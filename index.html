@@ -28,7 +28,182 @@
       font-family: var(--sans);
       color: var(--text);
       overflow: hidden;
-      background: transparent; /* importante para OBS overlay */
+      background: transparent;
+    }
+
+    /* Mode 0: Jardim Canvas */
+    body.mode-0{
+      background: linear-gradient(to bottom, #87CEEB 0%, #98D8C8 50%, #90EE90 100%);
+      overflow: hidden;
+    }
+    body.mode-0 .bgfill{ display:none; }
+    body.mode-0 .frames{ display:none; }
+    body.mode-0 .topbar{ display:none; }
+    body.mode-0 .layout{ display:none; }
+    body.mode-0 .buysHistory{ display:none; }
+    body.mode-0 .ticker{ display:none; }
+    body.mode-0 .overlayCounters{ display:none; }
+    body.mode-0 .overlayStatus{ display:none; }
+    
+    .gardenCanvas{
+      display: none;
+      position: absolute;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+    }
+    body.mode-0 .gardenCanvas{
+      display: block;
+    }
+    
+    .gardenStats{
+      display: none;
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      right: 24px;
+      z-index: 100;
+    }
+    body.mode-0 .gardenStats{
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .gardenStatCard{
+      padding: 12px 18px;
+      border-radius: 12px;
+      border: 2px solid rgba(255,255,255,.3);
+      background: rgba(255,255,255,.15);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0,0,0,.2);
+    }
+    .gardenStatCard .label{
+      font-size: 11px;
+      color: rgba(255,255,255,.8);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .gardenStatCard .value{
+      font-size: 18px;
+      font-weight: 900;
+      color: #fff;
+      font-family: var(--mono);
+    }
+
+    /* Mode 1 & 2: Overlay com caixa bonita nas bordas e green screen no centro */
+    body.mode-1, body.mode-2{
+      background: #00ff00; /* Green screen para chroma key */
+    }
+    body.mode-1 .bgfill, body.mode-2 .bgfill{ display:none; }
+    body.mode-1 .frames, body.mode-2 .frames{ display:none; }
+    
+    /* Layout compacto nas bordas para mode-1 e mode-2 */
+    body.mode-1 .layout, body.mode-2 .layout{ 
+      display: none; 
+    }
+    body.mode-1 .main, body.mode-2 .main{ 
+      display: none; 
+    }
+    
+    /* Topbar compacto para overlays */
+    body.mode-1 .topbar, body.mode-2 .topbar{
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      top: 18px;
+      max-width: none;
+    }
+    
+    /* Mini contadores para overlays */
+    .overlayCounters{
+      display: none;
+      position: absolute;
+      left: 24px;
+      top: 72px;
+      gap: 12px;
+      z-index: 10;
+    }
+    body.mode-1 .overlayCounters, body.mode-2 .overlayCounters{
+      display: flex;
+    }
+    .overlayCounter{
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+    }
+    .overlayCounter .label{
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .overlayCounter .value{
+      font-size: 16px;
+      font-weight: 900;
+      font-family: var(--mono);
+    }
+    .overlayCounter.buys .value{ color: var(--good); }
+    .overlayCounter.sells .value{ color: var(--warn); }
+    
+    /* Compras history sempre visível em overlays */
+    body.mode-1 .buysHistory, body.mode-2 .buysHistory{
+      position: absolute;
+      right: 24px;
+      top: 140px;
+      bottom: auto;
+      width: 280px;
+      max-height: 300px;
+    }
+    
+    /* Ticker sempre visível */
+    body.mode-1 .ticker, body.mode-2 .ticker{
+      position: absolute;
+      left: 24px;
+      right: 320px;
+      bottom: 18px;
+    }
+    
+    /* Alert ajustado */
+    body.mode-1 .alert, body.mode-2 .alert{
+      bottom: 80px;
+      left: 24px;
+    }
+    
+    /* Status WS para overlays */
+    .overlayStatus{
+      display: none;
+      position: absolute;
+      left: 24px;
+      top: 130px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(0,0,0,.3);
+      backdrop-filter: blur(10px);
+      font-size: 11px;
+      color: var(--muted);
+      align-items: center;
+      gap: 6px;
+      z-index: 10;
+    }
+    body.mode-1 .overlayStatus, body.mode-2 .overlayStatus{
+      display: flex;
+    }
+    .overlayStatus .dot{
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255,210,120,.9);
+    }
+    .overlayStatus .dot.live{
+      background: rgba(90,255,170,.95);
     }
 
     .stage{
@@ -37,7 +212,7 @@
       height: 100vh;
     }
 
-    /* Fundo (só no modo page0) */
+    /* Background (only in page0) */
     .bgfill{
       position:absolute; inset:0;
       background:
@@ -57,6 +232,7 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       backdrop-filter: blur(10px);
+      z-index: 10;
     }
 
     .brand{
@@ -103,6 +279,7 @@
       display:grid;
       grid-template-columns: 360px 1fr;
       gap: 18px;
+      z-index: 5;
     }
 
     .card{
@@ -174,6 +351,31 @@
       font-weight: 900;
       letter-spacing:.2px;
     }
+    .counters{
+      display:flex; gap:16px;
+      align-items:center;
+    }
+    .counter{
+      display:flex; flex-direction:column; align-items:center;
+      padding: 8px 16px;
+      border-radius: 12px;
+      background: rgba(0,0,0,.2);
+    }
+    .counter .label{
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing:1px;
+    }
+    .counter .value{
+      font-size: 24px;
+      font-weight: 900;
+      font-family: var(--mono);
+      margin-top: 4px;
+    }
+    .counter.buys .value{ color: var(--good); }
+    .counter.sells .value{ color: var(--warn); }
+    
     .status{
       font-size: 12px; color: var(--muted);
       display:flex; align-items:center; gap:8px;
@@ -188,7 +390,6 @@
       box-shadow: 0 0 0 6px rgba(90,255,170,.12);
     }
 
-    /* No modo página 0: podes embutir o player/iframe se quiseres (opcional) */
     .playerWrap{
       position:absolute; inset: 52px 0 0 0;
       padding: 16px;
@@ -209,7 +410,56 @@
       border:0;
     }
 
-    /* Rodapé tasks ticker */
+    /* Last 5 Buys Panel */
+    .buysHistory{
+      position:absolute;
+      right:24px;
+      bottom:92px;
+      width:320px;
+      max-height:400px;
+      border: 1px solid var(--stroke);
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      padding: 14px;
+      z-index: 10;
+    }
+    .buysHistory h3{
+      font-size: 13px;
+      font-weight: 900;
+      margin:0 0 12px 0;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing:1px;
+    }
+    .buyList{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .buyItem{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: rgba(0,0,0,.18);
+      border: 1px solid var(--stroke);
+    }
+    .buyItem .wallet{
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .buyItem .amount{
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--good);
+    }
+
+    /* Footer tasks ticker */
     .ticker{
       position:absolute; left:24px; right:24px; bottom:18px;
       border: 1px solid var(--stroke);
@@ -220,6 +470,7 @@
       padding: 10px 14px;
       display:flex; gap:12px; align-items:center;
       overflow:hidden;
+      z-index: 10;
     }
     .ticker .label{
       font-weight: 900;
@@ -235,16 +486,18 @@
       display:inline-block;
       white-space: nowrap;
       will-change: transform;
-      animation: scroll 22s linear infinite;
       color: var(--muted);
       font-size: 13px;
+    }
+    .marquee .track.animate{
+      animation: scroll 22s linear infinite;
     }
     @keyframes scroll{
       from{ transform: translateX(0); }
       to{ transform: translateX(-50%); }
     }
 
-    /* ALERT donation */
+    /* Alert donation */
     .alert{
       position:absolute;
       left: 24px;
@@ -254,18 +507,1477 @@
       display:flex;
       gap:12px;
       align-items:center;
-      padding: 14px 14px;
+      padding: 14px 18px;
       border-radius: 18px;
       border: 1px solid rgba(90,255,170,.30);
-      background: rgba(0,0,0,.55);
+      background: rgba(0,0,0,.75);
       backdrop-filter: blur(10px);
-      box-shadow: var(--shadow);
+      box-shadow: 0 0 40px rgba(90,255,170,.3), var(--shadow);
       transform: translateX(-120%);
       opacity: 0;
+      z-index: 100;
     }
     .alert.show{
       animation: slideInOut 6.5s ease-in-out forwards;
     }
+    .alert .mascot{
+      width: 64px;
+      height: 64px;
+      border-radius: 12px;
+      overflow:hidden;
+      flex-shrink:0;
+      border: 1px solid rgba(90,255,170,.3);
+    }
+    .alert .mascot img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+    }
+    .alert .content{
+      flex:1;
+    }
+    .alert .content .title{
+      font-size: 14px;
+      color: rgba(90,255,170,.9);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .alert .content .wallet{
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .alert .content .amount{
+      font-family: var(--mono);
+      font-size: 16px;
+      font-weight: 900;
+      color: var(--good);
+    }
     @keyframes slideInOut{
       0%   { transform: translateX(-120%); opacity: 0; }
-      12%  { transform:
+      12%  { transform: translateX(0); opacity: 1; }
+      88%  { transform: translateX(0); opacity: 1; }
+      100% { transform: translateX(-120%); opacity: 0; }
+    }
+    @keyframes bounce{
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    .alert.show .mascot{
+      animation: bounce 0.6s ease-in-out 3;
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <div class="bgfill"></div>
+    <div class="frames">
+      <div class="frame-screen"></div>
+      <div class="frame-cam"></div>
+    </div>
+
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo">
+          <img src="https://mewvolt.online/logo.png" alt="MeVolt" />
+        </div>
+        <div class="btext">
+          <div class="name">MeVolt</div>
+          <div class="sub">Memecoin Development</div>
+        </div>
+      </div>
+
+      <div class="pill">
+        <span>Viewers:</span>
+        <strong id="viewers">—</strong>
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="price">
+        <span class="label">Price</span>
+        <span class="val" id="priceVal">—</span>
+        <span class="unit">SOL</span>
+      </div>
+    </div>
+
+    <!-- Mini contadores para overlays (mode 1 e 2) -->
+    <div class="overlayCounters">
+      <div class="overlayCounter buys">
+        <span class="label">Buys</span>
+        <span class="value" id="overlayBuyCount">0</span>
+      </div>
+      <div class="overlayCounter sells">
+        <span class="label">Sells</span>
+        <span class="value" id="overlaySellCount">0</span>
+      </div>
+    </div>
+
+    <!-- Status WS para overlays -->
+    <div class="overlayStatus">
+      <div class="dot" id="overlayWsStatus"></div>
+      <span id="overlayWsStatusText">Connecting...</span>
+    </div>
+
+    <div class="layout">
+      <div class="card left">
+        <div class="mascot">
+          <img src="https://mewvolt.online/character.png" alt="MeVolt Mascot" />
+        </div>
+        <div class="meta">
+          <div class="kv">
+            <span class="k">Contract:</span>
+            <span class="v" id="contract">CpqA1pwX5SjU1SgufRwQ59knKGaDMEQ7MQBeu6mpump</span>
+          </div>
+          <div class="kv">
+            <span class="k">Platform:</span>
+            <span class="v">Pump.fun</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card main">
+        <div class="mainHead">
+          <div class="title">Live Activity</div>
+          <div class="counters">
+            <div class="counter buys">
+              <div class="label">Buys</div>
+              <div class="value" id="buyCount">0</div>
+            </div>
+            <div class="counter sells">
+              <div class="label">Sells</div>
+              <div class="value" id="sellCount">0</div>
+            </div>
+          </div>
+          <div class="status">
+            <div class="dot" id="wsStatus"></div>
+            <span id="wsStatusText">Connecting...</span>
+          </div>
+        </div>
+        <div class="playerWrap">
+          <div class="player">
+            <!-- Optional iframe player can be embedded here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="buysHistory">
+      <h3>Last 5 Buys</h3>
+      <div class="buyList" id="buyList"></div>
+    </div>
+
+    <div class="ticker">
+      <span class="label" id="tickerTitle">Working on:</span>
+      <div class="marquee">
+        <div class="track" id="tickerTrack"></div>
+      </div>
+    </div>
+
+    <div class="alert" id="alert">
+      <div class="mascot">
+        <img src="https://mewvolt.online/character.png" alt="" />
+      </div>
+      <div class="content">
+        <div class="title">New Buy!</div>
+        <div class="wallet" id="alertWallet"></div>
+        <div class="amount" id="alertAmount"></div>
+      </div>
+    </div>
+
+    <!-- Canvas para jardim animado (Mode 0) -->
+    <canvas class="gardenCanvas" id="gardenCanvas"></canvas>
+
+    <!-- Stats no jardim -->
+    <div class="gardenStats">
+      <div class="gardenStatCard">
+        <div class="label">Viewers</div>
+        <div class="value" id="gardenViewers">—</div>
+      </div>
+      <div class="gardenStatCard">
+        <div class="label">Price</div>
+        <div class="value" id="gardenPrice">— SOL</div>
+      </div>
+      <div class="gardenStatCard">
+        <div class="label">Market Cap</div>
+        <div class="value" id="gardenMarketCap">—</div>
+      </div>
+      <div class="gardenStatCard">
+        <div class="label">Holders</div>
+        <div class="value" id="gardenHolders">—</div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="alertSound" preload="auto">
+    <source src="alert.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script>
+    const CONFIG = {
+      contract: 'CpqA1pwX5SjU1SgufRwQ59knKGaDMEQ7MQBeu6mpump',
+      pumpUrl: 'https://pump.fun/coin/CpqA1pwX5SjU1SgufRwQ59knKGaDMEQ7MQBeu6mpump',
+      wsUrl: 'wss://pumpportal.fun/api/data',
+      corsProxy: 'https://api.allorigins.win/raw?url=', // Proxy CORS público para Pump.fun
+      minBuyThreshold: 0.01, // SOL
+      alertCooldown: 1500 // ms
+    };
+
+    // Mode detection - Page 0 (Jardim), Page 1 ou Page 2
+    const urlParams = new URLSearchParams(window.location.search);
+    const pageId = urlParams.get('id');
+    if (pageId === '0' || !pageId) {
+      document.body.classList.add('mode-0');
+    } else if (pageId === '1') {
+      document.body.classList.add('mode-1');
+    } else if (pageId === '2') {
+      document.body.classList.add('mode-2');
+    }
+
+    // State
+    let buyCount = 0;
+    let sellCount = 0;
+    let lastBuys = [];
+    let lastAlertTime = 0;
+    let ws = null;
+    let priceInterval = null;
+    let viewersInterval = null;
+    let tasksInterval = null;
+
+    // DOM Elements
+    const viewersEl = document.getElementById('viewers');
+    const priceValEl = document.getElementById('priceVal');
+    const buyCountEl = document.getElementById('buyCount');
+    const sellCountEl = document.getElementById('sellCount');
+    const buyListEl = document.getElementById('buyList');
+    const alertEl = document.getElementById('alert');
+    const alertWalletEl = document.getElementById('alertWallet');
+    const alertAmountEl = document.getElementById('alertAmount');
+    const alertSoundEl = document.getElementById('alertSound');
+    const wsStatusEl = document.getElementById('wsStatus');
+    const wsStatusTextEl = document.getElementById('wsStatusText');
+    const overlayWsStatusEl = document.getElementById('overlayWsStatus');
+    const overlayWsStatusTextEl = document.getElementById('overlayWsStatusText');
+    const overlayBuyCountEl = document.getElementById('overlayBuyCount');
+    const overlaySellCountEl = document.getElementById('overlaySellCount');
+    const tickerTitleEl = document.getElementById('tickerTitle');
+    const tickerTrackEl = document.getElementById('tickerTrack');
+
+    // Helper: Shorten wallet address
+    function shortenAddress(addr) {
+      if (!addr) return '—';
+      return `${addr.slice(0, 4)}…${addr.slice(-4)}`;
+    }
+
+    // Helper: Format SOL
+    function formatSOL(amount) {
+      if (!amount) return '—';
+      return parseFloat(amount).toFixed(4) + ' SOL';
+    }
+
+    // Fetch Pump.fun viewers (via CORS proxy)
+    async function fetchViewers() {
+      try {
+        // Usa proxy CORS para contornar restrições
+        const proxyUrl = CONFIG.corsProxy + encodeURIComponent(CONFIG.pumpUrl);
+        const res = await fetch(proxyUrl);
+        const html = await res.text();
+        
+        // Tentar múltiplos padrões para encontrar viewer count
+        let viewers = null;
+        
+        // Pattern 1: JSON-like "viewers": <num>
+        const jsonMatch = html.match(/"viewers"\s*:\s*(\d+)/i);
+        if (jsonMatch) {
+          viewers = parseInt(jsonMatch[1], 10);
+        }
+        
+        // Pattern 2: "X viewers" or "X watching"
+        if (!viewers) {
+          const textMatch = html.match(/(\d+)\s+(viewers?|watching)/i);
+          if (textMatch) {
+            viewers = parseInt(textMatch[1], 10);
+          }
+        }
+        
+        // Pattern 3: HTML tags com números seguidos de viewers
+        if (!viewers) {
+          const htmlMatch = html.match(/<[^>]*>(\d+)<[^>]*>\s*(?:viewers?|watching|live)/i);
+          if (htmlMatch) {
+            viewers = parseInt(htmlMatch[1], 10);
+          }
+        }
+        
+        if (viewers !== null) {
+          viewersEl.textContent = viewers;
+        } else {
+          viewersEl.textContent = '—';
+        }
+      } catch (err) {
+        console.error('Viewers fetch error:', err);
+        viewersEl.textContent = '—';
+      }
+    }
+
+    // Fetch all coin data (unified function that runs every 10 seconds)
+    let coinData = { 
+      viewers: null, 
+      marketCap: null, 
+      holders: null,
+      price: null,
+      volume24h: null,
+      liquidity: null
+    };
+    
+    async function fetchAllCoinData() {
+      // Fetch Pump.fun data and price in parallel
+      await Promise.all([
+        fetchPumpData(),
+        fetchPrice()
+      ]);
+    }
+    
+    let pumpDataAttempts = 0;
+    async function fetchPumpData() {
+      try {
+        // Verificar se está em file:// protocol
+        if (window.location.protocol === 'file:') {
+          pumpDataAttempts++;
+          if (pumpDataAttempts === 1) {
+            console.warn('[Pump Data] CORS: Use um servidor HTTP local para acessar dados externos');
+          }
+          return; // Skip se estiver em file://
+        }
+        
+        const proxyUrl = CONFIG.corsProxy + encodeURIComponent(CONFIG.pumpUrl);
+        const res = await fetch(proxyUrl);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const html = await res.text();
+        
+        let viewers = null;
+        let marketCap = null;
+        let holders = null;
+        
+        // Viewers patterns - melhorados para encontrar viewers da stream
+        const viewersPatterns = [
+          /"viewers"\s*:\s*(\d+)/i,
+          /"viewerCount"\s*:\s*(\d+)/i,
+          /(\d+)\s+(viewers?|watching|watching now)/i,
+          /<[^>]*>(\d+)<[^>]*>\s*(?:viewers?|watching|live)/i,
+          /viewers?[:\s]*(\d+)/i,
+          /watching[:\s]*(\d+)/i,
+          /(\d+)\s+people\s+(watching|viewing)/i
+        ];
+        for (const pattern of viewersPatterns) {
+          const match = html.match(pattern);
+          if (match) {
+            viewers = parseInt(match[1].replace(/,/g, ''), 10);
+            if (viewers > 0) break;
+          }
+        }
+        
+        // Market Cap patterns
+        const marketCapPatterns = [
+          /"market.*?cap["\s:]+[\$]?(\d+[.,]?\d*[KMkm]?)/i,
+          /market.*?cap[:\s]*[\$]?(\d+[.,]?\d*[KMkm]?)/i,
+          /mcap[:\s]*[\$]?(\d+[.,]?\d*[KMkm]?)/i
+        ];
+        for (const pattern of marketCapPatterns) {
+          const match = html.match(pattern);
+          if (match) {
+            marketCap = match[1];
+            break;
+          }
+        }
+        
+        // Holders pattern - mais padrões
+        const holdersPatterns = [
+          /"holders?"\s*:\s*(\d+)/i,
+          /(\d+)\s+holders?/i,
+          /holders?[:\s]*(\d+)/i,
+          /holder.*?count[:\s]*(\d+)/i,
+          /unique.*?holders?[:\s]*(\d+)/i
+        ];
+        for (const pattern of holdersPatterns) {
+          const match = html.match(pattern);
+          if (match) {
+            holders = parseInt(match[1].replace(/,/g, ''), 10);
+            break;
+          }
+        }
+        
+        // Volume 24h patterns
+        let volume24h = null;
+        const volumePatterns = [
+          /"volume.*?24h["\s:]+[\$]?(\d+[.,]?\d*[KMkm]?)/i,
+          /volume.*?24h[:\s]*[\$]?(\d+[.,]?\d*[KMkm]?)/i,
+          /24h.*?volume[:\s]*[\$]?(\d+[.,]?\d*[KMkm]?)/i
+        ];
+        for (const pattern of volumePatterns) {
+          const match = html.match(pattern);
+          if (match) {
+            volume24h = match[1];
+            break;
+          }
+        }
+        
+        // Liquidity patterns
+        let liquidity = null;
+        const liquidityPatterns = [
+          /"liquidity["\s:]+[\$]?(\d+[.,]?\d*[KMkm]?)/i,
+          /liquidity[:\s]*[\$]?(\d+[.,]?\d*[KMkm]?)/i,
+          /liq[:\s]*[\$]?(\d+[.,]?\d*[KMkm]?)/i
+        ];
+        for (const pattern of liquidityPatterns) {
+          const match = html.match(pattern);
+          if (match) {
+            liquidity = match[1];
+            break;
+          }
+        }
+        
+        coinData = { viewers, marketCap, holders, volume24h, liquidity };
+        pumpData = { viewers, marketCap, holders, volume24h, liquidity };
+        
+        // Log para debug
+        console.log('[Coin Data Update]', {
+          viewers,
+          marketCap,
+          holders,
+          volume24h,
+          liquidity,
+          timestamp: new Date().toLocaleTimeString()
+        });
+        
+        // Update viewers
+        if (viewers !== null) {
+          if (viewersEl) viewersEl.textContent = viewers;
+          const gardenViewersEl = document.getElementById('gardenViewers');
+          if (gardenViewersEl) gardenViewersEl.textContent = viewers;
+        } else {
+          if (viewersEl) viewersEl.textContent = '—';
+          const gardenViewersEl = document.getElementById('gardenViewers');
+          if (gardenViewersEl) gardenViewersEl.textContent = '—';
+        }
+        
+        // Update garden stats
+        const gardenMarketCapEl = document.getElementById('gardenMarketCap');
+        if (gardenMarketCapEl) {
+          if (marketCap) {
+            gardenMarketCapEl.textContent = marketCap.includes('$') ? marketCap : '$' + marketCap;
+          } else {
+            gardenMarketCapEl.textContent = '—';
+          }
+        }
+        const gardenHoldersEl = document.getElementById('gardenHolders');
+        if (gardenHoldersEl) gardenHoldersEl.textContent = holders ? holders.toLocaleString() : '—';
+        
+      } catch (err) {
+        pumpDataAttempts++;
+        // Só logar erro na primeira tentativa ou se for erro HTTP (não CORS)
+        if (pumpDataAttempts === 1 || (err.message && err.message.includes('HTTP'))) {
+          if (window.location.protocol === 'file:') {
+            // Já foi logado acima, não repetir
+          } else {
+            console.error('Pump data fetch error:', err);
+          }
+        }
+        if (viewersEl) viewersEl.textContent = '—';
+        const gardenViewersEl = document.getElementById('gardenViewers');
+        if (gardenViewersEl) gardenViewersEl.textContent = '—';
+      }
+    }
+
+    // Fetch token price and additional data from DexScreener
+    let priceAttempts = 0;
+    async function fetchPrice() {
+      try {
+        const apiUrl = `https://api.dexscreener.com/token-pairs/v1/solana/${CONFIG.contract}`;
+        const res = await fetch(apiUrl);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        priceAttempts = 0; // Reset on success
+        
+        if (data.pairs && data.pairs.length > 0) {
+          // Encontrar pair com maior liquidez
+          let bestPair = data.pairs[0];
+          let maxLiquidity = parseFloat(bestPair.liquidity?.usd || 0);
+          
+          for (const pair of data.pairs) {
+            const liq = parseFloat(pair.liquidity?.usd || 0);
+            if (liq > maxLiquidity) {
+              maxLiquidity = liq;
+              bestPair = pair;
+            }
+          }
+          
+          // Update price
+          if (bestPair.priceNative) {
+            const price = parseFloat(bestPair.priceNative).toFixed(6);
+            coinData.price = price;
+            if (priceValEl) priceValEl.textContent = price;
+            const gardenPriceEl = document.getElementById('gardenPrice');
+            if (gardenPriceEl) gardenPriceEl.textContent = price + ' SOL';
+          } else {
+            if (priceValEl) priceValEl.textContent = '—';
+            const gardenPriceEl = document.getElementById('gardenPrice');
+            if (gardenPriceEl) gardenPriceEl.textContent = '—';
+          }
+          
+          // Update market cap from DexScreener if available
+          if (bestPair.marketCap) {
+            const mcap = parseFloat(bestPair.marketCap);
+            let mcapFormatted;
+            if (mcap >= 1000000) {
+              mcapFormatted = (mcap / 1000000).toFixed(2) + 'M';
+            } else if (mcap >= 1000) {
+              mcapFormatted = (mcap / 1000).toFixed(2) + 'K';
+            } else {
+              mcapFormatted = mcap.toFixed(0);
+            }
+            const gardenMarketCapEl = document.getElementById('gardenMarketCap');
+            if (gardenMarketCapEl && (!coinData.marketCap || coinData.marketCap === null)) {
+              gardenMarketCapEl.textContent = '$' + mcapFormatted;
+            }
+          }
+          
+          // Update volume 24h if not found in Pump.fun scraping
+          if (bestPair.volume?.h24 && !coinData.volume24h) {
+            const vol = parseFloat(bestPair.volume.h24);
+            let volFormatted;
+            if (vol >= 1000000) {
+              volFormatted = (vol / 1000000).toFixed(2) + 'M';
+            } else if (vol >= 1000) {
+              volFormatted = (vol / 1000).toFixed(2) + 'K';
+            } else {
+              volFormatted = vol.toFixed(0);
+            }
+            coinData.volume24h = '$' + volFormatted;
+          }
+          
+          // Update liquidity if not found in Pump.fun scraping
+          if (bestPair.liquidity?.usd && !coinData.liquidity) {
+            const liq = parseFloat(bestPair.liquidity.usd);
+            let liqFormatted;
+            if (liq >= 1000000) {
+              liqFormatted = (liq / 1000000).toFixed(2) + 'M';
+            } else if (liq >= 1000) {
+              liqFormatted = (liq / 1000).toFixed(2) + 'K';
+            } else {
+              liqFormatted = liq.toFixed(0);
+            }
+            coinData.liquidity = '$' + liqFormatted;
+          }
+        } else {
+          if (priceValEl) priceValEl.textContent = '—';
+          const gardenPriceEl = document.getElementById('gardenPrice');
+          if (gardenPriceEl) gardenPriceEl.textContent = '—';
+        }
+      } catch (err) {
+        priceAttempts++;
+        // Só logar erro na primeira tentativa ou se for erro HTTP (não CORS)
+        if (priceAttempts === 1 || (err.message && err.message.includes('HTTP'))) {
+          console.error('Price fetch error:', err);
+        }
+        if (priceValEl) priceValEl.textContent = '—';
+        const gardenPriceEl = document.getElementById('gardenPrice');
+        if (gardenPriceEl) gardenPriceEl.textContent = '—';
+      }
+    }
+
+    // Load tasks ticker
+    let tasksLoadAttempts = 0;
+    async function loadTasks() {
+      // Se estiver em file://, pular tentativa (CORS não permite)
+      if (window.location.protocol === 'file:') {
+        tasksLoadAttempts++;
+        if (tasksLoadAttempts === 1) {
+          console.warn('[Tasks] CORS: Tasks.json requer servidor HTTP. Use: python -m http.server 8000');
+          // Usar valores padrão se não conseguir carregar
+          if (!tickerTitleEl.textContent || tickerTitleEl.textContent.trim() === '') {
+            tickerTitleEl.textContent = 'Working on:';
+          }
+        }
+        return; // Não tentar fazer fetch em file://
+      }
+      
+      try {
+        const tasksPath = `MeVoltOBS/tasks.json?t=${Date.now()}`;
+        const res = await fetch(tasksPath);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        
+        const data = await res.json();
+        if (data.title) tickerTitleEl.textContent = data.title;
+        if (data.items && data.items.length > 0) {
+          const text = data.items.join(' • ') + ' • ';
+          tickerTrackEl.textContent = text + text; // Duplicate for seamless loop
+          tickerTrackEl.classList.add('animate');
+        }
+        tasksLoadAttempts = 0; // Reset on success
+      } catch (err) {
+        tasksLoadAttempts++;
+        // Só logar erro na primeira tentativa ou se for erro HTTP (não CORS)
+        if (tasksLoadAttempts === 1 || (err.message && err.message.includes('HTTP'))) {
+          console.error('Tasks fetch error:', err);
+        }
+        // Se falhar, manter conteúdo anterior (não limpar)
+      }
+    }
+
+    // Update last buys list
+    function updateBuyList() {
+      buyListEl.innerHTML = '';
+      lastBuys.slice(0, 5).forEach(buy => {
+        const div = document.createElement('div');
+        div.className = 'buyItem';
+        div.innerHTML = `
+          <span class="wallet">${shortenAddress(buy.wallet)}</span>
+          <span class="amount">${formatSOL(buy.sol)}</span>
+        `;
+        buyListEl.appendChild(div);
+      });
+    }
+
+    // Show buy alert
+    function showBuyAlert(wallet, solAmount) {
+      const now = Date.now();
+      if (now - lastAlertTime < CONFIG.alertCooldown) return;
+      if (parseFloat(solAmount) < CONFIG.minBuyThreshold) return;
+
+      lastAlertTime = now;
+      alertWalletEl.textContent = shortenAddress(wallet);
+      alertAmountEl.textContent = formatSOL(solAmount);
+
+      alertEl.classList.remove('show');
+      void alertEl.offsetWidth; // Trigger reflow
+      alertEl.classList.add('show');
+
+      // Play sound (alert notification)
+      try {
+        alertSoundEl.currentTime = 0;
+        alertSoundEl.play().catch(err => {
+          console.log('[Buy Alert] Audio play blocked - user interaction may be required:', err);
+        });
+        console.log('[Buy Alert]', { wallet, solAmount, timestamp: new Date().toLocaleTimeString() });
+      } catch (err) {
+        console.log('[Buy Alert] Audio error:', err);
+      }
+    }
+
+    // Connect to PumpPortal WebSocket
+    function connectWS() {
+      try {
+        ws = new WebSocket(CONFIG.wsUrl);
+
+        ws.onopen = () => {
+          console.log('WebSocket connected');
+          wsStatusEl.classList.add('live');
+          wsStatusTextEl.textContent = 'Live';
+          if (overlayWsStatusEl) overlayWsStatusEl.classList.add('live');
+          if (overlayWsStatusTextEl) overlayWsStatusTextEl.textContent = 'Live';
+          // Subscribe to token trades
+          ws.send(JSON.stringify({
+            method: 'subscribeTokenTrade',
+            keys: [CONFIG.contract]
+          }));
+        };
+
+        ws.onmessage = (event) => {
+          try {
+            const data = JSON.parse(event.data);
+            if (data.type === 'trade' || data.txType) {
+              const txType = data.txType || data.type;
+              const wallet = data.traderPublicKey || data.wallet || data.user;
+              const sol = data.solAmount || data.sol || data.amount;
+              const tokens = data.tokenAmount || data.tokens;
+
+              if (txType === 'buy' || txType === 'Buy') {
+                buyCount++;
+                buyCountEl.textContent = buyCount;
+                if (overlayBuyCountEl) overlayBuyCountEl.textContent = buyCount;
+
+                if (wallet && sol) {
+                  lastBuys.unshift({ wallet, sol, tokens });
+                  if (lastBuys.length > 5) lastBuys.pop();
+                  updateBuyList();
+                  showBuyAlert(wallet, sol);
+                }
+              } else if (txType === 'sell' || txType === 'Sell') {
+                sellCount++;
+                sellCountEl.textContent = sellCount;
+                if (overlaySellCountEl) overlaySellCountEl.textContent = sellCount;
+              }
+            }
+          } catch (err) {
+            console.error('WS message parse error:', err);
+          }
+        };
+
+        ws.onerror = (err) => {
+          console.error('WebSocket error:', err);
+          wsStatusEl.classList.remove('live');
+          wsStatusTextEl.textContent = 'Error';
+        };
+
+        ws.onclose = () => {
+          console.log('WebSocket closed, reconnecting...');
+          wsStatusEl.classList.remove('live');
+          wsStatusTextEl.textContent = 'Reconnecting...';
+          if (overlayWsStatusEl) overlayWsStatusEl.classList.remove('live');
+          if (overlayWsStatusTextEl) overlayWsStatusTextEl.textContent = 'Reconnecting...';
+          setTimeout(connectWS, 3000);
+        };
+      } catch (err) {
+        console.error('WebSocket connection error:', err);
+        wsStatusEl.classList.remove('live');
+        wsStatusTextEl.textContent = 'Connection failed';
+        if (overlayWsStatusEl) overlayWsStatusEl.classList.remove('live');
+        if (overlayWsStatusTextEl) overlayWsStatusTextEl.textContent = 'Connection failed';
+      }
+    }
+
+    // Canvas Garden Animation (Mode 0)
+    let canvas, ctx, characterImg, logoImg;
+    let characterX = 100;
+    let characterY = 0;
+    let characterVx = 0.8; // Mais devagar
+    let characterVy = 0;
+    let isJumping = false;
+    let groundLevel = 0;
+    let characterWidth = 0;
+    let characterHeight = 0;
+    let imageAspectRatio = 1;
+    let walkCycle = 0; // Para animação de caminhada
+    let bounceOffset = 0; // Offset vertical suave
+    let nextJumpTime = 0;
+    let trees = []; // Array de árvores para colisão
+    let logoWidth = 0;
+    let logoHeight = 0;
+    let logoAspectRatio = 1;
+    
+    function initGarden() {
+      canvas = document.getElementById('gardenCanvas');
+      if (!canvas) return;
+      
+      ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      groundLevel = canvas.height * 0.92; // Personagem mais para baixo (92% da altura)
+      
+      // Load character image
+      characterImg = new Image();
+      characterImg.src = 'https://mewvolt.online/character.png';
+      
+      // Load logo image
+      logoImg = new Image();
+      logoImg.src = 'https://mewvolt.online/logo.png';
+      
+      let characterLoaded = false;
+      let logoLoaded = false;
+      
+      characterImg.onload = () => {
+        // Calcular proporção da imagem
+        imageAspectRatio = characterImg.width / characterImg.height;
+        // Definir altura base e calcular largura mantendo proporção
+        characterHeight = 120;
+        characterWidth = characterHeight * imageAspectRatio;
+        characterY = groundLevel - characterHeight;
+        characterLoaded = true;
+        if (characterLoaded && logoLoaded) {
+          nextJumpTime = Date.now() + 3000 + Math.random() * 2000;
+          animateGarden();
+        }
+      };
+      
+      logoImg.onload = () => {
+        // Calcular proporção do logo
+        logoAspectRatio = logoImg.width / logoImg.height;
+        // Tamanho do logo (pode ajustar)
+        logoHeight = 200;
+        logoWidth = logoHeight * logoAspectRatio;
+        logoLoaded = true;
+        if (characterLoaded && logoLoaded) {
+          nextJumpTime = Date.now() + 3000 + Math.random() * 2000;
+          animateGarden();
+        }
+      };
+      
+      window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        groundLevel = canvas.height * 0.92; // Personagem mais para baixo
+        if (characterImg.complete) {
+          characterY = groundLevel - characterHeight;
+        }
+        // Reinicializar árvores ao redimensionar
+        initTrees();
+      });
+      
+      // Inicializar árvores e partículas
+      initTrees();
+      initParticles();
+    }
+    
+    function drawGarden() {
+      const time = Date.now() / 1000;
+      
+      // Sky gradient mais realista (céu azul que vai para verde)
+      const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+      gradient.addColorStop(0, '#6BB6FF'); // Azul céu mais realista
+      gradient.addColorStop(0.4, '#87CEEB'); // Azul claro
+      gradient.addColorStop(0.65, '#A8E6CF'); // Verde claro
+      gradient.addColorStop(0.85, '#C8E6C9'); // Verde
+      gradient.addColorStop(1, '#AED581'); // Verde grama
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // Sun (sol animado)
+      const sunX = canvas.width * 0.85;
+      const sunY = canvas.height * 0.25;
+      const sunSize = 80 + Math.sin(time * 0.5) * 5;
+      const sunGradient = ctx.createRadialGradient(sunX, sunY, 0, sunX, sunY, sunSize);
+      sunGradient.addColorStop(0, '#FFF9C4');
+      sunGradient.addColorStop(0.7, '#FFEB3B');
+      sunGradient.addColorStop(1, 'rgba(255, 235, 59, 0)');
+      ctx.fillStyle = sunGradient;
+      ctx.beginPath();
+      ctx.arc(sunX, sunY, sunSize, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // Clouds (mais realistas e animadas)
+      drawClouds();
+      
+      // Hills/terrain no background (colinas suaves)
+      ctx.fillStyle = '#81C784';
+      ctx.beginPath();
+      ctx.moveTo(0, groundLevel);
+      for (let i = 0; i < canvas.width; i += 10) {
+        const hillHeight = Math.sin((i / canvas.width) * Math.PI * 4 + time * 0.1) * 15;
+        ctx.lineTo(i, groundLevel - hillHeight - 40);
+      }
+      ctx.lineTo(canvas.width, groundLevel);
+      ctx.lineTo(canvas.width, canvas.height);
+      ctx.lineTo(0, canvas.height);
+      ctx.closePath();
+      ctx.fill();
+      
+      // Ground/grass (camada principal)
+      ctx.fillStyle = '#66BB6A';
+      ctx.fillRect(0, groundLevel - 30, canvas.width, canvas.height - groundLevel + 30);
+      
+      // Grass detalhada e animada (múltiplas camadas) - mais densa
+      drawAnimatedGrass();
+      
+      // Trees atrás do character (apenas as que estão atrás)
+      drawTreesBehind();
+      
+      // Logo no centro
+      drawLogo();
+    }
+    
+    // Desenhar árvores que estão na frente do character (z-index maior)
+    function drawTreesFront() {
+      const time = Date.now() / 1200;
+      
+      if (trees.length === 0) {
+        initTrees();
+      }
+      
+      // Filtrar árvores que estão na frente do character (baseado na posição X)
+      const characterCenterX = characterX + characterWidth / 2;
+      const frontTrees = trees.filter(tree => tree.x > characterCenterX);
+      
+      frontTrees.forEach((tree) => {
+        const treeY = groundLevel - 150; // Árvores mais para cima
+        const treeIndex = trees.indexOf(tree); // Índice fixo no array original
+        const sway = Math.sin(time + treeIndex) * 2;
+        
+        drawSingleTree(tree, treeY, sway, time, treeIndex);
+      });
+    }
+    
+    // Desenhar árvores que estão atrás do character
+    function drawTreesBehind() {
+      const time = Date.now() / 1200;
+      
+      if (trees.length === 0) {
+        initTrees();
+      }
+      
+      // Filtrar árvores que estão atrás do character
+      const characterCenterX = characterX + characterWidth / 2;
+      const behindTrees = trees.filter(tree => tree.x <= characterCenterX);
+      
+      behindTrees.forEach((tree) => {
+        const treeY = groundLevel - 150; // Árvores mais para cima
+        const treeIndex = trees.indexOf(tree); // Índice fixo no array original
+        const sway = Math.sin(time + treeIndex) * 2;
+        
+        drawSingleTree(tree, treeY, sway, time, treeIndex);
+      });
+    }
+    
+    function drawClouds() {
+      const time = Date.now() / 4000; // Movimento mais lento e suave
+      
+      // Múltiplas camadas de nuvens (background, mid, front)
+      const cloudLayers = [
+        { count: 3, speed: 0.3, opacity: 0.4, yBase: 30, sizeBase: 80 },
+        { count: 4, speed: 0.5, opacity: 0.6, yBase: 60, sizeBase: 60 },
+        { count: 5, speed: 0.7, opacity: 0.8, yBase: 100, sizeBase: 50 }
+      ];
+      
+      cloudLayers.forEach(layer => {
+        ctx.fillStyle = `rgba(255, 255, 255, ${layer.opacity})`;
+        for (let i = 0; i < layer.count; i++) {
+          const x = (canvas.width / layer.count * i + time * layer.speed * 30) % (canvas.width + 250) - 125;
+          const y = layer.yBase + i * 35 + Math.sin(time + i) * 10;
+          const size = layer.sizeBase + i * 8;
+          drawRealisticCloud(x, y, size, time + i);
+        }
+      });
+    }
+    
+    function drawRealisticCloud(x, y, size, timeOffset) {
+      ctx.save();
+      ctx.translate(x, y);
+      
+      // Nuvem mais realista com múltiplos círculos sobrepostos
+      const circles = [
+        { x: 0, y: 0, r: size * 0.5 },
+        { x: size * 0.4, y: 0, r: size * 0.6 },
+        { x: size * 0.7, y: 0, r: size * 0.5 },
+        { x: size * 0.25, y: -size * 0.25, r: size * 0.45 },
+        { x: size * 0.6, y: -size * 0.25, r: size * 0.4 },
+        { x: size * 0.45, y: -size * 0.4, r: size * 0.35 }
+      ];
+      
+      // Sway suave (balanço)
+      const sway = Math.sin(timeOffset * 0.5) * 3;
+      
+      circles.forEach(circle => {
+        ctx.beginPath();
+        ctx.arc(circle.x + sway, circle.y, circle.r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      
+      ctx.restore();
+    }
+    
+    function drawAnimatedGrass() {
+      const time = Date.now() / 800;
+      
+      // Camada 1: Grama alta (mais densa)
+      ctx.strokeStyle = '#558B2F';
+      for (let i = 0; i < canvas.width; i += 4) { // Mais frequente (era 8)
+        const wind = Math.sin(time + i * 0.1) * 8;
+        const grassHeight = 15 + Math.sin(i * 0.3) * 5;
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(i, groundLevel);
+        ctx.quadraticCurveTo(i + wind * 0.5, groundLevel - grassHeight * 0.5, i + wind, groundLevel - grassHeight);
+        ctx.stroke();
+      }
+      
+      // Camada 2: Grama média (mais densa)
+      ctx.strokeStyle = '#66BB6A';
+      for (let i = 2; i < canvas.width; i += 6) { // Mais frequente (era 12)
+        const wind = Math.sin(time * 1.2 + i * 0.15) * 6;
+        const grassHeight = 10 + Math.cos(i * 0.4) * 3;
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(i, groundLevel);
+        ctx.quadraticCurveTo(i + wind * 0.4, groundLevel - grassHeight * 0.5, i + wind * 0.8, groundLevel - grassHeight);
+        ctx.stroke();
+      }
+      
+      // Camada 3: Grama baixa (detalhes - mais densa)
+      ctx.strokeStyle = '#81C784';
+      for (let i = 1; i < canvas.width; i += 8) { // Mais frequente (era 15)
+        const wind = Math.sin(time * 0.8 + i * 0.2) * 4;
+        const grassHeight = 6 + Math.sin(i) * 2;
+        ctx.lineWidth = 0.8;
+        ctx.beginPath();
+        ctx.moveTo(i, groundLevel);
+        ctx.lineTo(i + wind * 0.3, groundLevel - grassHeight);
+        ctx.stroke();
+      }
+      
+      // Camada 4: Grama extra fina (mais detalhes)
+      ctx.strokeStyle = '#AED581';
+      for (let i = 1.5; i < canvas.width; i += 5) {
+        const wind = Math.sin(time * 0.9 + i * 0.25) * 3;
+        const grassHeight = 4 + Math.cos(i * 0.6) * 1.5;
+        ctx.lineWidth = 0.5;
+        ctx.beginPath();
+        ctx.moveTo(i, groundLevel);
+        ctx.lineTo(i + wind * 0.2, groundLevel - grassHeight);
+        ctx.stroke();
+      }
+    }
+    
+    // Partículas animadas (pólen, folhas, etc)
+    let particles = [];
+    function initParticles() {
+      particles = [];
+      for (let i = 0; i < 30; i++) {
+        // Cores fixas baseadas no índice (sem Math.random para evitar tremores)
+        const colorSeed = i * 17;
+        let colorR, colorG, colorB;
+        const type = (i % 10 > 7) ? 'leaf' : 'pollen'; // Folhas ou pólen
+        
+        if (type === 'leaf') {
+          colorR = 50 + (colorSeed % 30);
+          colorG = 150 + ((colorSeed * 7) % 40);
+          colorB = 80 + ((colorSeed * 13) % 20);
+        } else {
+          colorR = 255;
+          colorG = 200 + (colorSeed % 50);
+          colorB = colorSeed % 100;
+        }
+        
+        particles.push({
+          x: (i * 47.3) % canvas.width, // Posições determinísticas
+          y: (i * 31.7) % (canvas.height * 0.6),
+          vx: ((i * 0.1) % 1 - 0.5) * 0.5,
+          vy: (i * 0.07) % 0.3 + 0.1,
+          size: (i * 0.13) % 3 + 1,
+          type: type,
+          rotation: (i * 0.52) % (Math.PI * 2),
+          rotationSpeed: ((i * 0.03) % 1 - 0.5) * 0.05,
+          colorR: colorR,
+          colorG: colorG,
+          colorB: colorB
+        });
+      }
+    }
+    
+    function drawParticles() {
+      if (particles.length === 0 && canvas) {
+        initParticles();
+      }
+      
+      const time = Date.now() / 1000;
+      
+      particles.forEach((particle, idx) => {
+        // Atualizar posição
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+        particle.rotation += particle.rotationSpeed;
+        
+        // Resetar se sair da tela (posição determinística baseada no índice)
+        if (particle.y > groundLevel + 50) {
+          const idx = particles.indexOf(particle);
+          particle.y = -20;
+          particle.x = (idx * 47.3) % canvas.width; // Posição determinística
+        }
+        if (particle.x < -10) particle.x = canvas.width + 10;
+        if (particle.x > canvas.width + 10) particle.x = -10;
+        
+        // Desenhar partícula
+        ctx.save();
+        ctx.translate(particle.x, particle.y);
+        ctx.rotate(particle.rotation);
+        
+        if (particle.type === 'leaf') {
+          // Folha caindo (cores fixas armazenadas)
+          ctx.fillStyle = `rgba(${particle.colorR}, ${particle.colorG}, ${particle.colorB}, 0.6)`;
+          ctx.beginPath();
+          ctx.ellipse(0, 0, particle.size * 2, particle.size, 0, 0, Math.PI * 2);
+          ctx.fill();
+        } else {
+          // Pólen (cores fixas armazenadas)
+          ctx.fillStyle = `rgba(${particle.colorR}, ${particle.colorG}, ${particle.colorB}, 0.5)`;
+          ctx.beginPath();
+          ctx.arc(0, 0, particle.size, 0, Math.PI * 2);
+          ctx.fill();
+          // Brilho do pólen
+          ctx.fillStyle = `rgba(255, 255, 200, 0.3)`;
+          ctx.beginPath();
+          ctx.arc(0, 0, particle.size * 0.5, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        
+        ctx.restore();
+      });
+    }
+    
+    function drawFlowers() {
+      const time = Date.now() / 1000;
+      // Mais flores pelo cenário
+      const flowers = [
+        { x: canvas.width * 0.12, y: groundLevel, color: 15, size: 1.0 },
+        { x: canvas.width * 0.18, y: groundLevel, color: 45, size: 1.1 },
+        { x: canvas.width * 0.25, y: groundLevel, color: 60, size: 0.9 },
+        { x: canvas.width * 0.32, y: groundLevel, color: 30, size: 1.2 },
+        { x: canvas.width * 0.42, y: groundLevel, color: 320, size: 0.95 },
+        { x: canvas.width * 0.52, y: groundLevel, color: 340, size: 1.0 },
+        { x: canvas.width * 0.62, y: groundLevel, color: 280, size: 1.15 },
+        { x: canvas.width * 0.72, y: groundLevel, color: 260, size: 0.85 },
+        { x: canvas.width * 0.82, y: groundLevel, color: 350, size: 1.05 },
+        { x: canvas.width * 0.88, y: groundLevel, color: 200, size: 0.9 },
+        { x: canvas.width * 0.38, y: groundLevel, color: 50, size: 0.8 },
+        { x: canvas.width * 0.58, y: groundLevel, color: 300, size: 1.1 },
+      ];
+      
+      flowers.forEach((flower, idx) => {
+        // Sway com vento
+        const sway = Math.sin(time * 0.8 + idx) * 3;
+        const flowerX = flower.x + sway;
+        
+        // Stem (caule mais realista com curvatura)
+        ctx.strokeStyle = '#2E7D32';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(flowerX, flower.y);
+        ctx.quadraticCurveTo(flowerX + sway * 0.3, flower.y - 20, flowerX, flower.y - 40);
+        ctx.stroke();
+        
+        // Leaves (folhas no caule)
+        ctx.fillStyle = '#4CAF50';
+        ctx.beginPath();
+        ctx.ellipse(flowerX - 5, flower.y - 20, 6, 3, sway * 0.1, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // Petals (pétalas animadas e rotacionadas)
+        const rotation = time * 0.3 + idx;
+        const petalCount = 6;
+        const petalSize = 10 * flower.size;
+        const petalDistance = 18 * flower.size;
+        
+        ctx.fillStyle = `hsl(${(flower.color + time * 20) % 360}, 75%, 65%)`;
+        for (let i = 0; i < petalCount; i++) {
+          const angle = (Math.PI * 2 / petalCount) * i + rotation;
+          const px = flowerX + Math.cos(angle) * petalDistance;
+          const py = flower.y - 40 + Math.sin(angle) * petalDistance;
+          
+          // Pétala elíptica
+          ctx.save();
+          ctx.translate(px, py);
+          ctx.rotate(angle);
+          ctx.beginPath();
+          ctx.ellipse(0, 0, petalSize, petalSize * 0.6, 0, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        }
+        
+        // Center (centro da flor)
+        ctx.fillStyle = '#FFD700';
+        ctx.beginPath();
+        ctx.arc(flowerX, flower.y - 40, 7 * flower.size, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // Detalhe do centro
+        ctx.fillStyle = '#FFA000';
+        ctx.beginPath();
+        ctx.arc(flowerX, flower.y - 40, 4 * flower.size, 0, Math.PI * 2);
+        ctx.fill();
+      });
+    }
+    
+    function initTrees() {
+      // Inicializar árvores em posições variadas (mais árvores, mais realista)
+      trees = [
+        { x: canvas.width * 0.05, size: 85, height: 130, trunkWidth: 32 },
+        { x: canvas.width * 0.15, size: 100, height: 150, trunkWidth: 36 },
+        { x: canvas.width * 0.32, size: 75, height: 120, trunkWidth: 28 },
+        { x: canvas.width * 0.48, size: 95, height: 140, trunkWidth: 34 },
+        { x: canvas.width * 0.65, size: 80, height: 125, trunkWidth: 30 },
+        { x: canvas.width * 0.80, size: 105, height: 155, trunkWidth: 38 },
+        { x: canvas.width * 0.93, size: 90, height: 135, trunkWidth: 32 },
+      ];
+    }
+    
+    // Função auxiliar para desenhar uma árvore individual
+    function drawSingleTree(tree, treeY, sway, time, idx) {
+        // Trunk (tronco mais realista com textura e profundidade)
+        const trunkHalf = tree.trunkWidth / 2;
+        const trunkGradient = ctx.createLinearGradient(
+          tree.x - trunkHalf, treeY, 
+          tree.x + trunkHalf, treeY + tree.height
+        );
+        trunkGradient.addColorStop(0, '#5D4037');
+        trunkGradient.addColorStop(0.3, '#6D4C41');
+        trunkGradient.addColorStop(0.7, '#5D4037');
+        trunkGradient.addColorStop(1, '#4E342E');
+        ctx.fillStyle = trunkGradient;
+        ctx.fillRect(tree.x - trunkHalf + sway * 0.1, treeY, tree.trunkWidth, tree.height);
+        
+        // Trunk details (textura mais realista)
+        ctx.strokeStyle = '#3E2723';
+        ctx.lineWidth = 1.5;
+        // Linhas verticais de textura (valores fixos baseados no índice da árvore para evitar tremores)
+        const textureSeed = tree.x * 0.01 + idx * 0.1; // Seed baseado na posição X e índice
+        for (let i = 0; i < 4; i++) {
+          const offset = (i / 3) * tree.trunkWidth - trunkHalf;
+          // Usar seed determinístico em vez de Math.random()
+          const textureOffset = Math.sin(textureSeed + i) * 0.8; // Valor fixo mas variado
+          ctx.beginPath();
+          ctx.moveTo(tree.x + offset + sway * 0.1, treeY);
+          ctx.lineTo(tree.x + offset + sway * 0.1 + textureOffset, treeY + tree.height);
+          ctx.stroke();
+        }
+        
+        // Anéis do tronco (sugestão de idade)
+        ctx.strokeStyle = 'rgba(62, 39, 35, 0.3)';
+        ctx.lineWidth = 1;
+        for (let i = 1; i < 4; i++) {
+          ctx.beginPath();
+          ctx.arc(tree.x + sway * 0.1, treeY + (tree.height / 4) * i, trunkHalf * 0.8, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+        
+        // Leaves (folhas mais realistas com múltiplas camadas e variações)
+        const leafBaseY = treeY - tree.height * 0.3;
+        const leafColors = [
+          { light: '#81C784', mid: '#66BB6A', dark: '#4CAF50' },
+          { light: '#A5D6A7', mid: '#81C784', dark: '#66BB6A' },
+          { light: '#C8E6C9', mid: '#A5D6A7', dark: '#81C784' }
+        ];
+        const colorSet = leafColors[idx % leafColors.length];
+        
+        // Camada de folhas principal (forma mais orgânica)
+        const mainLeafGradient = ctx.createRadialGradient(
+          tree.x + sway, leafBaseY, 0,
+          tree.x + sway, leafBaseY, tree.size
+        );
+        mainLeafGradient.addColorStop(0, colorSet.light);
+        mainLeafGradient.addColorStop(0.6, colorSet.mid);
+        mainLeafGradient.addColorStop(1, colorSet.dark);
+        ctx.fillStyle = mainLeafGradient;
+        
+        // Folhas em múltiplas camadas (forma mais natural)
+        const leafLayers = [
+          { x: tree.x + sway, y: leafBaseY, size: tree.size, offset: 0 },
+          { x: tree.x - tree.size * 0.35 + sway * 0.85, y: leafBaseY - tree.size * 0.2, size: tree.size * 0.8, offset: -0.1 },
+          { x: tree.x + tree.size * 0.35 + sway * 0.85, y: leafBaseY - tree.size * 0.2, size: tree.size * 0.8, offset: 0.1 },
+          { x: tree.x + sway * 0.7, y: leafBaseY - tree.size * 0.45, size: tree.size * 0.65, offset: 0 },
+          { x: tree.x - tree.size * 0.25 + sway * 0.75, y: leafBaseY - tree.size * 0.35, size: tree.size * 0.7, offset: -0.15 },
+          { x: tree.x + tree.size * 0.25 + sway * 0.75, y: leafBaseY - tree.size * 0.35, size: tree.size * 0.7, offset: 0.15 }
+        ];
+        
+        leafLayers.forEach((leaf, leafIdx) => {
+          // Gradiente para cada camada de folhas
+          const leafGrad = ctx.createRadialGradient(
+            leaf.x, leaf.y, leaf.size * 0.2,
+            leaf.x, leaf.y, leaf.size
+          );
+          leafGrad.addColorStop(0, colorSet.light);
+          leafGrad.addColorStop(0.7, colorSet.mid);
+          leafGrad.addColorStop(1, colorSet.dark);
+          ctx.fillStyle = leafGrad;
+          
+          // Desenhar folhas em forma mais orgânica (elipse ou círculo levemente distorcido)
+          ctx.save();
+          ctx.translate(leaf.x, leaf.y);
+          ctx.rotate(leaf.offset * 0.2);
+          ctx.beginPath();
+          ctx.ellipse(0, 0, leaf.size, leaf.size * 0.95, 0, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+          
+          // Highlights nas folhas (brilho do sol)
+          if (leafIdx < 3) { // Só nas camadas superiores
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.25)';
+            ctx.beginPath();
+            ctx.ellipse(
+              leaf.x - leaf.size * 0.35, 
+              leaf.y - leaf.size * 0.35, 
+              leaf.size * 0.35, 
+              leaf.size * 0.25, 
+              0.3, 0, Math.PI * 2
+            );
+            ctx.fill();
+          }
+        });
+    }
+    
+    function drawLogo() {
+      if (!logoImg.complete || !logoAspectRatio) return;
+      
+      const centerX = canvas.width / 2;
+      const centerY = canvas.height / 2 - 100; // Um pouco acima do centro
+      
+      // Glow effect (brilho suave)
+      const time = Date.now() / 1000;
+      const glowIntensity = 0.3 + Math.sin(time * 2) * 0.1;
+      const glowSize = logoWidth * 1.2;
+      
+      // Sombra/glow atrás do logo
+      const gradient = ctx.createRadialGradient(
+        centerX, centerY, logoWidth * 0.3,
+        centerX, centerY, glowSize
+      );
+      gradient.addColorStop(0, `rgba(255, 255, 255, ${glowIntensity * 0.3})`);
+      gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+      ctx.fillStyle = gradient;
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, glowSize, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // Bounce suave sutil
+      const bounce = Math.sin(time * 1.5) * 3;
+      
+      ctx.save();
+      ctx.translate(centerX, centerY + bounce);
+      
+      // Draw logo mantendo proporção
+      ctx.drawImage(logoImg, -logoWidth/2, -logoHeight/2, logoWidth, logoHeight);
+      ctx.restore();
+    }
+    
+    function drawCharacter() {
+      if (!characterImg.complete || !imageAspectRatio) return;
+      
+      const drawX = characterX;
+      const drawY = characterY;
+      
+      // Calcular altura do pulo (quanto mais alto, menor a sombra)
+      const groundY = groundLevel - characterHeight;
+      const jumpHeight = groundY - characterY; // Positivo quando está acima do chão
+      const maxJumpHeight = 150; // Altura máxima estimada do pulo
+      const heightRatio = Math.max(0, Math.min(1, jumpHeight / maxJumpHeight)); // 0 = no chão, 1 = máximo
+      
+      // Shadow diminui quando salta (quanto mais alto, menor e mais transparente)
+      const baseShadowSize = characterWidth * 0.5;
+      const shadowSize = baseShadowSize * (1 - heightRatio * 0.6); // Reduz até 60% quando no máximo
+      const shadowOpacity = 0.2 * (1 - heightRatio * 0.7); // Opacidade reduz até 70% quando no máximo
+      
+      ctx.fillStyle = `rgba(0, 0, 0, ${shadowOpacity})`;
+      ctx.beginPath();
+      ctx.ellipse(characterX + characterWidth/2, groundLevel - 8, shadowSize, shadowSize * 0.3, 0, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // Bounce suave contínuo (passo animado)
+      const time = Date.now() / 500;
+      walkCycle = (walkCycle + 0.1) % (Math.PI * 2);
+      const walkBounce = Math.abs(Math.sin(walkCycle)) * 3; // Bounce sutil ao caminhar
+      bounceOffset = isJumping ? 0 : walkBounce;
+      
+      // Rotation suave ao pular (mais animado)
+      let rotation = 0;
+      if (isJumping && characterVy < 0) {
+        rotation = characterVx < 0 ? -0.1 : 0.1; // Inclina ao pular
+      }
+      
+      ctx.save();
+      ctx.translate(drawX + characterWidth/2, drawY + characterHeight/2 - bounceOffset);
+      
+      // Aplicar rotação se estiver pulando
+      if (rotation !== 0) {
+        ctx.rotate(rotation);
+      }
+      
+      // Mirror horizontal (sempre espelhado)
+      ctx.scale(-1, 1);
+      
+      // Draw character mantendo proporção
+      ctx.drawImage(characterImg, -characterWidth/2, -characterHeight/2, characterWidth, characterHeight);
+      ctx.restore();
+      
+      // Efeito de "happy bounce" - bounce extra quando não está pulando
+      if (!isJumping && Math.random() < 0.01) {
+        // Pequeno bounce aleatório
+      }
+    }
+    
+    function updateCharacter() {
+      // Mover character sem colisões (personagem sempre por cima das árvores)
+      characterX += characterVx;
+      
+      // Bounce at edges com delay (pausa antes de virar)
+      const margin = 60;
+      if (characterX < margin) {
+        characterX = margin;
+        characterVx = Math.abs(characterVx); // Vira para direita
+        // Pequeno bounce ao bater na parede
+        if (!isJumping && Math.random() < 0.3) {
+          isJumping = true;
+          characterVy = -8;
+        }
+      } else if (characterX > canvas.width - characterWidth - margin) {
+        characterX = canvas.width - characterWidth - margin;
+        characterVx = -Math.abs(characterVx); // Vira para esquerda
+        // Pequeno bounce ao bater na parede
+        if (!isJumping && Math.random() < 0.3) {
+          isJumping = true;
+          characterVy = -8;
+        }
+      }
+      
+      // Jumping mechanics - mais frequente e variado
+      const now = Date.now();
+      if (!isJumping && now >= nextJumpTime) {
+        isJumping = true;
+        // Velocidade de pulo variável (mais animado)
+        characterVy = -12 - Math.random() * 4; // Entre -12 e -16
+        nextJumpTime = now + 2000 + Math.random() * 3000; // Próximo pulo em 2-5s
+      }
+      
+      if (isJumping) {
+        characterY += characterVy;
+        characterVy += 0.6; // Gravity mais suave
+        
+        // Aterrissar
+        const groundY = groundLevel - characterHeight;
+        if (characterY >= groundY) {
+          characterY = groundY;
+          characterVy = 0;
+          isJumping = false;
+        }
+      }
+      
+      // Pequenas variações de velocidade (mais orgânico)
+      if (!isJumping && Math.random() < 0.02) {
+        characterVx *= (0.95 + Math.random() * 0.1); // Variação sutil
+      }
+    }
+    
+    function animateGarden() {
+      if (!canvas || !ctx) return;
+      
+      drawGarden(); // Desenha background e árvores atrás
+      updateCharacter();
+      drawTreesFront(); // Desenha árvores na frente
+      drawFlowers(); // Desenha flores por cima das árvores
+      drawParticles(); // Desenha partículas (pólen, folhas, etc)
+      drawCharacter(); // Desenha character por cima de tudo (z-index maior)
+      
+      requestAnimationFrame(animateGarden);
+    }
+
+    // Initialize
+    function init() {
+      // Start intervals
+      fetchAllCoinData(); // Initial call - busca tudo
+      loadTasks();
+
+      // Atualizar informações da moeda a cada 10 segundos
+      fetchAllCoinData(); // Initial call
+      viewersInterval = setInterval(fetchAllCoinData, 10000); // 10 segundos
+      priceInterval = null; // Integrado em fetchAllCoinData
+      tasksInterval = setInterval(loadTasks, 10000); // 10 segundos
+
+      // Connect WebSocket
+      connectWS();
+      
+      // Initialize garden if mode 0
+      if (pageId === '0' || !pageId) {
+        initGarden();
+      }
+    }
+
+    // Start on load
+    window.addEventListener('load', init);
+
+    // Cleanup on unload
+    window.addEventListener('beforeunload', () => {
+      if (ws) ws.close();
+      if (viewersInterval) clearInterval(viewersInterval);
+      if (priceInterval) clearInterval(priceInterval);
+      if (tasksInterval) clearInterval(tasksInterval);
+    });
+  </script>
+</body>
+</html>
