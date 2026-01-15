@@ -4,9 +4,10 @@ Um overlay profissional para OBS Browser Source para streaming de desenvolviment
 
 ## Características
 
-- **Dois Modos de Exibição:**
-  - **Página 0 (Painel Completo):** Overlay full-screen com branding, estatísticas e player opcional
-  - **Página 1 (Overlay Transparente):** Overlay transparente com frames visuais para screen share e câmera (`?id=1`)
+- **Três Modos de Exibição:**
+  - **Mode 0 (Jardim Canvas):** cenário animado com personagem e stats (`?id=0` ou sem parâmetro)
+  - **Mode 1 (Overlay Chroma Key / Green Screen):** overlay com fundo verde e chat visível (`?id=1`)
+  - **Mode 2 (Overlay Centralizado):** overlay com fundo verde e alertas centralizados maiores (`?id=2`)
 
 - **Dados em Tempo Real:**
   - Contador de viewers do Pump.fun (via proxy CORS)
@@ -24,7 +25,7 @@ Um overlay profissional para OBS Browser Source para streaming de desenvolviment
 ### Pré-requisitos
 
 - OBS Studio
-- Servidor web local (qualquer um serve: Python `python -m http.server`, Node `npx serve`, etc.) ou abrir diretamente via `file://`
+- Servidor web local (recomendado: necessário para evitar limitações de CORS em fetch/WS auxiliares)
 
 ### Instalação
 
@@ -47,16 +48,14 @@ Um overlay profissional para OBS Browser Source para streaming de desenvolviment
    - Ou use qualquer servidor estático
 2. Em OBS, adicione uma **Browser Source**
 3. Configure a URL:
-   - **Painel Completo:** `http://localhost:8000/index.html`
-   - **Overlay Transparente:** `http://localhost:8000/index.html?id=1`
+  - **Mode 0 (Jardim):** `http://localhost:8000/index.html` ou `http://localhost:8000/index.html?id=0`
+  - **Mode 1 (Green Screen + Chat):** `http://localhost:8000/index.html?id=1`
+  - **Mode 2 (Green Screen + Alert central):** `http://localhost:8000/index.html?id=2`
 4. Defina largura: `1920` e altura: `1080` (ou sua resolução de stream)
 5. Marque "Shutdown source when not visible" (opcional)
 6. Marque "Control audio via OBS" se quiser controlar o volume do alerta
 
-**Opção 2: File Protocol (Pode ter limitações de CORS)**
-1. Abra `index.html` diretamente no navegador
-2. Copie o caminho `file://` completo
-3. Use em OBS Browser Source (algumas funcionalidades podem não funcionar devido a CORS)
+> Nota: nos modos `id=1` e `id=2`, o fundo é verde (#00ff00) para chroma key.
 
 ### Configuração
 
@@ -79,7 +78,7 @@ Edite o objeto `CONFIG` em `index.html` para personalizar:
 
 - **CORS Proxy:** O código usa `api.allorigins.win` como proxy CORS para acessar Pump.fun. Se preferir outro proxy, altere `CONFIG.corsProxy`
 - WebSocket reconecta automaticamente em caso de desconexão
-- Polling de dados acontece em intervalos especificados (viewers: 5s, preço: 4s, tarefas: 5s)
+- Polling principal roda a cada 10s (coin data + price + comments) e o ticker a cada 10s; Solscan a cada ~8s
 - Som de alerta requer interação do usuário ou controle de áudio via OBS devido a restrições de autoplay do navegador
 
 ## Solução de Problemas

@@ -117,15 +117,25 @@
       right: 24px;
       top: 18px;
       max-width: none;
-      padding: 16px 20px;
+      padding: 8px 16px;
+      z-index: 100; /* Logo acima dos mini cards */
+      justify-content: space-between;
+    }
+    /* Brand/Logo acima de tudo */
+    body.mode-1 .brand, body.mode-2 .brand{
+      position: relative;
+      z-index: 101;
     }
     
     /* MODE-1: Estilos específicos - tudo bem maior e melhor estruturado */
     body.mode-1 .topbar{
-      padding: 24px 32px;
+      padding: 8px 16px;
       left: 32px;
       right: 32px;
       top: 24px;
+      min-height: auto;
+      border: 1px solid var(--stroke);
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
     }
     
     /* Logo MUITO maior no mode-1 */
@@ -271,6 +281,31 @@
       max-height: 300px;
     }
     
+    /* Compras history maior no mode-1 */
+    body.mode-1 .buysHistory{
+      right: 32px;
+      top: 180px;
+      width: 340px;
+      max-height: 400px;
+      padding: 20px;
+      border-radius: 16px;
+    }
+    body.mode-1 .buysHistory .title{
+      font-size: 18px;
+      margin-bottom: 14px;
+    }
+    body.mode-1 .buysHistory .buyItem{
+      padding: 11px 15px;
+      font-size: 14px;
+      margin-bottom: 9px;
+    }
+    body.mode-1 .buysHistory .buyItem .wallet{
+      font-size: 13px;
+    }
+    body.mode-1 .buysHistory .buyItem .sol{
+      font-size: 15px;
+    }
+    
     /* Compras history maior no mode-2 */
     body.mode-2 .buysHistory{
       right: 32px;
@@ -302,6 +337,10 @@
       left: 24px;
       right: 320px;
       bottom: 18px;
+    }
+    /* Remover ticker na page id=1 */
+    body.mode-1 .ticker{
+      display: none !important;
     }
     body.mode-1 .ticker .label{
       font-size: 16px;
@@ -348,6 +387,11 @@
     }
     body.mode-1 .liveComments{
       display: block;
+      width: 600px;
+      max-height: 500px;
+      padding: 24px;
+      border-radius: 16px;
+      border-width: 4px;
     }
     /* Comentários NÃO aparecem no mode-2 - apenas alert aparece quando há compra */
     body.mode-2 .liveComments{
@@ -407,9 +451,46 @@
     }
     
     /* Alert ajustado - visível em todas as páginas */
-    body.mode-0 .alert, body.mode-1 .alert{
+    body.mode-0 .alert{
       bottom: 80px;
       left: 24px;
+    }
+    
+    /* Alert centralizado e bem maior no mode-1 - só aparece quando há compra */
+    body.mode-1 .alert{
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      bottom: auto;
+      width: 580px;
+      max-width: 90vw;
+      padding: 28px;
+      border-radius: 20px;
+      border-width: 4px;
+      z-index: 100;
+    }
+    body.mode-1 .alert .mascot{
+      width: 100px;
+      height: 100px;
+    }
+    body.mode-1 .alert .mascot img{
+      width: 100px;
+      height: 100px;
+    }
+    body.mode-1 .alert .content{
+      gap: 10px;
+    }
+    body.mode-1 .alert .content .title{
+      font-size: 28px;
+      margin-bottom: 6px;
+    }
+    body.mode-1 .alert .content .wallet{
+      font-size: 20px;
+    }
+    body.mode-1 .alert .content .amount{
+      font-size: 32px;
+      font-weight: 900;
     }
     
     /* Alert centralizado e bem maior no mode-2 - só aparece quando há compra */
@@ -469,6 +550,19 @@
     body.mode-1 .overlayStatus, body.mode-2 .overlayStatus{
       display: flex;
     }
+    
+    /* Status maior no mode-1 */
+    body.mode-1 .overlayStatus{
+      left: 32px;
+      top: 260px;
+      padding: 10px 18px;
+      font-size: 14px;
+      gap: 8px;
+    }
+    body.mode-1 .overlayStatus .dot{
+      width: 12px;
+      height: 12px;
+    }
     body.mode-2 .overlayStatus{
       left: 32px;
       top: 280px;
@@ -509,7 +603,8 @@
 
     .topbar{
       position:absolute; left:24px; right:24px; top:18px;
-      display:flex; align-items:center; gap:14px;
+      display:flex; align-items:center; justify-content: space-between;
+      gap:14px;
       padding: 12px 14px;
       border: 1px solid var(--stroke);
       background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
@@ -517,6 +612,15 @@
       box-shadow: var(--shadow);
       backdrop-filter: blur(10px);
       z-index: 10;
+    }
+    /* Topbar mais fino no mode-1 */
+    body.mode-1 .topbar{
+      gap: 12px;
+      align-items: center;
+    }
+    /* Remover barra visual do spacer no mode-1 */
+    body.mode-1 .spacer{
+      display: none;
     }
 
     .brand{
@@ -546,6 +650,10 @@
     .pill strong{ color: var(--text); font-weight: 700; }
 
     .spacer{ flex:1; }
+    /* Remover barra visual do spacer no mode-1 */
+    body.mode-1 .spacer{
+      display: none;
+    }
 
     .price{
       display:flex; align-items:baseline; gap:10px;
@@ -593,6 +701,18 @@
       object-fit: contain;
       transform: translateY(6px);
       filter: drop-shadow(0 18px 30px rgba(0,0,0,.35));
+      transition: transform 0.3s ease-out;
+    }
+    
+    /* Animação de salto para o mascot */
+    @keyframes jumpMascot {
+      0% { transform: translateY(6px) scale(1); }
+      50% { transform: translateY(-40px) scale(1.1); }
+      100% { transform: translateY(6px) scale(1); }
+    }
+    
+    .mascot img.jump {
+      animation: jumpMascot 0.6s ease-out;
     }
 
     .meta{
@@ -760,6 +880,12 @@
       font-weight: 900;
       color: var(--text);
       white-space: nowrap;
+      cursor: text;
+    }
+    .ticker .label:focus{
+      outline: 2px solid var(--good);
+      outline-offset: 2px;
+      border-radius: 4px;
     }
     .marquee{
       flex:1;
@@ -772,6 +898,13 @@
       will-change: transform;
       color: var(--muted);
       font-size: 13px;
+      cursor: text;
+    }
+    .marquee .track:focus{
+      outline: 2px solid var(--good);
+      outline-offset: 2px;
+      border-radius: 4px;
+      animation: none !important;
     }
     .marquee .track.animate{
       animation: scroll 22s linear infinite;
@@ -887,12 +1020,20 @@
         <strong id="viewers">—</strong>
       </div>
 
-      <div class="spacer"></div>
-
       <div class="price">
         <span class="label">Price</span>
         <span class="val" id="priceVal">—</span>
         <span class="unit">SOL</span>
+      </div>
+
+      <div class="pill">
+        <span>Market Cap:</span>
+        <strong id="marketCap">—</strong>
+      </div>
+
+      <div class="pill">
+        <span>Holders:</span>
+        <strong id="holders">—</strong>
       </div>
     </div>
 
@@ -963,9 +1104,9 @@
     </div>
 
     <div class="ticker">
-      <span class="label" id="tickerTitle">Working on:</span>
+      <span class="label" id="tickerTitle" contenteditable="true">Working on:</span>
       <div class="marquee">
-        <div class="track" id="tickerTrack"></div>
+        <div class="track" id="tickerTrack" contenteditable="true"></div>
       </div>
     </div>
 
@@ -1013,13 +1154,24 @@
     <source src="alert.mp3" type="audio/mpeg" />
   </audio>
 
+  <!-- Socket.IO para conexão com chat do Pump Fun -->
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+
   <script>
     const CONFIG = {
       contract: 'CpqA1pwX5SjU1SgufRwQ59knKGaDMEQ7MQBeu6mpump',
       pumpUrl: 'https://pump.fun/coin/CpqA1pwX5SjU1SgufRwQ59knKGaDMEQ7MQBeu6mpump',
       wsUrl: 'wss://pumpportal.fun/api/data',
-      corsProxy: 'https://api.allorigins.win/raw?url=', // Proxy CORS público para Pump.fun
+      chatWsUrl: 'https://livechat.pump.fun', // WebSocket do chat do Pump Fun
+      // CORS proxies (ordem = tentativa). Sem servidor local: depende de proxies públicos.
+      // Nota: proxies públicos podem ficar instáveis/indisponíveis; por isso tentamos vários.
+      corsProxies: [
+        'https://corsproxy.io/?',
+        'https://r.jina.ai/',
+        'https://api.codetabs.com/v1/proxy?quest='
+      ],
       solscanApi: 'https://api.solscan.io', // API Solscan
+      enableSolscanPolling: false, // Desligado por padrão: evita erros de CORS em modo "só frontend"
       minBuyThreshold: 0.01, // SOL
       alertCooldown: 1500 // ms
     };
@@ -1041,6 +1193,7 @@
     let lastBuys = [];
     let lastAlertTime = 0;
     let ws = null;
+    let chatSocket = null; // WebSocket para chat do Pump Fun
     let priceInterval = null;
     let viewersInterval = null;
     let tasksInterval = null;
@@ -1050,6 +1203,8 @@
     // DOM Elements
     const viewersEl = document.getElementById('viewers');
     const priceValEl = document.getElementById('priceVal');
+    const marketCapEl = document.getElementById('marketCap');
+    const holdersEl = document.getElementById('holders');
     const buyCountEl = document.getElementById('buyCount');
     const sellCountEl = document.getElementById('sellCount');
     const buyListEl = document.getElementById('buyList');
@@ -1065,6 +1220,37 @@
     const overlaySellCountEl = document.getElementById('overlaySellCount');
     const tickerTitleEl = document.getElementById('tickerTitle');
     const tickerTrackEl = document.getElementById('tickerTrack');
+    
+    // Tornar ticker editável - remover animação quando focado
+    if (tickerTitleEl) {
+      tickerTitleEl.addEventListener('focus', () => {
+        tickerTitleEl.style.outline = '2px solid var(--good)';
+        tickerTitleEl.style.outlineOffset = '2px';
+        tickerTitleEl.style.borderRadius = '4px';
+      });
+      tickerTitleEl.addEventListener('blur', () => {
+        tickerTitleEl.style.outline = 'none';
+      });
+    }
+    
+    if (tickerTrackEl) {
+      tickerTrackEl.addEventListener('focus', () => {
+        tickerTrackEl.classList.remove('animate'); // Parar animação
+        tickerTrackEl.style.outline = '2px solid var(--good)';
+        tickerTrackEl.style.outlineOffset = '2px';
+        tickerTrackEl.style.borderRadius = '4px';
+      });
+      tickerTrackEl.addEventListener('blur', () => {
+        tickerTrackEl.style.outline = 'none';
+        // Retomar animação se houver conteúdo
+        if (tickerTrackEl.textContent.trim()) {
+          tickerTrackEl.textContent = tickerTrackEl.textContent.trim() + ' • ';
+          const text = tickerTrackEl.textContent;
+          tickerTrackEl.textContent = text + text; // Duplicate for seamless loop
+          tickerTrackEl.classList.add('animate');
+        }
+      });
+    }
 
     // Helper: Shorten wallet address
     function shortenAddress(addr) {
@@ -1078,7 +1264,72 @@
       return parseFloat(amount).toFixed(4) + ' SOL';
     }
 
+    function formatUSDCompact(value) {
+      const num = typeof value === 'number' ? value : parseFloat(String(value).replace(/[^0-9.]/g, ''));
+      if (!Number.isFinite(num)) return null;
+      if (num >= 1_000_000_000) return (num / 1_000_000_000).toFixed(2) + 'B';
+      if (num >= 1_000_000) return (num / 1_000_000).toFixed(2) + 'M';
+      if (num >= 1_000) return (num / 1_000).toFixed(2) + 'K';
+      return num.toFixed(0);
+    }
+
+    function getCorsProxyCandidates() {
+      // Back-compat: se alguém tiver CONFIG.corsProxy antigo, ainda funciona
+      const list = Array.isArray(CONFIG.corsProxies) ? CONFIG.corsProxies.slice() : [];
+      if (typeof CONFIG.corsProxy === 'string' && CONFIG.corsProxy) list.push(CONFIG.corsProxy);
+      // Remover duplicatas/vazios
+      return [...new Set(list.filter(Boolean))];
+    }
+
+    async function fetchTextWithCorsFallback(targetUrl) {
+      // 1) Tentar direto (se o servidor permitir CORS)
+      try {
+        const direct = await fetch(targetUrl);
+        if (direct.ok) return await direct.text();
+      } catch (_) {
+        // CORS bloqueado ou erro de rede
+      }
+
+      const proxies = getCorsProxyCandidates();
+      let lastErr = null;
+      for (const proxy of proxies) {
+        try {
+          const proxiedUrl = proxy.startsWith('https://r.jina.ai/')
+            ? (proxy + targetUrl) // r.jina.ai espera a URL completa no path
+            : (proxy + encodeURIComponent(targetUrl));
+          const res = await fetch(proxiedUrl);
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          return await res.text();
+        } catch (e) {
+          lastErr = e;
+        }
+      }
+      throw lastErr || new Error('All CORS proxy attempts failed');
+    }
+
+    async function fetchJsonWithCorsFallback(targetUrl) {
+      const text = await fetchTextWithCorsFallback(targetUrl);
+      try {
+        return JSON.parse(text);
+      } catch {
+        // Algumas proxies podem envolver a resposta. Tentar achar o primeiro JSON válido.
+        const start = text.indexOf('{');
+        const startArr = text.indexOf('[');
+        const idx = startArr !== -1 && (start === -1 || startArr < start) ? startArr : start;
+        if (idx !== -1) {
+          return JSON.parse(text.slice(idx));
+        }
+        throw new Error('Failed to parse JSON from response');
+      }
+    }
+
     // Fetch Pump.fun viewers (via CORS proxy)
+    // NOTA: Pump Fun NÃO tem API pública oficial para viewers.
+    // Esta função usa scraping HTML como solução alternativa.
+    // Opções disponíveis:
+    // 1. Scraping HTML (atual) - funciona mas é frágil
+    // 2. WebSocket do chat pode ter informações de viewers (não confirmado)
+    // 3. PumpPortal.fun não oferece endpoint de viewers
     async function fetchViewers() {
       try {
         // Usa proxy CORS para contornar restrições
@@ -1176,12 +1427,7 @@
         // Usar API pública do Solscan via proxy CORS
         // Endpoint para buscar transações recentes de um token/contrato
         const solscanUrl = `https://public-api.solscan.io/account/transactions?account=${CONFIG.contract}&limit=10`;
-        const proxyUrl = CONFIG.corsProxy + encodeURIComponent(solscanUrl);
-        
-        const res = await fetch(proxyUrl);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        
-        const transactions = await res.json();
+        const transactions = await fetchJsonWithCorsFallback(solscanUrl);
         
         if (Array.isArray(transactions) && transactions.length > 0) {
           processSolscanTransactions(transactions);
@@ -1192,14 +1438,8 @@
         try {
           // Alternativa: usar endpoint de token transactions
           const altUrl = `https://api.helius.xyz/v0/addresses/${CONFIG.contract}/transactions?api-key=public&limit=10`;
-          const altProxyUrl = CONFIG.corsProxy + encodeURIComponent(altUrl);
-          const altRes = await fetch(altProxyUrl);
-          if (altRes && altRes.ok) {
-            const altData = await altRes.json();
-            if (Array.isArray(altData)) {
-              processSolscanTransactions(altData);
-            }
-          }
+          const altData = await fetchJsonWithCorsFallback(altUrl);
+          if (Array.isArray(altData)) processSolscanTransactions(altData);
         } catch (altErr) {
           // Silenciar erros de fallback
         }
@@ -1318,23 +1558,59 @@
     let pumpDataAttempts = 0;
     async function fetchPumpData() {
       try {
-        // Verificar se está em file:// protocol
+        // Em file:// pode falhar por CORS, mas tentamos mesmo (best-effort)
         if (window.location.protocol === 'file:') {
           pumpDataAttempts++;
           if (pumpDataAttempts === 1) {
-            console.warn('[Pump Data] CORS: Use um servidor HTTP local para acessar dados externos');
+            console.warn('[Pump Data] CORS: recomenda-se usar servidor HTTP local (ex: python -m http.server 8000)');
           }
-          return; // Skip se estiver em file://
         }
         
-        const proxyUrl = CONFIG.corsProxy + encodeURIComponent(CONFIG.pumpUrl);
-        const res = await fetch(proxyUrl);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const html = await res.text();
+        const html = await fetchTextWithCorsFallback(CONFIG.pumpUrl);
         
         let viewers = null;
         let marketCap = null;
         let holders = null;
+
+        // Se existir __NEXT_DATA__, tentar extrair valores direto (bem mais confiável)
+        try {
+          const nextDataMatch = html.match(/<script[^>]*id="__NEXT_DATA__"[^>]*>([\s\S]*?)<\/script>/i);
+          if (nextDataMatch && nextDataMatch[1]) {
+            const nextJson = JSON.parse(nextDataMatch[1]);
+            const stack = [nextJson];
+            const seen = new Set();
+
+            const pickNumber = (obj, keys) => {
+              while (stack.length) {
+                const cur = stack.pop();
+                if (!cur || typeof cur !== 'object') continue;
+                if (seen.has(cur)) continue;
+                seen.add(cur);
+                for (const k of keys) {
+                  if (Object.prototype.hasOwnProperty.call(cur, k)) {
+                    const v = cur[k];
+                    const n = typeof v === 'number' ? v : parseFloat(String(v).replace(/[^0-9.]/g, ''));
+                    if (Number.isFinite(n) && n > 0) return n;
+                  }
+                }
+                if (Array.isArray(cur)) {
+                  for (const item of cur) stack.push(item);
+                } else {
+                  for (const key of Object.keys(cur)) stack.push(cur[key]);
+                }
+              }
+              return null;
+            };
+
+            // Procurar chaves comuns
+            viewers = viewers ?? pickNumber(nextJson, ['viewers', 'viewerCount', 'liveViewers']);
+            holders = holders ?? pickNumber(nextJson, ['holders', 'holderCount', 'uniqueHolders']);
+            const mcapNum = pickNumber(nextJson, ['marketCap', 'mcap', 'market_cap']);
+            if (mcapNum) marketCap = String(formatUSDCompact(mcapNum) || mcapNum);
+          }
+        } catch (_) {
+          // ignorar
+        }
         
         // Viewers patterns - melhorados para encontrar viewers da stream
         // Pump.fun pode usar diferentes estruturas, vamos tentar múltiplos padrões
@@ -1490,6 +1766,15 @@
           const gardenViewersEl = document.getElementById('gardenViewers');
           if (gardenViewersEl) gardenViewersEl.textContent = '—';
         }
+
+        // Update Market Cap (topbar + garden)
+        if (marketCapEl) {
+          if (marketCap) {
+            marketCapEl.textContent = marketCap.includes('$') ? marketCap : '$' + marketCap;
+          } else {
+            marketCapEl.textContent = '—';
+          }
+        }
         
         // Update garden stats
         const gardenMarketCapEl = document.getElementById('gardenMarketCap');
@@ -1502,6 +1787,9 @@
         }
         const gardenHoldersEl = document.getElementById('gardenHolders');
         if (gardenHoldersEl) gardenHoldersEl.textContent = holders ? holders.toLocaleString() : '—';
+
+        // Update Holders (topbar)
+        if (holdersEl) holdersEl.textContent = holders ? holders.toLocaleString() : '—';
         
       } catch (err) {
         pumpDataAttempts++;
@@ -1516,6 +1804,9 @@
         if (viewersEl) viewersEl.textContent = '—';
         const gardenViewersEl = document.getElementById('gardenViewers');
         if (gardenViewersEl) gardenViewersEl.textContent = '—';
+
+        if (marketCapEl) marketCapEl.textContent = '—';
+        if (holdersEl) holdersEl.textContent = '—';
       }
     }
 
@@ -1571,6 +1862,8 @@
               gardenMarketCapEl.textContent = '$' + mcapFormatted;
               console.log('[DexScreener] Market Cap atualizado:', mcapFormatted);
             }
+
+            if (marketCapEl) marketCapEl.textContent = '$' + mcapFormatted;
             // Atualizar coinData também
             if (!coinData.marketCap || coinData.marketCap === null) {
               coinData.marketCap = '$' + mcapFormatted;
@@ -1639,10 +1932,7 @@
       }
       
       try {
-        const proxyUrl = CONFIG.corsProxy + encodeURIComponent(CONFIG.pumpUrl);
-        const res = await fetch(proxyUrl);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const html = await res.text();
+        const html = await fetchTextWithCorsFallback(CONFIG.pumpUrl);
         
         const newComments = [];
         
@@ -1720,6 +2010,9 @@
           });
           
           if (!isDuplicate && messageText.length >= 2 && messageText.length <= 500) {
+            // Processar comandos do chat
+            processChatCommand(messageText);
+            
             // Encurtar nome de utilizador se necessário
             const displayName = userName.length > 20 ? userName.slice(0, 20) : userName;
             
@@ -1756,6 +2049,9 @@
                 );
                 
                 if (!isDuplicate) {
+                  // Processar comandos do chat
+                  processChatCommand(text);
+                  
                   newComments.push({
                     user: userName.length > 20 ? userName.slice(0, 20) : userName,
                     text: text.length > 200 ? text.slice(0, 200) + '...' : text,
@@ -1983,6 +2279,223 @@
         wsStatusTextEl.textContent = 'Connection failed';
         if (overlayWsStatusEl) overlayWsStatusEl.classList.remove('live');
         if (overlayWsStatusTextEl) overlayWsStatusTextEl.textContent = 'Connection failed';
+      }
+    }
+
+    // Connect to Pump Fun Chat WebSocket (Socket.IO)
+    function connectChatWS() {
+      // Só conectar no mode-1 e mode-2 (onde o chat é exibido)
+      if (pageId !== '1' && pageId !== '2') return;
+      
+      try {
+        // Verificar se socket.io está disponível
+        if (typeof io === 'undefined') {
+          console.warn('[Chat WS] Socket.IO não carregado. Tentando carregar...');
+          // Tentar carregar socket.io dinamicamente
+          const script = document.createElement('script');
+          script.src = 'https://cdn.socket.io/4.5.4/socket.io.min.js';
+          script.onload = () => {
+            console.log('[Chat WS] Socket.IO carregado, conectando...');
+            connectChatWS();
+          };
+          script.onerror = () => {
+            console.error('[Chat WS] Falha ao carregar Socket.IO');
+          };
+          document.head.appendChild(script);
+          return;
+        }
+
+        // Extrair o token/room ID do contract
+        // O Pump Fun usa o contract address como room identifier
+        const roomId = CONFIG.contract;
+        
+        console.log('[Chat WS] Conectando ao chat do Pump Fun...', roomId);
+        
+        // Conectar ao socket.io do Pump Fun
+        chatSocket = io(CONFIG.chatWsUrl, {
+          transports: ['websocket'],
+          upgrade: false,
+          reconnection: true,
+          reconnectionDelay: 1000,
+          reconnectionAttempts: 5
+        });
+
+        chatSocket.on('connect', () => {
+          console.log('[Chat WS] Conectado ao chat do Pump Fun');
+          
+          // Entrar na sala do token
+          chatSocket.emit('join_room', roomId);
+          
+          // Também tentar outros eventos comuns
+          chatSocket.emit('subscribe', { room: roomId });
+        });
+
+        chatSocket.on('message', (data) => {
+          try {
+            // Processar mensagem recebida
+            if (data && data.user && data.text) {
+              const newComment = {
+                user: data.user,
+                text: data.text,
+                timestamp: data.timestamp || Date.now(),
+                id: data.id || data.messageId || Date.now().toString()
+              };
+              
+              // Processar comandos do chat
+              processChatCommand(newComment.text);
+              
+              // Adicionar comentário se não for duplicado
+              const isDuplicate = liveComments.some(c => {
+                const sameText = c.text.toLowerCase().trim() === newComment.text.toLowerCase().trim();
+                const sameUser = c.user.toLowerCase().trim() === newComment.user.toLowerCase().trim();
+                const recent = Date.now() - c.timestamp < 300000; // 5 minutos
+                return sameText && sameUser && recent;
+              });
+              
+              if (!isDuplicate) {
+                liveComments.unshift(newComment);
+                liveComments = liveComments.slice(0, 30); // Manter últimos 30
+                updateCommentsDisplay();
+              }
+            }
+          } catch (err) {
+            console.error('[Chat WS] Erro ao processar mensagem:', err);
+          }
+        });
+
+        // Tentar outros eventos possíveis do Pump Fun
+        chatSocket.on('new_message', (data) => {
+          chatSocket.emit('message', data);
+        });
+
+        chatSocket.on('chat_message', (data) => {
+          chatSocket.emit('message', data);
+        });
+
+        // Eventos alternativos que podem ser usados
+        chatSocket.on('room_message', (data) => {
+          chatSocket.emit('message', data);
+        });
+
+        chatSocket.on('token_message', (data) => {
+          chatSocket.emit('message', data);
+        });
+
+        // Tentar obter viewers do chat (se disponível)
+        chatSocket.on('viewers', (data) => {
+          if (data && typeof data.count === 'number') {
+            if (viewersEl) viewersEl.textContent = data.count;
+            const gardenViewersEl = document.getElementById('gardenViewers');
+            if (gardenViewersEl) gardenViewersEl.textContent = data.count;
+          }
+        });
+
+        chatSocket.on('room_info', (data) => {
+          if (data && data.viewers) {
+            if (viewersEl) viewersEl.textContent = data.viewers;
+            const gardenViewersEl = document.getElementById('gardenViewers');
+            if (gardenViewersEl) gardenViewersEl.textContent = data.viewers;
+          }
+        });
+
+        chatSocket.on('disconnect', () => {
+          console.log('[Chat WS] Desconectado do chat');
+        });
+
+        chatSocket.on('connect_error', (err) => {
+          console.warn('[Chat WS] Erro de conexão:', err.message);
+          // Fallback para scraping HTML se WebSocket falhar
+          console.log('[Chat WS] Usando fallback de scraping HTML');
+        });
+
+      } catch (err) {
+        console.error('[Chat WS] Erro ao conectar:', err);
+        // Continuar usando scraping HTML como fallback
+      }
+    }
+
+    // Processar comandos do chat
+    function processChatCommand(text) {
+      if (!text || typeof text !== 'string') return;
+      
+      const command = text.trim().toLowerCase();
+      
+      // Comando /jump - fazer o personagem saltar
+      if (command === '/jump' || command.startsWith('/jump ')) {
+        console.log('[Chat Command] /jump detectado!');
+        
+        // Mode-0: Jardim (canvas) - fazer personagem saltar
+        if (pageId === '0' || !pageId) {
+          if (typeof isJumping !== 'undefined') {
+            isJumping = true;
+            characterVy = -12 - Math.random() * 4; // Entre -12 e -16
+            console.log('[Chat Command] Personagem no jardim saltou!');
+          }
+        }
+        
+        // Mode-1 e Mode-2: Mascot (imagem) - animação CSS
+        if (pageId === '1' || pageId === '2') {
+          const mascotImgs = document.querySelectorAll('.mascot img');
+          mascotImgs.forEach(img => {
+            // Remover classe anterior se existir
+            img.classList.remove('jump');
+            // Forçar reflow
+            void img.offsetWidth;
+            // Adicionar classe de salto
+            img.classList.add('jump');
+            console.log('[Chat Command] Mascot saltou!');
+            
+            // Remover classe após animação
+            setTimeout(() => {
+              img.classList.remove('jump');
+            }, 600);
+          });
+        }
+      }
+      
+      // Comando /redobrar ou /double - fazer personagem redobrar (pular duas vezes)
+      if (command === '/redobrar' || command === '/double' || command.startsWith('/redobrar ') || command.startsWith('/double ')) {
+        console.log('[Chat Command] /redobrar detectado!');
+        
+        // Mode-0: Jardim
+        if (pageId === '0' || !pageId) {
+          if (typeof isJumping !== 'undefined') {
+            // Primeiro salto
+            isJumping = true;
+            characterVy = -12 - Math.random() * 4;
+            
+            // Segundo salto após um delay
+            setTimeout(() => {
+              if (!isJumping) {
+                isJumping = true;
+                characterVy = -12 - Math.random() * 4;
+              }
+            }, 400);
+            console.log('[Chat Command] Personagem no jardim redobrou!');
+          }
+        }
+        
+        // Mode-1 e Mode-2: Mascot
+        if (pageId === '1' || pageId === '2') {
+          const mascotImgs = document.querySelectorAll('.mascot img');
+          mascotImgs.forEach(img => {
+            // Primeiro salto
+            img.classList.remove('jump');
+            void img.offsetWidth;
+            img.classList.add('jump');
+            
+            // Segundo salto após delay
+            setTimeout(() => {
+              img.classList.remove('jump');
+              void img.offsetWidth;
+              img.classList.add('jump');
+              setTimeout(() => {
+                img.classList.remove('jump');
+              }, 600);
+            }, 400);
+            console.log('[Chat Command] Mascot redobrou!');
+          });
+        }
       }
     }
 
@@ -2715,11 +3228,16 @@
       }
       
       // Buscar transações do Solscan para detectar compras (todas as páginas)
-      fetchSolscanTransactions();
-      solscanInterval = setInterval(fetchSolscanTransactions, 8000); // A cada 8 segundos
+      if (CONFIG.enableSolscanPolling) {
+        fetchSolscanTransactions();
+        solscanInterval = setInterval(fetchSolscanTransactions, 8000); // A cada 8 segundos
+      }
 
       // Connect WebSocket
       connectWS();
+      
+      // Connect to Chat WebSocket (mode-1 e mode-2)
+      connectChatWS();
       
       // Initialize garden if mode 0
       if (pageId === '0' || !pageId) {
@@ -2733,6 +3251,7 @@
     // Cleanup on unload
     window.addEventListener('beforeunload', () => {
       if (ws) ws.close();
+      if (chatSocket) chatSocket.disconnect();
       if (viewersInterval) clearInterval(viewersInterval);
       if (priceInterval) clearInterval(priceInterval);
       if (tasksInterval) clearInterval(tasksInterval);
