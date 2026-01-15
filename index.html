@@ -120,32 +120,83 @@
       padding: 16px 20px;
     }
     
-    /* Logo maior no mode-1 */
+    /* MODE-1: Estilos específicos - tudo bem maior e melhor estruturado */
+    body.mode-1 .topbar{
+      padding: 24px 32px;
+      left: 32px;
+      right: 32px;
+      top: 24px;
+    }
+    
+    /* Logo MUITO maior no mode-1 */
     body.mode-1 .brand .logo{
-      width: 64px;
-      height: 64px;
+      width: 100px;
+      height: 100px;
+      border-radius: 18px;
     }
     /* Remover texto MeVolt no mode-1 */
     body.mode-1 .btext{
       display: none;
     }
     
-    /* Textos maiores no mode-1 */
+    /* MODE-2: Estilos específicos - tudo bem maior e melhor estruturado */
+    body.mode-2 .topbar{
+      padding: 24px 32px;
+      left: 32px;
+      right: 32px;
+      top: 24px;
+    }
+    
+    /* Logo MUITO maior no mode-2 */
+    body.mode-2 .brand .logo{
+      width: 120px;
+      height: 120px;
+      border-radius: 20px;
+    }
+    
+    /* Remover texto MeVolt no mode-2 também */
+    body.mode-2 .btext{
+      display: none;
+    }
+    
+    /* Textos muito maiores no mode-2 */
+    body.mode-2 .pill{
+      font-size: 22px;
+      padding: 16px 24px;
+      border-radius: 12px;
+    }
+    body.mode-2 .pill strong{
+      font-size: 28px;
+    }
+    body.mode-2 .price .label{
+      font-size: 18px;
+    }
+    body.mode-2 .price .val{
+      font-size: 36px;
+      font-weight: 900;
+    }
+    body.mode-2 .price .unit{
+      font-size: 18px;
+    }
+    
+    /* Textos muito maiores no mode-1 */
     body.mode-1 .pill{
-      font-size: 16px;
-      padding: 12px 18px;
+      font-size: 20px;
+      padding: 14px 22px;
+      border-radius: 12px;
     }
     body.mode-1 .pill strong{
-      font-size: 20px;
+      font-size: 26px;
     }
     body.mode-1 .price .label{
-      font-size: 14px;
+      font-size: 16px;
     }
     body.mode-1 .price .val{
-      font-size: 24px;
+      font-size: 32px;
+      font-weight: 900;
     }
     body.mode-1 .price .unit{
-      font-size: 14px;
+      font-size: 16px;
     }
     
     /* Mini contadores para overlays */
@@ -188,6 +239,25 @@
     body.mode-1 .overlayCounter .value{
       font-size: 22px;
     }
+    
+    /* Contadores muito maiores no mode-2 */
+    body.mode-2 .overlayCounter{
+      padding: 14px 22px;
+      border-radius: 12px;
+      gap: 12px;
+    }
+    body.mode-2 .overlayCounter .label{
+      font-size: 18px;
+    }
+    body.mode-2 .overlayCounter .value{
+      font-size: 32px;
+    }
+    body.mode-2 .overlayCounters{
+      top: 160px;
+      left: 32px;
+      gap: 16px;
+    }
+    
     .overlayCounter.buys .value{ color: var(--good); }
     .overlayCounter.sells .value{ color: var(--warn); }
     
@@ -199,6 +269,31 @@
       bottom: auto;
       width: 280px;
       max-height: 300px;
+    }
+    
+    /* Compras history maior no mode-2 */
+    body.mode-2 .buysHistory{
+      right: 32px;
+      top: 200px;
+      width: 360px;
+      max-height: 400px;
+      padding: 20px;
+      border-radius: 16px;
+    }
+    body.mode-2 .buysHistory .title{
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+    body.mode-2 .buysHistory .buyItem{
+      padding: 12px 16px;
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+    body.mode-2 .buysHistory .buyItem .wallet{
+      font-size: 14px;
+    }
+    body.mode-2 .buysHistory .buyItem .sol{
+      font-size: 16px;
     }
     
     /* Ticker sempre visível */
@@ -213,6 +308,23 @@
     }
     body.mode-1 .ticker .marquee .track{
       font-size: 15px;
+    }
+    
+    /* Ticker maior no mode-2 */
+    body.mode-2 .ticker{
+      left: 32px;
+      right: 400px;
+      bottom: 24px;
+      padding: 16px 20px;
+      border-radius: 12px;
+    }
+    body.mode-2 .ticker .label{
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    body.mode-2 .ticker .marquee .track{
+      font-size: 18px;
+      padding: 8px 0;
     }
     
     /* Comentários da live do Pump.fun (mode-1) */
@@ -236,6 +348,10 @@
     }
     body.mode-1 .liveComments{
       display: block;
+    }
+    /* Comentários NÃO aparecem no mode-2 - apenas alert aparece quando há compra */
+    body.mode-2 .liveComments{
+      display: none;
     }
     .liveComments::-webkit-scrollbar{
       width: 6px;
@@ -290,10 +406,47 @@
       margin-top: 4px;
     }
     
-    /* Alert ajustado */
-    body.mode-1 .alert, body.mode-2 .alert{
+    /* Alert ajustado - visível em todas as páginas */
+    body.mode-0 .alert, body.mode-1 .alert{
       bottom: 80px;
       left: 24px;
+    }
+    
+    /* Alert centralizado e bem maior no mode-2 - só aparece quando há compra */
+    body.mode-2 .alert{
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      bottom: auto;
+      width: 600px;
+      max-width: 90vw;
+      padding: 32px;
+      border-radius: 20px;
+      border-width: 4px;
+      z-index: 100;
+    }
+    body.mode-2 .alert .mascot{
+      width: 120px;
+      height: 120px;
+    }
+    body.mode-2 .alert .mascot img{
+      width: 120px;
+      height: 120px;
+    }
+    body.mode-2 .alert .content{
+      gap: 12px;
+    }
+    body.mode-2 .alert .content .title{
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+    body.mode-2 .alert .content .wallet{
+      font-size: 24px;
+    }
+    body.mode-2 .alert .content .amount{
+      font-size: 36px;
+      font-weight: 900;
     }
     
     /* Status WS para overlays */
@@ -315,6 +468,17 @@
     }
     body.mode-1 .overlayStatus, body.mode-2 .overlayStatus{
       display: flex;
+    }
+    body.mode-2 .overlayStatus{
+      left: 32px;
+      top: 280px;
+      padding: 10px 18px;
+      font-size: 14px;
+      gap: 8px;
+    }
+    body.mode-2 .overlayStatus .dot{
+      width: 12px;
+      height: 12px;
     }
     .overlayStatus .dot{
       width: 8px;
@@ -680,6 +844,16 @@
       88%  { transform: translateX(0); opacity: 1; }
       100% { transform: translateX(-120%); opacity: 0; }
     }
+    /* Animação centralizada para mode-2 */
+    @keyframes slideInOutCenter{
+      0%   { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+      10%  { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+      90%  { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+      100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+    }
+    body.mode-2 .alert.show{
+      animation: slideInOutCenter 6.5s ease-in-out forwards;
+    }
     @keyframes bounce{
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.1); }
@@ -845,6 +1019,7 @@
       pumpUrl: 'https://pump.fun/coin/CpqA1pwX5SjU1SgufRwQ59knKGaDMEQ7MQBeu6mpump',
       wsUrl: 'wss://pumpportal.fun/api/data',
       corsProxy: 'https://api.allorigins.win/raw?url=', // Proxy CORS público para Pump.fun
+      solscanApi: 'https://api.solscan.io', // API Solscan
       minBuyThreshold: 0.01, // SOL
       alertCooldown: 1500 // ms
     };
@@ -869,6 +1044,8 @@
     let priceInterval = null;
     let viewersInterval = null;
     let tasksInterval = null;
+    let solscanInterval = null;
+    let processedTxSignatures = new Set(); // Rastrear transações já processadas
 
     // DOM Elements
     const viewersEl = document.getElementById('viewers');
@@ -946,14 +1123,21 @@
     }
 
     // Fetch all coin data (unified function that runs every 10 seconds)
-    let coinData = { 
-      viewers: null, 
-      marketCap: null, 
-      holders: null,
-      price: null,
-      volume24h: null,
-      liquidity: null
-    };
+    // coinData será inicializado aqui
+    if (typeof coinData === 'undefined') {
+      var coinData = { 
+        viewers: null, 
+        marketCap: null, 
+        holders: null,
+        price: null,
+        volume24h: null,
+        liquidity: null
+      };
+    }
+    
+    if (typeof pumpData === 'undefined') {
+      var pumpData = {};
+    }
     
     // Comentários da live
     let liveComments = [];
@@ -961,11 +1145,174 @@
     
     async function fetchAllCoinData() {
       // Fetch Pump.fun data and price in parallel
-      await Promise.all([
-        fetchPumpData(),
-        fetchPrice(),
-        fetchLiveComments()
-      ]);
+      try {
+        await Promise.allSettled([
+          fetchPumpData(),
+          fetchPrice(),
+          fetchLiveComments()
+        ]);
+        
+        // Garantir que os dados do DexScreener sejam aplicados mesmo se Pump.fun falhar
+        // O fetchPrice já atualiza market cap, então isso já está coberto
+        console.log('[All Coin Data] Atualização completa:', {
+          viewers: coinData?.viewers ?? null,
+          marketCap: coinData?.marketCap ?? null,
+          holders: coinData?.holders ?? null,
+          price: coinData?.price ?? null
+        });
+      } catch (err) {
+        console.error('[All Coin Data] Erro geral:', err);
+      }
+    }
+    
+    // Fetch transações do contrato via Solscan para detectar compras
+    async function fetchSolscanTransactions() {
+      // Se estiver em file://, pular
+      if (window.location.protocol === 'file:') {
+        return;
+      }
+      
+      try {
+        // Usar API pública do Solscan via proxy CORS
+        // Endpoint para buscar transações recentes de um token/contrato
+        const solscanUrl = `https://public-api.solscan.io/account/transactions?account=${CONFIG.contract}&limit=10`;
+        const proxyUrl = CONFIG.corsProxy + encodeURIComponent(solscanUrl);
+        
+        const res = await fetch(proxyUrl);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        
+        const transactions = await res.json();
+        
+        if (Array.isArray(transactions) && transactions.length > 0) {
+          processSolscanTransactions(transactions);
+        }
+        
+      } catch (err) {
+        // Tentar método alternativo via Helius ou outro endpoint
+        try {
+          // Alternativa: usar endpoint de token transactions
+          const altUrl = `https://api.helius.xyz/v0/addresses/${CONFIG.contract}/transactions?api-key=public&limit=10`;
+          const altProxyUrl = CONFIG.corsProxy + encodeURIComponent(altUrl);
+          const altRes = await fetch(altProxyUrl);
+          if (altRes && altRes.ok) {
+            const altData = await altRes.json();
+            if (Array.isArray(altData)) {
+              processSolscanTransactions(altData);
+            }
+          }
+        } catch (altErr) {
+          // Silenciar erros de fallback
+        }
+      }
+    }
+    
+    // Processar transações do Solscan e detectar compras
+    function processSolscanTransactions(transactions) {
+      if (!transactions || !Array.isArray(transactions)) return;
+      
+      const now = Math.floor(Date.now() / 1000);
+      
+      transactions.forEach(tx => {
+        // Verificar se já processamos esta transação
+        const txSig = tx.signature || tx.slot || tx.hash || JSON.stringify(tx);
+        if (processedTxSignatures.has(txSig)) {
+          return;
+        }
+        
+        // Verificar timestamp (só processar transações recentes)
+        const txTime = tx.blockTime || tx.timestamp || (tx.blockTimeSeconds || 0);
+        if (txTime > 0) {
+          const timeDiff = now - txTime;
+          // Só processar transações dos últimos 3 minutos
+          if (timeDiff > 180) return;
+        }
+        
+        // Procurar por transfers de SOL (compras)
+        let solAmount = 0;
+        let fromAddress = null;
+        
+        // Método 1: Verificar preBalances/postBalances
+        if (tx.preBalances && tx.postBalances && tx.accountKeys) {
+          for (let i = 0; i < tx.accountKeys.length && i < tx.preBalances.length; i++) {
+            const account = tx.accountKeys[i];
+            const preBal = parseFloat(tx.preBalances[i] || 0) / 1e9;
+            const postBal = parseFloat(tx.postBalances[i] || 0) / 1e9;
+            const diff = preBal - postBal;
+            
+            // Se alguém enviou SOL (diferença positiva) e não é o próprio contrato
+            if (diff > CONFIG.minBuyThreshold && diff < 100 && account !== CONFIG.contract) {
+              solAmount = diff;
+              fromAddress = account;
+              break;
+            }
+          }
+        }
+        
+        // Método 2: Verificar em nativeTransfers
+        if (!fromAddress && tx.nativeTransfers) {
+          for (const transfer of tx.nativeTransfers) {
+            if (transfer.to === CONFIG.contract && transfer.from !== CONFIG.contract) {
+              const amount = parseFloat(transfer.amount || 0) / 1e9;
+              if (amount >= CONFIG.minBuyThreshold) {
+                solAmount = amount;
+                fromAddress = transfer.from;
+                break;
+              }
+            }
+          }
+        }
+        
+        // Método 3: Verificar em instructions
+        if (!fromAddress && tx.instructions) {
+          for (const instruction of tx.instructions) {
+            if (instruction.programId === CONFIG.contract || 
+                (instruction.accounts && instruction.accounts.includes(CONFIG.contract))) {
+              // Tentar extrair informações de transfer
+              if (instruction.data) {
+                // Procurar por valores de SOL nos dados
+                const dataStr = JSON.stringify(instruction);
+                const amountMatch = dataStr.match(/"amount":\s*(\d+)/i);
+                if (amountMatch) {
+                  const amount = parseFloat(amountMatch[1]) / 1e9;
+                  if (amount >= CONFIG.minBuyThreshold && instruction.accounts) {
+                    solAmount = amount;
+                    fromAddress = instruction.accounts[0] || instruction.from;
+                    break;
+                  }
+                }
+              }
+            }
+          }
+        }
+        
+        // Se encontrou uma compra válida
+        if (solAmount >= CONFIG.minBuyThreshold && fromAddress) {
+          processedTxSignatures.add(txSig);
+          
+          // Evitar duplicatas muito recentes (mesmo wallet e valor similar)
+          const isDuplicate = lastBuys.some(buy => 
+            buy.wallet === fromAddress && 
+            Math.abs(buy.sol - solAmount) < 0.001 &&
+            Date.now() - (buy.timestamp || 0) < 5000
+          );
+          
+          if (!isDuplicate) {
+            // Atualizar contadores
+            buyCount++;
+            if (buyCountEl) buyCountEl.textContent = buyCount;
+            if (overlayBuyCountEl) overlayBuyCountEl.textContent = buyCount;
+            
+            // Adicionar timestamp
+            const buyEntry = { wallet: fromAddress, sol: solAmount, tokens: null, timestamp: Date.now() };
+            lastBuys.unshift(buyEntry);
+            if (lastBuys.length > 5) lastBuys.pop();
+            updateBuyList();
+            
+            // Mostrar alerta
+            showBuyAlert(fromAddress, solAmount);
+          }
+        }
+      });
     }
     
     let pumpDataAttempts = 0;
@@ -990,50 +1337,84 @@
         let holders = null;
         
         // Viewers patterns - melhorados para encontrar viewers da stream
+        // Pump.fun pode usar diferentes estruturas, vamos tentar múltiplos padrões
         const viewersPatterns = [
-          /"viewers"\s*:\s*(\d+)/i,
+          // JSON embutido
+          /"viewers?"\s*:\s*(\d+)/i,
           /"viewerCount"\s*:\s*(\d+)/i,
+          /"liveViewers"\s*:\s*(\d+)/i,
+          /"watching"\s*:\s*(\d+)/i,
+          // Texto visível na página
           /(\d+)\s+(viewers?|watching|watching now)/i,
-          /<[^>]*>(\d+)<[^>]*>\s*(?:viewers?|watching|live)/i,
+          /<[^>]*>(\d+)<[^>]*>\s*(?:viewers?|watching|live|online)/i,
           /viewers?[:\s]*(\d+)/i,
           /watching[:\s]*(\d+)/i,
-          /(\d+)\s+people\s+(watching|viewing)/i
+          /(\d+)\s+people\s+(watching|viewing)/i,
+          // Em elementos específicos do Pump.fun
+          /<div[^>]*class="[^"]*viewer[^"]*"[^>]*>[\s\S]*?(\d+)[\s\S]*?<\/div>/i,
+          /<span[^>]*data-viewers="(\d+)"/i,
+          // Em scripts embutidos
+          /window\.__INITIAL_STATE__[\s\S]*?"viewers?"\s*:\s*(\d+)/i,
+          /__NEXT_DATA__[\s\S]*?"viewers?"\s*:\s*(\d+)/i
         ];
         for (const pattern of viewersPatterns) {
           const match = html.match(pattern);
-          if (match) {
-            viewers = parseInt(match[1].replace(/,/g, ''), 10);
-            if (viewers > 0) break;
+          if (match && match[1]) {
+            const parsed = parseInt(match[1].replace(/,/g, ''), 10);
+            if (parsed > 0 && parsed < 1000000) { // Validação razoável
+              viewers = parsed;
+              console.log('[Pump Data] Viewers encontrados:', viewers, 'via pattern');
+              break;
+            }
           }
         }
         
-        // Market Cap patterns
+        // Market Cap patterns - melhorados
         const marketCapPatterns = [
+          // JSON embutido
           /"market.*?cap["\s:]+[\$]?(\d+[.,]?\d*[KMkm]?)/i,
+          /"mcap["\s:]+[\$]?(\d+[.,]?\d*[KMkm]?)/i,
+          /"marketCap["\s:]+[\$]?(\d+[.,]?\d*[KMkm]?)/i,
+          // Texto visível
           /market.*?cap[:\s]*[\$]?(\d+[.,]?\d*[KMkm]?)/i,
-          /mcap[:\s]*[\$]?(\d+[.,]?\d*[KMkm]?)/i
+          /mcap[:\s]*[\$]?(\d+[.,]?\d*[KMkm]?)/i,
+          // Em scripts
+          /window\.__INITIAL_STATE__[\s\S]*?"marketCap"\s*:\s*"?(\d+[.,]?\d*[KMkm]?)/i,
+          /__NEXT_DATA__[\s\S]*?"marketCap"\s*:\s*"?(\d+[.,]?\d*[KMkm]?)/i
         ];
         for (const pattern of marketCapPatterns) {
           const match = html.match(pattern);
-          if (match) {
-            marketCap = match[1];
+          if (match && match[1]) {
+            marketCap = match[1].replace(/['"]/g, '').trim();
+            console.log('[Pump Data] Market Cap encontrado:', marketCap);
             break;
           }
         }
         
         // Holders pattern - mais padrões
         const holdersPatterns = [
+          // JSON embutido
           /"holders?"\s*:\s*(\d+)/i,
+          /"holderCount"\s*:\s*(\d+)/i,
+          /"uniqueHolders"\s*:\s*(\d+)/i,
+          // Texto visível
           /(\d+)\s+holders?/i,
           /holders?[:\s]*(\d+)/i,
           /holder.*?count[:\s]*(\d+)/i,
-          /unique.*?holders?[:\s]*(\d+)/i
+          /unique.*?holders?[:\s]*(\d+)/i,
+          // Em scripts
+          /window\.__INITIAL_STATE__[\s\S]*?"holders?"\s*:\s*(\d+)/i,
+          /__NEXT_DATA__[\s\S]*?"holders?"\s*:\s*(\d+)/i
         ];
         for (const pattern of holdersPatterns) {
           const match = html.match(pattern);
-          if (match) {
-            holders = parseInt(match[1].replace(/,/g, ''), 10);
-            break;
+          if (match && match[1]) {
+            const parsed = parseInt(match[1].replace(/,/g, ''), 10);
+            if (parsed > 0 && parsed < 10000000) { // Validação
+              holders = parsed;
+              console.log('[Pump Data] Holders encontrados:', holders);
+              break;
+            }
           }
         }
         
@@ -1067,18 +1448,37 @@
           }
         }
         
-        coinData = { viewers, marketCap, holders, volume24h, liquidity };
+        // Merge data instead of replacing (preserve price from fetchPrice)
+        coinData = { 
+          ...coinData, // Preserve existing data (like price)
+          ...(viewers !== null && { viewers }),
+          ...(marketCap !== null && { marketCap }),
+          ...(holders !== null && { holders }),
+          ...(volume24h !== null && { volume24h }),
+          ...(liquidity !== null && { liquidity })
+        };
         pumpData = { viewers, marketCap, holders, volume24h, liquidity };
         
-        // Log para debug
-        console.log('[Coin Data Update]', {
+        // Log para debug detalhado
+        console.log('[Coin Data Update - Pump.fun]', {
           viewers,
           marketCap,
           holders,
           volume24h,
           liquidity,
-          timestamp: new Date().toLocaleTimeString()
+          timestamp: new Date().toLocaleTimeString(),
+          htmlLength: html.length,
+          foundInHtml: { 
+            viewers: viewers !== null, 
+            marketCap: marketCap !== null, 
+            holders: holders !== null 
+          }
         });
+        
+        // Se não encontrou dados, DexScreener será usado como fallback em fetchPrice()
+        if (holders === null || marketCap === null) {
+          console.log('[Pump Data] Alguns dados não encontrados via scraping, DexScreener será usado como fallback...');
+        }
         
         // Update viewers
         if (viewers !== null) {
@@ -1167,10 +1567,17 @@
               mcapFormatted = mcap.toFixed(0);
             }
             const gardenMarketCapEl = document.getElementById('gardenMarketCap');
-            if (gardenMarketCapEl && (!coinData.marketCap || coinData.marketCap === null)) {
+            if (gardenMarketCapEl) {
               gardenMarketCapEl.textContent = '$' + mcapFormatted;
+              console.log('[DexScreener] Market Cap atualizado:', mcapFormatted);
+            }
+            // Atualizar coinData também
+            if (!coinData.marketCap || coinData.marketCap === null) {
+              coinData.marketCap = '$' + mcapFormatted;
             }
           }
+          
+          // DexScreener não fornece holders diretamente, mas vamos tentar buscar de outra fonte se necessário
           
           // Update volume 24h if not found in Pump.fun scraping
           if (bestPair.volume?.h24 && !coinData.volume24h) {
@@ -1219,8 +1626,8 @@
     // Fetch comentários da live do Pump.fun
     let commentsAttempts = 0;
     async function fetchLiveComments() {
-      // Só buscar comentários no mode-1
-      if (pageId !== '1') return;
+      // Buscar comentários no mode-1 e mode-2
+      if (pageId !== '1' && pageId !== '2') return;
       
       // Se estiver em file://, pular
       if (window.location.protocol === 'file:') {
@@ -1239,71 +1646,150 @@
         
         const newComments = [];
         
-        // Padrões para encontrar comentários no HTML
-        // Tentar diferentes formatos de comentários
-        const commentPatterns = [
-          // Pattern 1: Estrutura de comentários comum
-          /<div[^>]*class="[^"]*comment[^"]*"[^>]*>[\s\S]*?<div[^>]*class="[^"]*user[^"]*"[^>]*>([^<]+)<\/div>[\s\S]*?<div[^>]*class="[^"]*text[^"]*"[^>]*>([^<]+)<\/div>/gi,
-          // Pattern 2: Comentários em formato JSON ou data attributes
-          /data-user="([^"]+)"[^>]*data-text="([^"]+)"/gi,
-          // Pattern 3: Comentários simples com estrutura HTML
-          /<[^>]*comment[^>]*>[\s\S]*?([A-Za-z0-9]{4}…[A-Za-z0-9]{4})[\s\S]*?([^<]{10,100})/gi,
-        ];
+        // Extrair chat da Pump.fun - estrutura específica com data-message-id
+        // Procurar por todas as mensagens com data-message-id
+        const messagePattern = /<div\s+data-message-id="([^"]+)"[^>]*>([\s\S]*?)<\/div>\s*(?=<div\s+data-message-id|<\/div>\s*<\/div>\s*<\/div>|$)/gi;
         
-        for (const pattern of commentPatterns) {
-          let match;
-          while ((match = pattern.exec(html)) !== null && newComments.length < 10) {
-            const user = match[1]?.trim() || match[3]?.trim() || 'User';
-            const text = match[2]?.trim() || match[4]?.trim() || '';
-            
-            if (text && text.length > 5) {
-              // Verificar se é um comentário duplicado recente
-              const isDuplicate = liveComments.some(c => 
-                c.text === text && Date.now() - c.timestamp < 60000
-              );
-              
-              if (!isDuplicate) {
-                newComments.push({
-                  user: user.length > 20 ? user.slice(0, 20) : user,
-                  text: text.length > 100 ? text.slice(0, 100) + '...' : text,
-                  timestamp: Date.now()
-                });
-              }
+        let messageMatch;
+        const processedMessageIds = new Set();
+        
+        while ((messageMatch = messagePattern.exec(html)) !== null && newComments.length < 20) {
+          const messageId = messageMatch[1];
+          const messageHtml = messageMatch[2];
+          
+          // Evitar processar a mesma mensagem várias vezes
+          if (processedMessageIds.has(messageId)) continue;
+          processedMessageIds.add(messageId);
+          
+          // Extrair nome do utilizador (dentro de <a> com href para profile)
+          const userMatch = messageHtml.match(/<a[^>]*href="https:\/\/pump\.fun\/profile\/([^"]+)"[^>]*>([^<]+)<\/a>/i);
+          const userName = userMatch ? (userMatch[2] || userMatch[1] || 'User') : null;
+          
+          if (!userName) continue; // Pular se não encontrar nome de utilizador
+          
+          // Extrair texto da mensagem (dentro de <p class="break-words">)
+          const textMatches = [
+            messageHtml.match(/<p\s+class="break-words"[^>]*>([\s\S]*?)<\/p>/i),
+            messageHtml.match(/<p[^>]*class="[^"]*break-words[^"]*"[^>]*>([\s\S]*?)<\/p>/i)
+          ];
+          
+          let messageText = null;
+          for (const match of textMatches) {
+            if (match && match[1]) {
+              messageText = match[1];
+              break;
             }
           }
           
-          if (newComments.length > 0) break;
-        }
-        
-        // Se não encontrou comentários nos padrões, tentar extrair texto que parece comentário
-        if (newComments.length === 0) {
-          // Buscar divs ou spans que podem conter comentários
-          const textMatches = html.match(/<[^>]*>(?:[A-Z][^<]{20,80}){1,3}<\/[^>]*>/gi);
-          if (textMatches) {
-            textMatches.slice(0, 5).forEach((match, idx) => {
-              const text = match.replace(/<[^>]*>/g, '').trim();
-              if (text.length > 15 && text.length < 150) {
-                newComments.push({
-                  user: `User${idx + 1}`,
-                  text: text,
-                  timestamp: Date.now() - idx * 1000
-                });
-              }
+          if (!messageText) continue;
+          
+          // Limpar HTML do texto (remover tags mas manter links se houver)
+          // Primeiro, processar links @username
+          messageText = messageText.replace(/<a[^>]*href="https:\/\/pump\.fun\/profile\/([^"]+)"[^>]*class="[^"]*font-semibold[^"]*"[^>]*>([^<]+)<\/a>/gi, '@$2');
+          // Remover todas as outras tags HTML
+          messageText = messageText.replace(/<[^>]+>/g, '');
+          // Decodificar entidades HTML comuns
+          messageText = messageText.replace(/&nbsp;/g, ' ').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+          // Limpar espaços extras
+          messageText = messageText.replace(/\s+/g, ' ').trim();
+          
+          // Filtrar mensagens vazias ou muito curtas
+          if (!messageText || messageText.length < 2) continue;
+          
+          // Extrair timestamp (formato HH:MM dentro de span)
+          const timeMatch = messageHtml.match(/<span[^>]*class="[^"]*text-\[10px\][^"]*"[^>]*>(\d{1,2}:\d{2})<\/span>/i);
+          let timestamp = Date.now();
+          if (timeMatch) {
+            const timeStr = timeMatch[1];
+            const [hours, minutes] = timeStr.split(':').map(Number);
+            const now = new Date();
+            // Assumir que é hoje, ajustar se necessário
+            timestamp = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hours, minutes).getTime();
+            // Se o tempo é maior que agora, assumir que foi ontem
+            if (timestamp > now.getTime()) {
+              timestamp -= 24 * 60 * 60 * 1000;
+            }
+          }
+          
+          // Verificar se é duplicado
+          const isDuplicate = liveComments.some(c => {
+            const sameText = c.text.toLowerCase().trim() === messageText.toLowerCase().trim();
+            const sameUser = c.user.toLowerCase().trim() === userName.toLowerCase().trim();
+            const recent = Date.now() - c.timestamp < 300000; // 5 minutos
+            return sameText && sameUser && recent;
+          });
+          
+          if (!isDuplicate && messageText.length >= 2 && messageText.length <= 500) {
+            // Encurtar nome de utilizador se necessário
+            const displayName = userName.length > 20 ? userName.slice(0, 20) : userName;
+            
+            newComments.push({
+              user: displayName,
+              text: messageText.length > 200 ? messageText.slice(0, 200) + '...' : messageText,
+              timestamp: timestamp,
+              messageId: messageId
             });
           }
         }
         
-        // Adicionar novos comentários ao início da lista
+        // Fallback: se não encontrou mensagens com data-message-id, tentar padrões alternativos
+        if (newComments.length === 0) {
+          // Buscar por divs com classes de mensagem de chat
+          const chatMessagePattern = /<div[^>]*class="[^"]*mb-2[^"]*flex[^"]*w-full[^"]*items-start[^"]*"[^>]*>([\s\S]*?)<\/div>\s*(?=<div[^>]*class="[^"]*mb-2|<\/div>\s*<\/div>)/gi;
+          let chatMatch;
+          let chatCount = 0;
+          
+          while ((chatMatch = chatMessagePattern.exec(html)) !== null && chatCount < 15) {
+            const chatHtml = chatMatch[1];
+            
+            // Extrair nome e texto
+            const userMatch = chatHtml.match(/<a[^>]*href="[^"]*profile\/([^"]+)"[^>]*>([^<]+)<\/a>/i);
+            const textMatch = chatHtml.match(/<p[^>]*class="[^"]*break-words[^"]*"[^>]*>([\s\S]*?)<\/p>/i);
+            
+            if (userMatch && textMatch) {
+              const userName = userMatch[2] || userMatch[1];
+              let text = textMatch[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+              
+              if (text && text.length >= 2 && text.length <= 500) {
+                const isDuplicate = liveComments.some(c => 
+                  c.text.toLowerCase().trim() === text.toLowerCase().trim()
+                );
+                
+                if (!isDuplicate) {
+                  newComments.push({
+                    user: userName.length > 20 ? userName.slice(0, 20) : userName,
+                    text: text.length > 200 ? text.slice(0, 200) + '...' : text,
+                    timestamp: Date.now() - chatCount * 10000
+                  });
+                  chatCount++;
+                }
+              }
+            }
+          }
+        }
+        
+        // Adicionar novos comentários (mais recentes primeiro)
         if (newComments.length > 0) {
-          liveComments = [...newComments, ...liveComments].slice(0, 20); // Manter últimos 20
-          updateCommentsDisplay();
+          // Ordenar por timestamp (mais recentes primeiro)
+          newComments.sort((a, b) => b.timestamp - a.timestamp);
+          
+          // Combinar com comentários existentes, removendo duplicatas
+          const existingTexts = new Set(liveComments.map(c => c.text.toLowerCase().trim()));
+          const uniqueNewComments = newComments.filter(c => 
+            !existingTexts.has(c.text.toLowerCase().trim())
+          );
+          
+          if (uniqueNewComments.length > 0) {
+            liveComments = [...uniqueNewComments, ...liveComments].slice(0, 30); // Manter últimos 30
+            updateCommentsDisplay();
+          }
         }
         
         commentsAttempts = 0;
       } catch (err) {
         commentsAttempts++;
-        if (commentsAttempts === 1) {
-          console.error('Live comments fetch error:', err);
+        if (commentsAttempts === 1 || (commentsAttempts % 10 === 0)) {
+          console.log('[Comments] Fetch error:', err.message);
         }
       }
     }
@@ -1311,24 +1797,42 @@
     // Atualizar display de comentários
     function updateCommentsDisplay() {
       const commentsListEl = document.getElementById('commentsList');
-      if (!commentsListEl || pageId !== '1') return;
+      // Mostrar comentários no mode-1 e mode-2
+      if (!commentsListEl || (pageId !== '1' && pageId !== '2')) return;
       
       commentsListEl.innerHTML = '';
       
+      // Ordenar comentários por timestamp (mais recentes primeiro)
+      const sortedComments = [...liveComments].sort((a, b) => b.timestamp - a.timestamp);
+      
       // Mostrar últimos 8 comentários
-      liveComments.slice(0, 8).forEach(comment => {
+      sortedComments.slice(0, 8).forEach(comment => {
         const div = document.createElement('div');
         div.className = 'commentItem';
         const timeAgo = Math.floor((Date.now() - comment.timestamp) / 1000);
-        const timeText = timeAgo < 60 ? `${timeAgo}s` : `${Math.floor(timeAgo / 60)}m`;
+        let timeText;
+        if (timeAgo < 60) {
+          timeText = `${timeAgo}s`;
+        } else if (timeAgo < 3600) {
+          timeText = `${Math.floor(timeAgo / 60)}m`;
+        } else {
+          timeText = `${Math.floor(timeAgo / 3600)}h`;
+        }
         
         div.innerHTML = `
-          <div class="commentUser">${comment.user}</div>
-          <div class="commentText">${comment.text}</div>
+          <div class="commentUser">${escapeHtml(comment.user)}</div>
+          <div class="commentText">${escapeHtml(comment.text)}</div>
           <div class="commentTime">${timeText} ago</div>
         `;
         commentsListEl.appendChild(div);
       });
+    }
+    
+    // Função auxiliar para escapar HTML
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
     }
 
     // Load tasks ticker
@@ -2204,11 +2708,15 @@
       priceInterval = null; // Integrado em fetchAllCoinData
       tasksInterval = setInterval(loadTasks, 10000); // 10 segundos
       
-      // Atualizar comentários a cada 8 segundos (mais frequente)
-      if (pageId === '1') {
+      // Atualizar comentários a cada 8 segundos (mais frequente) - mode-1 e mode-2
+      if (pageId === '1' || pageId === '2') {
         fetchLiveComments();
         commentsInterval = setInterval(fetchLiveComments, 8000);
       }
+      
+      // Buscar transações do Solscan para detectar compras (todas as páginas)
+      fetchSolscanTransactions();
+      solscanInterval = setInterval(fetchSolscanTransactions, 8000); // A cada 8 segundos
 
       // Connect WebSocket
       connectWS();
@@ -2229,6 +2737,7 @@
       if (priceInterval) clearInterval(priceInterval);
       if (tasksInterval) clearInterval(tasksInterval);
       if (commentsInterval) clearInterval(commentsInterval);
+      if (solscanInterval) clearInterval(solscanInterval);
     });
   </script>
 </body>
