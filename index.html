@@ -1234,6 +1234,7 @@
     // DOM Elements
     const viewersEl = document.getElementById('viewers');
     const priceValEl = document.getElementById('priceVal');
+    const priceUsdEl = document.getElementById('priceUsd');
     const marketCapEl = document.getElementById('marketCap');
     const holdersEl = document.getElementById('holders');
     const buyCountEl = document.getElementById('buyCount');
@@ -1302,6 +1303,48 @@
       if (num >= 1_000_000) return (num / 1_000_000).toFixed(2) + 'M';
       if (num >= 1_000) return (num / 1_000).toFixed(2) + 'K';
       return num.toFixed(0);
+    }
+
+    function formatUsdPrice(value) {
+      const num = typeof value === 'number' ? value : parseFloat(String(value));
+      if (!Number.isFinite(num)) return '$—';
+      if (num >= 1) return '$' + num.toFixed(4);
+      if (num >= 0.01) return '$' + num.toFixed(6);
+      if (num >= 0.0001) return '$' + num.toFixed(8);
+      return '$' + num.toPrecision(4);
+    }
+
+    function formatSolPrice(value) {
+      const num = typeof value === 'number' ? value : parseFloat(String(value));
+      if (!Number.isFinite(num)) return '—';
+      if (num >= 0.01) return num.toFixed(6);
+      if (num >= 0.0001) return num.toFixed(8);
+      return num.toPrecision(4);
+    }
+
+    function findFirstNumberByKeys(obj, keys) {
+      const wanted = new Set(keys.map(k => String(k).toLowerCase()));
+      const seen = new Set();
+      const stack = [obj];
+      while (stack.length) {
+        const cur = stack.pop();
+        if (!cur || typeof cur !== 'object') continue;
+        if (seen.has(cur)) continue;
+        seen.add(cur);
+        if (Array.isArray(cur)) {
+          for (const v of cur) stack.push(v);
+          continue;
+        }
+        for (const [k, v] of Object.entries(cur)) {
+          const key = k.toLowerCase();
+          if (wanted.has(key)) {
+            const n = typeof v === 'number' ? v : parseFloat(String(v).replace(/[^0-9.]/g, ''));
+            if (Number.isFinite(n)) return n;
+          }
+          if (v && typeof v === 'object') stack.push(v);
+        }
+      }
+      return null;
     }
 
     function getCorsProxyCandidates() {
@@ -1466,6 +1509,7 @@
         await Promise.allSettled([
           fetchPumpData(),
           fetchPrice(),
+          fetchHoldersCount(),
           fetchLiveComments()
         ]);
         
@@ -1892,7 +1936,7 @@
         }
         priceAttempts = 0; // Reset on success
         
-        if (data.pairs && data.pairs.length > 0) {
+        if (data && data.pairs && data.pairs.length > 0) {
           // Encontrar pair com maior liquidez
           let bestPair = data.pairs[0];
           let maxLiquidity = parseFloat(bestPair.liquidity?.usd || 0);
@@ -1905,41 +1949,38 @@
             }
           }
           
-          // Update price
-          if (bestPair.priceNative) {
-            const price = parseFloat(bestPair.priceNative).toFixed(6);
-            coinData.price = price;
-            if (priceValEl) priceValEl.textContent = price;
-            const gardenPriceEl = document.getElementById('gardenPrice');
-            if (gardenPriceEl) gardenPriceEl.textContent = price + ' SOL';
+          const priceNative = bestPair.priceNative ? parseFloat(bestPair.priceNative) : NaN;
+          const priceUsd = bestPair.priceUsd ? parseFloat(bestPair.priceUsd) : NaN;
+
+          // Update price (SOL) + USD
+          if (Number.isFinite(priceNative)) {
+            const priceText = formatSolPrice(priceNative);
+            coinData.price = priceText;
+            if (priceValEl) priceValEl.textContent = priceText;
           } else {
             if (priceValEl) priceValEl.textContent = '—';
-            const gardenPriceEl = document.getElementById('gardenPrice');
-            if (gardenPriceEl) gardenPriceEl.textContent = '—';
+          }
+
+          if (priceUsdEl) {
+            priceUsdEl.textContent = formatUsdPrice(priceUsd);
+          }
+
+          const gardenPriceEl = document.getElementById('gardenPrice');
+          if (gardenPriceEl) {
+            const solPart = Number.isFinite(priceNative) ? (formatSolPrice(priceNative) + ' SOL') : '— SOL';
+            const usdPart = formatUsdPrice(priceUsd);
+            gardenPriceEl.textContent = solPart + ' (' + usdPart + ')';
           }
           
           // Update market cap from DexScreener if available
-          if (bestPair.marketCap) {
-            const mcap = parseFloat(bestPair.marketCap);
-            let mcapFormatted;
-            if (mcap >= 1000000) {
-              mcapFormatted = (mcap / 1000000).toFixed(2) + 'M';
-            } else if (mcap >= 1000) {
-              mcapFormatted = (mcap / 1000).toFixed(2) + 'K';
-            } else {
-              mcapFormatted = mcap.toFixed(0);
-            }
+          const rawMcap = (bestPair.marketCap ?? bestPair.fdv);
+          const mcapNum = rawMcap ? parseFloat(rawMcap) : NaN;
+          if (Number.isFinite(mcapNum)) {
+            const mcapFormatted = '$' + formatUSDCompact(mcapNum);
             const gardenMarketCapEl = document.getElementById('gardenMarketCap');
-            if (gardenMarketCapEl) {
-              gardenMarketCapEl.textContent = '$' + mcapFormatted;
-              console.log('[DexScreener] Market Cap atualizado:', mcapFormatted);
-            }
-
-            if (marketCapEl) marketCapEl.textContent = '$' + mcapFormatted;
-            // Atualizar coinData também
-            if (!coinData.marketCap || coinData.marketCap === null) {
-              coinData.marketCap = '$' + mcapFormatted;
-            }
+            if (gardenMarketCapEl) gardenMarketCapEl.textContent = mcapFormatted;
+            if (marketCapEl) marketCapEl.textContent = mcapFormatted;
+            coinData.marketCap = mcapFormatted;
           }
           
           // DexScreener não fornece holders diretamente, mas vamos tentar buscar de outra fonte se necessário
@@ -1973,6 +2014,7 @@
           }
         } else {
           if (priceValEl) priceValEl.textContent = '—';
+          if (priceUsdEl) priceUsdEl.textContent = '$—';
           const gardenPriceEl = document.getElementById('gardenPrice');
           if (gardenPriceEl) gardenPriceEl.textContent = '—';
         }
@@ -1983,8 +2025,54 @@
           console.error('Price fetch error:', err);
         }
         if (priceValEl) priceValEl.textContent = '—';
+        if (priceUsdEl) priceUsdEl.textContent = '$—';
         const gardenPriceEl = document.getElementById('gardenPrice');
         if (gardenPriceEl) gardenPriceEl.textContent = '—';
+      }
+    }
+
+    // Fetch holders count (Solscan via proxy). Cached to avoid hitting every 10s.
+    let holdersLastFetchAt = 0;
+    async function fetchHoldersCount() {
+      try {
+        const now = Date.now();
+        if (now - holdersLastFetchAt < 60_000) return; // 1 min cache
+        holdersLastFetchAt = now;
+
+        // Se estiver em file://, pular (fetch cross-origin tende a falhar)
+        if (window.location.protocol === 'file:') return;
+
+        const mint = CONFIG.contract;
+        const candidates = [
+          `https://public-api.solscan.io/token/meta?tokenAddress=${mint}`,
+          `https://public-api.solscan.io/token/holders?tokenAddress=${mint}&offset=0&limit=1`,
+          `https://api.solscan.io/token/meta?tokenAddress=${mint}`,
+          `https://api.solscan.io/token/holders?tokenAddress=${mint}&offset=0&limit=1`,
+          `https://api.solscan.io/token/holders?token=${mint}&offset=0&limit=1`
+        ];
+
+        let holdersCount = null;
+        for (const url of candidates) {
+          try {
+            const json = await fetchJsonWithCorsFallback(url);
+            // tentar chaves comuns
+            holdersCount =
+              findFirstNumberByKeys(json, ['holders', 'holder', 'holderCount', 'holdersCount', 'total', 'totalHolders', 'count']) ||
+              null;
+            if (Number.isFinite(holdersCount) && holdersCount > 0) break;
+          } catch {
+            // try next
+          }
+        }
+
+        if (Number.isFinite(holdersCount) && holdersCount > 0) {
+          coinData.holders = holdersCount;
+          if (holdersEl) holdersEl.textContent = holdersCount.toLocaleString();
+          const gardenHoldersEl = document.getElementById('gardenHolders');
+          if (gardenHoldersEl) gardenHoldersEl.textContent = holdersCount.toLocaleString();
+        }
+      } catch (err) {
+        // silencioso: holders depende muito de CORS/proxy
       }
     }
     
