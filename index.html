@@ -2664,6 +2664,10 @@
     let characterVy = 0;
     let isJumping = false;
     let groundLevel = 0;
+    let characterGroundOffset = 45; // Empurra personagem/sombra mais para baixo
+    let characterDepthZoom = 1; // 1 = tamanho base (mínimo)
+    let targetCharacterDepthZoom = 1;
+    let lastDepthZoomChange = 0;
     let characterWidth = 0;
     let characterHeight = 0;
     let imageAspectRatio = 1;
@@ -2674,6 +2678,188 @@
     let logoWidth = 0;
     let logoHeight = 0;
     let logoAspectRatio = 1;
+
+    // Seasons + weather (Mode 0)
+    const SEASONS = ['spring', 'summer', 'autumn', 'winter'];
+    let currentSeason = 'spring';
+    let seasonFrom = 'spring';
+    let seasonTo = 'spring';
+    let seasonTransitionStart = 0;
+    const seasonTransitionDurationMs = 15000; // transição suave (15s)
+    let nextSeasonChangeAt = 0;
+
+    let weatherType = null; // 'rain' | 'snow' | null
+    let weatherStrength = 0;
+    let targetWeatherStrength = 0;
+    let weatherEndAt = 0;
+    let nextWeatherCheckAt = 0;
+    let weatherParticles = [];
+    let windMultiplier = 1;
+
+    function clamp01(x) {
+      return Math.max(0, Math.min(1, x));
+    }
+
+    function lerp(a, b, t) {
+      return a + (b - a) * t;
+    }
+
+    function rgba(r, g, b, a) {
+      return `rgba(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)}, ${a})`;
+    }
+
+    function seasonWeights() {
+      const now = Date.now();
+      if (seasonTransitionStart) {
+        const t = clamp01((now - seasonTransitionStart) / seasonTransitionDurationMs);
+        const w = { spring: 0, summer: 0, autumn: 0, winter: 0 };
+        w[seasonFrom] = 1 - t;
+        w[seasonTo] = t;
+        return w;
+      }
+      return {
+        spring: currentSeason === 'spring' ? 1 : 0,
+        summer: currentSeason === 'summer' ? 1 : 0,
+        autumn: currentSeason === 'autumn' ? 1 : 0,
+        winter: currentSeason === 'winter' ? 1 : 0,
+      };
+    }
+
+    function pickNextSeason(exclude) {
+      const options = SEASONS.filter(s => s !== exclude);
+      return options[Math.floor(Math.random() * options.length)];
+    }
+
+    function scheduleNextSeasonChange(now) {
+      const minMs = 2 * 60 * 1000;
+      const maxMs = 20 * 60 * 1000;
+      nextSeasonChangeAt = now + (minMs + Math.random() * (maxMs - minMs));
+    }
+
+    function updateSeasonAndWeather() {
+      const now = Date.now();
+      if (!nextSeasonChangeAt) scheduleNextSeasonChange(now);
+
+      // Finish transition
+      if (seasonTransitionStart) {
+        const t = (now - seasonTransitionStart) / seasonTransitionDurationMs;
+        if (t >= 1) {
+          currentSeason = seasonTo;
+          seasonFrom = currentSeason;
+          seasonTransitionStart = 0;
+        }
+      }
+
+      // Start new season transition
+      if (!seasonTransitionStart && now >= nextSeasonChangeAt) {
+        seasonFrom = currentSeason;
+        seasonTo = pickNextSeason(seasonFrom);
+        seasonTransitionStart = now;
+        scheduleNextSeasonChange(now);
+      }
+
+      // Weather events (climatic)
+      const w = seasonWeights();
+      const isMostlyWinter = w.winter > 0.6;
+      const isMostlySpring = w.spring > 0.6;
+      const isMostlyAutumn = w.autumn > 0.6;
+
+      if (now >= nextWeatherCheckAt && !weatherType) {
+        // check every 15–45s
+        nextWeatherCheckAt = now + (15000 + Math.random() * 30000);
+
+        if (isMostlyWinter && Math.random() < 0.35) {
+          weatherType = 'snow';
+          targetWeatherStrength = 1;
+          weatherEndAt = now + (25000 + Math.random() * 45000);
+          initWeatherParticles('snow');
+        } else if (isMostlySpring && Math.random() < 0.25) {
+          weatherType = 'rain';
+          targetWeatherStrength = 1;
+          weatherEndAt = now + (18000 + Math.random() * 35000);
+          initWeatherParticles('rain');
+        } else if (isMostlyAutumn && Math.random() < 0.20) {
+          // wind gust event
+          windMultiplier = 1.6;
+          weatherEndAt = now + (12000 + Math.random() * 20000);
+        }
+      }
+
+      if (weatherType && now >= weatherEndAt) {
+        targetWeatherStrength = 0;
+      }
+      if (!weatherType && windMultiplier !== 1 && now >= weatherEndAt) {
+        windMultiplier = 1;
+      }
+
+      // Smooth weather strength
+      weatherStrength += (targetWeatherStrength - weatherStrength) * 0.03;
+      if (weatherStrength < 0.02) {
+        weatherStrength = 0;
+        targetWeatherStrength = 0;
+        weatherType = null;
+        weatherParticles = [];
+      }
+    }
+
+    function initWeatherParticles(type) {
+      weatherParticles = [];
+      const count = type === 'rain' ? 220 : 140;
+      for (let i = 0; i < count; i++) {
+        weatherParticles.push({
+          x: (i * 73.1) % canvas.width,
+          y: (i * 41.3) % canvas.height,
+          vx: ((i % 7) - 3) * (type === 'snow' ? 0.12 : 0.04),
+          vy: type === 'rain' ? (6 + (i % 7)) : (0.8 + (i % 6) * 0.15),
+          size: type === 'rain' ? (10 + (i % 12)) : (1 + (i % 3)),
+        });
+      }
+    }
+
+    function drawWeather() {
+      if (!weatherType || !weatherStrength || weatherParticles.length === 0) return;
+      const strength = weatherStrength;
+      ctx.save();
+      ctx.globalAlpha = 0.9 * strength;
+
+      if (weatherType === 'rain') {
+        ctx.strokeStyle = 'rgba(200, 230, 255, 0.6)';
+        ctx.lineWidth = 1.2;
+        weatherParticles.forEach(p => {
+          p.x += (p.vx * 20) * strength;
+          p.y += (p.vy * 3) * strength;
+          if (p.y > canvas.height + 30) {
+            p.y = -30;
+            p.x = (p.x + canvas.width * 0.37) % canvas.width;
+          }
+          if (p.x < -40) p.x = canvas.width + 40;
+          if (p.x > canvas.width + 40) p.x = -40;
+
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(p.x - 6, p.y - p.size);
+          ctx.stroke();
+        });
+      } else if (weatherType === 'snow') {
+        weatherParticles.forEach(p => {
+          p.x += (p.vx * 10) * strength;
+          p.y += (p.vy * 2) * strength;
+          if (p.y > canvas.height + 10) {
+            p.y = -10;
+            p.x = (p.x + canvas.width * 0.29) % canvas.width;
+          }
+          if (p.x < -20) p.x = canvas.width + 20;
+          if (p.x > canvas.width + 20) p.x = -20;
+
+          ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fill();
+        });
+      }
+
+      ctx.restore();
+    }
     
     function initGarden() {
       canvas = document.getElementById('gardenCanvas');
@@ -2701,7 +2887,7 @@
         // Definir altura base e calcular largura mantendo proporção
         characterHeight = 120;
         characterWidth = characterHeight * imageAspectRatio;
-        characterY = groundLevel - characterHeight;
+        characterY = groundLevel - characterHeight + characterGroundOffset;
         characterLoaded = true;
         if (characterLoaded && logoLoaded) {
           nextJumpTime = Date.now() + 3000 + Math.random() * 2000;
@@ -2727,7 +2913,7 @@
         canvas.height = window.innerHeight;
         groundLevel = canvas.height * 0.80; // Jardim ocupa mais altura
         if (characterImg.complete) {
-          characterY = groundLevel - characterHeight;
+          characterY = groundLevel - characterHeight + characterGroundOffset;
         }
         // Reinicializar árvores ao redimensionar
         initTrees();
@@ -2739,7 +2925,9 @@
     }
     
     function drawGarden() {
+      updateSeasonAndWeather();
       const time = Date.now() / 1000;
+      const w = seasonWeights();
       
       // Sky gradient mais realista (céu azul que vai para verde)
       const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
@@ -2749,6 +2937,14 @@
       gradient.addColorStop(0.85, '#C8E6C9'); // Verde
       gradient.addColorStop(1, '#AED581'); // Verde grama
       ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Seasonal tint overlay (suave, sem alterar o design todo)
+      const tintR = (w.summer * 255 + w.spring * 235 + w.autumn * 255 + w.winter * 210);
+      const tintG = (w.summer * 240 + w.spring * 255 + w.autumn * 205 + w.winter * 235);
+      const tintB = (w.summer * 220 + w.spring * 235 + w.autumn * 160 + w.winter * 255);
+      const tintA = (w.summer * 0.06 + w.spring * 0.04 + w.autumn * 0.10 + w.winter * 0.14);
+      ctx.fillStyle = rgba(tintR, tintG, tintB, tintA);
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       
       // Sun (sol animado)
@@ -2784,6 +2980,13 @@
       // Ground/grass (camada principal)
       ctx.fillStyle = '#66BB6A';
       ctx.fillRect(0, groundLevel - 30, canvas.width, canvas.height - groundLevel + 30);
+
+      // Winter snow cover on the ground
+      const snowCover = w.winter * 0.55;
+      if (snowCover > 0.01) {
+        ctx.fillStyle = `rgba(255, 255, 255, ${snowCover})`;
+        ctx.fillRect(0, groundLevel - 34, canvas.width, canvas.height - groundLevel + 34);
+      }
       
       // Grass detalhada e animada (múltiplas camadas) - mais densa
       drawAnimatedGrass();
@@ -2978,10 +3181,14 @@
       }
       
       const time = Date.now() / 1000;
+      const w = seasonWeights();
+      const pollenFactor = clamp01(w.spring + w.summer * 0.6);
+      const leafFactor = clamp01(w.autumn + w.winter * 0.25);
       
       particles.forEach((particle, idx) => {
-        // Atualizar posição
-        particle.x += particle.vx;
+        // Atualizar posição (vento afeta mais folhas/pólen)
+        const wind = windMultiplier || 1;
+        particle.x += particle.vx * wind;
         particle.y += particle.vy;
         particle.rotation += particle.rotationSpeed;
         
@@ -3000,19 +3207,29 @@
         ctx.rotate(particle.rotation);
         
         if (particle.type === 'leaf') {
+          if (leafFactor < 0.05 && (idx % 2 === 0)) {
+            ctx.restore();
+            return;
+          }
           // Folha caindo (cores fixas armazenadas)
-          ctx.fillStyle = `rgba(${particle.colorR}, ${particle.colorG}, ${particle.colorB}, 0.6)`;
+          const a = 0.15 + 0.55 * leafFactor;
+          ctx.fillStyle = `rgba(${particle.colorR}, ${particle.colorG}, ${particle.colorB}, ${a})`;
           ctx.beginPath();
           ctx.ellipse(0, 0, particle.size * 2, particle.size, 0, 0, Math.PI * 2);
           ctx.fill();
         } else {
+          if (pollenFactor < 0.05 && (idx % 2 === 1)) {
+            ctx.restore();
+            return;
+          }
           // Pólen (cores fixas armazenadas)
-          ctx.fillStyle = `rgba(${particle.colorR}, ${particle.colorG}, ${particle.colorB}, 0.5)`;
+          const a = 0.12 + 0.45 * pollenFactor;
+          ctx.fillStyle = `rgba(${particle.colorR}, ${particle.colorG}, ${particle.colorB}, ${a})`;
           ctx.beginPath();
           ctx.arc(0, 0, particle.size, 0, Math.PI * 2);
           ctx.fill();
           // Brilho do pólen
-          ctx.fillStyle = `rgba(255, 255, 200, 0.3)`;
+          ctx.fillStyle = `rgba(255, 255, 200, ${0.12 + 0.22 * pollenFactor})`;
           ctx.beginPath();
           ctx.arc(0, 0, particle.size * 0.5, 0, Math.PI * 2);
           ctx.fill();
@@ -3024,6 +3241,9 @@
     
     function drawFlowers() {
       const time = Date.now() / 1000;
+      const w = seasonWeights();
+      const flowerFactor = clamp01(w.spring + w.summer * 0.65);
+      if (flowerFactor < 0.08) return;
       // Mais flores pelo cenário
       const flowers = [
         { x: canvas.width * 0.12, y: groundLevel, color: 15, size: 1.0 },
@@ -3041,12 +3261,14 @@
       ];
       
       flowers.forEach((flower, idx) => {
+        // Reduz quantidade quando não é primavera/verão
+        if (flowerFactor < 0.35 && (idx % 2 === 1)) return;
         // Sway com vento
         const sway = Math.sin(time * 0.8 + idx) * 3;
         const flowerX = flower.x + sway;
         
         // Stem (caule mais realista com curvatura)
-        ctx.strokeStyle = '#2E7D32';
+        ctx.strokeStyle = `rgba(46, 125, 50, ${0.55 + 0.45 * flowerFactor})`;
         ctx.lineWidth = 3;
         ctx.beginPath();
         ctx.moveTo(flowerX, flower.y);
@@ -3054,7 +3276,7 @@
         ctx.stroke();
         
         // Leaves (folhas no caule)
-        ctx.fillStyle = '#4CAF50';
+        ctx.fillStyle = `rgba(76, 175, 80, ${0.55 + 0.45 * flowerFactor})`;
         ctx.beginPath();
         ctx.ellipse(flowerX - 5, flower.y - 20, 6, 3, sway * 0.1, 0, Math.PI * 2);
         ctx.fill();
@@ -3065,7 +3287,7 @@
         const petalSize = 10 * flower.size;
         const petalDistance = 18 * flower.size;
         
-        ctx.fillStyle = `hsl(${(flower.color + time * 20) % 360}, 75%, 65%)`;
+        ctx.fillStyle = `hsla(${(flower.color + time * 20) % 360}, 75%, 65%, ${0.45 + 0.55 * flowerFactor})`;
         for (let i = 0; i < petalCount; i++) {
           const angle = (Math.PI * 2 / petalCount) * i + rotation;
           const px = flowerX + Math.cos(angle) * petalDistance;
@@ -3082,13 +3304,13 @@
         }
         
         // Center (centro da flor)
-        ctx.fillStyle = '#FFD700';
+        ctx.fillStyle = `rgba(255, 215, 0, ${0.55 + 0.45 * flowerFactor})`;
         ctx.beginPath();
         ctx.arc(flowerX, flower.y - 40, 7 * flower.size, 0, Math.PI * 2);
         ctx.fill();
         
         // Detalhe do centro
-        ctx.fillStyle = '#FFA000';
+        ctx.fillStyle = `rgba(255, 160, 0, ${0.55 + 0.45 * flowerFactor})`;
         ctx.beginPath();
         ctx.arc(flowerX, flower.y - 40, 4 * flower.size, 0, Math.PI * 2);
         ctx.fill();
@@ -3253,25 +3475,28 @@
       const drawY = characterY;
       
       // Calcular altura do pulo (quanto mais alto, menor a sombra)
-      const groundY = groundLevel - characterHeight;
+      const groundY = groundLevel - characterHeight + characterGroundOffset;
       const jumpHeight = groundY - characterY; // Positivo quando está acima do chão
       const maxJumpHeight = 150; // Altura máxima estimada do pulo
       const heightRatio = Math.max(0, Math.min(1, jumpHeight / maxJumpHeight)); // 0 = no chão, 1 = máximo
       
       // Shadow diminui quando salta (quanto mais alto, menor e mais transparente)
-      const baseShadowSize = characterWidth * 0.5;
+      const baseShadowSize = characterWidth * 0.35 * characterDepthZoom;
       const shadowSize = baseShadowSize * (1 - heightRatio * 0.6); // Reduz até 60% quando no máximo
-      const shadowOpacity = 0.2 * (1 - heightRatio * 0.7); // Opacidade reduz até 70% quando no máximo
+      const shadowOpacity = 0.18 * (1 - heightRatio * 0.7); // Opacidade reduz até 70% quando no máximo
       
       ctx.fillStyle = `rgba(0, 0, 0, ${shadowOpacity})`;
       ctx.beginPath();
-      ctx.ellipse(characterX + characterWidth/2, groundLevel - 8, shadowSize, shadowSize * 0.3, 0, 0, Math.PI * 2);
+      const zoomNow = Math.max(1, Number(characterDepthZoom) || 1);
+      const depthOffsetY = (zoomNow - 1) * characterHeight * 0.55; // mais zoom => mais para baixo
+      const shadowY = groundLevel + characterGroundOffset - 16 + depthOffsetY;
+      ctx.ellipse(characterX + characterWidth/2, shadowY, shadowSize, shadowSize * 0.22, 0, 0, Math.PI * 2);
       ctx.fill();
       
       // Bounce suave contínuo (passo animado)
       const time = Date.now() / 500;
       walkCycle = (walkCycle + 0.1) % (Math.PI * 2);
-      const walkBounce = Math.abs(Math.sin(walkCycle)) * 3; // Bounce sutil ao caminhar
+      const walkBounce = Math.abs(Math.sin(walkCycle)) * 1.0; // Bounce mínimo (mais junto à sombra)
       bounceOffset = isJumping ? 0 : walkBounce;
       
       // Rotation suave ao pular (mais animado)
@@ -3279,24 +3504,32 @@
       if (isJumping && characterVy < 0) {
         rotation = characterVx < 0 ? -0.1 : 0.1; // Inclina ao pular
       }
-      
+
+      // Efeito de respirar (scale suave) + efeito de "aproximar da câmara" (depth zoom)
+      const breatheTime = Date.now() / 1000;
+      const breathe = 1 + Math.sin(breatheTime * 2.0) * 0.02; // ~2%
+      const zoom = zoomNow;
+      const finalScale = breathe * zoom;
+
       ctx.save();
-      ctx.translate(drawX + characterWidth/2, drawY + characterHeight/2 - bounceOffset);
-      
-      // Aplicar rotação se estiver pulando
+      // Ancorar o sprite pelos pés; quando faz zoom, desce um pouco para dar sensação de aproximar da câmara
+      ctx.translate(drawX + characterWidth/2, drawY + characterHeight - bounceOffset + depthOffsetY);
+
+      // Aplicar rotação em torno do centro do corpo (sem deslocar os pés)
       if (rotation !== 0) {
+        ctx.translate(0, -characterHeight/2);
         ctx.rotate(rotation);
+        ctx.translate(0, characterHeight/2);
       }
-      
+
       // Flip horizontal conforme direção:
       // - imagem original está virada para a esquerda
       // - por defeito (andar para a direita) espelhamos para ele olhar para a direita
-      if (characterVx >= 0) {
-        ctx.scale(-1, 1);
-      }
+      const flipScaleX = characterVx >= 0 ? -1 : 1;
+      ctx.scale(flipScaleX * finalScale, finalScale);
       
-      // Draw character mantendo proporção
-      ctx.drawImage(characterImg, -characterWidth/2, -characterHeight/2, characterWidth, characterHeight);
+      // Draw character mantendo proporção (desenhar a partir dos pés)
+      ctx.drawImage(characterImg, -characterWidth/2, -characterHeight, characterWidth, characterHeight);
       ctx.restore();
       
       // Efeito de "happy bounce" - bounce extra quando não está pulando
@@ -3306,21 +3539,38 @@
     }
     
     function updateCharacter() {
+      // Ajustar zoom de profundidade (smooth) — nunca menor que o tamanho inicial
+      const nowZoom = Date.now();
+      const minZoom = 1;
+      // Troca ocasional quando está a caminhar (não durante saltos)
+      if (!isJumping && nowZoom - lastDepthZoomChange > 5000 && Math.random() < 0.004) {
+        // Alternar entre voltar ao normal e aproximar-se
+        targetCharacterDepthZoom = (targetCharacterDepthZoom > 1.02) ? 1 : (1.10 + Math.random() * 0.18); // 1.10–1.28
+        lastDepthZoomChange = nowZoom;
+      }
+      // Interpolação suave
+      characterDepthZoom += (targetCharacterDepthZoom - characterDepthZoom) * 0.02;
+      if (characterDepthZoom < minZoom) characterDepthZoom = minZoom;
+
       // Mover character sem colisões (personagem sempre por cima das árvores)
       characterX += characterVx;
       
       // Bounce at edges com delay (pausa antes de virar)
       const margin = 60;
-      if (characterX < margin) {
-        characterX = margin;
+      // Considerar o zoom ao calcular limites (evita cortar sprite nas bordas)
+      const z = Math.max(1, Number(characterDepthZoom) || 1);
+      const leftBound = margin + (characterWidth * (z - 1)) / 2;
+      const rightBound = canvas.width - margin - (characterWidth * (z + 1)) / 2;
+      if (characterX < leftBound) {
+        characterX = leftBound;
         characterVx = Math.abs(characterVx); // Vira para direita
         // Pequeno bounce ao bater na parede
         if (!isJumping && Math.random() < 0.3) {
           isJumping = true;
           characterVy = -8;
         }
-      } else if (characterX > canvas.width - characterWidth - margin) {
-        characterX = canvas.width - characterWidth - margin;
+      } else if (characterX > rightBound) {
+        characterX = rightBound;
         characterVx = -Math.abs(characterVx); // Vira para esquerda
         // Pequeno bounce ao bater na parede
         if (!isJumping && Math.random() < 0.3) {
@@ -3343,7 +3593,7 @@
         characterVy += 0.6; // Gravity mais suave
         
         // Aterrissar
-        const groundY = groundLevel - characterHeight;
+        const groundY = groundLevel - characterHeight + characterGroundOffset;
         if (characterY >= groundY) {
           characterY = groundY;
           characterVy = 0;
@@ -3365,6 +3615,7 @@
       drawTreesFront(); // Desenha árvores na frente
       drawFlowers(); // Desenha flores por cima das árvores
       drawParticles(); // Desenha partículas (pólen, folhas, etc)
+      drawWeather(); // Chuva/neve por cima do cenário
       drawCharacter(); // Desenha character por cima de tudo (z-index maior)
       
       requestAnimationFrame(animateGarden);
