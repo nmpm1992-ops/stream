@@ -1512,6 +1512,8 @@
           fetchHoldersCount(),
           fetchLiveComments()
         ]);
+
+        refreshStatVisibility();
         
         // Garantir que os dados do DexScreener sejam aplicados mesmo se Pump.fun falhar
         // O fetchPrice já atualiza market cap, então isso já está coberto
@@ -1524,6 +1526,50 @@
       } catch (err) {
         console.error('[All Coin Data] Erro geral:', err);
       }
+    }
+
+    function isMissingText(t) {
+      const s = (t ?? '').toString().trim();
+      return (
+        s === '' ||
+        s === '—' ||
+        s === '$—' ||
+        s === '— SOL' ||
+        s.startsWith('— ') ||
+        s.includes('—') && s.length <= 8
+      );
+    }
+
+    function setCardVisibleForValue(valueEl, isVisible) {
+      if (!valueEl) return;
+      const card = valueEl.closest('.pill') || valueEl.closest('.price') || valueEl.closest('.gardenStatCard');
+      if (!card) return;
+      card.style.display = isVisible ? '' : 'none';
+    }
+
+    function refreshStatVisibility() {
+      // Topbar
+      setCardVisibleForValue(viewersEl, !isMissingText(viewersEl?.textContent));
+      setCardVisibleForValue(marketCapEl, !isMissingText(marketCapEl?.textContent));
+      setCardVisibleForValue(holdersEl, !isMissingText(holdersEl?.textContent));
+
+      // Price block: só mostrar se tivermos SOL ou USD
+      const hasSol = !isMissingText(priceValEl?.textContent);
+      const hasUsd = !isMissingText(priceUsdEl?.textContent);
+      if (priceValEl) {
+        const priceCard = priceValEl.closest('.price');
+        if (priceCard) priceCard.style.display = (hasSol || hasUsd) ? '' : 'none';
+      }
+
+      // Garden cards
+      const gardenViewersEl = document.getElementById('gardenViewers');
+      const gardenPriceEl = document.getElementById('gardenPrice');
+      const gardenMarketCapEl = document.getElementById('gardenMarketCap');
+      const gardenHoldersEl = document.getElementById('gardenHolders');
+      setCardVisibleForValue(gardenViewersEl, !isMissingText(gardenViewersEl?.textContent));
+      setCardVisibleForValue(gardenPriceEl, !isMissingText(gardenPriceEl?.textContent));
+      setCardVisibleForValue(gardenMarketCapEl, !isMissingText(gardenMarketCapEl?.textContent));
+      setCardVisibleForValue(gardenHoldersEl, !isMissingText(gardenHoldersEl?.textContent));
     }
     
     // Fetch transações do contrato via Solscan para detectar compras
