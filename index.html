@@ -611,7 +611,7 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       backdrop-filter: blur(10px);
-      z-index: 10;
+      z-index: 1000;
     }
     /* Topbar mais fino no mode-1 */
     body.mode-1 .topbar{
@@ -625,6 +625,8 @@
 
     .brand{
       display:flex; align-items:center; gap:12px; min-width: 260px;
+      position: relative;
+      z-index: 1001;
     }
     .logo{
       width:42px; height:42px; border-radius: 12px;
@@ -656,11 +658,26 @@
     }
 
     .price{
-      display:flex; align-items:baseline; gap:10px;
+      display:flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
       padding: 10px 14px;
       border-radius: 999px;
       border: 1px solid rgba(90,255,170,.25);
       background: rgba(90,255,170,.10);
+    }
+    .priceRow{
+      display:flex;
+      align-items:baseline;
+      gap:10px;
+    }
+    .priceSub{
+      font-size: 12px;
+      color: var(--muted);
+      font-family: var(--mono);
+      line-height: 1;
+      white-space: nowrap;
     }
     .price .label{ font-size: 12px; color: rgba(90,255,170,.88); font-weight: 700; letter-spacing:.2px; }
     .price .val{ font-size: 18px; font-weight: 900; color: var(--text); font-family: var(--mono); }
@@ -781,29 +798,17 @@
     .counter.sells .value{ color: var(--warn); }
     
     .status{
-      font-size: 12px; color: var(--muted);
-      display:flex; align-items:center; gap:8px;
-        display:flex;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 2px;
+      font-size: 12px;
+      color: var(--muted);
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
     .dot{
       width:10px; height:10px; border-radius:999px;
       background: rgba(255,210,120,.9);
       box-shadow: 0 0 0 6px rgba(255,210,120,.12);
     }
-      .priceRow{
-        display:flex;
-        align-items:baseline;
-        gap:10px;
-      }
-      .priceSub{
-        font-size: 12px;
-        color: var(--muted);
-        font-family: var(--mono);
-        line-height: 1;
-        white-space: nowrap;
-      }
     .dot.live{
       background: rgba(90,255,170,.95);
       box-shadow: 0 0 0 6px rgba(90,255,170,.12);
@@ -3283,8 +3288,12 @@
         ctx.rotate(rotation);
       }
       
-      // Mirror horizontal (sempre espelhado)
-      ctx.scale(-1, 1);
+      // Flip horizontal conforme direção:
+      // - imagem original está virada para a esquerda
+      // - por defeito (andar para a direita) espelhamos para ele olhar para a direita
+      if (characterVx >= 0) {
+        ctx.scale(-1, 1);
+      }
       
       // Draw character mantendo proporção
       ctx.drawImage(characterImg, -characterWidth/2, -characterHeight/2, characterWidth, characterHeight);
