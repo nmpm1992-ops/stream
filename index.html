@@ -783,12 +783,27 @@
     .status{
       font-size: 12px; color: var(--muted);
       display:flex; align-items:center; gap:8px;
-    }
+        display:flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 2px;
     .dot{
       width:10px; height:10px; border-radius:999px;
       background: rgba(255,210,120,.9);
       box-shadow: 0 0 0 6px rgba(255,210,120,.12);
     }
+      .priceRow{
+        display:flex;
+        align-items:baseline;
+        gap:10px;
+      }
+      .priceSub{
+        font-size: 12px;
+        color: var(--muted);
+        font-family: var(--mono);
+        line-height: 1;
+        white-space: nowrap;
+      }
     .dot.live{
       background: rgba(90,255,170,.95);
       box-shadow: 0 0 0 6px rgba(90,255,170,.12);
@@ -799,6 +814,9 @@
       padding: 16px;
       display:grid;
       grid-template-rows: 1fr;
+      body.mode-2 .priceSub{
+        font-size: 18px;
+      }
     }
     .player{
       border-radius: 16px;
@@ -809,6 +827,9 @@
       color: var(--muted);
       font-size: 13px;
     }
+      body.mode-1 .priceSub{
+        font-size: 16px;
+      }
     .player iframe{
       width:100%; height:100%;
       border:0;
@@ -1021,9 +1042,12 @@
       </div>
 
       <div class="price">
-        <span class="label">Price</span>
-        <span class="val" id="priceVal">—</span>
-        <span class="unit">SOL</span>
+        <span class="label">1 MEWVOLT</span>
+        <div class="priceRow">
+          <span class="val" id="priceVal">—</span>
+          <span class="unit">SOL</span>
+        </div>
+        <div class="priceSub" id="priceUsd">$—</div>
       </div>
 
       <div class="pill">
@@ -1167,6 +1191,8 @@
       // Nota: proxies públicos podem ficar instáveis/indisponíveis; por isso tentamos vários.
       corsProxies: [
         'https://corsproxy.io/?',
+        'https://api.allorigins.win/raw?url=',
+        'https://api.allorigins.win/get?url=',
         'https://r.jina.ai/',
         'https://api.codetabs.com/v1/proxy?quest='
       ],
@@ -1281,13 +1307,50 @@
       return [...new Set(list.filter(Boolean))];
     }
 
+    function shouldSkipDirectFetch(targetUrl) {
+      // Evita spam no console quando sabemos que vai falhar por CORS.
+      // (ex: Pump.fun bloqueia CORS; Solscan/Helius frequentemente bloqueiam)
+      try {
+        const u = new URL(targetUrl);
+        const host = u.hostname.toLowerCase();
+        return (
+          host === 'pump.fun' ||
+          host.endsWith('.pump.fun') ||
+          host === 'public-api.solscan.io' ||
+          host === 'api.solscan.io' ||
+          host === 'api.helius.xyz'
+        );
+      } catch {
+        return false;
+      }
+    }
+
+    function unwrapMaybeJsonProxy(text) {
+      const trimmed = (text || '').trim();
+      if (!trimmed) return text;
+      if (!(trimmed.startsWith('{') || trimmed.startsWith('['))) return text;
+      try {
+        const obj = JSON.parse(trimmed);
+        // allorigins /get?url= => { contents: "..." }
+        if (obj && typeof obj === 'object') {
+          if (typeof obj.contents === 'string') return obj.contents;
+          if (obj.data && typeof obj.data.contents === 'string') return obj.data.contents;
+        }
+      } catch {
+        // ignore
+      }
+      return text;
+    }
+
     async function fetchTextWithCorsFallback(targetUrl) {
       // 1) Tentar direto (se o servidor permitir CORS)
-      try {
-        const direct = await fetch(targetUrl);
-        if (direct.ok) return await direct.text();
-      } catch (_) {
-        // CORS bloqueado ou erro de rede
+      if (!shouldSkipDirectFetch(targetUrl)) {
+        try {
+          const direct = await fetch(targetUrl);
+          if (direct.ok) return await direct.text();
+        } catch (_) {
+          // CORS bloqueado ou erro de rede
+        }
       }
 
       const proxies = getCorsProxyCandidates();
@@ -1299,7 +1362,8 @@
             : (proxy + encodeURIComponent(targetUrl));
           const res = await fetch(proxiedUrl);
           if (!res.ok) throw new Error(`HTTP ${res.status}`);
-          return await res.text();
+          const raw = await res.text();
+          return unwrapMaybeJsonProxy(raw);
         } catch (e) {
           lastErr = e;
         }
@@ -1332,10 +1396,7 @@
     // 3. PumpPortal.fun não oferece endpoint de viewers
     async function fetchViewers() {
       try {
-        // Usa proxy CORS para contornar restrições
-        const proxyUrl = CONFIG.corsProxy + encodeURIComponent(CONFIG.pumpUrl);
-        const res = await fetch(proxyUrl);
-        const html = await res.text();
+        const html = await fetchTextWithCorsFallback(CONFIG.pumpUrl);
         
         // Tentar múltiplos padrões para encontrar viewer count
         let viewers = null;
@@ -1815,9 +1876,15 @@
     async function fetchPrice() {
       try {
         const apiUrl = `https://api.dexscreener.com/token-pairs/v1/solana/${CONFIG.contract}`;
-        const res = await fetch(apiUrl);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const data = await res.json();
+        let data;
+        try {
+          const res = await fetch(apiUrl);
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          data = await res.json();
+        } catch (_) {
+          // Fallback via proxies públicos (se o browser bloquear cross-origin)
+          data = await fetchJsonWithCorsFallback(apiUrl);
+        }
         priceAttempts = 0; // Reset on success
         
         if (data.pairs && data.pairs.length > 0) {
