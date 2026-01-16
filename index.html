@@ -449,6 +449,79 @@
       color: var(--muted);
       margin-top: 4px;
     }
+
+    /* Lista de presentes (mode-1) */
+    .giftPanel{
+      display: none;
+      position: absolute;
+      right: 24px;
+      top: 120px;
+      width: 320px;
+      max-height: 360px;
+      overflow-y: auto;
+      padding: 16px;
+      border-radius: 14px;
+      border: 3px solid rgba(255,210,90,.4);
+      background: rgba(0,0,0,.75);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 24px rgba(255,210,90,.2), var(--shadow);
+      z-index: 6;
+      pointer-events: none;
+    }
+    body.mode-1 .giftPanel{
+      display: block;
+    }
+    body.mode-2 .giftPanel{
+      display: none;
+    }
+    .giftPanel::-webkit-scrollbar{
+      width: 6px;
+    }
+    .giftPanel::-webkit-scrollbar-track{
+      background: rgba(255,255,255,.05);
+      border-radius: 3px;
+    }
+    .giftPanel::-webkit-scrollbar-thumb{
+      background: rgba(255,210,90,.35);
+      border-radius: 3px;
+    }
+    .giftPanel .giftTitle{
+      font-family: var(--mono);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255,210,90,.9);
+      margin-bottom: 10px;
+    }
+    .giftItem{
+      padding: 8px 10px;
+      margin-bottom: 8px;
+      border-radius: 10px;
+      background: rgba(255,255,255,.08);
+      border-left: 3px solid rgba(255,210,90,.6);
+      animation: slideInComment 0.3s ease-out;
+    }
+    .giftItem .giftMain{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .giftItem .giftName{
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    .giftItem .giftQty{
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255,210,90,.95);
+    }
+    .giftItem .giftMeta{
+      font-size: 10px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
     
     /* Alert ajustado - visível em todas as páginas */
     body.mode-0 .alert{
@@ -1144,6 +1217,12 @@
       <div id="commentsList"></div>
     </div>
 
+    <!-- Lista de presentes (mode-1) -->
+    <div class="giftPanel" id="giftPanel">
+      <div class="giftTitle">Presentes</div>
+      <div id="giftList"></div>
+    </div>
+
     <div class="alert" id="alert">
       <div class="mascot">
         <img src="https://mewvolt.online/character.png" alt="" />
@@ -1183,6 +1262,9 @@
     <source src="alert.mp3" type="audio/mpeg" />
   </audio>
 
+  <!-- Three.js para cenário 2.5D (Mode 0) -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+
   <!-- Socket.IO para conexão com chat do Pump Fun -->
   <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
 
@@ -1203,6 +1285,9 @@
       ],
       solscanApi: 'https://api.solscan.io', // API Solscan
       enableSolscanPolling: false, // Desligado por padrão: evita erros de CORS em modo "só frontend"
+      enableChatScrape: true, // Permitir fallback via scraping HTML para comandos/chat
+      chatScrapeInterval: 10000, // ms
+      useThreeGarden: true, // Usar cenário 2.5D em Three.js no mode-0
       minBuyThreshold: 0.01, // SOL
       alertCooldown: 1500 // ms
     };
@@ -1229,7 +1314,12 @@
     let viewersInterval = null;
     let tasksInterval = null;
     let solscanInterval = null;
+    let giftsInterval = null;
     let processedTxSignatures = new Set(); // Rastrear transações já processadas
+
+    // Presentes (comandos do chat)
+    const giftStorageKey = 'pumpfun_gifts_v1';
+    let giftEntries = [];
 
     // DOM Elements
     const viewersEl = document.getElementById('viewers');
@@ -1252,6 +1342,8 @@
     const overlaySellCountEl = document.getElementById('overlaySellCount');
     const tickerTitleEl = document.getElementById('tickerTitle');
     const tickerTrackEl = document.getElementById('tickerTrack');
+    const giftListEl = document.getElementById('giftList');
+    const giftPanelEl = document.getElementById('giftPanel');
     
     // Tornar ticker editável - remover animação quando focado
     if (tickerTitleEl) {
@@ -1502,7 +1594,17 @@
     // Comentários da live
     let liveComments = [];
     let commentsInterval = null;
+    let chatScrapeActive = false;
     
+    function ensureChatScrapeRunning() {
+      if (!CONFIG.enableChatScrape) return;
+      if (commentsInterval) return;
+      chatScrapeActive = true;
+      fetchLiveComments();
+      commentsInterval = setInterval(fetchLiveComments, CONFIG.chatScrapeInterval);
+      console.log('[Chat Scrape] Ativado fallback HTML');
+    }
+
     async function fetchAllCoinData() {
       // Fetch Pump.fun data and price in parallel
       try {
@@ -2125,9 +2227,6 @@
     // Fetch comentários da live do Pump.fun
     let commentsAttempts = 0;
     async function fetchLiveComments() {
-      // Buscar comentários no mode-1 e mode-2
-      if (pageId !== '1' && pageId !== '2') return;
-      
       // Se estiver em file://, pular
       if (window.location.protocol === 'file:') {
         commentsAttempts++;
@@ -2217,7 +2316,7 @@
           
           if (!isDuplicate && messageText.length >= 2 && messageText.length <= 500) {
             // Processar comandos do chat
-            processChatCommand(messageText);
+            processChatCommand(messageText, userName);
             
             // Encurtar nome de utilizador se necessário
             const displayName = userName.length > 20 ? userName.slice(0, 20) : userName;
@@ -2256,7 +2355,7 @@
                 
                 if (!isDuplicate) {
                   // Processar comandos do chat
-                  processChatCommand(text);
+                  processChatCommand(text, userName);
                   
                   newComments.push({
                     user: userName.length > 20 ? userName.slice(0, 20) : userName,
@@ -2327,6 +2426,79 @@
           <div class="commentTime">${timeText} ago</div>
         `;
         commentsListEl.appendChild(div);
+      });
+    }
+
+    // Presentes (chat commands)
+    function loadGiftEntries() {
+      try {
+        const raw = localStorage.getItem(giftStorageKey);
+        const parsed = raw ? JSON.parse(raw) : [];
+        return Array.isArray(parsed) ? parsed : [];
+      } catch {
+        return [];
+      }
+    }
+
+    function saveGiftEntries() {
+      try {
+        const limited = giftEntries.slice(0, 200);
+        localStorage.setItem(giftStorageKey, JSON.stringify(limited));
+      } catch (err) {
+        console.warn('[Gifts] Falha ao salvar no localStorage:', err);
+      }
+    }
+
+    function addGiftEntry({ user, item, qty }) {
+      if (!item) return;
+      const safeQty = Math.max(1, Math.min(999, Number(qty) || 1));
+      giftEntries.unshift({
+        user: user || 'User',
+        item: item,
+        qty: safeQty,
+        timestamp: Date.now()
+      });
+      giftEntries = giftEntries.slice(0, 200);
+      saveGiftEntries();
+      updateGiftDisplay();
+    }
+
+    function clearGiftEntries() {
+      giftEntries = [];
+      saveGiftEntries();
+      updateGiftDisplay();
+    }
+
+    function formatTimeAgo(ts) {
+      const seconds = Math.max(1, Math.floor((Date.now() - ts) / 1000));
+      if (seconds < 60) return `${seconds}s`;
+      const minutes = Math.floor(seconds / 60);
+      if (minutes < 60) return `${minutes}m`;
+      const hours = Math.floor(minutes / 60);
+      if (hours < 24) return `${hours}h`;
+      const days = Math.floor(hours / 24);
+      return `${days}d`;
+    }
+
+    function updateGiftDisplay() {
+      if (!giftListEl || pageId !== '1') return;
+      if (giftPanelEl) {
+        giftPanelEl.style.display = giftEntries.length ? '' : 'none';
+      }
+      giftListEl.innerHTML = '';
+      const recentGifts = giftEntries.slice(0, 8);
+      recentGifts.forEach(entry => {
+        const div = document.createElement('div');
+        div.className = 'giftItem';
+        const timeText = formatTimeAgo(entry.timestamp);
+        div.innerHTML = `
+          <div class="giftMain">
+            <div class="giftName">${escapeHtml(entry.item)}</div>
+            <div class="giftQty">x${entry.qty}</div>
+          </div>
+          <div class="giftMeta">${escapeHtml(entry.user)} • ${timeText} ago</div>
+        `;
+        giftListEl.appendChild(div);
       });
     }
     
@@ -2535,7 +2707,7 @@
         console.log('[Chat WS] Nova mensagem recebida:', { user: newComment.user, text: newComment.text.substring(0, 50) });
 
         // Processar comandos do chat (SEMPRE, mesmo que não exiba o chat)
-        processChatCommand(newComment.text);
+        processChatCommand(newComment.text, newComment.user);
 
         // Adicionar comentário se não for duplicado (apenas se estiver em mode-1 ou mode-2)
         if (pageId === '1' || pageId === '2') {
@@ -2695,10 +2867,12 @@
           console.warn('[Chat WS] Erro de conexão:', err.message);
           // Fallback para scraping HTML se WebSocket falhar
           console.log('[Chat WS] Usando fallback de scraping HTML para comandos');
+          ensureChatScrapeRunning();
         });
 
         chatSocket.on('error', (err) => {
           console.error('[Chat WS] Erro no socket:', err);
+          ensureChatScrapeRunning();
         });
 
       } catch (err) {
@@ -2708,7 +2882,7 @@
     }
 
     // Processar comandos do chat
-    function processChatCommand(text) {
+    function processChatCommand(text, user) {
       if (!text || typeof text !== 'string') return;
       
       const trimmed = text.trim();
@@ -2719,9 +2893,13 @@
         console.log('[Chat Command] ✅ /jump detectado!');
         
         // Mode-0: Jardim (canvas) - fazer personagem saltar
-        if ((pageId === '0' || !pageId) && typeof isJumping !== 'undefined') {
-          isJumping = true;
-          characterVy = -12 - Math.random() * 4; // Entre -12 e -16
+        if (pageId === '0' || !pageId) {
+          if (usingThreeGarden) {
+            triggerThreeJump();
+          } else if (typeof isJumping !== 'undefined') {
+            isJumping = true;
+            characterVy = -12 - Math.random() * 4; // Entre -12 e -16
+          }
           console.log('[Chat Command] Personagem no jardim saltou!');
         }
         
@@ -2750,16 +2928,23 @@
         console.log('[Chat Command] ✅ /redobrar detectado!');
         
         // Mode-0: Jardim
-        if ((pageId === '0' || !pageId) && typeof isJumping !== 'undefined') {
-          // Primeiro salto
-          isJumping = true;
-          characterVy = -12 - Math.random() * 4;
-          
-          // Segundo salto após um delay
-          setTimeout(() => {
+        if (pageId === '0' || !pageId) {
+          if (usingThreeGarden) {
+            triggerThreeJump();
+            setTimeout(() => {
+              triggerThreeJump();
+            }, 400);
+          } else if (typeof isJumping !== 'undefined') {
+            // Primeiro salto
             isJumping = true;
             characterVy = -12 - Math.random() * 4;
-          }, 400);
+            
+            // Segundo salto após um delay
+            setTimeout(() => {
+              isJumping = true;
+              characterVy = -12 - Math.random() * 4;
+            }, 400);
+          }
           console.log('[Chat Command] Personagem no jardim redobrou!');
         }
         
@@ -2785,10 +2970,56 @@
           });
         }
       }
-      
+
+      // Comando /presente ou /gift - registrar presente no overlay
+      const giftMatch = trimmed.match(/^\/(presente|gift)\s+(.+)/i);
+      if (giftMatch) {
+        let payload = giftMatch[2].trim();
+        if (payload) {
+          let qty = 1;
+          const qtyMatch = payload.match(/^(\d{1,3})\s+(.+)/);
+          if (qtyMatch) {
+            qty = Math.max(1, Math.min(999, parseInt(qtyMatch[1], 10)));
+            payload = qtyMatch[2].trim();
+          }
+          const item = payload.slice(0, 80);
+          if (item) {
+            addGiftEntry({ user: user || 'User', item, qty });
+            console.log('[Chat Command] ✅ Presente registrado:', { item, qty });
+            return;
+          }
+        }
+      }
+
+      // Comando /limparpresentes - limpar lista
+      if (
+        command === '/limparpresentes' ||
+        command === '/clearpresentes' ||
+        command === '/cleargifts' ||
+        command === '/resetpresentes'
+      ) {
+        clearGiftEntries();
+        console.log('[Chat Command] ✅ Lista de presentes limpa!');
+        return;
+      }
+
       // Adicionar mais comandos aqui se necessário
       // Exemplo: /dance, /wave, etc.
     }
+
+    // Three.js Garden (Mode 0) - 2.5D low-poly
+    let usingThreeGarden = false;
+    let threeRenderer = null;
+    let threeScene = null;
+    let threeCamera = null;
+    let threeClock = null;
+    let threeAnimId = null;
+    let threeCharacter = null;
+    let threeCharacterShadow = null;
+    let threeCharacterSpeed = 0.6;
+    let threeCharacterDir = 1;
+    let threeJumpVelocity = 0;
+    let threeIsJumping = false;
 
     // Canvas Garden Animation (Mode 0)
     let canvas, ctx, characterImg, logoImg;
@@ -2993,6 +3224,160 @@
       }
 
       ctx.restore();
+    }
+
+    function triggerThreeJump() {
+      if (!threeCharacter) return;
+      threeIsJumping = true;
+      threeJumpVelocity = 3 + Math.random() * 0.6;
+    }
+
+    function createLowPolyTree(trunkMat, leafMat) {
+      const group = new THREE.Group();
+      const trunk = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.18, 0.7, 6), trunkMat);
+      trunk.position.y = 0.35;
+      const foliage = new THREE.Mesh(new THREE.ConeGeometry(0.6, 1.2, 7), leafMat);
+      foliage.position.y = 1.05;
+      group.add(trunk, foliage);
+      return group;
+    }
+
+    function createLowPolyRock(rockMat) {
+      return new THREE.Mesh(new THREE.DodecahedronGeometry(0.25, 0), rockMat);
+    }
+
+    function initThreeGarden() {
+      const gardenCanvas = document.getElementById('gardenCanvas');
+      if (!gardenCanvas || typeof THREE === 'undefined') {
+        usingThreeGarden = false;
+        initGarden();
+        return;
+      }
+
+      usingThreeGarden = true;
+      if (threeAnimId) cancelAnimationFrame(threeAnimId);
+
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+
+      threeRenderer = new THREE.WebGLRenderer({ canvas: gardenCanvas, antialias: true, alpha: true });
+      threeRenderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+      threeRenderer.setSize(width, height, false);
+      threeRenderer.outputColorSpace = THREE.SRGBColorSpace;
+
+      threeScene = new THREE.Scene();
+      threeScene.background = new THREE.Color(0x89c6ff);
+      threeScene.fog = new THREE.Fog(0x89c6ff, 8, 28);
+
+      threeCamera = new THREE.PerspectiveCamera(35, width / height, 0.1, 100);
+      threeCamera.position.set(6.5, 6.2, 8.2);
+      threeCamera.lookAt(0, 0.6, 0);
+
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.65);
+      const sunLight = new THREE.DirectionalLight(0xffffff, 0.85);
+      sunLight.position.set(6, 10, 4);
+      threeScene.add(ambientLight, sunLight);
+
+      const groundMat = new THREE.MeshStandardMaterial({ color: 0x7fd08f, flatShading: true });
+      const ground = new THREE.Mesh(new THREE.PlaneGeometry(34, 34, 1, 1), groundMat);
+      ground.rotation.x = -Math.PI / 2;
+      ground.position.y = 0;
+      threeScene.add(ground);
+
+      const pathMat = new THREE.MeshStandardMaterial({ color: 0xe9d9b1, flatShading: true });
+      const path = new THREE.Mesh(new THREE.BoxGeometry(14, 0.1, 4), pathMat);
+      path.position.set(0, 0.05, 1);
+      threeScene.add(path);
+
+      const trunkMat = new THREE.MeshStandardMaterial({ color: 0x8a5a3a, flatShading: true });
+      const leafMat = new THREE.MeshStandardMaterial({ color: 0x4fa66f, flatShading: true });
+      const rockMat = new THREE.MeshStandardMaterial({ color: 0x8c8c8c, flatShading: true });
+
+      const envGroup = new THREE.Group();
+      for (let i = 0; i < 16; i++) {
+        const tree = createLowPolyTree(trunkMat, leafMat);
+        const angle = (i / 16) * Math.PI * 2;
+        const radius = 6.5 + (i % 3) * 0.7;
+        tree.position.set(Math.cos(angle) * radius, 0, Math.sin(angle) * radius);
+        tree.scale.setScalar(0.9 + (i % 4) * 0.08);
+        envGroup.add(tree);
+      }
+      for (let i = 0; i < 10; i++) {
+        const rock = createLowPolyRock(rockMat);
+        rock.position.set(-4 + i * 0.8, 0.18, -3 + (i % 2) * 0.5);
+        rock.rotation.set(0, i * 0.6, 0);
+        envGroup.add(rock);
+      }
+      threeScene.add(envGroup);
+
+      const loader = new THREE.TextureLoader();
+      const charTexture = loader.load('https://mewvolt.online/character.png');
+      charTexture.colorSpace = THREE.SRGBColorSpace;
+      const spriteMat = new THREE.SpriteMaterial({ map: charTexture, transparent: true });
+      threeCharacter = new THREE.Sprite(spriteMat);
+      threeCharacter.scale.set(2.1, 3.0, 1);
+      threeCharacter.position.set(-3, 1.45, 0);
+      threeScene.add(threeCharacter);
+
+      const shadowMat = new THREE.MeshBasicMaterial({ color: 0x000000, transparent: true, opacity: 0.25 });
+      threeCharacterShadow = new THREE.Mesh(new THREE.CircleGeometry(0.7, 20), shadowMat);
+      threeCharacterShadow.rotation.x = -Math.PI / 2;
+      threeCharacterShadow.position.set(-3, 0.02, 0);
+      threeScene.add(threeCharacterShadow);
+
+      threeClock = new THREE.Clock();
+
+      function onResize() {
+        if (!threeCamera || !threeRenderer) return;
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+        threeCamera.aspect = w / h;
+        threeCamera.updateProjectionMatrix();
+        threeRenderer.setSize(w, h, false);
+      }
+
+      window.addEventListener('resize', onResize);
+
+      function animateThreeGarden() {
+        if (!threeRenderer || !threeScene || !threeCamera || !threeCharacter) return;
+        const dt = Math.min(0.033, threeClock.getDelta());
+        const t = threeClock.elapsedTime;
+
+        threeCharacter.position.x += threeCharacterDir * threeCharacterSpeed * dt;
+        if (threeCharacter.position.x > 5.6) {
+          threeCharacterDir = -1;
+          threeCharacter.scale.x = -Math.abs(threeCharacter.scale.x);
+        } else if (threeCharacter.position.x < -5.6) {
+          threeCharacterDir = 1;
+          threeCharacter.scale.x = Math.abs(threeCharacter.scale.x);
+        }
+
+        const baseY = 1.45;
+        if (threeIsJumping) {
+          threeJumpVelocity -= 6.8 * dt;
+          threeCharacter.position.y += threeJumpVelocity * dt;
+          if (threeCharacter.position.y <= baseY) {
+            threeCharacter.position.y = baseY;
+            threeJumpVelocity = 0;
+            threeIsJumping = false;
+          }
+        } else {
+          threeCharacter.position.y = baseY + Math.sin(t * 3.2) * 0.05;
+        }
+
+        if (threeCharacterShadow) {
+          threeCharacterShadow.position.x = threeCharacter.position.x;
+          threeCharacterShadow.position.z = threeCharacter.position.z;
+          const height = Math.max(0, threeCharacter.position.y - baseY);
+          const scale = 1 - Math.min(height * 0.35, 0.45);
+          threeCharacterShadow.scale.set(scale, scale, scale);
+        }
+
+        threeRenderer.render(threeScene, threeCamera);
+        threeAnimId = requestAnimationFrame(animateThreeGarden);
+      }
+
+      animateThreeGarden();
     }
     
     function initGarden() {
@@ -3760,6 +4145,8 @@
       // Start intervals
       fetchAllCoinData(); // Initial call - busca tudo
       loadTasks();
+      giftEntries = loadGiftEntries();
+      updateGiftDisplay();
 
       // Atualizar informações da moeda a cada 10 segundos
       fetchAllCoinData(); // Initial call
@@ -3767,10 +4154,12 @@
       priceInterval = null; // Integrado em fetchAllCoinData
       tasksInterval = setInterval(loadTasks, 10000); // 10 segundos
       
-      // Atualizar comentários a cada 8 segundos (mais frequente) - mode-1 e mode-2
-      if (pageId === '1' || pageId === '2') {
-        fetchLiveComments();
-        commentsInterval = setInterval(fetchLiveComments, 8000);
+      // Atualizar comentários / comandos via scraping (fallback)
+      ensureChatScrapeRunning();
+
+      // Atualizar lista de presentes (mode-1)
+      if (pageId === '1') {
+        giftsInterval = setInterval(updateGiftDisplay, 10000);
       }
       
       // Buscar transações do Solscan para detectar compras (todas as páginas)
@@ -3787,7 +4176,12 @@
       
       // Initialize garden if mode 0
       if (pageId === '0' || !pageId) {
-        initGarden();
+        if (CONFIG.useThreeGarden && typeof THREE !== 'undefined') {
+          initThreeGarden();
+        } else {
+          usingThreeGarden = false;
+          initGarden();
+        }
       }
     }
 
@@ -3802,7 +4196,10 @@
       if (priceInterval) clearInterval(priceInterval);
       if (tasksInterval) clearInterval(tasksInterval);
       if (commentsInterval) clearInterval(commentsInterval);
+      chatScrapeActive = false;
       if (solscanInterval) clearInterval(solscanInterval);
+      if (giftsInterval) clearInterval(giftsInterval);
+      if (threeAnimId) cancelAnimationFrame(threeAnimId);
     });
   </script>
 </body>
