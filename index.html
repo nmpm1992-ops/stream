@@ -814,9 +814,12 @@
       padding: 16px;
       display:grid;
       grid-template-rows: 1fr;
-      body.mode-2 .priceSub{
-        font-size: 18px;
-      }
+    }
+    body.mode-2 .priceSub{
+      font-size: 18px;
+    }
+    body.mode-1 .priceSub{
+      font-size: 16px;
     }
     .player{
       border-radius: 16px;
@@ -827,9 +830,6 @@
       color: var(--muted);
       font-size: 13px;
     }
-      body.mode-1 .priceSub{
-        font-size: 16px;
-      }
     .player iframe{
       width:100%; height:100%;
       border:0;
@@ -2349,10 +2349,79 @@
       }
     }
 
+    // Função auxiliar para processar mensagem do chat
+    function processChatMessage(data) {
+      try {
+        // Normalizar estrutura de dados (pode vir em diferentes formatos)
+        let user = null;
+        let text = null;
+        let timestamp = Date.now();
+        let messageId = null;
+
+        // Tentar diferentes estruturas de dados
+        if (typeof data === 'string') {
+          try {
+            data = JSON.parse(data);
+          } catch {
+            text = data;
+          }
+        }
+
+        if (data && typeof data === 'object') {
+          // Estrutura padrão
+          user = data.user || data.username || data.author || data.sender || 'User';
+          text = data.text || data.message || data.content || data.body || '';
+          timestamp = data.timestamp || data.time || data.createdAt || Date.now();
+          messageId = data.id || data.messageId || data._id || Date.now().toString();
+          
+          // Se não encontrou user/text, tentar estrutura aninhada
+          if (!user && data.data) {
+            user = data.data.user || data.data.username || 'User';
+            text = data.data.text || data.data.message || '';
+          }
+        }
+
+        if (!text || text.trim().length === 0) {
+          console.log('[Chat WS] Mensagem vazia ignorada:', data);
+          return;
+        }
+
+        const newComment = {
+          user: user || 'User',
+          text: text.trim(),
+          timestamp: timestamp,
+          id: messageId || Date.now().toString()
+        };
+
+        console.log('[Chat WS] Nova mensagem recebida:', { user: newComment.user, text: newComment.text.substring(0, 50) });
+
+        // Processar comandos do chat (SEMPRE, mesmo que não exiba o chat)
+        processChatCommand(newComment.text);
+
+        // Adicionar comentário se não for duplicado (apenas se estiver em mode-1 ou mode-2)
+        if (pageId === '1' || pageId === '2') {
+          const isDuplicate = liveComments.some(c => {
+            const sameText = c.text.toLowerCase().trim() === newComment.text.toLowerCase().trim();
+            const sameUser = c.user.toLowerCase().trim() === newComment.user.toLowerCase().trim();
+            const recent = Date.now() - c.timestamp < 300000; // 5 minutos
+            return sameText && sameUser && recent;
+          });
+
+          if (!isDuplicate) {
+            liveComments.unshift(newComment);
+            liveComments = liveComments.slice(0, 30); // Manter últimos 30
+            updateCommentsDisplay();
+          }
+        }
+      } catch (err) {
+        console.error('[Chat WS] Erro ao processar mensagem:', err, data);
+      }
+    }
+
     // Connect to Pump Fun Chat WebSocket (Socket.IO)
     function connectChatWS() {
-      // Só conectar no mode-1 e mode-2 (onde o chat é exibido)
-      if (pageId !== '1' && pageId !== '2') return;
+      // Conectar em TODOS os modos para processar comandos
+      // (mesmo que o chat não seja exibido visualmente)
       
       try {
         // Verificar se socket.io está disponível
@@ -2372,6 +2441,12 @@
           return;
         }
 
+        // Se já existe conexão, não reconectar
+        if (chatSocket && chatSocket.connected) {
+          console.log('[Chat WS] Já conectado');
+          return;
+        }
+
         // Extrair o token/room ID do contract
         // O Pump Fun usa o contract address como room identifier
         const roomId = CONFIG.contract;
@@ -2380,72 +2455,70 @@
         
         // Conectar ao socket.io do Pump Fun
         chatSocket = io(CONFIG.chatWsUrl, {
-          transports: ['websocket'],
-          upgrade: false,
+          transports: ['websocket', 'polling'], // Tentar ambos
+          upgrade: true,
           reconnection: true,
-          reconnectionDelay: 1000,
-          reconnectionAttempts: 5
+          reconnectionDelay: 2000,
+          reconnectionDelayMax: 10000,
+          reconnectionAttempts: Infinity, // Tentar reconectar indefinidamente
+          timeout: 20000
         });
 
         chatSocket.on('connect', () => {
-          console.log('[Chat WS] Conectado ao chat do Pump Fun');
+          console.log('[Chat WS] ✅ Conectado ao chat do Pump Fun');
           
-          // Entrar na sala do token
+          // Entrar na sala do token - tentar múltiplos formatos
           chatSocket.emit('join_room', roomId);
-          
-          // Também tentar outros eventos comuns
+          chatSocket.emit('join', roomId);
           chatSocket.emit('subscribe', { room: roomId });
+          chatSocket.emit('subscribe', roomId);
+          chatSocket.emit('room', roomId);
+          
+          console.log('[Chat WS] Tentando entrar na sala:', roomId);
         });
 
+        // Evento principal de mensagem
         chatSocket.on('message', (data) => {
-          try {
-            // Processar mensagem recebida
-            if (data && data.user && data.text) {
-              const newComment = {
-                user: data.user,
-                text: data.text,
-                timestamp: data.timestamp || Date.now(),
-                id: data.id || data.messageId || Date.now().toString()
-              };
-              
-              // Processar comandos do chat
-              processChatCommand(newComment.text);
-              
-              // Adicionar comentário se não for duplicado
-              const isDuplicate = liveComments.some(c => {
-                const sameText = c.text.toLowerCase().trim() === newComment.text.toLowerCase().trim();
-                const sameUser = c.user.toLowerCase().trim() === newComment.user.toLowerCase().trim();
-                const recent = Date.now() - c.timestamp < 300000; // 5 minutos
-                return sameText && sameUser && recent;
-              });
-              
-              if (!isDuplicate) {
-                liveComments.unshift(newComment);
-                liveComments = liveComments.slice(0, 30); // Manter últimos 30
-                updateCommentsDisplay();
-              }
+          console.log('[Chat WS] Evento "message" recebido:', data);
+          processChatMessage(data);
+        });
+
+        // Todos os outros eventos possíveis do Pump Fun
+        const possibleEvents = [
+          'new_message',
+          'chat_message',
+          'room_message',
+          'token_message',
+          'chat',
+          'msg',
+          'comment',
+          'live_message',
+          'stream_message'
+        ];
+
+        possibleEvents.forEach(eventName => {
+          chatSocket.on(eventName, (data) => {
+            console.log(`[Chat WS] Evento "${eventName}" recebido:`, data);
+            processChatMessage(data);
+          });
+        });
+
+        // Capturar TODOS os eventos para debug
+        const originalEmit = chatSocket.emit.bind(chatSocket);
+        chatSocket.emit = function(...args) {
+          console.log('[Chat WS] Emit:', args[0], args.slice(1));
+          return originalEmit(...args);
+        };
+
+        // Listener genérico para capturar qualquer evento não tratado
+        chatSocket.onAny((eventName, ...args) => {
+          if (!['connect', 'disconnect', 'connect_error', 'error'].includes(eventName)) {
+            console.log(`[Chat WS] Evento genérico "${eventName}":`, args);
+            // Se parecer uma mensagem, tentar processar
+            if (args.length > 0 && (args[0]?.text || args[0]?.message || typeof args[0] === 'string')) {
+              processChatMessage(args[0]);
             }
-          } catch (err) {
-            console.error('[Chat WS] Erro ao processar mensagem:', err);
           }
-        });
-
-        // Tentar outros eventos possíveis do Pump Fun
-        chatSocket.on('new_message', (data) => {
-          chatSocket.emit('message', data);
-        });
-
-        chatSocket.on('chat_message', (data) => {
-          chatSocket.emit('message', data);
-        });
-
-        // Eventos alternativos que podem ser usados
-        chatSocket.on('room_message', (data) => {
-          chatSocket.emit('message', data);
-        });
-
-        chatSocket.on('token_message', (data) => {
-          chatSocket.emit('message', data);
         });
 
         // Tentar obter viewers do chat (se disponível)
@@ -2465,14 +2538,28 @@
           }
         });
 
-        chatSocket.on('disconnect', () => {
-          console.log('[Chat WS] Desconectado do chat');
+        chatSocket.on('disconnect', (reason) => {
+          console.log('[Chat WS] Desconectado do chat. Razão:', reason);
+          // Tentar reconectar após delay
+          if (reason === 'io server disconnect') {
+            // Servidor desconectou, tentar reconectar manualmente
+            setTimeout(() => {
+              if (!chatSocket.connected) {
+                console.log('[Chat WS] Tentando reconectar...');
+                chatSocket.connect();
+              }
+            }, 2000);
+          }
         });
 
         chatSocket.on('connect_error', (err) => {
           console.warn('[Chat WS] Erro de conexão:', err.message);
           // Fallback para scraping HTML se WebSocket falhar
-          console.log('[Chat WS] Usando fallback de scraping HTML');
+          console.log('[Chat WS] Usando fallback de scraping HTML para comandos');
+        });
+
+        chatSocket.on('error', (err) => {
+          console.error('[Chat WS] Erro no socket:', err);
         });
 
       } catch (err) {
@@ -2485,19 +2572,18 @@
     function processChatCommand(text) {
       if (!text || typeof text !== 'string') return;
       
-      const command = text.trim().toLowerCase();
+      const trimmed = text.trim();
+      const command = trimmed.toLowerCase();
       
       // Comando /jump - fazer o personagem saltar
       if (command === '/jump' || command.startsWith('/jump ')) {
-        console.log('[Chat Command] /jump detectado!');
+        console.log('[Chat Command] ✅ /jump detectado!');
         
         // Mode-0: Jardim (canvas) - fazer personagem saltar
-        if (pageId === '0' || !pageId) {
-          if (typeof isJumping !== 'undefined') {
-            isJumping = true;
-            characterVy = -12 - Math.random() * 4; // Entre -12 e -16
-            console.log('[Chat Command] Personagem no jardim saltou!');
-          }
+        if ((pageId === '0' || !pageId) && typeof isJumping !== 'undefined') {
+          isJumping = true;
+          characterVy = -12 - Math.random() * 4; // Entre -12 e -16
+          console.log('[Chat Command] Personagem no jardim saltou!');
         }
         
         // Mode-1 e Mode-2: Mascot (imagem) - animação CSS
@@ -2522,24 +2608,20 @@
       
       // Comando /redobrar ou /double - fazer personagem redobrar (pular duas vezes)
       if (command === '/redobrar' || command === '/double' || command.startsWith('/redobrar ') || command.startsWith('/double ')) {
-        console.log('[Chat Command] /redobrar detectado!');
+        console.log('[Chat Command] ✅ /redobrar detectado!');
         
         // Mode-0: Jardim
-        if (pageId === '0' || !pageId) {
-          if (typeof isJumping !== 'undefined') {
-            // Primeiro salto
+        if ((pageId === '0' || !pageId) && typeof isJumping !== 'undefined') {
+          // Primeiro salto
+          isJumping = true;
+          characterVy = -12 - Math.random() * 4;
+          
+          // Segundo salto após um delay
+          setTimeout(() => {
             isJumping = true;
             characterVy = -12 - Math.random() * 4;
-            
-            // Segundo salto após um delay
-            setTimeout(() => {
-              if (!isJumping) {
-                isJumping = true;
-                characterVy = -12 - Math.random() * 4;
-              }
-            }, 400);
-            console.log('[Chat Command] Personagem no jardim redobrou!');
-          }
+          }, 400);
+          console.log('[Chat Command] Personagem no jardim redobrou!');
         }
         
         // Mode-1 e Mode-2: Mascot
@@ -2564,6 +2646,9 @@
           });
         }
       }
+      
+      // Adicionar mais comandos aqui se necessário
+      // Exemplo: /dance, /wave, etc.
     }
 
     // Canvas Garden Animation (Mode 0)
@@ -3303,7 +3388,7 @@
       // Connect WebSocket
       connectWS();
       
-      // Connect to Chat WebSocket (mode-1 e mode-2)
+      // Connect to Chat WebSocket (TODOS os modos para processar comandos)
       connectChatWS();
       
       // Initialize garden if mode 0
