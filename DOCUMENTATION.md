@@ -226,6 +226,58 @@ const CONFIG = {
    - `https://livechat.pump.fun` (Socket.IO)
    - Chat em tempo real
 
+## Servidor Node.js (`server.js`) — Endpoints Locais
+
+O `server.js` serve o `index.html`, fornece **SSE** para chat/trades e endpoints para obter dados da Pump.fun.
+
+### Health
+- `GET /health`
+
+### Proxy (CORS-safe, com allowlist de hosts)
+- `GET /proxy?url=<URL>`
+
+### Trades (SSE via PumpPortal)
+- `GET /trades-sse?mint=<MINT>`
+
+### Coin data (Pump frontend API)
+- `GET /pump/coin?mint=<MINT>`
+- `GET /coin-sse?mint=<MINT>&interval=<ms>`
+
+### Chat (SSE via livechat.pump.fun)
+- `GET /chat-sse?room=<MINT>`
+- **Commands-only (recomendado para jogo)**: `GET /chat-sse?room=<MINT>&commands=1`
+  - Só emite `event=command` quando a mensagem começa com `/`
+  - Exemplo: `/jump` → `cmd="jump"`, `args=[]`
+
+### Chat history (JSON via Socket.IO: `joinRoom` + `getMessageHistory`)
+- `GET /chat-scrape?mint=<MINT>`
+  - Retorna `{ username, wallet(userAddress), message, timestamp, ... }`
+  - Inclui debug do join em `join.authenticated` (se vier `false`, falta auth no `.env`)
+
+### Viewer HTML (para testar manualmente)
+- `GET /render/chat?mint=<MINT>`
+
+### Render coin page (debug / visualização)
+- `GET /render/coin?mint=<MINT>`
+  - Default: **static-safe** (remove scripts para evitar erro de Next.js em localhost)
+  - Interativo (pode falhar): `GET /render/coin?mint=<MINT>&mode=interactive`
+
+### Fallback “browser” (somente local — não recomendado em cPanel)
+> Estes métodos requerem Chrome com CDP (`--remote-debugging-port=9222`) e uma tab autenticada aberta.
+
+- `GET /chat-browser-scrape?mint=<MINT>` (scrape DOM — frágil)
+- `GET /chat-browser-ws?mint=<MINT>&listenMs=15000` (sniff de WebSocket — devolve apenas mensagens novas durante `listenMs`)
+
+## `.env` (Autenticação Pump.fun)
+
+Crie um arquivo `.env` (não versionar) e defina **um** dos itens abaixo:
+
+- `PUMPFUN_JWT=<seu auth_token>`
+- `PUMPFUN_COOKIE=<cookie completo do browser>`
+
+Opcional:
+- `PUMPFUN_USERNAME=<nome>` (usado no `joinRoom`)
+
 ### Proxies CORS
 
 - `https://api.allorigins.win/raw?url=`
@@ -253,8 +305,8 @@ const CONFIG = {
 ### Pré-requisitos
 
 - OBS Studio
-- Servidor web local (Python, Node, ou qualquer servidor estático)
-- Navegador moderno com suporte a WebSocket
+- Node.js (recomendado: **24.6.0** em produção)
+- Navegador moderno com suporte a WebSocket (para o overlay)
 
 ### Instalação
 
@@ -276,20 +328,21 @@ const CONFIG = {
 }
 ```
 
-3. **Iniciar Servidor Local**:
+3. **Instalar dependências (Node)**:
 ```bash
-# Python
-python -m http.server 8000
-
-# Node
-npx serve .
-
-# Ou qualquer servidor estático
+npm install
 ```
 
-4. **Configurar OBS**:
+4. **Iniciar Servidor Local (Node)**:
+```bash
+node server.js
+```
+
+> Por padrão inicia em `http://localhost:3000` (ou `PORT`).
+
+5. **Configurar OBS**:
    - Adicionar Browser Source
-   - URL: `http://localhost:8000/index.html?id=1` (ou id=0, id=2)
+   - URL: `http://localhost:3000/index.html?id=1` (ou id=0, id=2)
    - Largura: 1920px
    - Altura: 1080px
    - Marcar "Shutdown source when not visible"
@@ -339,9 +392,10 @@ Edite as variáveis CSS em `:root`:
 - Reconexão automática após 3 segundos
 
 ### Chat não funciona
-- WebSocket do chat é não-oficial e pode parar de funcionar
-- Fallback automático para scraping HTML
-- Verifique console para status da conexão
+- Se `/chat-scrape` retornar `messageCount: 0`, verifique no JSON:
+  - `join.authenticated` deve ser `true` (senão, falta/expirou `PUMPFUN_JWT`/`PUMPFUN_COOKIE`)
+- Para comandos no jogo, prefira:
+  - `GET /chat-sse?room=<MINT>&commands=1`
 
 ### Comandos não funcionam
 - Certifique-se que mensagem começa com `/jump` ou `/redobrar`
@@ -366,7 +420,7 @@ Edite as variáveis CSS em `:root`:
 
 2. **Chat WebSocket**: Não oficial
    - Pode parar de funcionar a qualquer momento
-   - Fallback para scraping HTML implementado
+   - Fallback “browser” existe, mas é pesado e depende de Chrome (apenas local)
 
 3. **CORS**: Requer servidor HTTP local
    - Não funciona via `file://` protocol
@@ -410,3 +464,5 @@ Para questões ou melhorias, consulte o código-fonte ou abra uma issue no repos
 ---
 
 **Última Atualização**: Inclui sistema de comandos do chat (`/jump`, `/redobrar`) e integração com WebSocket do chat do Pump Fun.
+
+**Última Atualização (Server)**: Endpoints `chat-scrape` (histórico), `chat-sse` com `commands=1` (comandos), e `render/chat` para debug.

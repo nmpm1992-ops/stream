@@ -1,0 +1,12 @@
+file=_ref\chunk_chat.js
+total=16
+messageDeleted
+messagePinned
+messageReactionUpdated
+messageUnpinned
+newMessage
+roomModeratorAssigned
+roomModeratorUnassigned
+userBannedInRoom
+userMessagesWiped
+userUnbannedInRoom

@@ -2,7 +2,7 @@
   "name": "mewvolt-obs-overlay",
   "version": "1.0.0",
   "private": true,
-  "description": "Overlay OBS com integração Pump.fun",
+  "description": "Overlay OBS com integração",
   "main": "server.js",
   "type": "commonjs",
   "scripts": {
@@ -10,5 +10,11 @@
   },
   "engines": {
     "node": "24.6.0"
+  },
+  "dependencies": {
+    "cheerio": "1.0.0-rc.12",
+    "dotenv": "16.4.5",
+    "socket.io-client": "4.5.4",
+    "ws": "8.18.0"
   }
 }

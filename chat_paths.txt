@@ -1,0 +1,11 @@
+file=coin_page.html
+chunks=86
+chatPaths=8
+chat/moderation/rooms/${e}/bans
+chat/moderation/rooms/${e}/moderators
+chat/moderation/rooms/${e}/participants
+chat/moderation/rooms/${t}/bans
+chat/moderation/rooms/${t}/bans/${r}
+chat/moderation/rooms/${t}/messages/${r}/delete
+chat/moderation/rooms/${t}/moderators
+chat/moderation/rooms/${t}/moderators/${r}

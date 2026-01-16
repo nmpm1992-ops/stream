@@ -1274,9 +1274,12 @@
       pumpUrl: 'https://pump.fun/coin/CpqA1pwX5SjU1SgufRwQ59knKGaDMEQ7MQBeu6mpump',
       wsUrl: 'wss://pumpportal.fun/api/data',
       chatWsUrl: 'https://livechat.pump.fun', // WebSocket do chat do Pump Fun
+      chatSseUrl: '/chat-sse', // Fallback via SSE (Node proxy)
+      tradeSseUrl: '/trades-sse', // Fallback via SSE para trades (Node proxy)
       // CORS proxies (ordem = tentativa). Sem servidor local: depende de proxies públicos.
       // Nota: proxies públicos podem ficar instáveis/indisponíveis; por isso tentamos vários.
       corsProxies: [
+        '/proxy?url=',
         'https://corsproxy.io/?',
         'https://api.allorigins.win/raw?url=',
         'https://api.allorigins.win/get?url=',
@@ -1309,6 +1312,7 @@
     let lastBuys = [];
     let lastAlertTime = 0;
     let ws = null;
+    let tradeSseSource = null;
     let chatSocket = null; // WebSocket para chat do Pump Fun
     let priceInterval = null;
     let viewersInterval = null;
@@ -2588,6 +2592,32 @@
       }
     }
 
+    function handleTradeMessageFromWs(data) {
+      if (data.type === 'trade' || data.txType) {
+        const txType = data.txType || data.type;
+        const wallet = data.traderPublicKey || data.wallet || data.user;
+        const sol = data.solAmount || data.sol || data.amount;
+        const tokens = data.tokenAmount || data.tokens;
+
+        if (txType === 'buy' || txType === 'Buy') {
+          buyCount++;
+          buyCountEl.textContent = buyCount;
+          if (overlayBuyCountEl) overlayBuyCountEl.textContent = buyCount;
+
+          if (wallet && sol) {
+            lastBuys.unshift({ wallet, sol, tokens });
+            if (lastBuys.length > 5) lastBuys.pop();
+            updateBuyList();
+            showBuyAlert(wallet, sol);
+          }
+        } else if (txType === 'sell' || txType === 'Sell') {
+          sellCount++;
+          sellCountEl.textContent = sellCount;
+          if (overlaySellCountEl) overlaySellCountEl.textContent = sellCount;
+        }
+      }
+    }
+
     // Connect to PumpPortal WebSocket
     function connectWS() {
       try {
@@ -2609,29 +2639,7 @@
         ws.onmessage = (event) => {
           try {
             const data = JSON.parse(event.data);
-            if (data.type === 'trade' || data.txType) {
-              const txType = data.txType || data.type;
-              const wallet = data.traderPublicKey || data.wallet || data.user;
-              const sol = data.solAmount || data.sol || data.amount;
-              const tokens = data.tokenAmount || data.tokens;
-
-              if (txType === 'buy' || txType === 'Buy') {
-                buyCount++;
-                buyCountEl.textContent = buyCount;
-                if (overlayBuyCountEl) overlayBuyCountEl.textContent = buyCount;
-
-                if (wallet && sol) {
-                  lastBuys.unshift({ wallet, sol, tokens });
-                  if (lastBuys.length > 5) lastBuys.pop();
-                  updateBuyList();
-                  showBuyAlert(wallet, sol);
-                }
-              } else if (txType === 'sell' || txType === 'Sell') {
-                sellCount++;
-                sellCountEl.textContent = sellCount;
-                if (overlaySellCountEl) overlaySellCountEl.textContent = sellCount;
-              }
-            }
+            handleTradeMessageFromWs(data);
           } catch (err) {
             console.error('WS message parse error:', err);
           }
@@ -2641,6 +2649,7 @@
           console.error('WebSocket error:', err);
           wsStatusEl.classList.remove('live');
           wsStatusTextEl.textContent = 'Error';
+          connectTradeSse();
         };
 
         ws.onclose = () => {
@@ -2649,6 +2658,7 @@
           wsStatusTextEl.textContent = 'Reconnecting...';
           if (overlayWsStatusEl) overlayWsStatusEl.classList.remove('live');
           if (overlayWsStatusTextEl) overlayWsStatusTextEl.textContent = 'Reconnecting...';
+          connectTradeSse();
           setTimeout(connectWS, 3000);
         };
       } catch (err) {
@@ -2657,7 +2667,30 @@
         wsStatusTextEl.textContent = 'Connection failed';
         if (overlayWsStatusEl) overlayWsStatusEl.classList.remove('live');
         if (overlayWsStatusTextEl) overlayWsStatusTextEl.textContent = 'Connection failed';
+        connectTradeSse();
       }
+    }
+
+    function connectTradeSse() {
+      if (tradeSseSource || !CONFIG.tradeSseUrl) return;
+      if (window.location.protocol === 'file:') return;
+      const url = `${CONFIG.tradeSseUrl}?mint=${encodeURIComponent(CONFIG.contract)}`;
+      console.log('[Trade SSE] Conectando...', url);
+      tradeSseSource = new EventSource(url);
+      tradeSseSource.onmessage = (event) => {
+        try {
+          const payload = JSON.parse(event.data);
+          if (payload && payload.data) {
+            const data = JSON.parse(payload.data);
+            handleTradeMessageFromWs(data);
+          }
+        } catch (err) {
+          console.warn('[Trade SSE] Mensagem inválida:', err);
+        }
+      };
+      tradeSseSource.addEventListener('error', () => {
+        console.warn('[Trade SSE] Erro de conexão');
+      });
     }
 
     // Função auxiliar para processar mensagem do chat
@@ -2678,10 +2711,26 @@
           }
         }
 
+        if (Array.isArray(data)) {
+          data = data[0] || null;
+        }
+
+        if (data && data.event && data.data) {
+          data = data.data;
+        }
+
         if (data && typeof data === 'object') {
           // Estrutura padrão
           user = data.user || data.username || data.author || data.sender || 'User';
-          text = data.text || data.message || data.content || data.body || '';
+          text =
+            data.text ||
+            data.message ||
+            data.content ||
+            data.body ||
+            (data.message && (data.message.text || data.message.content)) ||
+            (data.content && data.content.text) ||
+            (data.payload && (data.payload.text || data.payload.message)) ||
+            '';
           timestamp = data.timestamp || data.time || data.createdAt || Date.now();
           messageId = data.id || data.messageId || data._id || Date.now().toString();
           
@@ -2727,6 +2776,34 @@
       } catch (err) {
         console.error('[Chat WS] Erro ao processar mensagem:', err, data);
       }
+    }
+
+    // Fallback SSE via Node server (quando WS direto falha)
+    let chatSseSource = null;
+    function connectChatSse() {
+      if (chatSseSource || !CONFIG.chatSseUrl) return;
+      if (window.location.protocol === 'file:') return;
+
+      const roomId = CONFIG.contract;
+      const url = `${CONFIG.chatSseUrl}?room=${encodeURIComponent(roomId)}`;
+      console.log('[Chat SSE] Conectando...', url);
+
+      chatSseSource = new EventSource(url);
+      chatSseSource.onmessage = (event) => {
+        try {
+          const payload = JSON.parse(event.data);
+          const data = payload && payload.data ? payload.data : payload;
+          if (payload && payload.event) {
+            console.log('[Chat SSE] Evento:', payload.event);
+          }
+          processChatMessage(data);
+        } catch (err) {
+          console.warn('[Chat SSE] Mensagem inválida:', err);
+        }
+      };
+      chatSseSource.addEventListener('error', () => {
+        console.warn('[Chat SSE] Erro de conexão');
+      });
     }
 
     // Connect to Pump Fun Chat WebSocket (Socket.IO)
@@ -2868,11 +2945,13 @@
           // Fallback para scraping HTML se WebSocket falhar
           console.log('[Chat WS] Usando fallback de scraping HTML para comandos');
           ensureChatScrapeRunning();
+          connectChatSse();
         });
 
         chatSocket.on('error', (err) => {
           console.error('[Chat WS] Erro no socket:', err);
           ensureChatScrapeRunning();
+          connectChatSse();
         });
 
       } catch (err) {
@@ -3270,8 +3349,9 @@
       threeScene.fog = new THREE.Fog(0x89c6ff, 8, 28);
 
       threeCamera = new THREE.PerspectiveCamera(35, width / height, 0.1, 100);
-      threeCamera.position.set(6.5, 6.2, 8.2);
-      threeCamera.lookAt(0, 0.6, 0);
+      // Camera: olhar para o norte (eixo -Z), 30° para baixo
+      threeCamera.position.set(0, 8.5, 14.5);
+      threeCamera.lookAt(0, 0.6, -10);
 
       const ambientLight = new THREE.AmbientLight(0xffffff, 0.65);
       const sunLight = new THREE.DirectionalLight(0xffffff, 0.85);
@@ -3316,7 +3396,9 @@
       const spriteMat = new THREE.SpriteMaterial({ map: charTexture, transparent: true });
       threeCharacter = new THREE.Sprite(spriteMat);
       threeCharacter.scale.set(2.1, 3.0, 1);
-      threeCharacter.position.set(-3, 1.45, 0);
+      // Começar à esquerda e andar para a direita
+      threeCharacter.position.set(-5.2, 1.45, 0);
+      threeCharacterDir = 1;
       threeScene.add(threeCharacter);
 
       const shadowMat = new THREE.MeshBasicMaterial({ color: 0x000000, transparent: true, opacity: 0.25 });
@@ -4200,6 +4282,8 @@
       if (solscanInterval) clearInterval(solscanInterval);
       if (giftsInterval) clearInterval(giftsInterval);
       if (threeAnimId) cancelAnimationFrame(threeAnimId);
+      if (chatSseSource) chatSseSource.close();
+      if (tradeSseSource) tradeSseSource.close();
     });
   </script>
 </body>
