@@ -3690,6 +3690,86 @@
       "avatarUrl": "",
       "text": "/spin",
       "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    },
+    {
+      "ts": 1768763342396,
+      "id": "1e21bded-f4c0-470d-8dfd-ccd4ccede0a1",
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "avatarUrl": "",
+      "text": "/spin aslkççdç",
+      "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    },
+    {
+      "ts": 1768763342397,
+      "id": "1e21bded-f4c0-470d-8dfd-ccd4ccede0a1",
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "avatarUrl": "",
+      "text": "/spin aslkççdç",
+      "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    },
+    {
+      "ts": 1768763342398,
+      "id": "1e21bded-f4c0-470d-8dfd-ccd4ccede0a1",
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "avatarUrl": "",
+      "text": "/spin aslkççdç",
+      "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    },
+    {
+      "ts": 1768763342407,
+      "id": "1e21bded-f4c0-470d-8dfd-ccd4ccede0a1",
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "text": "/spin aslkççdç",
+      "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    },
+    {
+      "ts": 1768763342407,
+      "id": "1e21bded-f4c0-470d-8dfd-ccd4ccede0a1",
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "avatarUrl": "",
+      "text": "/spin aslkççdç",
+      "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    },
+    {
+      "ts": 1768763528187,
+      "id": "e30f50e0-c49c-4081-8d6a-7b22b9ddd4ee",
+      "username": "ct.app_site_esqra",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "text": "!Pump Fun DEv V O L U M E Bot",
+      "userAddress": "2Nu2peDiTAeMCLFJ6pbY6xgEVnUEEjStbVfzeXZXgFUU"
+    },
+    {
+      "ts": 1768763584358,
+      "id": "msg_1768763584358_nlldlitjf",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768763584541,
+      "id": "msg_1768763584541_1gds8zxgu",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768763584828,
+      "id": "msg_1768763584828_uc09ihode",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768763584929,
+      "id": "msg_1768763584929_zy71e0arj",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
     }
   ],
   "logs": [
@@ -5882,6 +5962,30 @@
     },
     {
       "ts": 1768763143420,
+      "username": null,
+      "text": "⚠️ 7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9 reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768763342962,
+      "username": null,
+      "text": "⚠️ 7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9 reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768763343017,
+      "username": null,
+      "text": "⚠️ 7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9 reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768763351152,
       "username": null,
       "text": "⚠️ 7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9 reached daily limit (1 spins/day)",
       "action": null,

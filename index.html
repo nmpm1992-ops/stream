@@ -329,7 +329,9 @@
 
     .widget-body { padding: 15px; font-size: 13px; overflow: visible; flex: 1; word-wrap: break-word; }
 
-    .item-row { margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid rgba(255,255,255,0.02); word-wrap: break-word; overflow-wrap: break-word; }
+    .item-row { margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid rgba(255,255,255,0.02); word-wrap: break-word; overflow-wrap: break-word; display: flex; align-items: center; gap: 8px; }
+    .item-row .avatar { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 1px solid rgba(255,255,255,0.1); }
+    .item-row .content { flex: 1; min-width: 0; }
     .user { color: var(--neon-green); font-weight: 700; }
     .msg { color: #bbb; display: block; margin-top: 2px; word-wrap: break-word; overflow-wrap: break-word; }
     .ts { float: right; color: #333; font-size: 10px; }
@@ -1115,17 +1117,8 @@
         return;
       }
 
-      // Check holder status for chat entry
-      let isHolder = false;
-      if (wallet && wallet !== 'unknown') {
-        try {
-          isHolder = await checkIsHolder(wallet);
-        } catch (e) {
-          console.warn('[Chat] Holder check failed:', e);
-        }
-      }
-
-      const chatEntry = { username: user, message: text, timestamp: now, isHolder };
+      const avatarUrl = data.avatarUrl || data.profile_image || '';
+      const chatEntry = { username: user, message: text, timestamp: now, avatarUrl };
       chatEntries.push(chatEntry);
       if (chatEntries.length > 50) chatEntries.shift();
       updateChatHud();
@@ -1196,19 +1189,6 @@
       if (slotState.queue.length === 0) return;
       
       const player = slotState.queue.shift();
-      
-      // Validate holder status before processing (always check)
-      let isHolder = player.isHolder || false;
-      if (player.wallet && player.wallet !== 'unknown') {
-        try {
-          isHolder = await checkIsHolder(player.wallet);
-          console.log('[Queue] Holder validation in processQueue:', { wallet: player.wallet, isHolder });
-        } catch (e) {
-          console.warn('[Queue] Holder validation failed in processQueue:', e);
-        }
-      }
-      // Update player with current holder status
-      player.isHolder = isHolder;
       
       // Play intro sound when player starts
       const introAudio = document.getElementById('slotSfxIntro');
@@ -1456,12 +1436,15 @@
         }
       }
       container.innerHTML = uniqueEntries.reverse().map(e => {
-        const hodlerTag = e.isHolder ? ' <span style="color:var(--neon-green); font-weight:700; font-size:10px;">[HODLER]</span>' : '';
+        const avatarImg = e.avatarUrl ? `<img src="${e.avatarUrl}" alt="${e.username}" class="avatar" onerror="this.style.display='none'">` : '<div class="avatar" style="background: rgba(255,255,255,0.1);"></div>';
         return `
         <div class="item-row">
-          <span class="ts">${new Date(e.timestamp).toLocaleTimeString()}</span>
-          <span class="user">${e.username}${hodlerTag}:</span>
-          <span class="msg">${e.message}</span>
+          ${avatarImg}
+          <div class="content">
+            <span class="ts">${new Date(e.timestamp).toLocaleTimeString()}</span>
+            <span class="user">${e.username}:</span>
+            <span class="msg">${e.message}</span>
+          </div>
         </div>
       `;
       }).join('');
@@ -1493,6 +1476,7 @@
         text: text,
         action: meta.action || null,
         userAddress: meta.userAddress || null,
+        avatarUrl: meta.avatarUrl || null,
         level: meta.level || levelFromColor(color)
       };
       logEntries.unshift(logEntry); // Add to start
@@ -1515,13 +1499,17 @@
           : level === 'error' ? '#ff4444'
           : level === 'special' ? '#ffcc00'
           : '#ccc';
+        const avatarImg = e.avatarUrl ? `<img src="${e.avatarUrl}" alt="${e.username || ''}" class="avatar" onerror="this.style.display='none'">` : '<div class="avatar" style="background: rgba(255,255,255,0.1);"></div>';
         return `<div class="item-row" style="color:${color}">
-          <span class="ts">${new Date(e.ts || Date.now()).toLocaleTimeString()}</span> ${text}
+          ${avatarImg}
+          <div class="content">
+            <span class="ts">${new Date(e.ts || Date.now()).toLocaleTimeString()}</span> ${text}
+          </div>
         </div>`;
       }).join('');
     }
 
-    function addWinner(user, prize, amount = null) {
+    function addWinner(user, prize, amount = null, avatarUrl = null) {
       // Check for duplicates (same user + prize within last 5 seconds)
       const now = Date.now();
       const isDuplicate = winnersEntries.some(e => 
@@ -1536,7 +1524,8 @@
         ts: now,
         username: user,
         prize: prize,
-        amount: amount
+        amount: amount,
+        avatarUrl: avatarUrl
       };
       winnersEntries.unshift(winnerEntry); // Add to start
       if (winnersEntries.length > 10) winnersEntries.pop(); // Remove from end
@@ -1552,9 +1541,13 @@
       if (!container) return;
       container.innerHTML = winnersEntries.map(e => {
         const prize = e.prize || e.action || 'PRIZE';
+        const avatarImg = e.avatarUrl ? `<img src="${e.avatarUrl}" alt="${e.username || ''}" class="avatar" onerror="this.style.display='none'">` : '<div class="avatar" style="background: rgba(255,255,255,0.1);"></div>';
         return `<div class="item-row">
-          <span class="user">${e.username || 'Unknown'}</span> won 
-          <span style="color:var(--gold)">${prize}</span>
+          ${avatarImg}
+          <div class="content">
+            <span class="user">${e.username || 'Unknown'}</span> won 
+            <span style="color:var(--gold)">${prize}</span>
+          </div>
         </div>`;
       }).join('');
     }
@@ -1604,7 +1597,8 @@
               .map(c => ({
                 username: c.username || 'Unknown',
                 message: c.text || '',
-                timestamp: c.ts || Date.now()
+                timestamp: c.ts || Date.now(),
+                avatarUrl: c.avatarUrl || ''
               }))
               .filter(c => c.message)
               .slice(-50);
