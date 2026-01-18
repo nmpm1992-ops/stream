@@ -1,0 +1,6005 @@
+{
+  "chats": [
+    {
+      "ts": 1768700000000,
+      "id": "abc",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/Qm...",
+      "text": "oi"
+    },
+    {
+      "ts": 1768687013048,
+      "id": "2dab8c7c-1080-49bb-97fb-390690525aa8",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "oi"
+    },
+    {
+      "ts": 1768687087660,
+      "id": "db9ff688-8c28-42d4-99f6-3cde12669ea8",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/claim 1.33"
+    },
+    {
+      "ts": 1768687315056,
+      "id": "9cefdb6e-a9d7-425e-9e29-1b773cdcca06",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "Muda o texto amarelo do JACKPOT 0.23 SOL para SHUTDOWN"
+    },
+    {
+      "ts": 1768687436493,
+      "id": "c9122176-ce4a-488f-9b50-c42ed798ce63",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "Quando esta mensagem aparecer no cache, quero que mudes o nome do \"JACKPOT 0.25 SOL\" para SHUTDOWN"
+    },
+    {
+      "ts": 1768687911674,
+      "id": "3e392c35-ac60-43c4-9bc5-5e56845671c5",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/start"
+    },
+    {
+      "ts": 1768688742269,
+      "id": "17c133e2-7792-4bc6-abe1-b2d9d6a7af9a",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "xas"
+    },
+    {
+      "ts": 1768688774610,
+      "id": "8fb4a62c-a4b7-49f4-a1df-35e160dbe732",
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "text": "/startasdasdasd"
+    },
+    {
+      "ts": 1768688779361,
+      "id": "8dc91b8b-46c5-49a1-bfe4-f85580a0d36e",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/startshut"
+    },
+    {
+      "ts": 1768688780448,
+      "id": "a3494a46-d2cd-4a23-919c-df5669a35ae8",
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "text": "/start fgfdgdfg"
+    },
+    {
+      "ts": 1768688808927,
+      "id": "ccbb30dc-e67d-46d7-83f9-e1f74d900cee",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/start shutdown"
+    },
+    {
+      "ts": 1768688889294,
+      "id": "e1186d94-c24d-4a27-b366-33f99b6feade",
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "text": "/start"
+    },
+    {
+      "ts": 1768688960412,
+      "id": "afd09720-aef7-42a4-979e-1b7354379b27",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/start"
+    },
+    {
+      "ts": 1768689056478,
+      "id": "34107531-4556-496c-bbe2-bfd400be317a",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/start"
+    },
+    {
+      "ts": 1768689071257,
+      "id": "63e76ac9-820c-4106-b558-12f4dce17550",
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "text": "/start asdsadasdas"
+    },
+    {
+      "ts": 1768689081993,
+      "id": "05a9de6d-01d1-4777-b568-81653e43ecc6",
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "text": "/start dsfsf sfsd sf s"
+    },
+    {
+      "ts": 1768689097810,
+      "id": "933c18a0-5d8c-4334-90d4-153a4c2492da",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/start"
+    },
+    {
+      "ts": 1768690029660,
+      "id": "16eb80ab-85b1-414c-b38b-93949a5c26a0",
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "text": "/start dfsfsfdf"
+    },
+    {
+      "ts": 1768690117683,
+      "id": "673f6646-5df0-47c7-a048-4ebcce5b0b03",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/start sdlçaskda"
+    },
+    {
+      "ts": 1768690553382,
+      "id": "afcc0d31-4455-47fa-a87b-4d84c162aca9",
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "text": "/start sadsdasddsada"
+    },
+    {
+      "ts": 1768690637710,
+      "id": "0376de0c-c823-4861-a95b-cbc8f46fee22",
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "text": "/start asddasdasd"
+    },
+    {
+      "ts": 1768690641023,
+      "id": "d3134b21-52ce-4d0e-9e6c-a6382ae5f493",
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "text": "/start ds fsf sdf sdf"
+    },
+    {
+      "ts": 1768690644689,
+      "id": "499c8396-c33d-4849-a60e-d0ab7434a87f",
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "text": "/start sdfas gfg fdg dfgdf df df g"
+    },
+    {
+      "ts": 1768693330708,
+      "id": "03e546d9-334a-4f4d-b1e6-789a9244bbcc",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/start"
+    },
+    {
+      "ts": 1768694324823,
+      "id": "c987de74-5096-4fc5-887b-f663614f790e",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/start"
+    },
+    {
+      "ts": 1768694361604,
+      "id": "be1042a1-e9bd-4dee-aaf1-039b883081e2",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/start"
+    },
+    {
+      "ts": 1768694503267,
+      "id": "7e92b0c7-70fc-437f-9ec5-63c0f956ccf7",
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "text": "/start"
+    },
+    {
+      "ts": 1768695346293,
+      "id": "0e3a867d-4368-4333-9383-df44a8e9f28a",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/start sdf"
+    },
+    {
+      "ts": 1768695519913,
+      "id": "101b8224-3df7-4c70-bb20-1001455a936a",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/start dsfdffgd"
+    },
+    {
+      "ts": 1768695554035,
+      "id": "378768ed-1a10-4404-bf3a-1716afce76bc",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/start dsfg"
+    },
+    {
+      "ts": 1768695673628,
+      "id": "6b43bcb6-457a-4ece-b57b-b7066fc0f61e",
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "text": "/start dsfdfsdf"
+    },
+    {
+      "ts": 1768695810913,
+      "id": "6d3f2075-0177-4e85-9ff9-8cd50f689d25",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/start 30o'iofdlçf"
+    },
+    {
+      "ts": 1768696026328,
+      "id": "51484e87-c6d1-48f6-81e0-06b21717d7f5",
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "text": "/start dffgfgfg"
+    },
+    {
+      "ts": 1768696479211,
+      "id": "04fa889a-4229-4bb6-b327-59fed449beb5",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/start 3430'45fdfd"
+    },
+    {
+      "ts": 1768696627883,
+      "id": "8f9ef4c5-d775-46da-a9ed-f009c60233e1",
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "text": "/start mate"
+    },
+    {
+      "ts": 1768696664929,
+      "id": "86de6eed-d093-4bca-9ab9-764ba7046a38",
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "text": "/start sdf"
+    },
+    {
+      "ts": 1768696786836,
+      "id": "bba4950f-fe95-4dd9-b3cc-fcd60f214fa0",
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "text": "/staRT ASDADASAED"
+    },
+    {
+      "ts": 1768696794771,
+      "id": "a2c9cbe3-e2ec-4c87-8543-f8311581c7dd",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/start dfdsgfdg"
+    },
+    {
+      "ts": 1768696860080,
+      "id": "648387b1-e5e4-4000-bfff-b45d6a1fc180",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/start"
+    },
+    {
+      "ts": 1768696883242,
+      "id": "51cc5e32-eac5-41ba-a05a-1dc509c9eaa2",
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "text": "/start asdasd"
+    },
+    {
+      "ts": 1768697025215,
+      "id": "6a20fa6f-a0d7-41d8-bbfd-22108834ebf6",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/start dfgdsfds"
+    },
+    {
+      "ts": 1768697476938,
+      "id": "e63c8908-0eaa-4926-9e16-89f2c03b59bc",
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "text": "/start"
+    },
+    {
+      "ts": 1768697717691,
+      "id": "d6f539e2-21ca-4f29-bb94-3ca02a960c38",
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "text": "/start sdadsa"
+    },
+    {
+      "ts": 1768697798834,
+      "id": "ba908780-49fe-41e8-9671-d046f0e717bc",
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "text": "/start"
+    },
+    {
+      "ts": 1768697875188,
+      "id": "1c9f6dbd-bf12-4294-a702-eda08387494d",
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "text": "/start"
+    },
+    {
+      "ts": 1768698117124,
+      "id": "7ecc246d-3152-466e-bcc2-63128722369f",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/start dfds"
+    },
+    {
+      "ts": 1768698840044,
+      "id": "558eb553-2095-4aa9-87b0-1da5fd7423e1",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/start dlsfds"
+    },
+    {
+      "ts": 1768703885644,
+      "id": "6b797605-4b8d-4a98-8e01-18b2b229948f",
+      "username": "okort",
+      "avatarUrl": "https://ipfs.io/ipfs/QmXpkjdFYaCYTMS9wTq98TzgbKbK1MW3XM6FvnmTdxix4F",
+      "text": "Yoooo"
+    },
+    {
+      "ts": 1768703885644,
+      "id": "6b797605-4b8d-4a98-8e01-18b2b229948f",
+      "username": "okort",
+      "avatarUrl": "https://ipfs.io/ipfs/QmXpkjdFYaCYTMS9wTq98TzgbKbK1MW3XM6FvnmTdxix4F",
+      "text": "Yoooo"
+    },
+    {
+      "ts": 1768703891517,
+      "id": "5ee3f890-2c75-40f2-905b-27526b39917f",
+      "username": "okort",
+      "avatarUrl": "https://ipfs.io/ipfs/QmXpkjdFYaCYTMS9wTq98TzgbKbK1MW3XM6FvnmTdxix4F",
+      "text": "Let pump"
+    },
+    {
+      "ts": 1768703891517,
+      "id": "5ee3f890-2c75-40f2-905b-27526b39917f",
+      "username": "okort",
+      "avatarUrl": "https://ipfs.io/ipfs/QmXpkjdFYaCYTMS9wTq98TzgbKbK1MW3XM6FvnmTdxix4F",
+      "text": "Let pump"
+    },
+    {
+      "ts": 1768703899641,
+      "id": "ea56c078-858c-401c-a0b0-42b5f4ef932e",
+      "username": "okort",
+      "avatarUrl": "https://ipfs.io/ipfs/QmXpkjdFYaCYTMS9wTq98TzgbKbK1MW3XM6FvnmTdxix4F",
+      "text": "Wass up bro"
+    },
+    {
+      "ts": 1768703899641,
+      "id": "ea56c078-858c-401c-a0b0-42b5f4ef932e",
+      "username": "okort",
+      "avatarUrl": "https://ipfs.io/ipfs/QmXpkjdFYaCYTMS9wTq98TzgbKbK1MW3XM6FvnmTdxix4F",
+      "text": "Wass up bro"
+    },
+    {
+      "ts": 1768703948651,
+      "id": "5cc5ee31-c6d8-4039-aab8-1949806f8e2d",
+      "username": "okort",
+      "avatarUrl": "https://ipfs.io/ipfs/QmXpkjdFYaCYTMS9wTq98TzgbKbK1MW3XM6FvnmTdxix4F",
+      "text": "Do you have telegram??"
+    },
+    {
+      "ts": 1768703948651,
+      "id": "5cc5ee31-c6d8-4039-aab8-1949806f8e2d",
+      "username": "okort",
+      "avatarUrl": "https://ipfs.io/ipfs/QmXpkjdFYaCYTMS9wTq98TzgbKbK1MW3XM6FvnmTdxix4F",
+      "text": "Do you have telegram??"
+    },
+    {
+      "ts": 1768703958128,
+      "id": "6a81cd58-f3ed-4beb-9749-7afd43342285",
+      "username": "okort",
+      "avatarUrl": "https://ipfs.io/ipfs/QmXpkjdFYaCYTMS9wTq98TzgbKbK1MW3XM6FvnmTdxix4F",
+      "text": "@James_cino_4"
+    },
+    {
+      "ts": 1768703958128,
+      "id": "6a81cd58-f3ed-4beb-9749-7afd43342285",
+      "username": "okort",
+      "avatarUrl": "https://ipfs.io/ipfs/QmXpkjdFYaCYTMS9wTq98TzgbKbK1MW3XM6FvnmTdxix4F",
+      "text": "@James_cino_4"
+    },
+    {
+      "ts": 1768703974491,
+      "id": "8520d075-231e-4b54-9dab-b187087bde8c",
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "text": "yes"
+    },
+    {
+      "ts": 1768703974491,
+      "id": "8520d075-231e-4b54-9dab-b187087bde8c",
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "text": "yes"
+    },
+    {
+      "ts": 1768703976369,
+      "id": "3dab1caf-d687-4260-b07e-525fd21c41f6",
+      "username": "okort",
+      "avatarUrl": "https://ipfs.io/ipfs/QmXpkjdFYaCYTMS9wTq98TzgbKbK1MW3XM6FvnmTdxix4F",
+      "text": "Add me up on telegram now let’s go"
+    },
+    {
+      "ts": 1768703976369,
+      "id": "3dab1caf-d687-4260-b07e-525fd21c41f6",
+      "username": "okort",
+      "avatarUrl": "https://ipfs.io/ipfs/QmXpkjdFYaCYTMS9wTq98TzgbKbK1MW3XM6FvnmTdxix4F",
+      "text": "Add me up on telegram now let’s go"
+    },
+    {
+      "ts": 1768703985848,
+      "id": "564811ee-b25b-418b-bb39-31bbbc4d4541",
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "text": "https://t.me/mewvolt"
+    },
+    {
+      "ts": 1768703985848,
+      "id": "564811ee-b25b-418b-bb39-31bbbc4d4541",
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "text": "https://t.me/mewvolt"
+    },
+    {
+      "ts": 1768703991770,
+      "id": "3d77cb37-4981-40c6-b9c9-f8c12ccba39f",
+      "username": "okort",
+      "avatarUrl": "https://ipfs.io/ipfs/QmXpkjdFYaCYTMS9wTq98TzgbKbK1MW3XM6FvnmTdxix4F",
+      "text": "@James_cino_4"
+    },
+    {
+      "ts": 1768703991770,
+      "id": "3d77cb37-4981-40c6-b9c9-f8c12ccba39f",
+      "username": "okort",
+      "avatarUrl": "https://ipfs.io/ipfs/QmXpkjdFYaCYTMS9wTq98TzgbKbK1MW3XM6FvnmTdxix4F",
+      "text": "@James_cino_4"
+    },
+    {
+      "ts": 1768704009968,
+      "id": "1248c4b7-1ffe-4553-8272-6c06049009c8",
+      "username": "okort",
+      "avatarUrl": "https://ipfs.io/ipfs/QmXpkjdFYaCYTMS9wTq98TzgbKbK1MW3XM6FvnmTdxix4F",
+      "text": "Add me up on telegram now let’s go"
+    },
+    {
+      "ts": 1768704009968,
+      "id": "1248c4b7-1ffe-4553-8272-6c06049009c8",
+      "username": "okort",
+      "avatarUrl": "https://ipfs.io/ipfs/QmXpkjdFYaCYTMS9wTq98TzgbKbK1MW3XM6FvnmTdxix4F",
+      "text": "Add me up on telegram now let’s go"
+    },
+    {
+      "ts": 1768704017805,
+      "id": "7a62a452-f4f9-415a-8e19-6f9adb4fe033",
+      "username": "okort",
+      "avatarUrl": "https://ipfs.io/ipfs/QmXpkjdFYaCYTMS9wTq98TzgbKbK1MW3XM6FvnmTdxix4F",
+      "text": "LfGGGG 🚀🚀"
+    },
+    {
+      "ts": 1768704017805,
+      "id": "7a62a452-f4f9-415a-8e19-6f9adb4fe033",
+      "username": "okort",
+      "avatarUrl": "https://ipfs.io/ipfs/QmXpkjdFYaCYTMS9wTq98TzgbKbK1MW3XM6FvnmTdxix4F",
+      "text": "LfGGGG 🚀🚀"
+    },
+    {
+      "ts": 1768758837205,
+      "id": "msg_1768758837205_wsp5lgiji",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768758837344,
+      "id": "msg_1768758837344_5o2um6vta",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768758837505,
+      "id": "msg_1768758837505_8begfte62",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768758837624,
+      "id": "msg_1768758837624_sf52q2geu",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768758837625,
+      "id": "msg_1768758837625_g0nytuvda",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768758837721,
+      "id": "msg_1768758837721_6nrddpas6",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768758908443,
+      "id": "msg_1768758908443_ccxqacrsx",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768758908580,
+      "id": "msg_1768758908580_w6f2xee96",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768758908747,
+      "id": "msg_1768758908747_xrrvs8s9y",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768758908874,
+      "id": "msg_1768758908874_nmntzfw6i",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768758908874,
+      "id": "msg_1768758908874_5ap38ts83",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768758908981,
+      "id": "msg_1768758908981_9brqd8a3b",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768759453672,
+      "id": "b63cccdf-e49c-4aa2-b6dc-1e2e1a5edb00",
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "text": "teste",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768759453672,
+      "id": "b63cccdf-e49c-4aa2-b6dc-1e2e1a5edb00",
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "text": "teste",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768759577649,
+      "id": "3b7b48ea-c5c7-489b-8864-70dfd45933ab",
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "text": "/spin",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768759577650,
+      "id": "3b7b48ea-c5c7-489b-8864-70dfd45933ab",
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "text": "/spin",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768759577650,
+      "id": "3b7b48ea-c5c7-489b-8864-70dfd45933ab",
+      "username": "mewvoltcreator",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768759577650,
+      "id": "3b7b48ea-c5c7-489b-8864-70dfd45933ab",
+      "username": "mewvoltcreator",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768759749152,
+      "id": "msg_1768759749152_ek1zedtta",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768759749152,
+      "id": "msg_1768759749152_2l7cavrhk",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768759749314,
+      "id": "msg_1768759749314_q7pa75dgj",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768759749314,
+      "id": "msg_1768759749314_kmxwmi41y",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768759749451,
+      "id": "msg_1768759749451_1ucy11s4m",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768759749451,
+      "id": "msg_1768759749451_km8xdiend",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768759749605,
+      "id": "msg_1768759749605_99apd3l7v",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768759749606,
+      "id": "msg_1768759749606_2b1pcfa5j",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768759749619,
+      "id": "msg_1768759749619_bi298wund",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768759749620,
+      "id": "msg_1768759749620_df0dgcf5x",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768759749705,
+      "id": "msg_1768759749705_4smrdjsnx",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768759749705,
+      "id": "msg_1768759749705_rp58i0zda",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768759792088,
+      "id": "f79e8b51-4a12-4aec-b5e3-617d11580f9d",
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "text": "/spin asdsdsasd",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768759792089,
+      "id": "f79e8b51-4a12-4aec-b5e3-617d11580f9d",
+      "username": "mewvoltcreator",
+      "avatarUrl": "",
+      "text": "/spin asdsdsasd",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768759792093,
+      "id": "f79e8b51-4a12-4aec-b5e3-617d11580f9d",
+      "username": "mewvoltcreator",
+      "avatarUrl": "",
+      "text": "/spin asdsdsasd",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768759792094,
+      "id": "f79e8b51-4a12-4aec-b5e3-617d11580f9d",
+      "username": "mewvoltcreator",
+      "avatarUrl": "",
+      "text": "/spin asdsdsasd",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768759823825,
+      "id": "aa68521a-a1da-4930-9e78-35a6d1915a63",
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "text": "/spin",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768759823825,
+      "id": "aa68521a-a1da-4930-9e78-35a6d1915a63",
+      "username": "mewvoltcreator",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768759823826,
+      "id": "aa68521a-a1da-4930-9e78-35a6d1915a63",
+      "username": "mewvoltcreator",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768759823826,
+      "id": "aa68521a-a1da-4930-9e78-35a6d1915a63",
+      "username": "mewvoltcreator",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768759870996,
+      "id": "ac7fc895-19d3-4e07-9ba5-461d9499cddb",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768759870995,
+      "id": "ac7fc895-19d3-4e07-9ba5-461d9499cddb",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768759870996,
+      "id": "ac7fc895-19d3-4e07-9ba5-461d9499cddb",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768759870996,
+      "id": "ac7fc895-19d3-4e07-9ba5-461d9499cddb",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768759912894,
+      "id": "b2f09034-f018-4adb-b530-a98b072abfa5",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768759912892,
+      "id": "b2f09034-f018-4adb-b530-a98b072abfa5",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768759912895,
+      "id": "b2f09034-f018-4adb-b530-a98b072abfa5",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768759912903,
+      "id": "b2f09034-f018-4adb-b530-a98b072abfa5",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760016456,
+      "id": "4f224ac9-c309-4ddc-a3e9-69f22a22f0ce",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760016456,
+      "id": "4f224ac9-c309-4ddc-a3e9-69f22a22f0ce",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760016460,
+      "id": "4f224ac9-c309-4ddc-a3e9-69f22a22f0ce",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760016461,
+      "id": "4f224ac9-c309-4ddc-a3e9-69f22a22f0ce",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760050574,
+      "id": "961aa7f8-d2b6-40ce-85b4-253e5fbae026",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760050575,
+      "id": "961aa7f8-d2b6-40ce-85b4-253e5fbae026",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760050584,
+      "id": "961aa7f8-d2b6-40ce-85b4-253e5fbae026",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760050585,
+      "id": "961aa7f8-d2b6-40ce-85b4-253e5fbae026",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760079169,
+      "id": "4205e839-db30-4cb3-90ff-d3acf7c9102e",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760079170,
+      "id": "4205e839-db30-4cb3-90ff-d3acf7c9102e",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760079182,
+      "id": "4205e839-db30-4cb3-90ff-d3acf7c9102e",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760079182,
+      "id": "4205e839-db30-4cb3-90ff-d3acf7c9102e",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760090965,
+      "id": "msg_1768760090965_w2g03k78a",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760090965,
+      "id": "msg_1768760090965_1gpio4fh4",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760091119,
+      "id": "msg_1768760091119_zm86hduhm",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760091119,
+      "id": "msg_1768760091119_hubbea8fp",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760091273,
+      "id": "msg_1768760091273_t0ktcm9jc",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760091274,
+      "id": "msg_1768760091274_7hufjmnae",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760091406,
+      "id": "msg_1768760091406_kl0h1ip0s",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760091406,
+      "id": "msg_1768760091406_p8eag1ivm",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760091410,
+      "id": "msg_1768760091410_7b3u7du1n",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760091411,
+      "id": "msg_1768760091411_zmrv5yolp",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760091500,
+      "id": "msg_1768760091500_wjlpebvla",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760091500,
+      "id": "msg_1768760091500_my64zc6da",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760132457,
+      "id": "aed7fd76-3d74-44c3-a191-18861a14e0fa",
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "text": "/spin",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768760132458,
+      "id": "aed7fd76-3d74-44c3-a191-18861a14e0fa",
+      "username": "mewvoltcreator",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768760132459,
+      "id": "aed7fd76-3d74-44c3-a191-18861a14e0fa",
+      "username": "mewvoltcreator",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768760132461,
+      "id": "aed7fd76-3d74-44c3-a191-18861a14e0fa",
+      "username": "mewvoltcreator",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768760155739,
+      "id": "3fa281dc-8093-42ba-a7d1-ba277d4bff39",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760155740,
+      "id": "3fa281dc-8093-42ba-a7d1-ba277d4bff39",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760155759,
+      "id": "3fa281dc-8093-42ba-a7d1-ba277d4bff39",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760155759,
+      "id": "3fa281dc-8093-42ba-a7d1-ba277d4bff39",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760292356,
+      "id": "f56c1842-0ce7-4bd6-8693-bb56a4e24265",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760292357,
+      "id": "f56c1842-0ce7-4bd6-8693-bb56a4e24265",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760292371,
+      "id": "f56c1842-0ce7-4bd6-8693-bb56a4e24265",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760292372,
+      "id": "f56c1842-0ce7-4bd6-8693-bb56a4e24265",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760344539,
+      "id": "1a7019b7-13d0-4ff6-b03f-d963fa78a926",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/start dskoiajfsad",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760344540,
+      "id": "1a7019b7-13d0-4ff6-b03f-d963fa78a926",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/start dskoiajfsad",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760344540,
+      "id": "1a7019b7-13d0-4ff6-b03f-d963fa78a926",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/start dskoiajfsad",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760344541,
+      "id": "1a7019b7-13d0-4ff6-b03f-d963fa78a926",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/start dskoiajfsad",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760426531,
+      "id": "msg_1768760426531_kkqu1z7ex",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760426532,
+      "id": "msg_1768760426532_ressx3eaz",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760426687,
+      "id": "msg_1768760426687_mpkzo8kl7",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760426688,
+      "id": "msg_1768760426688_45vb60tqa",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760426826,
+      "id": "msg_1768760426826_2uup2oj7f",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760426827,
+      "id": "msg_1768760426827_mqon852rs",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760426961,
+      "id": "msg_1768760426961_0xwiwbi5x",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760426962,
+      "id": "msg_1768760426962_u13j5t1mo",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760426963,
+      "id": "msg_1768760426963_aa79usenm",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760426964,
+      "id": "msg_1768760426964_mxjikgas4",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760427061,
+      "id": "msg_1768760427061_5id2b9jz9",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760427062,
+      "id": "msg_1768760427062_ncqmcxv47",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760438032,
+      "id": "msg_1768760438032_l8bxz33jd",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760438032,
+      "id": "msg_1768760438032_2jz034ped",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760438171,
+      "id": "msg_1768760438171_okiw61ykc",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760438171,
+      "id": "msg_1768760438171_u6qcl8jj2",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760438310,
+      "id": "msg_1768760438310_bwf32f2ff",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760438310,
+      "id": "msg_1768760438310_xn76xhv1n",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760438432,
+      "id": "msg_1768760438432_gwmgsnjdu",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760438432,
+      "id": "msg_1768760438432_9qy9ylh9h",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760438433,
+      "id": "msg_1768760438433_us59sfvew",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760438433,
+      "id": "msg_1768760438433_pu4xfspw0",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760438533,
+      "id": "msg_1768760438533_6ax6qz65l",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760438534,
+      "id": "msg_1768760438534_zli73cc63",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768760447881,
+      "id": "b7836946-389a-422a-abc5-4f6f1155ba98",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760447881,
+      "id": "b7836946-389a-422a-abc5-4f6f1155ba98",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760447883,
+      "id": "b7836946-389a-422a-abc5-4f6f1155ba98",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760447883,
+      "id": "b7836946-389a-422a-abc5-4f6f1155ba98",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760447890,
+      "id": "b7836946-389a-422a-abc5-4f6f1155ba98",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760447891,
+      "id": "b7836946-389a-422a-abc5-4f6f1155ba98",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760476846,
+      "id": "055e908e-437a-4763-be3f-c7b01d6a5fc8",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760476847,
+      "id": "055e908e-437a-4763-be3f-c7b01d6a5fc8",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760476848,
+      "id": "055e908e-437a-4763-be3f-c7b01d6a5fc8",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760476848,
+      "id": "055e908e-437a-4763-be3f-c7b01d6a5fc8",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760476848,
+      "id": "055e908e-437a-4763-be3f-c7b01d6a5fc8",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760476849,
+      "id": "055e908e-437a-4763-be3f-c7b01d6a5fc8",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760499094,
+      "id": "d18ac079-f322-4c47-888b-27f145f4a920",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/start",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760499095,
+      "id": "d18ac079-f322-4c47-888b-27f145f4a920",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/start",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760499096,
+      "id": "d18ac079-f322-4c47-888b-27f145f4a920",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/start",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760499096,
+      "id": "d18ac079-f322-4c47-888b-27f145f4a920",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/start",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760499117,
+      "id": "d18ac079-f322-4c47-888b-27f145f4a920",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/start",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760499118,
+      "id": "d18ac079-f322-4c47-888b-27f145f4a920",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/start",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760507518,
+      "id": "c8732b41-32e6-4ebd-99a3-c6ccde36acf3",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin sdlçkas",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760507519,
+      "id": "c8732b41-32e6-4ebd-99a3-c6ccde36acf3",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin sdlçkas",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760507536,
+      "id": "c8732b41-32e6-4ebd-99a3-c6ccde36acf3",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/spin sdlçkas",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760507536,
+      "id": "c8732b41-32e6-4ebd-99a3-c6ccde36acf3",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin sdlçkas",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760507547,
+      "id": "c8732b41-32e6-4ebd-99a3-c6ccde36acf3",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin sdlçkas",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768760507548,
+      "id": "c8732b41-32e6-4ebd-99a3-c6ccde36acf3",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin sdlçkas",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761026757,
+      "id": "4a2ca645-7310-46cc-b84d-6bdf5c76d493",
+      "username": "ct.app_site_gi9zg",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "text": "!Pump Fun DEv V O L U M E Bot",
+      "userAddress": "C3PCmkQ27gxtr4uTAQZcKSn5irxdskLmJoovnDr6n5v3"
+    },
+    {
+      "ts": 1768761097831,
+      "id": "msg_1768761097831_tubup7iih",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761097832,
+      "id": "msg_1768761097832_dmgrp71q0",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761098030,
+      "id": "msg_1768761098030_14i85n4h9",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761098030,
+      "id": "msg_1768761098030_7i97pp5r7",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761098168,
+      "id": "msg_1768761098168_yropdsxhz",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761098169,
+      "id": "msg_1768761098169_exbx5wblh",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761098281,
+      "id": "msg_1768761098281_7sx7d5er7",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761098281,
+      "id": "msg_1768761098281_kbuaiifdd",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761098282,
+      "id": "msg_1768761098282_iutiod9ge",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761098282,
+      "id": "msg_1768761098282_ti368n7am",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761098316,
+      "id": "a7f2d84f-bce2-4109-b434-e4ca99bd21e7",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/points",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761098318,
+      "id": "a7f2d84f-bce2-4109-b434-e4ca99bd21e7",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/points",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761098330,
+      "id": "a7f2d84f-bce2-4109-b434-e4ca99bd21e7",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/points",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761098331,
+      "id": "a7f2d84f-bce2-4109-b434-e4ca99bd21e7",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/points",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761098383,
+      "id": "msg_1768761098383_i8jag07u3",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761098384,
+      "id": "msg_1768761098384_7mduk0dey",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761099986,
+      "id": "msg_1768761099986_79g5biqx7",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761099987,
+      "id": "msg_1768761099987_w5wwgu5bf",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761100101,
+      "id": "msg_1768761100101_xph5tfoa7",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761100101,
+      "id": "msg_1768761100101_i5o573512",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761100235,
+      "id": "msg_1768761100235_cokqtxqcz",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761100235,
+      "id": "msg_1768761100235_9no9j2dcq",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761100355,
+      "id": "msg_1768761100355_n64rf4ujr",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761100355,
+      "id": "msg_1768761100355_9hsu5c9lc",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761100355,
+      "id": "msg_1768761100355_ygbvn16ar",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761100356,
+      "id": "msg_1768761100356_aomrtr0ys",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761100452,
+      "id": "msg_1768761100452_0afneeuvl",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761100453,
+      "id": "msg_1768761100453_ve052r98n",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761323915,
+      "id": "msg_1768761323915_8qygvkr99",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761323916,
+      "id": "msg_1768761323916_eb8wclq28",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761324080,
+      "id": "msg_1768761324080_zueecctkl",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761324081,
+      "id": "msg_1768761324081_w3v3237dv",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761324231,
+      "id": "msg_1768761324231_tdm2p8xcu",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761324232,
+      "id": "msg_1768761324232_va3gtw6pp",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761324347,
+      "id": "msg_1768761324347_4z3znax1o",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761324348,
+      "id": "msg_1768761324348_9qvpfpjis",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761324349,
+      "id": "msg_1768761324349_j5q9l00vv",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761324349,
+      "id": "msg_1768761324349_210k2xb16",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761324441,
+      "id": "msg_1768761324441_tt68ydz4r",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761324442,
+      "id": "msg_1768761324442_48x32ubmi",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761391729,
+      "id": "e027baa4-78a9-4dd4-86eb-e88575629615",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761391730,
+      "id": "e027baa4-78a9-4dd4-86eb-e88575629615",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761391732,
+      "id": "e027baa4-78a9-4dd4-86eb-e88575629615",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761391733,
+      "id": "e027baa4-78a9-4dd4-86eb-e88575629615",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761391752,
+      "id": "e027baa4-78a9-4dd4-86eb-e88575629615",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761391753,
+      "id": "e027baa4-78a9-4dd4-86eb-e88575629615",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761411528,
+      "id": "819ddb1a-77ba-466b-bebc-6cbc1d720a2b",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761411529,
+      "id": "819ddb1a-77ba-466b-bebc-6cbc1d720a2b",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761411529,
+      "id": "819ddb1a-77ba-466b-bebc-6cbc1d720a2b",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761411529,
+      "id": "819ddb1a-77ba-466b-bebc-6cbc1d720a2b",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761411530,
+      "id": "819ddb1a-77ba-466b-bebc-6cbc1d720a2b",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761411530,
+      "id": "819ddb1a-77ba-466b-bebc-6cbc1d720a2b",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761417248,
+      "id": "f65a5072-8455-4120-bb7a-430297655dd4",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/points",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761417249,
+      "id": "f65a5072-8455-4120-bb7a-430297655dd4",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/points",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761417264,
+      "id": "f65a5072-8455-4120-bb7a-430297655dd4",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/points",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761417263,
+      "id": "f65a5072-8455-4120-bb7a-430297655dd4",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/points",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761417265,
+      "id": "f65a5072-8455-4120-bb7a-430297655dd4",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/points",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761417264,
+      "id": "f65a5072-8455-4120-bb7a-430297655dd4",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/points",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761426067,
+      "id": "b7b66bcf-a1d3-4cc1-850e-2ad94ff0a069",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761426068,
+      "id": "b7b66bcf-a1d3-4cc1-850e-2ad94ff0a069",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761426074,
+      "id": "b7b66bcf-a1d3-4cc1-850e-2ad94ff0a069",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761426073,
+      "id": "b7b66bcf-a1d3-4cc1-850e-2ad94ff0a069",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761426075,
+      "id": "b7b66bcf-a1d3-4cc1-850e-2ad94ff0a069",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761426074,
+      "id": "b7b66bcf-a1d3-4cc1-850e-2ad94ff0a069",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761459864,
+      "id": "d0195e25-35aa-4a72-ae9b-1bf36ed5649d",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761459865,
+      "id": "d0195e25-35aa-4a72-ae9b-1bf36ed5649d",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761459866,
+      "id": "d0195e25-35aa-4a72-ae9b-1bf36ed5649d",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761459866,
+      "id": "d0195e25-35aa-4a72-ae9b-1bf36ed5649d",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761459867,
+      "id": "d0195e25-35aa-4a72-ae9b-1bf36ed5649d",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761459869,
+      "id": "d0195e25-35aa-4a72-ae9b-1bf36ed5649d",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761547623,
+      "id": "msg_1768761547623_6mvkpuu7n",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761547624,
+      "id": "msg_1768761547624_unllfc4ec",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761547787,
+      "id": "msg_1768761547787_al9onr8ic",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761547788,
+      "id": "msg_1768761547788_vcns1yxcm",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761547944,
+      "id": "msg_1768761547944_dt5vie7ej",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761547944,
+      "id": "msg_1768761547944_1ros16fip",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761548104,
+      "id": "msg_1768761548104_1xmh1s10g",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761548104,
+      "id": "msg_1768761548104_u3r3iqbcj",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761548105,
+      "id": "msg_1768761548105_9p0vawhc9",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761548105,
+      "id": "msg_1768761548105_bi7wturqi",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761548210,
+      "id": "msg_1768761548210_tlczf9257",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761548211,
+      "id": "msg_1768761548211_y6k98ig4f",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761601986,
+      "id": "18263f7d-2145-43e5-86a4-a6de7a69c6eb",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin xas",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761601986,
+      "id": "18263f7d-2145-43e5-86a4-a6de7a69c6eb",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/spin xas",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761601987,
+      "id": "18263f7d-2145-43e5-86a4-a6de7a69c6eb",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin xas",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761601987,
+      "id": "18263f7d-2145-43e5-86a4-a6de7a69c6eb",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin xas",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761601988,
+      "id": "18263f7d-2145-43e5-86a4-a6de7a69c6eb",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin xas",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761601988,
+      "id": "18263f7d-2145-43e5-86a4-a6de7a69c6eb",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin xas",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761622253,
+      "id": "9552202a-67a2-45dd-92f0-c1dfc87f1a96",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin asçlda",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761622254,
+      "id": "9552202a-67a2-45dd-92f0-c1dfc87f1a96",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/spin asçlda",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761622254,
+      "id": "9552202a-67a2-45dd-92f0-c1dfc87f1a96",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin asçlda",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761622255,
+      "id": "9552202a-67a2-45dd-92f0-c1dfc87f1a96",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin asçlda",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761622255,
+      "id": "9552202a-67a2-45dd-92f0-c1dfc87f1a96",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin asçlda",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761622257,
+      "id": "9552202a-67a2-45dd-92f0-c1dfc87f1a96",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin asçlda",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761652421,
+      "id": "118392a5-f138-40d3-848c-3156c4c07f85",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/spin aslçdas",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761652421,
+      "id": "118392a5-f138-40d3-848c-3156c4c07f85",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin aslçdas",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761652422,
+      "id": "118392a5-f138-40d3-848c-3156c4c07f85",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin aslçdas",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761652423,
+      "id": "118392a5-f138-40d3-848c-3156c4c07f85",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin aslçdas",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761652429,
+      "id": "118392a5-f138-40d3-848c-3156c4c07f85",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin aslçdas",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761652430,
+      "id": "118392a5-f138-40d3-848c-3156c4c07f85",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin aslçdas",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761682435,
+      "id": "4fc2037d-a501-4422-bf6b-2a98673859b7",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin asçld",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761682436,
+      "id": "4fc2037d-a501-4422-bf6b-2a98673859b7",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/spin asçld",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761682437,
+      "id": "4fc2037d-a501-4422-bf6b-2a98673859b7",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin asçld",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761682438,
+      "id": "4fc2037d-a501-4422-bf6b-2a98673859b7",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin asçld",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761682438,
+      "id": "4fc2037d-a501-4422-bf6b-2a98673859b7",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin asçld",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761682440,
+      "id": "4fc2037d-a501-4422-bf6b-2a98673859b7",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin asçld",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768761773146,
+      "id": "msg_1768761773146_acmd5v8qs",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761773147,
+      "id": "msg_1768761773147_ej5ztuk37",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761773340,
+      "id": "msg_1768761773340_8qqu32uip",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761773346,
+      "id": "msg_1768761773346_0fcw4blmq",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761773498,
+      "id": "msg_1768761773498_1ma2tyi04",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761773498,
+      "id": "msg_1768761773498_pqwh117k3",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761773633,
+      "id": "msg_1768761773633_mr1n1mftj",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761773634,
+      "id": "msg_1768761773634_qjefvbn1q",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761773635,
+      "id": "msg_1768761773635_t4akonvln",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761773636,
+      "id": "msg_1768761773636_laysvj23v",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761773728,
+      "id": "msg_1768761773728_or0elj2jv",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761773729,
+      "id": "msg_1768761773729_4gi7nrwf9",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761908996,
+      "id": "msg_1768761908996_0297gusmk",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761908997,
+      "id": "msg_1768761908997_7mawp1cks",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761909185,
+      "id": "msg_1768761909185_d43rz0t6e",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761909186,
+      "id": "msg_1768761909186_a0dtm8zj5",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761909320,
+      "id": "msg_1768761909320_q5u4u2j3y",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761909320,
+      "id": "msg_1768761909320_dpijwo79g",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761909451,
+      "id": "msg_1768761909451_ym791kb9x",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761909452,
+      "id": "msg_1768761909452_fk0pzq3ux",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761909452,
+      "id": "msg_1768761909452_jckn7q6bi",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761909453,
+      "id": "msg_1768761909453_m6vgmrxcw",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761909549,
+      "id": "msg_1768761909549_kx2bvjzwf",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768761909549,
+      "id": "msg_1768761909549_kuh7x24a0",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762033596,
+      "id": "msg_1768762033596_6sx11bp84",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762033597,
+      "id": "msg_1768762033597_u8opn3noh",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762033751,
+      "id": "msg_1768762033751_xpty3knn2",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762033751,
+      "id": "msg_1768762033751_ndjbtm1dm",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762033895,
+      "id": "msg_1768762033895_qe9807f6o",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762033895,
+      "id": "msg_1768762033895_l7xc5t274",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762034005,
+      "id": "msg_1768762034005_e4us9kbr2",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762034005,
+      "id": "msg_1768762034005_d5shahnbt",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762034006,
+      "id": "msg_1768762034006_v6rzdh16b",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762034006,
+      "id": "msg_1768762034006_dlrla4e9x",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762034099,
+      "id": "msg_1768762034099_6vtzrwtd4",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762034101,
+      "id": "msg_1768762034101_cukuz2jjy",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762067946,
+      "id": "070ff3b1-6b3b-4092-b806-abddaa36ab50",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768762067947,
+      "id": "070ff3b1-6b3b-4092-b806-abddaa36ab50",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768762067947,
+      "id": "070ff3b1-6b3b-4092-b806-abddaa36ab50",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768762067949,
+      "id": "070ff3b1-6b3b-4092-b806-abddaa36ab50",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768762067949,
+      "id": "070ff3b1-6b3b-4092-b806-abddaa36ab50",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768762067951,
+      "id": "070ff3b1-6b3b-4092-b806-abddaa36ab50",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768762123922,
+      "id": "f57fb32a-b773-44db-bf9f-7f8a86ef7773",
+      "username": "mewvoltcreator",
+      "avatarUrl": "",
+      "text": "/SPIN ASDADASDS",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768762123922,
+      "id": "f57fb32a-b773-44db-bf9f-7f8a86ef7773",
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "text": "/SPIN ASDADASDS",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768762123922,
+      "id": "f57fb32a-b773-44db-bf9f-7f8a86ef7773",
+      "username": "mewvoltcreator",
+      "avatarUrl": "",
+      "text": "/SPIN ASDADASDS",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768762123923,
+      "id": "f57fb32a-b773-44db-bf9f-7f8a86ef7773",
+      "username": "mewvoltcreator",
+      "avatarUrl": "",
+      "text": "/SPIN ASDADASDS",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768762123936,
+      "id": "f57fb32a-b773-44db-bf9f-7f8a86ef7773",
+      "username": "mewvoltcreator",
+      "avatarUrl": "",
+      "text": "/SPIN ASDADASDS",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768762123937,
+      "id": "f57fb32a-b773-44db-bf9f-7f8a86ef7773",
+      "username": "mewvoltcreator",
+      "avatarUrl": "",
+      "text": "/SPIN ASDADASDS",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768762129378,
+      "id": "276735a5-2b99-4a14-8d65-8b945c122b58",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin ap+sdkas",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768762129379,
+      "id": "276735a5-2b99-4a14-8d65-8b945c122b58",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin ap+sdkas",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768762129382,
+      "id": "276735a5-2b99-4a14-8d65-8b945c122b58",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/spin ap+sdkas",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768762129383,
+      "id": "276735a5-2b99-4a14-8d65-8b945c122b58",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin ap+sdkas",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768762129406,
+      "id": "276735a5-2b99-4a14-8d65-8b945c122b58",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin ap+sdkas",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768762129407,
+      "id": "276735a5-2b99-4a14-8d65-8b945c122b58",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin ap+sdkas",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768762194416,
+      "id": "msg_1768762194416_9arvas5gu",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762194417,
+      "id": "msg_1768762194417_c6xi7zdy9",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762194821,
+      "id": "msg_1768762194821_ibz987ykc",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762194821,
+      "id": "msg_1768762194821_xtesyba5p",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762194976,
+      "id": "msg_1768762194976_0y9u6to3t",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762194976,
+      "id": "msg_1768762194976_6sczy0nyz",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762195106,
+      "id": "msg_1768762195106_emr78wq5n",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762195107,
+      "id": "msg_1768762195107_qd4mjn32v",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762195108,
+      "id": "msg_1768762195108_qi1lfurju",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762195109,
+      "id": "msg_1768762195109_gv6bewb20",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762195227,
+      "id": "msg_1768762195227_lnwlh1wku",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762195228,
+      "id": "msg_1768762195228_bmrc9fngg",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762199326,
+      "id": "5f5404ee-e81f-46a7-964a-71fda153c6c0",
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
+    },
+    {
+      "ts": 1768762199328,
+      "id": "5f5404ee-e81f-46a7-964a-71fda153c6c0",
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
+    },
+    {
+      "ts": 1768762199326,
+      "id": "5f5404ee-e81f-46a7-964a-71fda153c6c0",
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
+    },
+    {
+      "ts": 1768762199330,
+      "id": "5f5404ee-e81f-46a7-964a-71fda153c6c0",
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
+    },
+    {
+      "ts": 1768762199344,
+      "id": "5f5404ee-e81f-46a7-964a-71fda153c6c0",
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "text": "/spin",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
+    },
+    {
+      "ts": 1768762199345,
+      "id": "5f5404ee-e81f-46a7-964a-71fda153c6c0",
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
+    },
+    {
+      "ts": 1768762335093,
+      "id": "e52717cc-6d10-42ab-9fec-2ddb6a9dc774",
+      "username": "ct.app_site_esqra",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "text": "!Pump Fun DEv V O L U M E Bot",
+      "userAddress": "2Nu2peDiTAeMCLFJ6pbY6xgEVnUEEjStbVfzeXZXgFUU"
+    },
+    {
+      "ts": 1768762344737,
+      "id": "msg_1768762344737_iooi80lbo",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762344738,
+      "id": "msg_1768762344738_axa52iqeu",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762344893,
+      "id": "msg_1768762344893_lzg7ya5cv",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762344894,
+      "id": "msg_1768762344894_24mt6we8l",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762345045,
+      "id": "msg_1768762345045_apv17753t",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762345045,
+      "id": "msg_1768762345045_29r1rh9hj",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762345169,
+      "id": "msg_1768762345169_evxk89buv",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762345169,
+      "id": "msg_1768762345169_nt8clpvw3",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762345169,
+      "id": "msg_1768762345169_b6ldsm2qz",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762345170,
+      "id": "msg_1768762345170_hod7x0zgz",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762345267,
+      "id": "msg_1768762345267_8oayil6tt",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762345267,
+      "id": "msg_1768762345267_keep2h1e3",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762381834,
+      "id": "c5bf6dd9-b22f-4edd-b2ca-ad796875dca0",
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
+    },
+    {
+      "ts": 1768762381835,
+      "id": "c5bf6dd9-b22f-4edd-b2ca-ad796875dca0",
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
+    },
+    {
+      "ts": 1768762381836,
+      "id": "c5bf6dd9-b22f-4edd-b2ca-ad796875dca0",
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
+    },
+    {
+      "ts": 1768762381836,
+      "id": "c5bf6dd9-b22f-4edd-b2ca-ad796875dca0",
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "text": "/spin",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
+    },
+    {
+      "ts": 1768762381836,
+      "id": "c5bf6dd9-b22f-4edd-b2ca-ad796875dca0",
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
+    },
+    {
+      "ts": 1768762381837,
+      "id": "c5bf6dd9-b22f-4edd-b2ca-ad796875dca0",
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
+    },
+    {
+      "ts": 1768762415929,
+      "id": "9140333f-fe1d-4581-b6ae-3d930ccaa1bb",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768762415928,
+      "id": "9140333f-fe1d-4581-b6ae-3d930ccaa1bb",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768762415929,
+      "id": "9140333f-fe1d-4581-b6ae-3d930ccaa1bb",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768762415929,
+      "id": "9140333f-fe1d-4581-b6ae-3d930ccaa1bb",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768762415943,
+      "id": "9140333f-fe1d-4581-b6ae-3d930ccaa1bb",
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768762415943,
+      "id": "9140333f-fe1d-4581-b6ae-3d930ccaa1bb",
+      "username": "justin_bieber",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768762429477,
+      "id": "7583f9b9-7a12-42cd-b8fc-25a48061523d",
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "",
+      "text": "/points",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
+    },
+    {
+      "ts": 1768762429478,
+      "id": "7583f9b9-7a12-42cd-b8fc-25a48061523d",
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "text": "/points",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
+    },
+    {
+      "ts": 1768762429478,
+      "id": "7583f9b9-7a12-42cd-b8fc-25a48061523d",
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "",
+      "text": "/points",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
+    },
+    {
+      "ts": 1768762429479,
+      "id": "7583f9b9-7a12-42cd-b8fc-25a48061523d",
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "",
+      "text": "/points",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
+    },
+    {
+      "ts": 1768762429485,
+      "id": "7583f9b9-7a12-42cd-b8fc-25a48061523d",
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "",
+      "text": "/points",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
+    },
+    {
+      "ts": 1768762429486,
+      "id": "7583f9b9-7a12-42cd-b8fc-25a48061523d",
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "",
+      "text": "/points",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
+    },
+    {
+      "ts": 1768762654336,
+      "id": "ff7a2794-76e5-4bfb-990f-d8ef28633f3f",
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG"
+    },
+    {
+      "ts": 1768762654337,
+      "id": "ff7a2794-76e5-4bfb-990f-d8ef28633f3f",
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG"
+    },
+    {
+      "ts": 1768762654347,
+      "id": "ff7a2794-76e5-4bfb-990f-d8ef28633f3f",
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "text": "/spin",
+      "userAddress": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG"
+    },
+    {
+      "ts": 1768762654347,
+      "id": "ff7a2794-76e5-4bfb-990f-d8ef28633f3f",
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG"
+    },
+    {
+      "ts": 1768762654348,
+      "id": "ff7a2794-76e5-4bfb-990f-d8ef28633f3f",
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG"
+    },
+    {
+      "ts": 1768762654354,
+      "id": "ff7a2794-76e5-4bfb-990f-d8ef28633f3f",
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG"
+    },
+    {
+      "ts": 1768762687024,
+      "id": "19a3ea86-463d-4a3e-8d1d-f103e1a0e1f0",
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG"
+    },
+    {
+      "ts": 1768762687025,
+      "id": "19a3ea86-463d-4a3e-8d1d-f103e1a0e1f0",
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG"
+    },
+    {
+      "ts": 1768762687034,
+      "id": "19a3ea86-463d-4a3e-8d1d-f103e1a0e1f0",
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG"
+    },
+    {
+      "ts": 1768762687034,
+      "id": "19a3ea86-463d-4a3e-8d1d-f103e1a0e1f0",
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "text": "/spin",
+      "userAddress": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG"
+    },
+    {
+      "ts": 1768762687035,
+      "id": "19a3ea86-463d-4a3e-8d1d-f103e1a0e1f0",
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG"
+    },
+    {
+      "ts": 1768762687036,
+      "id": "19a3ea86-463d-4a3e-8d1d-f103e1a0e1f0",
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG"
+    },
+    {
+      "ts": 1768762726863,
+      "id": "99da3482-b422-4603-8a50-c4ffd3918112",
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "avatarUrl": "",
+      "text": "/spin asd",
+      "userAddress": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG"
+    },
+    {
+      "ts": 1768762726864,
+      "id": "99da3482-b422-4603-8a50-c4ffd3918112",
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "avatarUrl": "",
+      "text": "/spin asd",
+      "userAddress": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG"
+    },
+    {
+      "ts": 1768762726872,
+      "id": "99da3482-b422-4603-8a50-c4ffd3918112",
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "text": "/spin asd",
+      "userAddress": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG"
+    },
+    {
+      "ts": 1768762726873,
+      "id": "99da3482-b422-4603-8a50-c4ffd3918112",
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "avatarUrl": "",
+      "text": "/spin asd",
+      "userAddress": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG"
+    },
+    {
+      "ts": 1768762726875,
+      "id": "99da3482-b422-4603-8a50-c4ffd3918112",
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "avatarUrl": "",
+      "text": "/spin asd",
+      "userAddress": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG"
+    },
+    {
+      "ts": 1768762726875,
+      "id": "99da3482-b422-4603-8a50-c4ffd3918112",
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "avatarUrl": "",
+      "text": "/spin asd",
+      "userAddress": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG"
+    },
+    {
+      "ts": 1768762748297,
+      "id": "41d7221d-74a0-479f-b712-96ca02f66ebe",
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG"
+    },
+    {
+      "ts": 1768762748298,
+      "id": "41d7221d-74a0-479f-b712-96ca02f66ebe",
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG"
+    },
+    {
+      "ts": 1768762748298,
+      "id": "41d7221d-74a0-479f-b712-96ca02f66ebe",
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG"
+    },
+    {
+      "ts": 1768762748299,
+      "id": "41d7221d-74a0-479f-b712-96ca02f66ebe",
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG"
+    },
+    {
+      "ts": 1768762748313,
+      "id": "41d7221d-74a0-479f-b712-96ca02f66ebe",
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "text": "/spin",
+      "userAddress": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG"
+    },
+    {
+      "ts": 1768762748314,
+      "id": "41d7221d-74a0-479f-b712-96ca02f66ebe",
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG"
+    },
+    {
+      "ts": 1768762804418,
+      "id": "de5a4fe8-52b5-4f33-ae3c-cdc4a8e38c28",
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "text": "/spin",
+      "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    },
+    {
+      "ts": 1768762804420,
+      "id": "de5a4fe8-52b5-4f33-ae3c-cdc4a8e38c28",
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    },
+    {
+      "ts": 1768762804422,
+      "id": "de5a4fe8-52b5-4f33-ae3c-cdc4a8e38c28",
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    },
+    {
+      "ts": 1768762804426,
+      "id": "de5a4fe8-52b5-4f33-ae3c-cdc4a8e38c28",
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    },
+    {
+      "ts": 1768762804470,
+      "id": "de5a4fe8-52b5-4f33-ae3c-cdc4a8e38c28",
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    },
+    {
+      "ts": 1768762804471,
+      "id": "de5a4fe8-52b5-4f33-ae3c-cdc4a8e38c28",
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    },
+    {
+      "ts": 1768762808108,
+      "id": "msg_1768762808108_kvfhdlt0j",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762808530,
+      "id": "msg_1768762808530_k936dxj1p",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762808811,
+      "id": "msg_1768762808811_1txc68okx",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762809003,
+      "id": "msg_1768762809003_lq9u9z2g6",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768762828408,
+      "id": "0d337614-0827-4e56-9662-dfa1d55d5141",
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    },
+    {
+      "ts": 1768762828411,
+      "id": "0d337614-0827-4e56-9662-dfa1d55d5141",
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    },
+    {
+      "ts": 1768762828413,
+      "id": "0d337614-0827-4e56-9662-dfa1d55d5141",
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    },
+    {
+      "ts": 1768762828420,
+      "id": "0d337614-0827-4e56-9662-dfa1d55d5141",
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "text": "/spin",
+      "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    },
+    {
+      "ts": 1768762828421,
+      "id": "0d337614-0827-4e56-9662-dfa1d55d5141",
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    },
+    {
+      "ts": 1768763064611,
+      "id": "msg_1768763064611_i7pt3qzyp",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768763064767,
+      "id": "msg_1768763064767_qr3sr81n8",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768763065026,
+      "id": "msg_1768763065026_37xtwkj75",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768763065120,
+      "id": "msg_1768763065120_de7b1kat4",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768763089130,
+      "id": "msg_1768763089130_jesmuze17",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "chat config",
+      "userAddress": null
+    },
+    {
+      "ts": 1768763089269,
+      "id": "msg_1768763089269_8ckf8n02z",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "livestream join",
+      "userAddress": null
+    },
+    {
+      "ts": 1768763089557,
+      "id": "msg_1768763089557_qoy51zmmo",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "Joining rooms",
+      "userAddress": null
+    },
+    {
+      "ts": 1768763089650,
+      "id": "msg_1768763089650_4i3l2q3lf",
+      "username": "User",
+      "avatarUrl": "",
+      "text": "joinRoom ack",
+      "userAddress": null
+    },
+    {
+      "ts": 1768763110008,
+      "id": "5c8e567b-b313-4d03-b7f4-40efdff9031c",
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    },
+    {
+      "ts": 1768763110010,
+      "id": "5c8e567b-b313-4d03-b7f4-40efdff9031c",
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    },
+    {
+      "ts": 1768763110011,
+      "id": "5c8e567b-b313-4d03-b7f4-40efdff9031c",
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    },
+    {
+      "ts": 1768763110027,
+      "id": "5c8e567b-b313-4d03-b7f4-40efdff9031c",
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "text": "/spin",
+      "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    },
+    {
+      "ts": 1768763110027,
+      "id": "5c8e567b-b313-4d03-b7f4-40efdff9031c",
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    },
+    {
+      "ts": 1768763134594,
+      "id": "5bfa2a90-b4bd-423d-8fa1-82f92d53458e",
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    },
+    {
+      "ts": 1768763134595,
+      "id": "5bfa2a90-b4bd-423d-8fa1-82f92d53458e",
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "text": "/spin",
+      "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    },
+    {
+      "ts": 1768763134595,
+      "id": "5bfa2a90-b4bd-423d-8fa1-82f92d53458e",
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    },
+    {
+      "ts": 1768763134606,
+      "id": "5bfa2a90-b4bd-423d-8fa1-82f92d53458e",
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    },
+    {
+      "ts": 1768763134607,
+      "id": "5bfa2a90-b4bd-423d-8fa1-82f92d53458e",
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "avatarUrl": "",
+      "text": "/spin",
+      "userAddress": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9"
+    }
+  ],
+  "logs": [
+    {
+      "ts": 1768700000001,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/Qm...",
+      "action": "/start"
+    },
+    {
+      "ts": 1768687914123,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "joined the queue (+1)"
+    },
+    {
+      "ts": 1768687924126,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "Let's play"
+    },
+    {
+      "ts": 1768687925542,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "Spinning"
+    },
+    {
+      "ts": 1768687932650,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "LOST"
+    },
+    {
+      "ts": 1768688782917,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "joined the queue (+1)"
+    },
+    {
+      "ts": 1768688792925,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "Let's play"
+    },
+    {
+      "ts": 1768688794341,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "Spinning"
+    },
+    {
+      "ts": 1768688801444,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "LOST"
+    },
+    {
+      "ts": 1768688811399,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "joined the queue (+1)"
+    },
+    {
+      "ts": 1768688821406,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "Let's play"
+    },
+    {
+      "ts": 1768688822822,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "Spinning"
+    },
+    {
+      "ts": 1768688829939,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "LOST"
+    },
+    {
+      "ts": 1768688892029,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "joined the queue (+1)"
+    },
+    {
+      "ts": 1768688902037,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "Let's play"
+    },
+    {
+      "ts": 1768688903454,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "Spinning"
+    },
+    {
+      "ts": 1768688910571,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "LOST"
+    },
+    {
+      "ts": 1768688962961,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "joined the queue (+1)"
+    },
+    {
+      "ts": 1768688972966,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "Let's play"
+    },
+    {
+      "ts": 1768688974367,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "Spinning"
+    },
+    {
+      "ts": 1768688981479,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "LOST"
+    },
+    {
+      "ts": 1768689059006,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "joined the queue (+1)"
+    },
+    {
+      "ts": 1768689069014,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "Let's play"
+    },
+    {
+      "ts": 1768689070430,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "Spinning"
+    },
+    {
+      "ts": 1768689073777,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "joined the queue (+1)"
+    },
+    {
+      "ts": 1768689077548,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "LOST"
+    },
+    {
+      "ts": 1768689080075,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "Next"
+    },
+    {
+      "ts": 1768689084510,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "joined the queue (+1)"
+    },
+    {
+      "ts": 1768689090079,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "Let's play"
+    },
+    {
+      "ts": 1768689091479,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "Spinning"
+    },
+    {
+      "ts": 1768689098586,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "LOST"
+    },
+    {
+      "ts": 1768689100241,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "joined the queue (+1)"
+    },
+    {
+      "ts": 1768689101100,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "Next"
+    },
+    {
+      "ts": 1768689111113,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "Let's play"
+    },
+    {
+      "ts": 1768689112528,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "Spinning"
+    },
+    {
+      "ts": 1768689119646,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "LOST"
+    },
+    {
+      "ts": 1768689122163,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "Next"
+    },
+    {
+      "ts": 1768689132179,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "Let's play"
+    },
+    {
+      "ts": 1768689133595,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "Spinning"
+    },
+    {
+      "ts": 1768689140711,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "LOST"
+    },
+    {
+      "ts": 1768690032235,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "joined the queue (+1)"
+    },
+    {
+      "ts": 1768690042241,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "Let's play"
+    },
+    {
+      "ts": 1768690043658,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "Spinning"
+    },
+    {
+      "ts": 1768690050763,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "LOST"
+    },
+    {
+      "ts": 1768690120235,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "joined the queue (+1)"
+    },
+    {
+      "ts": 1768690130237,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "Let's play"
+    },
+    {
+      "ts": 1768690131653,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "Spinning"
+    },
+    {
+      "ts": 1768690138766,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "LOST"
+    },
+    {
+      "ts": 1768690558340,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "joined the queue (+1)"
+    },
+    {
+      "ts": 1768690568353,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "Let's play"
+    },
+    {
+      "ts": 1768690569754,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "Spinning"
+    },
+    {
+      "ts": 1768690576870,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "LOST"
+    },
+    {
+      "ts": 1768690640770,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "joined the queue (+1)"
+    },
+    {
+      "ts": 1768690643507,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "joined the queue (+1)"
+    },
+    {
+      "ts": 1768690647211,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "joined the queue (+1)"
+    },
+    {
+      "ts": 1768690650783,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "Let's play"
+    },
+    {
+      "ts": 1768690652184,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "Spinning"
+    },
+    {
+      "ts": 1768690659299,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "LOST"
+    },
+    {
+      "ts": 1768690661800,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "Next"
+    },
+    {
+      "ts": 1768690671817,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "Let's play"
+    },
+    {
+      "ts": 1768690673232,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "Spinning"
+    },
+    {
+      "ts": 1768690680349,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "LOST"
+    },
+    {
+      "ts": 1768690682860,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "Next"
+    },
+    {
+      "ts": 1768690692865,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "Let's play"
+    },
+    {
+      "ts": 1768690694265,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "Spinning"
+    },
+    {
+      "ts": 1768690701381,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "LOST"
+    },
+    {
+      "ts": 1768693333227,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "joined the queue (+1)"
+    },
+    {
+      "ts": 1768693343234,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "Let's play"
+    },
+    {
+      "ts": 1768693344650,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "Spinning"
+    },
+    {
+      "ts": 1768693351754,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "LOST"
+    },
+    {
+      "ts": 1768694327327,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "joined the queue (+1)"
+    },
+    {
+      "ts": 1768694337344,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "Let's play"
+    },
+    {
+      "ts": 1768694338760,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "Spinning"
+    },
+    {
+      "ts": 1768694345878,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "LOST"
+    },
+    {
+      "ts": 1768694364078,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "joined the queue (+1)"
+    },
+    {
+      "ts": 1768694374092,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "Let's play"
+    },
+    {
+      "ts": 1768694375493,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "Spinning"
+    },
+    {
+      "ts": 1768694382605,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "LOST"
+    },
+    {
+      "ts": 1768694505887,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "joined the queue (+1)"
+    },
+    {
+      "ts": 1768694515905,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "Let's play"
+    },
+    {
+      "ts": 1768694517307,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "Spinning"
+    },
+    {
+      "ts": 1768694524440,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "LOST"
+    },
+    {
+      "ts": 1768695348876,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "joined the queue (+1) [1/1 today]"
+    },
+    {
+      "ts": 1768695358889,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "Let's play"
+    },
+    {
+      "ts": 1768695360299,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "Spinning"
+    },
+    {
+      "ts": 1768695367419,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "LOST"
+    },
+    {
+      "ts": 1768695522480,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "tried /start (daily limit 1/1)"
+    },
+    {
+      "ts": 1768695557397,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "tried /start (daily limit 1/1)"
+    },
+    {
+      "ts": 1768695676226,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "joined the queue (+1) [1/1 today]",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768695686235,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "Let's play",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768695687638,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "Spinning",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768695694770,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "LOST",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
+    },
+    {
+      "ts": 1768695813529,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "tried /start (daily limit 1/1)",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
+    },
+    {
+      "ts": 1768696028896,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "⚠ daily limit reached (1/1)",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9",
+      "level": "warn"
+    },
+    {
+      "ts": 1768696481854,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "⚠ daily limit reached (1/1)",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G",
+      "level": "warn"
+    },
+    {
+      "ts": 1768696630502,
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "action": "joined the queue (+1) [1/1 today]",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "level": null
+    },
+    {
+      "ts": 1768696640518,
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "action": "Let's play",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "level": null
+    },
+    {
+      "ts": 1768696641918,
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "action": "Spinning",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "level": null
+    },
+    {
+      "ts": 1768696649039,
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "action": "LOST",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "level": null
+    },
+    {
+      "ts": 1768696667402,
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "action": "⚠ daily limit reached (1/1)",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "level": "warn"
+    },
+    {
+      "ts": 1768696789465,
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "action": "⚠ daily limit reached (1/1)",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "level": "warn"
+    },
+    {
+      "ts": 1768696797308,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "⚠ daily limit reached (1/1)",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G",
+      "level": "warn"
+    },
+    {
+      "ts": 1768696862633,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "⚠ daily limit reached (1/1)",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G",
+      "level": "warn"
+    },
+    {
+      "ts": 1768696885711,
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "action": "⚠ daily limit reached (1/1)",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "level": "warn"
+    },
+    {
+      "ts": 1768697027774,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "⚠ daily limit reached (1/1)",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G",
+      "level": "warn"
+    },
+    {
+      "ts": 1768697481692,
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "action": "joined the queue (+1) [2/3 today]",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "level": null
+    },
+    {
+      "ts": 1768697491700,
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "action": "Let's play",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "level": null
+    },
+    {
+      "ts": 1768697493120,
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "action": "Spinning",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "level": null
+    },
+    {
+      "ts": 1768697500239,
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "action": "LOST",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "level": null
+    },
+    {
+      "ts": 1768697720234,
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "action": "joined the queue (+1) [3/3 today]",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "level": null
+    },
+    {
+      "ts": 1768697730247,
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "action": "Let's play",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "level": null
+    },
+    {
+      "ts": 1768697731658,
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "action": "Spinning",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "level": null
+    },
+    {
+      "ts": 1768697738780,
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "action": "LOST",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "level": null
+    },
+    {
+      "ts": 1768697801461,
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "action": "⚠ daily limit reached (3/3)",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "level": "warn"
+    },
+    {
+      "ts": 1768697878329,
+      "username": "mewvoltcreator",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
+      "action": "⚠ daily limit reached (1/1)",
+      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9",
+      "level": "warn"
+    },
+    {
+      "ts": 1768698120177,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "joined the queue (+1) [2/3 today]",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G",
+      "level": null
+    },
+    {
+      "ts": 1768698130193,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "Let's play",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G",
+      "level": null
+    },
+    {
+      "ts": 1768698131594,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "Spinning",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G",
+      "level": null
+    },
+    {
+      "ts": 1768698138723,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "LOST",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G",
+      "level": null
+    },
+    {
+      "ts": 1768698842616,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "joined the queue (+1) [3/3 today]",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G",
+      "level": null
+    },
+    {
+      "ts": 1768698852631,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "Let's play",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G",
+      "level": null
+    },
+    {
+      "ts": 1768698854031,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "Spinning",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G",
+      "level": null
+    },
+    {
+      "ts": 1768698861178,
+      "username": "justin_bieber",
+      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
+      "action": "LOST",
+      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G",
+      "level": null
+    },
+    {
+      "ts": 1768759792771,
+      "username": null,
+      "text": "🎟️ mewvoltcreator joined the queue (1/1 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768759792870,
+      "username": null,
+      "text": "⚠️ mewvoltcreator reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768759795785,
+      "username": null,
+      "text": "🎁 mewvoltcreator won 25 points!",
+      "action": null,
+      "userAddress": null,
+      "level": "success"
+    },
+    {
+      "ts": 1768759824206,
+      "username": null,
+      "text": "⚠️ mewvoltcreator reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768759824286,
+      "username": null,
+      "text": "⚠️ mewvoltcreator reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768759871558,
+      "username": null,
+      "text": "🎟️ justin_bieber joined the queue (1/3 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768759871689,
+      "username": null,
+      "text": "🎟️ justin_bieber joined the queue (2/3 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768759874562,
+      "username": null,
+      "text": "🎁 justin_bieber won 50 points!",
+      "action": null,
+      "userAddress": null,
+      "level": "success"
+    },
+    {
+      "ts": 1768759880575,
+      "username": null,
+      "text": "🎨 justin_bieber won Free Mint NFT!",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768759913310,
+      "username": null,
+      "text": "🎟️ justin_bieber joined the queue (3/3 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768759913402,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768759916314,
+      "username": null,
+      "text": "🎁 justin_bieber won 10 points!",
+      "action": null,
+      "userAddress": null,
+      "level": "success"
+    },
+    {
+      "ts": 1768760016834,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760016906,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760051026,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760051102,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760079390,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760079456,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760132857,
+      "username": null,
+      "text": "⚠️ mewvoltcreator reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760132937,
+      "username": null,
+      "text": "⚠️ mewvoltcreator reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760155927,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760156024,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760292966,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760293052,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760344904,
+      "username": null,
+      "text": "🎟️ justin_bieber joined the queue (1/3 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768760344921,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760347914,
+      "username": null,
+      "text": "🎨 justin_bieber won Free Mint NFT!",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768760353018,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760353029,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760448306,
+      "username": null,
+      "text": "🎟️ justin_bieber joined the queue (2/3 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768760448393,
+      "username": null,
+      "text": "🎟️ justin_bieber joined the queue (2/3 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768760451308,
+      "username": null,
+      "text": "😔 justin_bieber got nothing",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768760451401,
+      "username": null,
+      "text": "🎁 justin_bieber won 25 points!",
+      "action": null,
+      "userAddress": null,
+      "level": "success"
+    },
+    {
+      "ts": 1768760456438,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760456578,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760477056,
+      "username": null,
+      "text": "🎟️ justin_bieber joined the queue (3/3 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768760477059,
+      "username": null,
+      "text": "🎟️ justin_bieber joined the queue (3/3 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768760480058,
+      "username": null,
+      "text": "😔 justin_bieber got nothing",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768760480061,
+      "username": null,
+      "text": "😔 justin_bieber got nothing",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768760485153,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760485169,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760499466,
+      "username": null,
+      "text": "🎟️ justin_bieber joined the queue (2/3 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768760499491,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760502470,
+      "username": null,
+      "text": "🎁 justin_bieber won 50 points!",
+      "action": null,
+      "userAddress": null,
+      "level": "success"
+    },
+    {
+      "ts": 1768760507337,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760507584,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760507587,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760515542,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760515785,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760523746,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760523988,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768760531951,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761098317,
+      "username": null,
+      "text": "📊 justin_bieber has 50 points (950 to 1000)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768761098318,
+      "username": null,
+      "text": "📊 justin_bieber has 50 points (950 to 1000)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768761098330,
+      "username": null,
+      "text": "📊 justin_bieber has 60 points (940 to 1000)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768761098331,
+      "username": null,
+      "text": "📊 justin_bieber has 60 points (940 to 1000)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768761392308,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761392314,
+      "username": null,
+      "text": "🎟️ justin_bieber joined the queue (3/3 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768761395321,
+      "username": null,
+      "text": "🎁 justin_bieber won 10 points!",
+      "action": null,
+      "userAddress": null,
+      "level": "success"
+    },
+    {
+      "ts": 1768761400421,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761400445,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761411769,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761411791,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761417248,
+      "username": null,
+      "text": "📊 justin_bieber has 60 points (940 to 1000)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768761417249,
+      "username": null,
+      "text": "📊 justin_bieber has 60 points (940 to 1000)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768761417264,
+      "username": null,
+      "text": "📊 justin_bieber has 50 points (950 to 1000)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768761417264,
+      "username": null,
+      "text": "📊 justin_bieber has 60 points (940 to 1000)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768761417265,
+      "username": null,
+      "text": "📊 justin_bieber has 60 points (940 to 1000)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768761417266,
+      "username": null,
+      "text": "📊 justin_bieber has 50 points (950 to 1000)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768761419891,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761419914,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761434336,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761434339,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761442552,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761442563,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761460320,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761460462,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761468429,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761468662,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761602564,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761602565,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761610648,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761610670,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761622479,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761622490,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761630603,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761630610,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761652805,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761652818,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761660921,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761660923,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761682679,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761682679,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761690784,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768761690792,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762068416,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762068514,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762076501,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762076696,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762124323,
+      "username": null,
+      "text": "⚠️ mewvoltcreator reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762124357,
+      "username": null,
+      "text": "⚠️ mewvoltcreator reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762132419,
+      "username": null,
+      "text": "⚠️ mewvoltcreator reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762132462,
+      "username": null,
+      "text": "⚠️ mewvoltcreator reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762137603,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762137628,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762145829,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762145832,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762199720,
+      "username": null,
+      "text": "🎟️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 joined the queue (1/3 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762199733,
+      "username": null,
+      "text": "🎟️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 joined the queue (1/3 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762202723,
+      "username": null,
+      "text": "😔 B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 got nothing",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762202740,
+      "username": null,
+      "text": "🔄 B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 got extra spin!",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762207841,
+      "username": null,
+      "text": "⚠️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762207849,
+      "username": null,
+      "text": "⚠️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762208742,
+      "username": null,
+      "text": "😔 B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 got nothing",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762382352,
+      "username": null,
+      "text": "🎟️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 joined the queue (2/3 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762382447,
+      "username": null,
+      "text": "🎟️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 joined the queue (2/3 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762385358,
+      "username": null,
+      "text": "😔 B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 got nothing",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762385450,
+      "username": null,
+      "text": "😔 B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 got nothing",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762390493,
+      "username": null,
+      "text": "⚠️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762390645,
+      "username": null,
+      "text": "⚠️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762416327,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762416346,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762424460,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762424463,
+      "username": null,
+      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762429477,
+      "username": null,
+      "text": "📊 B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 has 0 points (1000 to 1000)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762429478,
+      "username": null,
+      "text": "📊 B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 has 0 points (1000 to 1000)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762429478,
+      "username": null,
+      "text": "📊 B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 has 0 points (1000 to 1000)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762429479,
+      "username": null,
+      "text": "📊 B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 has 0 points (1000 to 1000)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762429486,
+      "username": null,
+      "text": "📊 B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 has 0 points (1000 to 1000)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762429487,
+      "username": null,
+      "text": "📊 B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 has 0 points (1000 to 1000)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762654776,
+      "username": null,
+      "text": "🎟️ 5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG joined the queue (1/3 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762654951,
+      "username": null,
+      "text": "🎟️ 5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG joined the queue (1/3 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762657790,
+      "username": null,
+      "text": "🔄 5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG got extra spin!",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762657955,
+      "username": null,
+      "text": "🎁 5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG won 10 points!",
+      "action": null,
+      "userAddress": null,
+      "level": "success"
+    },
+    {
+      "ts": 1768762662900,
+      "username": null,
+      "text": "⚠️ 5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762663168,
+      "username": null,
+      "text": "⚠️ 5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762663814,
+      "username": null,
+      "text": "🎁 5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG won 10 points!",
+      "action": null,
+      "userAddress": null,
+      "level": "success"
+    },
+    {
+      "ts": 1768762687485,
+      "username": null,
+      "text": "🎟️ 5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG joined the queue (2/3 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762687620,
+      "username": null,
+      "text": "🎟️ 5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG joined the queue (2/3 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762690489,
+      "username": null,
+      "text": "🔄 5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG got extra spin!",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762690623,
+      "username": null,
+      "text": "🔄 5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG got extra spin!",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762695614,
+      "username": null,
+      "text": "⚠️ 5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762695860,
+      "username": null,
+      "text": "⚠️ 5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762696509,
+      "username": null,
+      "text": "😔 5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG got nothing",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762696636,
+      "username": null,
+      "text": "🎁 5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG won 50 points!",
+      "action": null,
+      "userAddress": null,
+      "level": "success"
+    },
+    {
+      "ts": 1768762727294,
+      "username": null,
+      "text": "🎟️ 5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG joined the queue (3/3 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762727464,
+      "username": null,
+      "text": "🎟️ 5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG joined the queue (3/3 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762730302,
+      "username": null,
+      "text": "🎁 5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG won 25 points!",
+      "action": null,
+      "userAddress": null,
+      "level": "success"
+    },
+    {
+      "ts": 1768762730479,
+      "username": null,
+      "text": "😔 5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG got nothing",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762735411,
+      "username": null,
+      "text": "⚠️ 5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762735675,
+      "username": null,
+      "text": "⚠️ 5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762748553,
+      "username": null,
+      "text": "⚠️ 5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762748555,
+      "username": null,
+      "text": "⚠️ 5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762756695,
+      "username": null,
+      "text": "⚠️ 5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762756697,
+      "username": null,
+      "text": "⚠️ 5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762804863,
+      "username": null,
+      "text": "🎟️ 7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9 joined the queue (1/3 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762804877,
+      "username": null,
+      "text": "🎟️ 7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9 joined the queue (1/3 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762806839,
+      "username": null,
+      "text": "⚠️ 7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9 reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762807875,
+      "username": null,
+      "text": "🎁 7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9 won 10 points!",
+      "action": null,
+      "userAddress": null,
+      "level": "success"
+    },
+    {
+      "ts": 1768762813007,
+      "username": null,
+      "text": "⚠️ 7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9 reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762828637,
+      "username": null,
+      "text": "🎟️ 7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9 joined the queue (2/3 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762828639,
+      "username": null,
+      "text": "🎟️ 7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9 joined the queue (2/3 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762831643,
+      "username": null,
+      "text": "😔 7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9 got nothing",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762831648,
+      "username": null,
+      "text": "🔄 7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9 got extra spin!",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768762836786,
+      "username": null,
+      "text": "⚠️ 7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9 reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768762837665,
+      "username": null,
+      "text": "🎁 7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9 won 10 points!",
+      "action": null,
+      "userAddress": null,
+      "level": "success"
+    },
+    {
+      "ts": 1768763110479,
+      "username": null,
+      "text": "🎟️ 7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9 joined the queue (3/3 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768763110568,
+      "username": null,
+      "text": "🎟️ 7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9 joined the queue (3/3 spins)",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768763113485,
+      "username": null,
+      "text": "🎁 7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9 won 25 points!",
+      "action": null,
+      "userAddress": null,
+      "level": "success"
+    },
+    {
+      "ts": 1768763113570,
+      "username": null,
+      "text": "😔 7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9 got nothing",
+      "action": null,
+      "userAddress": null,
+      "level": "info"
+    },
+    {
+      "ts": 1768763118606,
+      "username": null,
+      "text": "⚠️ 7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9 reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768763135014,
+      "username": null,
+      "text": "⚠️ 7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9 reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768763135319,
+      "username": null,
+      "text": "⚠️ 7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9 reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768763143420,
+      "username": null,
+      "text": "⚠️ 7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9 reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    }
+  ],
+  "winners": [
+    {
+      "ts": 1768759795786,
+      "username": "mewvoltcreator",
+      "prize": "25 points",
+      "amount": 25
+    },
+    {
+      "ts": 1768759874565,
+      "username": "justin_bieber",
+      "prize": "50 points",
+      "amount": 50
+    },
+    {
+      "ts": 1768759880576,
+      "username": "justin_bieber",
+      "prize": "Free Mint NFT",
+      "amount": null
+    },
+    {
+      "ts": 1768759916314,
+      "username": "justin_bieber",
+      "prize": "10 points",
+      "amount": 10
+    },
+    {
+      "ts": 1768760347914,
+      "username": "justin_bieber",
+      "prize": "Free Mint NFT",
+      "amount": null
+    },
+    {
+      "ts": 1768760451401,
+      "username": "justin_bieber",
+      "prize": "25 points",
+      "amount": 25
+    },
+    {
+      "ts": 1768760502471,
+      "username": "justin_bieber",
+      "prize": "50 points",
+      "amount": 50
+    },
+    {
+      "ts": 1768761395321,
+      "username": "justin_bieber",
+      "prize": "10 points",
+      "amount": 10
+    },
+    {
+      "ts": 1768762657955,
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "prize": "10 points",
+      "amount": 10
+    },
+    {
+      "ts": 1768762663814,
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "prize": "10 points",
+      "amount": 10
+    },
+    {
+      "ts": 1768762696636,
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "prize": "50 points",
+      "amount": 50
+    },
+    {
+      "ts": 1768762730302,
+      "username": "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG",
+      "prize": "25 points",
+      "amount": 25
+    },
+    {
+      "ts": 1768762807876,
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "prize": "10 points",
+      "amount": 10
+    },
+    {
+      "ts": 1768762837666,
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "prize": "10 points",
+      "amount": 10
+    },
+    {
+      "ts": 1768763113485,
+      "username": "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9",
+      "prize": "25 points",
+      "amount": 25
+    }
+  ],
+  "slotState": {
+    "dailySpins": {
+      "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9": 1,
+      "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G": 3,
+      "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8": 2,
+      "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG": 3,
+      "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9": 3
+    },
+    "userPoints": {
+      "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9": 25,
+      "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G": 60,
+      "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG": 10,
+      "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9": 35
+    },
+    "jackpot": 1000,
+    "dailyNFTCount": 1,
+    "dailyPurchasesSOL": 0,
+    "yesterdayPurchasesSOL": 0,
+    "lastResetDate": "Sun Jan 18 2026",
+    "winners": []
+  }
+}

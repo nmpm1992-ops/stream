@@ -5,10 +5,33 @@ const path = require('path');
 const { io } = require('socket.io-client');
 const WebSocket = require('ws');
 const cheerio = require('cheerio');
+const solanaWeb3 = require('@solana/web3.js');
+const splToken = require('@solana/spl-token');
+const bs58 = require('bs58');
 
 const ROOT = __dirname;
 const PORT = process.env.PORT || 3000;
 const CACHE_PATH = path.join(ROOT, 'MeVoltOBS', 'pump_cache.json');
+const DRIVE_DB_PATH = process.env.DRIVE_DB_PATH || path.join(ROOT, 'MeVoltOBS', 'drive_db.json');
+const SOLANA_RPC_URL = process.env.SOLANA_RPC_URL || 'https://api.mainnet-beta.solana.com';
+const PAYOUT_TOKEN = (process.env.PAYOUT_TOKEN || '').trim();
+const TREASURY_SECRET_KEY = (process.env.TREASURY_SECRET_KEY || process.env.TREASURE_SECRET_KEY || '').trim();
+
+function defaultSlotState() {
+  return {
+    dailySpins: {},
+    userPoints: {},
+    jackpot: 1000,
+    dailyNFTCount: 0,
+    dailyPurchasesSOL: 0,
+    yesterdayPurchasesSOL: 0,
+    lastResetDate: new Date().toDateString()
+  };
+}
+
+function defaultDriveDb() {
+  return { chats: [], logs: [], winners: [], slotState: defaultSlotState() };
+}
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
@@ -447,8 +470,99 @@ function setSseHeaders(res) {
 
 function setCors(res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-payout-token');
+}
+
+function isLikelyBase58Address(s) {
+  if (!s || typeof s !== 'string') return false;
+  const trimmed = s.trim();
+  if (trimmed.length < 32 || trimmed.length > 44) return false;
+  return /^[1-9A-HJ-NP-Za-km-z]+$/.test(trimmed);
+}
+
+function readTreasuryKeypair() {
+  if (!TREASURY_SECRET_KEY) return null;
+  try {
+    let secret;
+    const trimmed = TREASURY_SECRET_KEY.trim();
+    if (trimmed.startsWith('[')) {
+      secret = JSON.parse(trimmed);
+    } else {
+      const decoded = bs58.decode(trimmed);
+      secret = Array.from(decoded);
+    }
+    if (!Array.isArray(secret) || secret.length !== 64) return null;
+    return solanaWeb3.Keypair.fromSecretKey(new Uint8Array(secret));
+  } catch {
+    return null;
+  }
+}
+
+function isPayoutAuthorized(req) {
+  if (!PAYOUT_TOKEN) return false;
+  const token = (req.headers['x-payout-token'] || req.headers['x-payout-token'.toLowerCase()] || '').toString().trim();
+  return token === PAYOUT_TOKEN;
+}
+
+async function sendSplToken({ toWallet, mint, amountTokens }) {
+  const kp = readTreasuryKeypair();
+  if (!kp) throw new Error('Treasury key not configured');
+  const to = new solanaWeb3.PublicKey(toWallet);
+  const mintPk = new solanaWeb3.PublicKey(mint);
+  const connection = new solanaWeb3.Connection(SOLANA_RPC_URL, 'confirmed');
+  
+  const fromTokenAccount = await splToken.getAssociatedTokenAddress(mintPk, kp.publicKey);
+  const toTokenAccount = await splToken.getAssociatedTokenAddress(mintPk, to);
+  
+  const amount = BigInt(Math.floor(Math.max(0, Number(amountTokens) || 0)));
+  if (amount <= 0n) throw new Error('Bad amountTokens');
+  
+  const mintInfo = await splToken.getMint(connection, mintPk);
+  const decimals = mintInfo.decimals;
+  const amountWithDecimals = amount * BigInt(10 ** decimals);
+  
+  const tx = new solanaWeb3.Transaction().add(
+    splToken.createTransferInstruction(
+      fromTokenAccount,
+      toTokenAccount,
+      kp.publicKey,
+      Number(amountWithDecimals),
+      [],
+      splToken.TOKEN_PROGRAM_ID
+    )
+  );
+  
+  const sig = await solanaWeb3.sendAndConfirmTransaction(connection, tx, [kp], {
+    commitment: 'confirmed',
+    skipPreflight: false
+  });
+  
+  return { sig, from: kp.publicKey.toBase58(), to: to.toBase58(), amountTokens: amount.toString() };
+}
+
+function readBodyJson(req, { maxBytes = 2_000_000 } = {}) {
+  return new Promise((resolve, reject) => {
+    let body = '';
+    let totalBytes = 0;
+    req.on('data', (chunk) => {
+      totalBytes += chunk.length;
+      if (totalBytes > maxBytes) {
+        req.destroy();
+        reject(new Error('Body too large'));
+        return;
+      }
+      body += chunk.toString('utf8');
+    });
+    req.on('end', () => {
+      try {
+        resolve(body ? JSON.parse(body) : {});
+      } catch (e) {
+        reject(new Error('Invalid JSON'));
+      }
+    });
+    req.on('error', reject);
+  });
 }
 
 async function handleProxy(req, res, targetUrl) {
@@ -1462,6 +1576,211 @@ const server = http.createServer((req, res) => {
       socket.disconnect();
     });
 
+    return;
+  }
+
+  // Holder check endpoint
+  if (urlPath === '/holder-check') {
+    setCors(res);
+    if (req.method !== 'GET') {
+      return sendError(res, 405, 'Method not allowed');
+    }
+    (async () => {
+      try {
+        const wallet = String(reqUrl.searchParams.get('wallet') || '').trim();
+        if (!isLikelyBase58Address(wallet)) {
+          res.statusCode = 400;
+          res.setHeader('Content-Type', 'application/json; charset=utf-8');
+          res.end(JSON.stringify({ ok: false, error: 'Bad wallet' }, null, 2));
+          return;
+        }
+        const MEWVOLT_MINT = 'CpqA1pwX5SjU1SgufRwQ59knKGaDMEQ7MQBeu6mpump';
+        const HOLDER_THRESHOLD_USD = 5.0;
+        
+        const connection = new solanaWeb3.Connection(SOLANA_RPC_URL, 'confirmed');
+        const tokenAccounts = await connection.getParsedTokenAccountsByOwner(
+          new solanaWeb3.PublicKey(wallet),
+          { mint: new solanaWeb3.PublicKey(MEWVOLT_MINT) }
+        );
+        
+        let balance = 0;
+        if (tokenAccounts.value && tokenAccounts.value.length > 0) {
+          balance = tokenAccounts.value[0].account.data.parsed.info.tokenAmount.uiAmount || 0;
+        }
+        
+        let priceUsd = 0;
+        try {
+          const ac = new AbortController();
+          const t = setTimeout(() => ac.abort(), 5000);
+          const dexRes = await fetch(`https://api.dexscreener.com/latest/dex/tokens/${MEWVOLT_MINT}`, { signal: ac.signal });
+          clearTimeout(t);
+          const dexJson = await dexRes.json();
+          if (dexJson && dexJson.pairs && dexJson.pairs.length > 0) {
+            priceUsd = Number(dexJson.pairs[0].priceUsd) || 0;
+          }
+        } catch {}
+        
+        const valueUsd = balance * priceUsd;
+        const isHolder = valueUsd >= HOLDER_THRESHOLD_USD;
+        
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json; charset=utf-8');
+        res.end(JSON.stringify({
+          ok: true,
+          wallet,
+          balance,
+          priceUsd,
+          valueUsd,
+          isHolder,
+          thresholdUsd: HOLDER_THRESHOLD_USD
+        }, null, 2));
+      } catch (err) {
+        res.statusCode = 500;
+        res.setHeader('Content-Type', 'application/json; charset=utf-8');
+        res.end(JSON.stringify({ ok: false, error: err.message }, null, 2));
+      }
+    })();
+    return;
+  }
+
+  // Drive DB endpoints (read/write drive_db.json)
+  if (urlPath === '/drive/read') {
+    setCors(res);
+    if (req.method !== 'GET') {
+      return sendError(res, 405, 'Method not allowed');
+    }
+    const db = readJsonFileSafe(DRIVE_DB_PATH) || defaultDriveDb();
+    if (!db.slotState || typeof db.slotState !== 'object') db.slotState = defaultSlotState();
+    if (!db.slotState.dailySpins || typeof db.slotState.dailySpins !== 'object') db.slotState.dailySpins = {};
+    if (!db.slotState.userPoints || typeof db.slotState.userPoints !== 'object') db.slotState.userPoints = {};
+    if (!db.slotState.lastResetDate) db.slotState.lastResetDate = new Date().toDateString();
+    if (!db.slotState.jackpot || Number(db.slotState.jackpot) < 1000) db.slotState.jackpot = 1000;
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'application/json; charset=utf-8');
+    res.end(JSON.stringify({ ok: true, data: db }, null, 2));
+    return;
+  }
+
+  if (urlPath === '/drive/append') {
+    setCors(res);
+    if (req.method !== 'POST') {
+      return sendError(res, 405, 'Method not allowed');
+    }
+    (async () => {
+      try {
+        const body = await readBodyJson(req, { maxBytes: 10_000_000 });
+        const db = readJsonFileSafe(DRIVE_DB_PATH) || defaultDriveDb();
+        if (!db.slotState || typeof db.slotState !== 'object') db.slotState = defaultSlotState();
+        
+        // Append new entries
+        if (Array.isArray(body.chats)) {
+          db.chats = (db.chats || []).concat(body.chats);
+        }
+        if (Array.isArray(body.logs)) {
+          db.logs = (db.logs || []).concat(body.logs);
+        }
+        if (Array.isArray(body.winners)) {
+          db.winners = (db.winners || []).concat(body.winners);
+        }
+
+        // Merge slotState (overlay sends full state snapshots)
+        if (body.slotState && typeof body.slotState === 'object') {
+          const incoming = body.slotState;
+          const {
+            dailySpins: incomingDailySpins,
+            userPoints: incomingUserPoints,
+            queue: _ignoredQueue,
+            ...rest
+          } = incoming;
+
+          db.slotState = { ...db.slotState, ...rest };
+
+          if (incomingDailySpins && typeof incomingDailySpins === 'object') {
+            db.slotState.dailySpins = { ...(db.slotState.dailySpins || {}), ...incomingDailySpins };
+          }
+          if (incomingUserPoints && typeof incomingUserPoints === 'object') {
+            db.slotState.userPoints = { ...(db.slotState.userPoints || {}), ...incomingUserPoints };
+          }
+
+          if (!db.slotState.lastResetDate) db.slotState.lastResetDate = new Date().toDateString();
+          if (!db.slotState.jackpot || Number(db.slotState.jackpot) < 1000) db.slotState.jackpot = 1000;
+          if (!db.slotState.dailyNFTCount) db.slotState.dailyNFTCount = 0;
+          if (!db.slotState.dailyPurchasesSOL) db.slotState.dailyPurchasesSOL = 0;
+          if (!db.slotState.yesterdayPurchasesSOL) db.slotState.yesterdayPurchasesSOL = 0;
+        }
+        
+        // Save back to file
+        const saved = writeJsonFileSafe(DRIVE_DB_PATH, db);
+        setCors(res);
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json; charset=utf-8');
+        res.end(JSON.stringify({ ok: true, saved }, null, 2));
+      } catch (err) {
+        setCors(res);
+        res.statusCode = 400;
+        res.setHeader('Content-Type', 'application/json; charset=utf-8');
+        res.end(JSON.stringify({ ok: false, error: err.message }, null, 2));
+      }
+    })();
+    return;
+  }
+
+  // Get payout token (para frontend)
+  if (urlPath === '/payout-token') {
+    setCors(res);
+    if (req.method !== 'GET') {
+      return sendError(res, 405, 'Method not allowed');
+    }
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'application/json; charset=utf-8');
+    res.end(JSON.stringify({ 
+      ok: true, 
+      hasToken: !!PAYOUT_TOKEN,
+      token: PAYOUT_TOKEN || null
+    }, null, 2));
+    return;
+  }
+
+  // Payout endpoint
+  if (urlPath === '/payout') {
+    if (req.method !== 'POST') {
+      setCors(res);
+      return sendError(res, 405, 'Method not allowed');
+    }
+    if (!isPayoutAuthorized(req)) {
+      setCors(res);
+      res.statusCode = 403;
+      res.setHeader('Content-Type', 'application/json; charset=utf-8');
+      res.end(JSON.stringify({ ok: false, error: 'Forbidden' }, null, 2));
+      return;
+    }
+    (async () => {
+      try {
+        const body = await readBodyJson(req, { maxBytes: 200_000 });
+        const kind = String(body?.kind || '').trim();
+        const toWallet = String(body?.toWallet || '').trim();
+        if (!isLikelyBase58Address(toWallet)) throw new Error('Bad toWallet');
+
+        if (kind === 'spl') {
+          const mint = String(body?.mint || '').trim();
+          const amountTokens = Number(body?.amountTokens);
+          if (!isLikelyBase58Address(mint)) throw new Error('Bad mint');
+          const out = await sendSplToken({ toWallet, mint, amountTokens });
+          setCors(res);
+          res.statusCode = 200;
+          res.setHeader('Content-Type', 'application/json; charset=utf-8');
+          res.end(JSON.stringify({ ok: true, kind: 'spl', ...out }, null, 2));
+          return;
+        }
+
+        throw new Error('Bad kind (expected spl)');
+      } catch (err) {
+        setCors(res);
+        res.statusCode = 400;
+        res.setHeader('Content-Type', 'application/json; charset=utf-8');
+        res.end(JSON.stringify({ ok: false, error: err.message }, null, 2));
+      }
+    })();
     return;
   }
 
