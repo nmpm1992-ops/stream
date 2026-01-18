@@ -1,673 +1,67 @@
 {
   "chats": [
     {
-      "ts": 1768765596226,
-      "id": "msg_1768765596226_kxp8h3xyi",
-      "username": "User",
-      "avatarUrl": "",
-      "text": "chat config",
-      "userAddress": null
-    },
-    {
-      "ts": 1768765596413,
-      "id": "msg_1768765596413_u8f0ygof7",
-      "username": "User",
-      "avatarUrl": "",
-      "text": "livestream join",
-      "userAddress": null
-    },
-    {
-      "ts": 1768765596702,
-      "id": "msg_1768765596702_udkv1bg2n",
-      "username": "User",
-      "avatarUrl": "",
-      "text": "Joining rooms",
-      "userAddress": null
-    },
-    {
-      "ts": 1768765596798,
-      "id": "msg_1768765596798_dupcnkoht",
-      "username": "User",
-      "avatarUrl": "",
-      "text": "joinRoom ack",
-      "userAddress": null
-    },
-    {
-      "ts": 1768765643606,
-      "id": "0a351e75-2c98-4c02-8917-aeed064065d0",
-      "username": "mewvoltcreator",
-      "avatarUrl": "",
-      "text": "/points",
-      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
-    },
-    {
-      "ts": 1768765643609,
-      "id": "0a351e75-2c98-4c02-8917-aeed064065d0",
-      "username": "mewvoltcreator",
-      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
-      "text": "/points",
-      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
-    },
-    {
-      "ts": 1768765643610,
-      "id": "0a351e75-2c98-4c02-8917-aeed064065d0",
-      "username": "mewvoltcreator",
-      "avatarUrl": "",
-      "text": "/points",
-      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
-    },
-    {
-      "ts": 1768765643623,
-      "id": "0a351e75-2c98-4c02-8917-aeed064065d0",
-      "username": "mewvoltcreator",
-      "avatarUrl": "",
-      "text": "/points",
-      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
-    },
-    {
-      "ts": 1768765643626,
-      "id": "0a351e75-2c98-4c02-8917-aeed064065d0",
-      "username": "mewvoltcreator",
-      "avatarUrl": "",
-      "text": "/points",
-      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
-    },
-    {
-      "ts": 1768765728999,
-      "id": "f8bf8ab1-0113-4108-841a-cf28c123c1f8",
-      "username": "justin_bieber",
-      "avatarUrl": "",
-      "text": "/point",
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
-    },
-    {
-      "ts": 1768765729000,
-      "id": "f8bf8ab1-0113-4108-841a-cf28c123c1f8",
-      "username": "justin_bieber",
-      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
-      "text": "/point",
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
-    },
-    {
-      "ts": 1768765729001,
-      "id": "f8bf8ab1-0113-4108-841a-cf28c123c1f8",
-      "username": "justin_bieber",
-      "avatarUrl": "",
-      "text": "/point",
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
-    },
-    {
-      "ts": 1768765729014,
-      "id": "f8bf8ab1-0113-4108-841a-cf28c123c1f8",
-      "username": "justin_bieber",
-      "avatarUrl": "",
-      "text": "/point",
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
-    },
-    {
-      "ts": 1768765729014,
-      "id": "f8bf8ab1-0113-4108-841a-cf28c123c1f8",
-      "username": "justin_bieber",
-      "avatarUrl": "",
-      "text": "/point",
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
-    },
-    {
-      "ts": 1768765784841,
-      "id": "f41b35a7-394b-44ea-95f4-731c28b39fb1",
-      "username": "justin_bieber",
-      "avatarUrl": "",
-      "text": "/points",
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
-    },
-    {
-      "ts": 1768765784841,
-      "id": "f41b35a7-394b-44ea-95f4-731c28b39fb1",
-      "username": "justin_bieber",
-      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
-      "text": "/points",
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
-    },
-    {
-      "ts": 1768765784842,
-      "id": "f41b35a7-394b-44ea-95f4-731c28b39fb1",
-      "username": "justin_bieber",
-      "avatarUrl": "",
-      "text": "/points",
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
-    },
-    {
-      "ts": 1768765784842,
-      "id": "f41b35a7-394b-44ea-95f4-731c28b39fb1",
-      "username": "justin_bieber",
-      "avatarUrl": "",
-      "text": "/points",
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
-    },
-    {
-      "ts": 1768765784844,
-      "id": "f41b35a7-394b-44ea-95f4-731c28b39fb1",
-      "username": "justin_bieber",
-      "avatarUrl": "",
-      "text": "/points",
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
-    },
-    {
-      "ts": 1768765788643,
-      "id": "6c832185-547e-4177-ab78-3a8c03c54c31",
-      "username": "justin_bieber",
-      "avatarUrl": "",
-      "text": "/point",
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
-    },
-    {
-      "ts": 1768765788650,
-      "id": "6c832185-547e-4177-ab78-3a8c03c54c31",
-      "username": "justin_bieber",
-      "avatarUrl": "",
-      "text": "/point",
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
-    },
-    {
-      "ts": 1768765788651,
-      "id": "6c832185-547e-4177-ab78-3a8c03c54c31",
-      "username": "justin_bieber",
-      "avatarUrl": "",
-      "text": "/point",
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
-    },
-    {
-      "ts": 1768765788653,
-      "id": "6c832185-547e-4177-ab78-3a8c03c54c31",
-      "username": "justin_bieber",
-      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
-      "text": "/point",
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
-    },
-    {
-      "ts": 1768765788653,
-      "id": "6c832185-547e-4177-ab78-3a8c03c54c31",
-      "username": "justin_bieber",
-      "avatarUrl": "",
-      "text": "/point",
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
-    },
-    {
-      "ts": 1768765846444,
-      "id": "b32e1aa9-552a-4a2b-baaf-d3104bdb05bd",
-      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
-      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
-      "text": "teste",
-      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
-    },
-    {
-      "ts": 1768765870123,
-      "id": "8d521283-ed89-4485-8fb4-9262fdb0de27",
-      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
-      "avatarUrl": "",
-      "text": "/start",
-      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
-    },
-    {
-      "ts": 1768765870125,
-      "id": "8d521283-ed89-4485-8fb4-9262fdb0de27",
-      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
-      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
-      "text": "/start",
-      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
-    },
-    {
-      "ts": 1768765870125,
-      "id": "8d521283-ed89-4485-8fb4-9262fdb0de27",
-      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
-      "avatarUrl": "",
-      "text": "/start",
-      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
-    },
-    {
-      "ts": 1768765870131,
-      "id": "8d521283-ed89-4485-8fb4-9262fdb0de27",
-      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
-      "avatarUrl": "",
-      "text": "/start",
-      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
-    },
-    {
-      "ts": 1768765870133,
-      "id": "8d521283-ed89-4485-8fb4-9262fdb0de27",
-      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
-      "avatarUrl": "",
-      "text": "/start",
-      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
-    },
-    {
-      "ts": 1768765880421,
-      "id": "7cb2ca90-e20f-48d3-b439-cbea2b4bcffb",
-      "username": "justin_bieber",
-      "avatarUrl": "",
-      "text": "/point",
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
-    },
-    {
-      "ts": 1768765880426,
-      "id": "7cb2ca90-e20f-48d3-b439-cbea2b4bcffb",
-      "username": "justin_bieber",
-      "avatarUrl": "",
-      "text": "/point",
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
-    },
-    {
-      "ts": 1768765880426,
-      "id": "7cb2ca90-e20f-48d3-b439-cbea2b4bcffb",
-      "username": "justin_bieber",
-      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
-      "text": "/point",
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
-    },
-    {
-      "ts": 1768765880427,
-      "id": "7cb2ca90-e20f-48d3-b439-cbea2b4bcffb",
-      "username": "justin_bieber",
-      "avatarUrl": "",
-      "text": "/point",
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
-    },
-    {
-      "ts": 1768765880427,
-      "id": "7cb2ca90-e20f-48d3-b439-cbea2b4bcffb",
-      "username": "justin_bieber",
-      "avatarUrl": "",
-      "text": "/point",
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
-    },
-    {
-      "ts": 1768765880939,
-      "id": "3ceb23be-e043-4ede-b762-6bcdd2bc18e4",
-      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
-      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
-      "text": "/asdasd",
-      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
-    },
-    {
-      "ts": 1768765880941,
-      "id": "3ceb23be-e043-4ede-b762-6bcdd2bc18e4",
-      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
-      "avatarUrl": "",
-      "text": "/asdasd",
-      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
-    },
-    {
-      "ts": 1768765880943,
-      "id": "3ceb23be-e043-4ede-b762-6bcdd2bc18e4",
-      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
-      "avatarUrl": "",
-      "text": "/asdasd",
-      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
-    },
-    {
-      "ts": 1768765880941,
-      "id": "3ceb23be-e043-4ede-b762-6bcdd2bc18e4",
-      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
-      "avatarUrl": "",
-      "text": "/asdasd",
-      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
-    },
-    {
-      "ts": 1768765880945,
-      "id": "3ceb23be-e043-4ede-b762-6bcdd2bc18e4",
-      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
-      "avatarUrl": "",
-      "text": "/asdasd",
-      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
-    },
-    {
-      "ts": 1768765917298,
-      "id": "8afaf05a-3794-4a93-a4d1-82b6cd366aaa",
-      "username": "mewvoltcreator",
-      "avatarUrl": "",
-      "text": "/spin",
-      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
-    },
-    {
-      "ts": 1768765917297,
-      "id": "8afaf05a-3794-4a93-a4d1-82b6cd366aaa",
-      "username": "mewvoltcreator",
-      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
-      "text": "/spin",
-      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
-    },
-    {
-      "ts": 1768765917298,
-      "id": "8afaf05a-3794-4a93-a4d1-82b6cd366aaa",
-      "username": "mewvoltcreator",
-      "avatarUrl": "",
-      "text": "/spin",
-      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
-    },
-    {
-      "ts": 1768765917299,
-      "id": "8afaf05a-3794-4a93-a4d1-82b6cd366aaa",
-      "username": "mewvoltcreator",
-      "avatarUrl": "",
-      "text": "/spin",
-      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
-    },
-    {
-      "ts": 1768765917302,
-      "id": "8afaf05a-3794-4a93-a4d1-82b6cd366aaa",
-      "username": "mewvoltcreator",
-      "avatarUrl": "",
-      "text": "/spin",
-      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
-    },
-    {
-      "ts": 1768765919457,
-      "id": "b21739d5-7d46-4495-9e6f-8548c8bff6f9",
-      "username": "mewvoltcreator",
-      "avatarUrl": "",
-      "text": "/spin",
-      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
-    },
-    {
-      "ts": 1768765919457,
-      "id": "b21739d5-7d46-4495-9e6f-8548c8bff6f9",
-      "username": "mewvoltcreator",
-      "avatarUrl": "",
-      "text": "/spin",
-      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
-    },
-    {
-      "ts": 1768765919460,
-      "id": "b21739d5-7d46-4495-9e6f-8548c8bff6f9",
-      "username": "mewvoltcreator",
-      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
-      "text": "/spin",
-      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
-    },
-    {
-      "ts": 1768765919460,
-      "id": "b21739d5-7d46-4495-9e6f-8548c8bff6f9",
-      "username": "mewvoltcreator",
-      "avatarUrl": "",
-      "text": "/spin",
-      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
-    },
-    {
-      "ts": 1768765919469,
-      "id": "b21739d5-7d46-4495-9e6f-8548c8bff6f9",
-      "username": "mewvoltcreator",
-      "avatarUrl": "",
-      "text": "/spin",
-      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9"
-    },
-    {
-      "ts": 1768765922042,
-      "id": "46100621-5bf5-4b4d-9204-bf65cbd42f9e",
-      "username": "ct.app_site_q6mip",
-      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
-      "text": "!Pump Fun DEv V O L U M E Bot",
-      "userAddress": "HNLg4sv3wjNqQJu7SbzGugKx9rMM4fiLdYvY3V2mJT1R"
-    },
-    {
-      "ts": 1768765964294,
-      "id": "9b1fffa2-f18a-4d6c-8b6e-abb45494c8a0",
-      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
-      "avatarUrl": "",
-      "text": "/spin",
-      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
-    },
-    {
-      "ts": 1768765964294,
-      "id": "9b1fffa2-f18a-4d6c-8b6e-abb45494c8a0",
-      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
-      "avatarUrl": "",
-      "text": "/spin",
-      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
-    },
-    {
-      "ts": 1768765964296,
-      "id": "9b1fffa2-f18a-4d6c-8b6e-abb45494c8a0",
-      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
-      "avatarUrl": "",
-      "text": "/spin",
-      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
-    },
-    {
-      "ts": 1768765964300,
-      "id": "9b1fffa2-f18a-4d6c-8b6e-abb45494c8a0",
+      "ts": 1768772655053,
+      "id": "54c22056-4a40-4811-a50c-3949f5988023",
       "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
       "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
       "text": "/spin",
       "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
     },
     {
-      "ts": 1768765964302,
-      "id": "9b1fffa2-f18a-4d6c-8b6e-abb45494c8a0",
+      "ts": 1768772704644,
+      "id": "1813c6bd-472a-403f-8f1d-ee6d82a4ad9d",
       "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
       "avatarUrl": "",
       "text": "/spin",
       "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
     },
     {
-      "ts": 1768765966110,
-      "id": "ccc0792c-3fd4-4daa-ad8c-dc4214a663df",
+      "ts": 1768772851713,
+      "id": "d50ac22c-3282-4b49-b26d-280c070a1221",
       "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
       "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
       "text": "/spin",
       "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
     },
     {
-      "ts": 1768765966110,
-      "id": "ccc0792c-3fd4-4daa-ad8c-dc4214a663df",
+      "ts": 1768773067339,
+      "id": "29efcd20-544b-440e-a17c-1bbf2ab4fe45",
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "",
+      "text": "/spin asd",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
+    },
+    {
+      "ts": 1768773506944,
+      "id": "360abaf5-6d06-422b-bcf3-d081f334b2a1",
       "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
       "avatarUrl": "",
       "text": "/spin",
       "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
-    },
-    {
-      "ts": 1768765966121,
-      "id": "ccc0792c-3fd4-4daa-ad8c-dc4214a663df",
-      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
-      "avatarUrl": "",
-      "text": "/spin",
-      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
-    },
-    {
-      "ts": 1768765966121,
-      "id": "ccc0792c-3fd4-4daa-ad8c-dc4214a663df",
-      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
-      "avatarUrl": "",
-      "text": "/spin",
-      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8"
-    },
-    {
-      "ts": 1768766006838,
-      "id": "94f5b6e9-a743-4be7-b391-6f86ed2fb025",
-      "username": "justin_bieber",
-      "avatarUrl": "",
-      "text": "/spin",
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
-    },
-    {
-      "ts": 1768766006839,
-      "id": "94f5b6e9-a743-4be7-b391-6f86ed2fb025",
-      "username": "justin_bieber",
-      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
-      "text": "/spin",
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
-    },
-    {
-      "ts": 1768766006839,
-      "id": "94f5b6e9-a743-4be7-b391-6f86ed2fb025",
-      "username": "justin_bieber",
-      "avatarUrl": "",
-      "text": "/spin",
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
-    },
-    {
-      "ts": 1768766006839,
-      "id": "94f5b6e9-a743-4be7-b391-6f86ed2fb025",
-      "username": "justin_bieber",
-      "avatarUrl": "",
-      "text": "/spin",
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
-    },
-    {
-      "ts": 1768766006840,
-      "id": "94f5b6e9-a743-4be7-b391-6f86ed2fb025",
-      "username": "justin_bieber",
-      "avatarUrl": "",
-      "text": "/spin",
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G"
     }
   ],
   "logs": [
     {
-      "ts": 1768765643607,
-      "username": "mewvoltcreator",
-      "text": "📊 mewvoltcreator has 0 points (1000 to 1000)",
-      "action": null,
-      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9",
-      "avatarUrl": null,
-      "isHolder": false,
-      "level": "info"
-    },
-    {
-      "ts": 1768765643610,
+      "ts": 1768772655723,
       "username": null,
-      "text": "📊 mewvoltcreator has 25 points (975 to 1000)",
-      "action": null,
-      "userAddress": null,
-      "level": "info"
-    },
-    {
-      "ts": 1768765643610,
-      "username": null,
-      "text": "📊 mewvoltcreator has 25 points (975 to 1000)",
-      "action": null,
-      "userAddress": null,
-      "level": "info"
-    },
-    {
-      "ts": 1768765643624,
-      "username": null,
-      "text": "📊 mewvoltcreator has 25 points (975 to 1000)",
-      "action": null,
-      "userAddress": null,
-      "level": "info"
-    },
-    {
-      "ts": 1768765643627,
-      "username": null,
-      "text": "📊 mewvoltcreator has 25 points (975 to 1000)",
-      "action": null,
-      "userAddress": null,
-      "level": "info"
-    },
-    {
-      "ts": 1768765784841,
-      "username": null,
-      "text": "📊 justin_bieber has 60 points (940 to 1000)",
-      "action": null,
-      "userAddress": null,
-      "level": "info"
-    },
-    {
-      "ts": 1768765784842,
-      "username": null,
-      "text": "📊 justin_bieber has 50 points (950 to 1000)",
-      "action": null,
-      "userAddress": null,
-      "level": "info"
-    },
-    {
-      "ts": 1768765784842,
-      "username": null,
-      "text": "📊 justin_bieber has 60 points (940 to 1000)",
-      "action": null,
-      "userAddress": null,
-      "level": "info"
-    },
-    {
-      "ts": 1768765784843,
-      "username": null,
-      "text": "📊 justin_bieber has 50 points (950 to 1000)",
-      "action": null,
-      "userAddress": null,
-      "level": "info"
-    },
-    {
-      "ts": 1768765784845,
-      "username": "justin_bieber",
-      "text": "📊 justin_bieber has 0 points (0 to 1000)",
-      "action": null,
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G",
-      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
-      "isHolder": false,
-      "level": "info"
-    },
-    {
-      "ts": 1768765870507,
-      "username": null,
-      "text": "🎟️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 joined the queue (1/3 spins)",
-      "action": null,
-      "userAddress": null,
-      "level": "info"
-    },
-    {
-      "ts": 1768765873516,
-      "username": null,
-      "text": "🎰 B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 WON THE JACKPOT! 1000 MEWVOLT",
-      "action": null,
-      "userAddress": null,
-      "level": "special"
-    },
-    {
-      "ts": 1768765873522,
-      "username": null,
-      "text": "⚠️ Jackpot payout failed: PAYOUT_TOKEN not configured",
-      "action": null,
-      "userAddress": null,
-      "level": "error"
-    },
-    {
-      "ts": 1768765878259,
-      "username": null,
-      "text": "⚠️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 reached daily limit (1 spins/day)",
+      "text": "⚠️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 reached daily limit (3 spins/day)",
       "action": null,
       "userAddress": null,
       "level": "warn"
     },
     {
-      "ts": 1768765878626,
-      "username": null,
-      "text": "⚠️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 reached daily limit (1 spins/day)",
-      "action": null,
-      "userAddress": null,
-      "level": "warn"
-    },
-    {
-      "ts": 1768765878903,
+      "ts": 1768772663774,
       "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
       "text": "🎟️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 joined the queue (1/1 spins)",
       "action": null,
       "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
-      "avatarUrl": null,
-      "isHolder": true,
-      "level": "info"
-    },
-    {
-      "ts": 1768765881910,
-      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
-      "text": "😔 B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 got nothing",
-      "action": null,
-      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
-      "avatarUrl": null,
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
       "isHolder": false,
       "level": "info"
     },
     {
-      "ts": 1768765886482,
+      "ts": 1768772663931,
       "username": null,
       "text": "⚠️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 reached daily limit (1 spins/day)",
       "action": null,
@@ -675,181 +69,167 @@
       "level": "warn"
     },
     {
-      "ts": 1768765918239,
-      "username": null,
-      "text": "⚠️ mewvoltcreator reached daily limit (1 spins/day)",
-      "action": null,
-      "userAddress": null,
-      "level": "warn"
-    },
-    {
-      "ts": 1768765925820,
-      "username": "mewvoltcreator",
-      "text": "🎟️ mewvoltcreator joined the queue (1/1 spins)",
-      "action": null,
-      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9",
-      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
-      "isHolder": false,
-      "level": "info"
-    },
-    {
-      "ts": 1768765926448,
-      "username": null,
-      "text": "⚠️ mewvoltcreator reached daily limit (1 spins/day)",
-      "action": null,
-      "userAddress": null,
-      "level": "warn"
-    },
-    {
-      "ts": 1768765928823,
-      "username": "mewvoltcreator",
-      "text": "😔 mewvoltcreator got nothing",
-      "action": null,
-      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9",
-      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
-      "isHolder": false,
-      "level": "info"
-    },
-    {
-      "ts": 1768765934642,
-      "username": null,
-      "text": "⚠️ mewvoltcreator reached daily limit (1 spins/day)",
-      "action": null,
-      "userAddress": null,
-      "level": "warn"
-    },
-    {
-      "ts": 1768765942292,
-      "username": "mewvoltcreator",
-      "text": "⚠️ mewvoltcreator reached daily limit (1 spins/day)",
-      "action": null,
-      "userAddress": "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9",
-      "avatarUrl": "https://ipfs.io/ipfs/QmQjjciB21tgYJdVzKTiqKUeZmaNcJo9BqJSwQrz4wP9Tn",
-      "isHolder": false,
-      "level": "warn"
-    },
-    {
-      "ts": 1768765942829,
-      "username": null,
-      "text": "⚠️ mewvoltcreator reached daily limit (1 spins/day)",
-      "action": null,
-      "userAddress": null,
-      "level": "warn"
-    },
-    {
-      "ts": 1768765964671,
-      "username": null,
-      "text": "🎟️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 joined the queue (3/3 spins)",
-      "action": null,
-      "userAddress": null,
-      "level": "info"
-    },
-    {
-      "ts": 1768765967685,
-      "username": null,
-      "text": "🎨 B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 won Free Mint NFT!",
-      "action": null,
-      "userAddress": null,
-      "level": "info"
-    },
-    {
-      "ts": 1768765972777,
-      "username": null,
-      "text": "⚠️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 reached daily limit (1 spins/day)",
-      "action": null,
-      "userAddress": null,
-      "level": "warn"
-    },
-    {
-      "ts": 1768765973002,
+      "ts": 1768772671410,
       "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
       "text": "⚠️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 reached daily limit (1 spins/day)",
       "action": null,
       "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
       "avatarUrl": null,
-      "isHolder": true,
-      "level": "warn"
-    },
-    {
-      "ts": 1768765981020,
-      "username": null,
-      "text": "⚠️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 reached daily limit (1 spins/day)",
-      "action": null,
-      "userAddress": null,
-      "level": "warn"
-    },
-    {
-      "ts": 1768765989219,
-      "username": null,
-      "text": "⚠️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 reached daily limit (1 spins/day)",
-      "action": null,
-      "userAddress": null,
-      "level": "warn"
-    },
-    {
-      "ts": 1768766007236,
-      "username": null,
-      "text": "⚠️ justin_bieber reached daily limit (3 spins/day)",
-      "action": null,
-      "userAddress": null,
-      "level": "warn"
-    },
-    {
-      "ts": 1768766015335,
-      "username": "justin_bieber",
-      "text": "🎟️ justin_bieber joined the queue (1/1 spins)",
-      "action": null,
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G",
-      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
-      "isHolder": true,
-      "level": "info"
-    },
-    {
-      "ts": 1768766015351,
-      "username": null,
-      "text": "⚠️ justin_bieber reached daily limit (1 spins/day)",
-      "action": null,
-      "userAddress": null,
-      "level": "warn"
-    },
-    {
-      "ts": 1768766018338,
-      "username": "justin_bieber",
-      "text": "😔 justin_bieber got nothing",
-      "action": null,
-      "userAddress": "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G",
-      "avatarUrl": "https://ipfs.io/ipfs/QmQwbmtcHYRXEV1VHvajuuG4FsecWs3FQUC45XMEEDKXVe",
       "isHolder": false,
-      "level": "info"
+      "level": "warn"
+    },
+    {
+      "ts": 1768772676304,
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "text": "🎁 B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 won 10 points!",
+      "action": null,
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "isHolder": false,
+      "level": "success"
+    },
+    {
+      "ts": 1768772712958,
+      "username": null,
+      "text": "⚠️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768772713343,
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "text": "⚠️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": null,
+      "isHolder": false,
+      "level": "warn"
+    },
+    {
+      "ts": 1768772721183,
+      "username": null,
+      "text": "⚠️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768772859973,
+      "username": null,
+      "text": "⚠️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768772868141,
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "text": "⚠️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "isHolder": false,
+      "level": "warn"
+    },
+    {
+      "ts": 1768772868186,
+      "username": null,
+      "text": "⚠️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768773067751,
+      "username": null,
+      "text": "⚠️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 reached daily limit (3 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768773075870,
+      "username": null,
+      "text": "⚠️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768773076084,
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "text": "⚠️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "isHolder": false,
+      "level": "warn"
+    },
+    {
+      "ts": 1768773083683,
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "text": "⚠️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": null,
+      "isHolder": false,
+      "level": "warn"
+    },
+    {
+      "ts": 1768773515182,
+      "username": null,
+      "text": "⚠️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768773523408,
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "text": "⚠️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "isHolder": false,
+      "level": "warn"
+    },
+    {
+      "ts": 1768773523413,
+      "username": null,
+      "text": "⚠️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": null,
+      "level": "warn"
+    },
+    {
+      "ts": 1768773533462,
+      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "text": "⚠️ B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8 reached daily limit (1 spins/day)",
+      "action": null,
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "isHolder": false,
+      "level": "warn"
     }
   ],
   "winners": [
     {
-      "ts": 1768765873516,
+      "ts": 1768772676306,
       "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
-      "prize": "JACKPOT 1000 MEWVOLT",
-      "amount": 1000
-    },
-    {
-      "ts": 1768765967685,
-      "username": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
-      "prize": "Free Mint NFT",
-      "amount": null
+      "prize": "10 points",
+      "amount": 10,
+      "avatarUrl": "https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1",
+      "userAddress": "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8",
+      "isHolder": false
     }
   ],
   "slotState": {
     "dailySpins": {
-      "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G": 1,
-      "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9": 1,
-      "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8": 1,
-      "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG": 3,
-      "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9": 3
+      "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8": 1
     },
     "userPoints": {
-      "DyYztRKD8UoKBi8DcmyyN8d7b9xW3XcpLrbHSvFaeS1G": 60,
-      "3crNkDaMJGxBshv9fBWh3ZgwAx9jxP2JRmGuHA5GcAU9": 25,
-      "5ojo1y3o7zmwm7PSeXy2RxAaqb8rTehvrqLjVJa5DnsG": 10,
-      "7BFdXzZonbeADMJxYUwoaHVrjrRwfQC286uJpApYERv9": 35
+      "B8VoC8hw5Rx8XH8YFvCUhZh7837bFTNeBNdbwyw6xhX8": 10
     },
     "jackpot": 1000,
     "dailyNFTCount": 0,

@@ -88,6 +88,33 @@
       position: relative;
     }
 
+    .slotMachineHud::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: var(--radius);
+      padding: 2px;
+      background: linear-gradient(45deg, 
+        var(--neon-blue), 
+        var(--neon-green), 
+        var(--gold), 
+        var(--neon-pink),
+        var(--neon-blue)
+      );
+      background-size: 400% 400%;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      animation: gradientBorder 3s ease infinite;
+      z-index: -1;
+    }
+
+    @keyframes gradientBorder {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     .slot-header {
       display: flex;
       justify-content: space-between;
@@ -117,6 +144,28 @@
       font-size: 14px;
       box-shadow: 0 0 25px rgba(255, 204, 0, 0.3);
       animation: pulse 2s infinite;
+      position: relative;
+      overflow: visible;
+    }
+
+    .jackpot-pill::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 50px;
+      padding: 2px;
+      background: linear-gradient(45deg, 
+        var(--gold), 
+        #d4a017, 
+        var(--neon-green), 
+        var(--gold)
+      );
+      background-size: 300% 300%;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      animation: gradientBorder 2s ease infinite;
+      z-index: -1;
     }
 
     @keyframes pulse {
@@ -191,8 +240,44 @@
       border-radius: 15px;
       margin-bottom: 30px;
       text-align: center;
+      min-height: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
     }
     .status-box span { color: var(--neon-blue); font-family: monospace; font-size: 20px; font-weight: bold; }
+    .status-box .player-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 5px;
+    }
+    .status-box .player-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--neon-blue);
+      flex-shrink: 0;
+    }
+    .status-box .player-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--neon-green);
+    }
+    .status-box .holder-badge {
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 700;
+      margin-left: 4px;
+    }
+    .status-box .phase-text {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 5px;
+    }
 
     /* Slots Styling */
     .reels-container {
@@ -215,6 +300,34 @@
       position: relative;
       transition: all 0.3s ease;
       overflow: hidden;
+    }
+
+    .reel::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 16px;
+      padding: 3px;
+      background: linear-gradient(45deg, 
+        var(--neon-blue), 
+        var(--neon-green), 
+        var(--gold), 
+        var(--neon-pink),
+        var(--neon-blue)
+      );
+      background-size: 400% 400%;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      animation: gradientBorder 3s ease infinite;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+
+    .reel.spinning::after,
+    .reel.slowing::after {
+      opacity: 1;
     }
 
     .reel::before {
@@ -336,6 +449,35 @@
       animation-duration: 0.13s;
     }
 
+    .reel.slowing {
+      border-color: var(--neon-green);
+      box-shadow: 
+        0 0 40px rgba(0, 255, 115, 0.5),
+        0 0 80px rgba(0, 255, 115, 0.3),
+        inset 0 0 40px rgba(0, 255, 115, 0.15);
+      animation: reelSlow 0.3s ease-out infinite;
+    }
+
+    @keyframes reelSlow {
+      0%, 100% { transform: perspective(1000px) rotateX(3deg) translateX(0); }
+      50% { transform: perspective(1000px) rotateX(3deg) translateX(-1px); }
+    }
+
+    @keyframes symbolSpinSlow {
+      0% { 
+        transform: translateY(0) scale(0.9); 
+        opacity: 0.3; 
+      }
+      50% { 
+        opacity: 1; 
+        transform: translateY(-140px) scale(1);
+      }
+      100% { 
+        transform: translateY(-280px) scale(0.9); 
+        opacity: 0.3; 
+      }
+    }
+
     .win-line {
       position: absolute;
       top: 50%;
@@ -362,6 +504,29 @@
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      position: relative;
+    }
+
+    .widget::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 20px;
+      padding: 1px;
+      background: linear-gradient(45deg, 
+        var(--neon-blue), 
+        var(--neon-green), 
+        var(--gold), 
+        var(--neon-pink),
+        var(--neon-blue)
+      );
+      background-size: 400% 400%;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      animation: gradientBorder 4s ease infinite;
+      opacity: 0.3;
+      z-index: -1;
     }
 
     .widget-header {
@@ -375,6 +540,25 @@
       border-bottom: 1px solid rgba(255,255,255,0.03);
       display: flex;
       justify-content: space-between;
+      position: relative;
+    }
+
+    .widget-header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, 
+        transparent, 
+        var(--neon-blue), 
+        var(--neon-green), 
+        var(--gold),
+        transparent
+      );
+      background-size: 300% 100%;
+      animation: gradientBorder 3s ease infinite;
     }
 
     .widget-body { padding: 15px; font-size: 13px; overflow: hidden; flex: 1; word-wrap: break-word; display: flex; flex-direction: column; }
@@ -384,7 +568,7 @@
     .item-row .content { flex: 1; min-width: 0; }
     .user { color: var(--neon-green); font-weight: 700; }
     .msg { color: #bbb; display: block; margin-top: 2px; word-wrap: break-word; overflow-wrap: break-word; }
-    .ts { float: right; color: #333; font-size: 10px; }
+    .ts { float: right; color: rgba(255,255,255,0.4); font-size: 10px; }
 
     /* --- FOOTER & DISCLAIMER --- */
     .hud-footer {
@@ -720,9 +904,9 @@
       </header>
 
       <div class="slot-body">
-        <div class="status-box">
+        <div class="status-box" id="statusBox">
           <p style="font-size: 10px; color: #555; margin-bottom: 5px; font-weight: 900;">SYSTEM READY</p>
-          Type <span>/start</span> in chat to join
+          <div>Type <span>/start</span> in chat to join</div>
       </div>
 
         <div id="slotRulesBreak" class="hidden" style="text-align:center; max-width: 500px;">
@@ -772,7 +956,7 @@
         </div>
       </div>
 
-      <div style="padding: 10px; text-align: center; background: rgba(0,0,0,0.2); font-size: 11px; color: #444;" id="slotDateTime">00/00/0000 00:00:00</div>
+      <div style="padding: 10px; text-align: center; background: rgba(0,0,0,0.2); font-size: 11px; color: rgba(255,255,255,0.5);" id="slotDateTime">00/00/0000 00:00:00</div>
     </main>
 
     <!-- SIDEBAR -->
@@ -781,7 +965,7 @@
       <div class="widget" style="height: 220px;">
         <div class="widget-header">
           <span>Activity Logs</span>
-          <span id="slotQueue" style="color:var(--neon-blue)">Q: 0</span>
+          <span id="slotQueue" style="color:var(--neon-blue); font-size: 9px; line-height: 1.4;">Q: 0</span>
     </div>
         <div class="widget-body" id="logsList"></div>
     </div>
@@ -1159,21 +1343,53 @@
         try {
           data = JSON.parse(data);
       } catch {
-          text = data;
-          user = "User";
+          // If we can't parse, skip this message (it's likely not a valid chat message)
+          console.log('[Chat] Skipping unparseable string message:', data);
+          return;
         }
       }
       
       console.log('[Chat] After unwrap, data is:', data);
+      console.log('[Chat] Debug - data.profile_image:', data?.profile_image);
+      console.log('[Chat] Debug - data.raw?.profile_image:', data?.raw?.profile_image);
+      console.log('[Chat] Debug - originalData.data?.profile_image:', originalData?.data?.profile_image);
+      console.log('[Chat] Debug - data object keys:', data ? Object.keys(data) : 'no data');
+      if (data && data.raw) {
+        console.log('[Chat] Debug - data.raw object keys:', Object.keys(data.raw));
+      }
       
-      user = data.user || data.username || data.name || "User";
+      // Extract username - if we don't have a valid username, skip the message
+      user = data.user || data.username || data.name || null;
+      if (!user || typeof user !== 'string') {
+        console.log('[Chat] Skipping message without valid username:', data);
+        return;
+      }
+      
       text = data.text || data.message || data.msg || data.content || "";
       wallet = data.wallet || data.userAddress || data.address || null;
 
-      // Filter out generic/invalid usernames
+      // Filter out generic/invalid usernames (case-insensitive, with or without colon)
       const normalizedUser = (user || '').trim().toLowerCase();
-      if (normalizedUser === 'user' || normalizedUser === 'user:' || normalizedUser === '' || !normalizedUser) {
+      if (normalizedUser === 'user' || normalizedUser === 'user:' || normalizedUser === '' || !normalizedUser || normalizedUser.startsWith('user')) {
         console.log('[Chat] Skipping message with invalid username:', user);
+        return;
+      }
+      
+      // Filter out system/debug messages
+      const normalizedText = (text || '').trim().toLowerCase();
+      const systemMessages = [
+        'chat config',
+        'livestream join',
+        'joinroom ack',
+        'joining rooms',
+        'connected',
+        'disconnected',
+        'subscribe',
+        'join_room',
+        'ack'
+      ];
+      if (systemMessages.some(msg => normalizedText.includes(msg))) {
+        console.log('[Chat] Skipping system/debug message:', text);
         return;
       }
 
@@ -1186,8 +1402,15 @@
       
       if (!text || !text.trim()) {
         console.log('[Chat] Skipping empty message:', data);
-            return;
-          }
+        return;
+      }
+      
+      // Only process messages that contain "/" (commands)
+      const normalizedTextForCommand = (text || '').trim();
+      if (!normalizedTextForCommand.includes('/')) {
+        console.log('[Chat] Skipping message without command (no "/"):', text);
+        return;
+      }
 
       console.log('[Chat] Processing message:', { user, text: text.substring(0, 50), wallet });
 
@@ -1202,17 +1425,38 @@
       }
 
       // Extract profile_image from data or originalData (in case it's in the unwrapped format)
-      // Try multiple paths: data.profile_image, data.avatarUrl, originalData.data.profile_image, etc.
-      const avatarUrl = (
-        data.profile_image || 
-        data.avatarUrl || 
-        data.profileImage ||
-        originalData?.data?.profile_image ||
-        originalData?.data?.avatarUrl ||
-        originalData?.profile_image ||
-        originalData?.avatarUrl ||
-        ''
-      ).trim();
+      // Priority: data.profile_image (after unwrap) > originalData.data.profile_image > other paths
+      // This ensures we get the profile_image from the correct location
+      let avatarUrl = '';
+      
+      // Try data.profile_image first (most common after unwrap)
+      if (data && typeof data === 'object' && 'profile_image' in data && data.profile_image) {
+        avatarUrl = String(data.profile_image).trim();
+      }
+      // Try data.raw.profile_image (sometimes profile_image is nested in raw property)
+      else if (data && data.raw && typeof data.raw === 'object' && 'profile_image' in data.raw && data.raw.profile_image) {
+        avatarUrl = String(data.raw.profile_image).trim();
+      }
+      // Try originalData.data.profile_image (before unwrap)
+      else if (originalData && originalData.data && typeof originalData.data === 'object' && 'profile_image' in originalData.data && originalData.data.profile_image) {
+        avatarUrl = String(originalData.data.profile_image).trim();
+      }
+      // Try other paths as fallback
+      else if (data && data.avatarUrl) {
+        avatarUrl = String(data.avatarUrl).trim();
+      }
+      else if (data && data.profileImage) {
+        avatarUrl = String(data.profileImage).trim();
+      }
+      else if (originalData && originalData.data && originalData.data.avatarUrl) {
+        avatarUrl = String(originalData.data.avatarUrl).trim();
+      }
+      else if (originalData && originalData.profile_image) {
+        avatarUrl = String(originalData.profile_image).trim();
+      }
+      else if (originalData && originalData.avatarUrl) {
+        avatarUrl = String(originalData.avatarUrl).trim();
+      }
       
       console.log('[Chat] Extracted avatar:', { 
         avatarUrl, 
@@ -1284,22 +1528,78 @@
       console.log('[Chat] Calling updateChatHud(), chatEntries.length:', chatEntries.length);
       updateChatHud();
 
-      // Save to drive_db
+      // Save to drive_db - ensure avatarUrl is saved correctly
+      // Double-check avatarUrl extraction right before saving, checking all possible paths
+      let finalAvatarUrl = avatarUrl || '';
+      
+      // If avatarUrl is empty, try all possible extraction paths again
+      if (!finalAvatarUrl || !finalAvatarUrl.trim()) {
+        if (data && typeof data === 'object' && 'profile_image' in data && data.profile_image) {
+          finalAvatarUrl = String(data.profile_image).trim();
+        }
+        else if (data && data.raw && typeof data.raw === 'object' && 'profile_image' in data.raw && data.raw.profile_image) {
+          finalAvatarUrl = String(data.raw.profile_image).trim();
+        }
+        else if (originalData && originalData.data && typeof originalData.data === 'object' && 'profile_image' in originalData.data && originalData.data.profile_image) {
+          finalAvatarUrl = String(originalData.data.profile_image).trim();
+        }
+        else if (data && data.avatarUrl) {
+          finalAvatarUrl = String(data.avatarUrl).trim();
+        }
+        else if (originalData && originalData.data && originalData.data.avatarUrl) {
+          finalAvatarUrl = String(originalData.data.avatarUrl).trim();
+        }
+      }
+      
+      const chatToSave = {
+        ts: Date.now(),
+        id: data.id || `msg_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+        username: user,
+        avatarUrl: finalAvatarUrl || '', // Use final extracted avatarUrl
+        text: text,
+        userAddress: wallet
+      };
+      // Final verification: if still empty, try accessing directly with bracket notation
+      if (!finalAvatarUrl || !finalAvatarUrl.trim()) {
+        // Try direct property access with bracket notation (in case property exists but 'in' operator fails)
+        if (data && data['profile_image']) {
+          finalAvatarUrl = String(data['profile_image']).trim();
+        }
+        else if (data && data.raw && data.raw['profile_image']) {
+          finalAvatarUrl = String(data.raw['profile_image']).trim();
+        }
+        else if (originalData && originalData.data && originalData.data['profile_image']) {
+          finalAvatarUrl = String(originalData.data['profile_image']).trim();
+        }
+        
+        // Update chatToSave with final value
+        if (finalAvatarUrl && finalAvatarUrl.trim()) {
+          chatToSave.avatarUrl = finalAvatarUrl;
+        }
+      }
+      
+      console.log('[Chat] Saving to drive_db:', { 
+        username: chatToSave.username, 
+        avatarUrl: chatToSave.avatarUrl, 
+        hasAvatarUrl: !!chatToSave.avatarUrl && chatToSave.avatarUrl.length > 0,
+        extractedAvatarUrl: avatarUrl,
+        finalAvatarUrl: finalAvatarUrl,
+        chatToSaveAvatarUrl: chatToSave.avatarUrl,
+        dataProfileImage: data?.profile_image,
+        dataRawProfileImage: data?.raw?.profile_image,
+        originalDataProfileImage: originalData?.data?.profile_image,
+        dataKeys: data ? Object.keys(data) : [],
+        originalDataKeys: originalData ? Object.keys(originalData) : [],
+        fullDataObject: JSON.stringify(data).substring(0, 500)
+      });
       saveToDriveDb({
-        chats: [{
-          ts: Date.now(),
-          id: data.id || `msg_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
-          username: user,
-          avatarUrl: data.avatarUrl || data.profile_image || '',
-          text: text,
-          userAddress: wallet
-        }]
+        chats: [chatToSave]
       });
 
       // Process chat commands (if message starts with /)
       if (text.trim().startsWith('/')) {
         console.log('[Chat] Detected command in message:', text);
-        processChatCommand(text, user, { ...data, wallet });
+        processChatCommand(text, user, { ...data, wallet, avatarUrl: avatarUrl, profile_image: avatarUrl });
       }
     }
     
@@ -1383,7 +1683,26 @@
         introAudio.play().catch(e => console.warn('[Audio] Intro sound error:', e));
       }
       
-      slotCurrent = { ...player, phase: 'spinning' };
+      // Get player avatar from cache
+      const playerCacheKey = player.wallet && player.wallet !== 'unknown' ? player.wallet : `user:${player.username.toLowerCase()}`;
+      const playerInfo = userInfoCache[playerCacheKey] || {};
+      const playerAvatarUrl = playerInfo.avatarUrl || null;
+      
+      // Show countdown phase (5 seconds)
+      slotCurrent = { ...player, phase: 'countdown', avatarUrl: playerAvatarUrl, countdown: 5 };
+      updateSlotMachineHud();
+      
+      // Countdown: 5, 4, 3, 2, 1
+      for (let i = 5; i >= 1; i--) {
+        await new Promise(r => setTimeout(r, 1000));
+        if (slotCurrent && slotCurrent.phase === 'countdown') {
+          slotCurrent.countdown = i;
+          updateSlotMachineHud();
+        }
+      }
+      
+      // Switch to spinning phase
+      slotCurrent.phase = 'spinning';
       updateSlotMachineHud();
       
       // 7. Increment daily spins counter
@@ -1395,14 +1714,36 @@
         saveSlotState(); // Persist state
       }
       
-      // Animate reels spinning
+      // Play spinning sound in loop
+      const spinAudio = document.getElementById('slotSfxSpin');
+      if (spinAudio) {
+        spinAudio.loop = true;
+        spinAudio.currentTime = 0;
+        spinAudio.play().catch(e => console.warn('[Audio] Spin sound error:', e));
+      }
+      
+      // Animate reels spinning (fast phase - 5 seconds)
       spinReels();
       
-      // Wait for spin animation
-      await new Promise(r => setTimeout(r, 3000));
+      // Fast spinning phase (5 seconds)
+      await new Promise(r => setTimeout(r, 5000));
+      
+      // Slow down phase (start deceleration)
+      slowDownReels();
+      
+      // Wait for slow down animation (2.5 seconds)
+      await new Promise(r => setTimeout(r, 2500));
       
       // Select prize and stop reels (pass isHolder status for different probabilities)
       const prize = selectPrize(player.isHolder || false);
+      
+      // Stop spin sound
+      if (spinAudio) {
+        spinAudio.pause();
+        spinAudio.currentTime = 0;
+        spinAudio.loop = false;
+      }
+      
       stopReels(prize);
       
       slotCurrent.phase = 'result';
@@ -1469,20 +1810,30 @@
       });
     }
 
-    function stopReels(prize) {
-      // Stop spin sound
-      const spinAudio = document.getElementById('slotSfxSpin');
-      if (spinAudio) {
-        spinAudio.pause();
-        spinAudio.currentTime = 0;
-      }
+    function slowDownReels() {
+      const reels = document.querySelectorAll('#slotGrid .reel');
+      reels.forEach((reel, reelIdx) => {
+        reel.classList.remove('spinning');
+        reel.classList.add('slowing');
+        
+        const symbols = reel.querySelectorAll('.symbol');
+        symbols.forEach((sym, symIdx) => {
+          // Gradually slow down animation (ease-out effect)
+          const baseDuration = 0.15;
+          const slowDuration = baseDuration + (reelIdx * 0.1) + (symIdx * 0.05);
+          sym.style.animation = `symbolSpinSlow ${slowDuration}s ease-out infinite`;
+        });
+      });
+    }
 
+    function stopReels(prize) {
       const reels = document.querySelectorAll('#slotGrid .reel');
       
       // Stop each reel with staggered timing for better effect
       reels.forEach((reel, idx) => {
         setTimeout(() => {
           reel.classList.remove('spinning');
+          reel.classList.remove('slowing');
           
           const symbols = reel.querySelectorAll('.symbol');
           symbols.forEach((sym, symIdx) => {
@@ -1630,7 +1981,14 @@
       const uniqueEntries = [];
       const seen = new Set();
       // Take last 15 entries (most recent) and iterate in reverse to show newest first
+      // Only show messages that contain "/" (commands)
       for (const e of chatEntries.slice(-15).reverse()) {
+        // Only include messages with "/" (commands)
+        const messageText = (e.message || e.text || '').trim();
+        if (!messageText.includes('/')) {
+          continue; // Skip messages without "/"
+        }
+        
         const key = `${e.username}:${e.message}:${Math.floor(e.timestamp / 2000)}`;
         if (!seen.has(key)) {
           seen.add(key);
@@ -1641,12 +1999,23 @@
       // Display them in order: newest first
       console.log('[Chat] Rendering', uniqueEntries.length, 'unique entries');
       container.innerHTML = uniqueEntries.map(e => {
-        console.log('[Chat] Rendering entry:', { username: e.username, avatarUrl: e.avatarUrl, isHolder: e.isHolder, userAddress: e.userAddress });
-        const avatarImg = e.avatarUrl ? `<img src="${e.avatarUrl}" alt="${e.username}" class="avatar" onerror="this.style.display='none'; console.log('Avatar failed to load:', '${e.avatarUrl}');">` : '<div class="avatar" style="background: rgba(255,255,255,0.1);"></div>';
-        const holderTag = e.isHolder ? '<span style="color:var(--gold);font-size:10px;margin-left:4px;font-weight:700;">HOLDER</span>' : '';
+        // Get holder status from entry or cache
+        const cacheKey = e.userAddress && e.userAddress !== 'unknown' ? e.userAddress : `user:${e.username.toLowerCase()}`;
+        const userInfo = userInfoCache[cacheKey] || {};
+        const isHolder = e.isHolder || userInfo.isHolder || false;
+        // Update entry with holder status if found in cache
+        if (!e.isHolder && userInfo.isHolder) {
+          e.isHolder = true;
+        }
+        console.log('[Chat] Rendering entry:', { username: e.username, avatarUrl: e.avatarUrl, isHolder: isHolder, entryIsHolder: e.isHolder, cacheIsHolder: userInfo.isHolder, userAddress: e.userAddress });
+        // Render avatar: show image if available, with placeholder fallback on error
+        const hasAvatarUrl = e.avatarUrl && e.avatarUrl.trim() && e.avatarUrl.trim() !== '';
+        const avatarImg = hasAvatarUrl ? `<img src="${e.avatarUrl}" alt="${e.username}" class="avatar" crossorigin="anonymous" referrerpolicy="no-referrer" loading="lazy" onerror="this.style.display='none'; const next=this.nextElementSibling; if(next && next.classList && next.classList.contains('avatar-placeholder')) { next.style.display='block'; }">` : '';
+        const avatarPlaceholder = `<div class="avatar avatar-placeholder" style="background: rgba(255,255,255,0.1); width:24px; height:24px; border-radius:50%; flex-shrink:0; ${hasAvatarUrl ? 'display:none;' : ''}"></div>`;
+        const holderTag = isHolder ? '<span style="color:var(--gold);font-size:10px;margin-left:4px;font-weight:700;">HOLDER</span>' : '';
         return `
         <div class="item-row">
-          ${avatarImg}
+          ${avatarImg}${avatarPlaceholder}
           <div class="content">
             <span class="ts">${new Date(e.timestamp).toLocaleTimeString()}</span>
             <span class="user">${e.username}${holderTag}:</span>
@@ -1716,19 +2085,41 @@
       const container = document.getElementById('logsList');
       if (!container) return;
       container.innerHTML = logEntries.map(e => {
-        const text = e.text || e.action || JSON.stringify(e);
+        let text = e.text || e.action || JSON.stringify(e);
         const level = e.level || 'info';
         const color = level === 'success' ? '#00ff73'
           : level === 'warn' ? '#ff8800'
           : level === 'error' ? '#ff4444'
           : level === 'special' ? '#ffcc00'
           : '#ccc';
-        console.log('[Logs] Rendering entry:', { username: e.username, avatarUrl: e.avatarUrl, isHolder: e.isHolder, userAddress: e.userAddress });
-        const avatarImg = e.avatarUrl ? `<img src="${e.avatarUrl}" alt="${e.username || ''}" class="avatar" onerror="this.style.display='none'; console.log('Avatar failed to load:', '${e.avatarUrl}');">` : '<div class="avatar" style="background: rgba(255,255,255,0.1);"></div>';
-        const holderTag = e.isHolder ? '<span style="color:var(--gold);font-size:10px;margin-left:4px;font-weight:700;">HOLDER</span>' : '';
+        // Get holder status from entry or cache
+        const cacheKey = e.userAddress && e.userAddress !== 'unknown' ? e.userAddress : (e.username ? `user:${e.username.toLowerCase()}` : null);
+        const userInfo = cacheKey ? (userInfoCache[cacheKey] || {}) : {};
+        const isHolder = e.isHolder || userInfo.isHolder || false;
+        // Update entry with holder status if found in cache
+        if (!e.isHolder && userInfo.isHolder) {
+          e.isHolder = true;
+        }
+        console.log('[Logs] Rendering entry:', { username: e.username, avatarUrl: e.avatarUrl, isHolder: isHolder, entryIsHolder: e.isHolder, cacheIsHolder: userInfo.isHolder, userAddress: e.userAddress });
+        const avatarImg = e.avatarUrl && e.avatarUrl.trim() ? `<img src="${e.avatarUrl}" alt="${e.username || ''}" class="avatar" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src=''; this.style.display='none'; this.nextElementSibling?.style.display='block';">` : '';
+        const avatarPlaceholder = `<div class="avatar" style="background: rgba(255,255,255,0.1); ${e.avatarUrl && e.avatarUrl.trim() ? 'display:none;' : ''}"></div>`;
+        const holderTag = isHolder ? '<span style="color:var(--gold);font-size:10px;margin-left:4px;font-weight:700;">HOLDER</span>' : '';
         const usernamePart = e.username ? `<span class="user">${e.username}${holderTag}</span> ` : '';
+        
+        // Remove username from text if it's already shown separately
+        if (e.username && usernamePart) {
+          // Remove username patterns: "📊 username has...", "username joined...", "username got...", etc.
+          // Match username at start or after emoji/whitespace
+          const escapedUsername = e.username.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          const usernameRegex = new RegExp(`(^|\\s)${escapedUsername}\\s+`, 'i');
+          text = text.replace(usernameRegex, '$1');
+          // Also handle cases where username appears with emoji prefix
+          const emojiUsernameRegex = new RegExp(`[📊🎟️⚠️🔄🎁🏆🎨🎰😔✅🔗]\\s*${escapedUsername}\\s+`, 'i');
+          text = text.replace(emojiUsernameRegex, '');
+        }
+        
         return `<div class="item-row" style="color:${color}">
-          ${avatarImg}
+          ${avatarImg}${avatarPlaceholder}
           <div class="content">
             <span class="ts">${new Date(e.ts || Date.now()).toLocaleTimeString()}</span> ${usernamePart}${text}
           </div>
@@ -1786,12 +2177,23 @@
       if (!container) return;
       container.innerHTML = winnersEntries.map(e => {
         const prize = e.prize || e.action || 'PRIZE';
-        console.log('[Winners] Rendering entry:', { username: e.username, avatarUrl: e.avatarUrl, isHolder: e.isHolder, userAddress: e.userAddress });
-        const avatarImg = e.avatarUrl ? `<img src="${e.avatarUrl}" alt="${e.username || ''}" class="avatar" onerror="this.style.display='none'; console.log('Avatar failed to load:', '${e.avatarUrl}');">` : '<div class="avatar" style="background: rgba(255,255,255,0.1);"></div>';
-        const holderTag = e.isHolder ? '<span style="color:var(--gold);font-size:10px;margin-left:4px;font-weight:700;">HOLDER</span>' : '';
+        // Get holder status from entry or cache
+        const cacheKey = e.userAddress && e.userAddress !== 'unknown' ? e.userAddress : (e.username ? `user:${e.username.toLowerCase()}` : null);
+        const userInfo = cacheKey ? (userInfoCache[cacheKey] || {}) : {};
+        const isHolder = e.isHolder || userInfo.isHolder || false;
+        // Update entry with holder status if found in cache
+        if (!e.isHolder && userInfo.isHolder) {
+          e.isHolder = true;
+        }
+        console.log('[Winners] Rendering entry:', { username: e.username, avatarUrl: e.avatarUrl, isHolder: isHolder, entryIsHolder: e.isHolder, cacheIsHolder: userInfo.isHolder, userAddress: e.userAddress });
+        const avatarImg = e.avatarUrl && e.avatarUrl.trim() ? `<img src="${e.avatarUrl}" alt="${e.username || ''}" class="avatar" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src=''; this.style.display='none'; this.nextElementSibling?.style.display='block';">` : '';
+        const avatarPlaceholder = `<div class="avatar" style="background: rgba(255,255,255,0.1); ${e.avatarUrl && e.avatarUrl.trim() ? 'display:none;' : ''}"></div>`;
+        const holderTag = isHolder ? '<span style="color:var(--gold);font-size:10px;margin-left:4px;font-weight:700;">HOLDER</span>' : '';
+        const timestamp = e.ts ? new Date(e.ts).toLocaleTimeString() : '';
         return `<div class="item-row">
-          ${avatarImg}
+          ${avatarImg}${avatarPlaceholder}
           <div class="content">
+            <span class="ts">${timestamp}</span>
             <span class="user">${e.username || 'Unknown'}${holderTag}</span> won 
             <span style="color:var(--gold)">${prize}</span>
           </div>
@@ -1800,12 +2202,101 @@
     }
 
     function updateSlotMachineHud() {
-      document.getElementById('slotQueue').textContent = `Q: ${slotState.queue.length}`;
-      const status = document.getElementById('slotWaiting');
-      if (slotCurrent) {
-        status.textContent = slotCurrent.phase === 'spinning' ? 'ROLLING...' : `WINNER: ${slotCurrent.result}`;
-        status.style.color = slotCurrent.phase === 'spinning' ? 'var(--gold)' : 'var(--neon-green)';
+      const queueEl = document.getElementById('slotQueue');
+      const queueLength = slotState.queue.length;
+      
+      // Show queue count and list of players ahead
+      if (queueLength > 0) {
+        const queueList = slotState.queue.slice(0, 5).map((q, idx) => {
+          const cacheKey = q.wallet && q.wallet !== 'unknown' ? q.wallet : `user:${q.username.toLowerCase()}`;
+          const userInfo = userInfoCache[cacheKey] || {};
+          const avatarUrl = userInfo.avatarUrl || '';
+          const isHolder = q.isHolder || userInfo.isHolder || false;
+          const holderTag = isHolder ? ' <span style="color:var(--gold);font-size:8px;">H</span>' : '';
+          const avatarImg = avatarUrl && avatarUrl.trim() ? `<img src="${avatarUrl}" alt="${q.username}" style="width:16px;height:16px;border-radius:50%;margin-right:4px;object-fit:cover;" onerror="this.style.display='none';">` : '';
+          return `${idx + 1}. ${avatarImg}${q.username}${holderTag}`;
+        }).join(' ');
+        queueEl.innerHTML = `Q: ${queueLength}${queueLength > 5 ? '+' : ''} ${queueLength > 0 ? '— ' : ''}${queueList}`;
       } else {
+        queueEl.textContent = `Q: 0`;
+      }
+      
+      const status = document.getElementById('slotWaiting');
+      const statusBox = document.getElementById('statusBox');
+      
+      if (slotCurrent) {
+        // Get player info from cache
+        const player = slotCurrent;
+        const cacheKey = player.wallet && player.wallet !== 'unknown' ? player.wallet : `user:${player.username.toLowerCase()}`;
+        const userInfo = userInfoCache[cacheKey] || {};
+        const avatarUrl = userInfo.avatarUrl || null;
+        const isHolder = player.isHolder || userInfo.isHolder || false;
+        
+        // Update status box with player info and phase
+        const holderTag = isHolder ? '<span class="holder-badge">HOLDER</span>' : '';
+        const avatarImg = avatarUrl ? `<img src="${avatarUrl}" alt="${player.username}" class="player-avatar" onerror="this.style.display='none'">` : '<div class="player-avatar" style="background: rgba(255,255,255,0.1); border: 2px solid var(--neon-blue);"></div>';
+        
+        let phaseText, phaseColor;
+        
+        if (player.phase === 'countdown') {
+          phaseText = `Waiting for ${player.username}`;
+          phaseColor = 'var(--neon-blue)';
+          statusBox.innerHTML = `
+            <div class="player-info">
+              ${avatarImg}
+              <div>
+                <span class="player-name">${player.username}${holderTag}</span>
+              </div>
+            </div>
+            <div style="color: ${phaseColor}; font-size: 16px; font-weight: 700; margin-top: 5px;">${phaseText}</div>
+            <div style="color: var(--gold); font-size: 48px; font-weight: 900; margin-top: 10px; line-height: 1;">${player.countdown || 5}</div>
+          `;
+        } else if (player.phase === 'spinning') {
+          phaseText = 'ROLLING...';
+          phaseColor = 'var(--gold)';
+          statusBox.innerHTML = `
+            <div class="player-info">
+              ${avatarImg}
+              <div>
+                <span class="player-name">${player.username}${holderTag}</span>
+              </div>
+            </div>
+            <div style="color: ${phaseColor}; font-size: 16px; font-weight: 700; margin-top: 5px;">${phaseText}</div>
+          `;
+        } else if (player.phase === 'result') {
+          phaseText = `WON: ${player.result}`;
+          phaseColor = 'var(--neon-green)';
+          statusBox.innerHTML = `
+            <div class="player-info">
+              ${avatarImg}
+              <div>
+                <span class="player-name">${player.username}${holderTag}</span>
+              </div>
+            </div>
+            <div style="color: ${phaseColor}; font-size: 16px; font-weight: 700; margin-top: 5px;">${phaseText}</div>
+          `;
+        } else {
+          phaseText = 'PLAYING';
+          phaseColor = 'var(--neon-blue)';
+          statusBox.innerHTML = `
+            <div class="player-info">
+              ${avatarImg}
+              <div>
+                <span class="player-name">${player.username}${holderTag}</span>
+              </div>
+            </div>
+            <div style="color: ${phaseColor}; font-size: 16px; font-weight: 700; margin-top: 5px;">${phaseText}</div>
+          `;
+        }
+        
+        status.textContent = player.phase === 'spinning' ? 'ROLLING...' : player.phase === 'countdown' ? `Waiting for ${player.username}` : `WINNER: ${player.result}`;
+        status.style.color = player.phase === 'spinning' ? 'var(--gold)' : player.phase === 'result' ? 'var(--neon-green)' : 'var(--neon-blue)';
+      } else {
+        // No current player - show default
+        statusBox.innerHTML = `
+          <p style="font-size: 10px; color: #555; margin-bottom: 5px; font-weight: 900;">SYSTEM READY</p>
+          <div>Type <span>/start</span> in chat to join</div>
+        `;
         status.textContent = 'WAITING FOR BETS';
         status.style.color = 'rgba(255,255,255,0.05)';
       }
@@ -2205,8 +2696,11 @@
       try {
         const res = await fetch(`/holder-check?wallet=${encodeURIComponent(wallet)}`);
         const data = await res.json();
-        return data.ok && data.isHolder === true;
+        const isHolder = data.ok && data.isHolder === true;
+        console.log('[HolderCheck] Result:', { wallet, ok: data.ok, isHolder: data.isHolder, result: isHolder, data });
+        return isHolder;
       } catch (e) {
+        console.warn('[HolderCheck] Error:', { wallet, error: e.message });
         return false;
       }
     }
@@ -2230,13 +2724,24 @@
       
       // 1. Check holder status (only if wallet is valid)
       let isHolder = false;
+      const cacheKey = wallet && wallet !== 'unknown' ? wallet : `user:${username.toLowerCase()}`;
+      
+      // Check cache first to get holder status if already validated
+      if (wallet && wallet !== 'unknown' && userInfoCache[cacheKey] && userInfoCache[cacheKey].isHolder !== undefined) {
+        isHolder = userInfoCache[cacheKey].isHolder;
+        console.log('[Queue] Using cached holder status:', { wallet, isHolder });
+      }
+      
+      // If not in cache or wallet is valid, check holder status
       if (wallet && wallet !== 'unknown') {
         try {
-          isHolder = await checkIsHolder(wallet);
-          console.log('[Queue] Holder check result:', { wallet, isHolder });
+          const checkedHolder = await checkIsHolder(wallet);
+          console.log('[Queue] Holder check result:', { wallet, isHolder: checkedHolder, wasCached: isHolder === checkedHolder });
+          
+          // Use the checked result (may update if different from cache)
+          isHolder = checkedHolder;
           
           // Update cache with holder status
-          const cacheKey = wallet;
           if (!userInfoCache[cacheKey]) {
             userInfoCache[cacheKey] = {};
           }
@@ -2244,38 +2749,69 @@
           userInfoCache[cacheKey].userAddress = wallet;
         } catch (e) {
           console.warn('[Queue] Holder check failed:', e);
+          // If check failed, keep using cached value (if available) or default to false
+          if (userInfoCache[cacheKey] && userInfoCache[cacheKey].isHolder !== undefined) {
+            isHolder = userInfoCache[cacheKey].isHolder;
+          }
         }
       }
       
+      // Calculate limit based on validated isHolder (not cache, which may be outdated)
       const limit = getDailySpinLimit(isHolder);
       const spinKey = (wallet && wallet !== 'unknown')
         ? wallet
         : `unknown:${String(username || 'user').toLowerCase()}`;
       const currentSpins = slotState.dailySpins[spinKey] || 0;
       
-      console.log('[Queue] Spin limits:', { spinKey, currentSpins, limit, isHolder });
+      // Ensure cache is updated with the latest isHolder value before calculating limit
+      if (wallet && wallet !== 'unknown' && userInfoCache[cacheKey]) {
+        userInfoCache[cacheKey].isHolder = isHolder;
+      }
+      
+      console.log('[Queue] Spin limits:', { spinKey, currentSpins, limit, isHolder, cacheIsHolder: userInfoCache[cacheKey]?.isHolder, cacheKey });
+      
+      // Ensure cache is initialized and updated with latest values
+      if (!userInfoCache[cacheKey]) {
+        userInfoCache[cacheKey] = {};
+      }
+      userInfoCache[cacheKey].isHolder = isHolder; // Always update with validated value
+      if (wallet && wallet !== 'unknown') {
+        userInfoCache[cacheKey].userAddress = wallet;
+      }
+      
+      // Try to get avatarUrl from cache, or from chat entries
+      let avatarUrl = userInfoCache[cacheKey]?.avatarUrl || null;
+      if (!avatarUrl && wallet && wallet !== 'unknown') {
+        // Try to find avatar from recent chat entries
+        const chatEntry = chatEntries.find(c => c.userAddress === wallet || c.username === username);
+        if (chatEntry && chatEntry.avatarUrl) {
+          avatarUrl = chatEntry.avatarUrl;
+          userInfoCache[cacheKey].avatarUrl = avatarUrl; // Update cache
+        }
+      }
       
       // Check if user has reached daily limit
       if (currentSpins >= limit) {
-        const cacheKey = wallet && wallet !== 'unknown' ? wallet : `user:${username.toLowerCase()}`;
-        const userInfo = userInfoCache[cacheKey] || {};
+        // Use the validated isHolder (not cache, which may be outdated)
+        console.log('[Queue] Daily limit reached - Logging:', { username, wallet, isHolder, limit, avatarUrl, cacheKey });
         addLog(`⚠️ ${username} reached daily limit (${limit} spins/day)`, '#ff8800', { 
           username, 
           userAddress: wallet !== 'unknown' ? wallet : null,
-          avatarUrl: userInfo.avatarUrl || null,
-          isHolder: userInfo.isHolder || false
+          avatarUrl: avatarUrl,
+          isHolder: isHolder // Use validated isHolder, not cache
         });
         return;
       }
       
       slotState.queue.push({ username, wallet: wallet || 'unknown', isHolder, kind: 'normal' });
-      const cacheKey = wallet && wallet !== 'unknown' ? wallet : `user:${username.toLowerCase()}`;
       const userInfo = userInfoCache[cacheKey] || {};
+      // Use the validated isHolder value, not the cache (cache may be outdated)
+      const finalIsHolder = isHolder || userInfo.isHolder || false;
       addLog(`🎟️ ${username} joined the queue (${currentSpins + 1}/${limit} spins)`, '#00d2ff', {
         username,
         userAddress: wallet !== 'unknown' ? wallet : null,
         avatarUrl: userInfo.avatarUrl || null,
-        isHolder: userInfo.isHolder || false
+        isHolder: finalIsHolder
       });
       updateSlotMachineHud();
       

@@ -1672,15 +1672,83 @@ const server = http.createServer((req, res) => {
         const db = readJsonFileSafe(DRIVE_DB_PATH) || defaultDriveDb();
         if (!db.slotState || typeof db.slotState !== 'object') db.slotState = defaultSlotState();
         
-        // Append new entries
+        // Helper function to check if chat entry already exists by ID (primary check)
+        const chatExistsById = (existingChats, id) => {
+          if (!id) return false;
+          return existingChats.some(c => c.id === id);
+        };
+        
+        // Helper function to check if chat entry already exists (fallback for entries without ID)
+        const chatExists = (existingChats, newChat) => {
+          // Primary check: by ID (most reliable)
+          if (newChat.id && chatExistsById(existingChats, newChat.id)) {
+            return true;
+          }
+          // Fallback: check by ts, username, text, userAddress (within 1 second tolerance)
+          return existingChats.some(c => 
+            c.username === newChat.username &&
+            c.text === newChat.text &&
+            c.userAddress === newChat.userAddress &&
+            Math.abs((c.ts || 0) - (newChat.ts || 0)) < 1000
+          );
+        };
+        
+        // Helper function to check if log entry already exists
+        const logExists = (existingLogs, newLog) => {
+          return existingLogs.some(l => 
+            l.username === newLog.username &&
+            l.text === newLog.text &&
+            Math.abs((l.ts || 0) - (newLog.ts || 0)) < 1000
+          );
+        };
+        
+        // Helper function to check if winner entry already exists
+        const winnerExists = (existingWinners, newWinner) => {
+          return existingWinners.some(w => 
+            w.username === newWinner.username &&
+            w.prize === newWinner.prize &&
+            w.amount === newWinner.amount &&
+            Math.abs((w.ts || 0) - (newWinner.ts || 0)) < 1000
+          );
+        };
+        
+        // Append new entries (filter duplicates - prioritize ID check)
         if (Array.isArray(body.chats)) {
-          db.chats = (db.chats || []).concat(body.chats);
+          const existingChats = db.chats || [];
+          // Create a Set of existing IDs for faster lookup
+          const existingIds = new Set((existingChats || []).map(c => c.id).filter(Boolean));
+          
+          // Filter duplicates: check by ID first, then fallback to other fields
+          const newChats = body.chats.filter(newChat => {
+            // If has ID, check if ID already exists
+            if (newChat.id && existingIds.has(newChat.id)) {
+              return false; // Skip - duplicate ID
+            }
+            // If no ID or ID not found, check by other fields
+            return !chatExists(existingChats, newChat);
+          });
+          
+          if (newChats.length > 0) {
+            // Add new IDs to the Set and concatenate
+            newChats.forEach(c => {
+              if (c.id) existingIds.add(c.id);
+            });
+            db.chats = existingChats.concat(newChats);
+          }
         }
         if (Array.isArray(body.logs)) {
-          db.logs = (db.logs || []).concat(body.logs);
+          const existingLogs = db.logs || [];
+          const newLogs = body.logs.filter(newLog => !logExists(existingLogs, newLog));
+          if (newLogs.length > 0) {
+            db.logs = existingLogs.concat(newLogs);
+          }
         }
         if (Array.isArray(body.winners)) {
-          db.winners = (db.winners || []).concat(body.winners);
+          const existingWinners = db.winners || [];
+          const newWinners = body.winners.filter(newWinner => !winnerExists(existingWinners, newWinner));
+          if (newWinners.length > 0) {
+            db.winners = existingWinners.concat(newWinners);
+          }
         }
 
         // Merge slotState (overlay sends full state snapshots)
