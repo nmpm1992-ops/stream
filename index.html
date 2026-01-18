@@ -132,6 +132,56 @@
       align-items: center;
       justify-content: center;
       padding: 40px;
+      position: relative;
+    }
+    
+    /* Commands help card */
+    .commands-help {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: var(--panel-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      font-size: 11px;
+      max-width: 280px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      z-index: 10;
+    }
+    
+    .commands-help h4 {
+      margin: 0 0 10px 0;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--neon-blue);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .commands-help .cmd-item {
+      margin: 8px 0;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    
+    .commands-help .cmd-item:last-child {
+      border-bottom: none;
+    }
+    
+    .commands-help .cmd-name {
+      color: var(--gold);
+      font-weight: 700;
+      font-family: monospace;
+      margin-right: 6px;
+    }
+    
+    .commands-help .cmd-desc {
+      color: var(--text-muted);
+      font-size: 10px;
+      line-height: 1.4;
+      margin-top: 2px;
     }
 
     .status-box {
@@ -327,7 +377,7 @@
       justify-content: space-between;
     }
 
-    .widget-body { padding: 15px; font-size: 13px; overflow: visible; flex: 1; word-wrap: break-word; }
+    .widget-body { padding: 15px; font-size: 13px; overflow: hidden; flex: 1; word-wrap: break-word; display: flex; flex-direction: column; }
 
     .item-row { margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid rgba(255,255,255,0.02); word-wrap: break-word; overflow-wrap: break-word; display: flex; align-items: center; gap: 8px; }
     .item-row .avatar { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 1px solid rgba(255,255,255,0.1); }
@@ -702,6 +752,24 @@
     </div>
 
         <h2 style="margin-top: 40px; font-weight: 900; letter-spacing: 5px; color: rgba(255,255,255,0.05)" id="slotWaiting">WAITING FOR BETS</h2>
+        
+        <!-- Commands Help Card -->
+        <div class="commands-help">
+          <h4>📋 Commands</h4>
+          <div class="cmd-item">
+            <div><span class="cmd-name">/start</span> or <span class="cmd-name">/spin</span></div>
+            <div class="cmd-desc">Join the slot queue. HOLDERS: 3 spins/day • Non-HOLDERS: 1 spin/day</div>
+          </div>
+          <div class="cmd-item">
+            <div><span class="cmd-name">/points</span></div>
+            <div class="cmd-desc">Check your current points. Collect 1000 points to win 1000 MEWVOLT!</div>
+          </div>
+          <div class="cmd-item">
+            <div style="color: var(--neon-green); font-size: 10px; margin-top: 6px;">
+              💡 Points are earned by spinning the slot machine
+            </div>
+          </div>
+        </div>
       </div>
 
       <div style="padding: 10px; text-align: center; background: rgba(0,0,0,0.2); font-size: 11px; color: #444;" id="slotDateTime">00/00/0000 00:00:00</div>
@@ -727,7 +795,7 @@
       <!-- CHAT -->
       <div class="widget" style="flex: 1;">
         <div class="widget-header">Community Chat</div>
-        <div class="widget-body" id="chatMessages" style="display:flex; flex-direction:column-reverse;"></div>
+        <div class="widget-body" id="chatMessages"></div>
       </div>
     </aside>
 
@@ -797,6 +865,7 @@
     let logEntries = [];
     let winnersEntries = [];
     let slotCurrent = null;
+    let userInfoCache = {}; // Cache: { wallet|username: { avatarUrl, isHolder, userAddress } }
 
     // --- MODE DETECTION ---
     const urlParams = new URLSearchParams(window.location.search);
@@ -956,14 +1025,16 @@
           es.addEventListener('newMessage', (ev) => {
             try {
               const payload = JSON.parse(ev.data);
+              console.log('[Chat] SSE newMessage event payload:', payload);
               // Payload can be direct message data or wrapped in { event, data }
               if (payload && payload.data) {
                 processChatMessage(payload);
               } else {
+                // Direct payload is the message data itself
                 processChatMessage({ event: 'newMessage', data: payload });
               }
             } catch (e) {
-              console.warn('[Chat] SSE newMessage parse error:', e);
+              console.warn('[Chat] SSE newMessage parse error:', e, ev.data);
             }
           });
 
@@ -1072,10 +1143,14 @@
     }
 
     function processChatMessage(data) {
+      console.log('[Chat] processChatMessage called with:', data);
+      
       // Handle different data formats
       let user, text, wallet;
 
       // Unwrap SSE envelope: { event, data }
+      // Store original data for extracting profile_image after unwrap
+      const originalData = data;
       if (data && typeof data === 'object' && data.data && (data.event || data.type)) {
         data = data.data;
       }
@@ -1089,9 +1164,18 @@
         }
       }
       
+      console.log('[Chat] After unwrap, data is:', data);
+      
       user = data.user || data.username || data.name || "User";
       text = data.text || data.message || data.msg || data.content || "";
       wallet = data.wallet || data.userAddress || data.address || null;
+
+      // Filter out generic/invalid usernames
+      const normalizedUser = (user || '').trim().toLowerCase();
+      if (normalizedUser === 'user' || normalizedUser === 'user:' || normalizedUser === '' || !normalizedUser) {
+        console.log('[Chat] Skipping message with invalid username:', user);
+        return;
+      }
 
       // Normalize text payloads (Pump.fun often sends { message: string|array })
       if (Array.isArray(text)) {
@@ -1117,10 +1201,87 @@
         return;
       }
 
-      const avatarUrl = data.avatarUrl || data.profile_image || '';
-      const chatEntry = { username: user, message: text, timestamp: now, avatarUrl };
+      // Extract profile_image from data or originalData (in case it's in the unwrapped format)
+      // Try multiple paths: data.profile_image, data.avatarUrl, originalData.data.profile_image, etc.
+      const avatarUrl = (
+        data.profile_image || 
+        data.avatarUrl || 
+        data.profileImage ||
+        originalData?.data?.profile_image ||
+        originalData?.data?.avatarUrl ||
+        originalData?.profile_image ||
+        originalData?.avatarUrl ||
+        ''
+      ).trim();
+      
+      console.log('[Chat] Extracted avatar:', { 
+        avatarUrl, 
+        hasData: !!data, 
+        hasOriginal: !!originalData,
+        dataKeys: data ? Object.keys(data) : [],
+        originalKeys: originalData ? Object.keys(originalData) : [],
+        dataProfileImage: data?.profile_image,
+        dataAvatarUrl: data?.avatarUrl
+      });
+      
+      const chatEntry = { username: user, message: text, timestamp: now, avatarUrl, userAddress: wallet, isHolder: false };
       chatEntries.push(chatEntry);
+      console.log('[Chat] Added chat entry, total entries:', chatEntries.length, 'new entry:', chatEntry);
       if (chatEntries.length > 50) chatEntries.shift();
+      
+      // Update user info cache
+      const cacheKey = wallet && wallet !== 'unknown' ? wallet : `user:${user.toLowerCase()}`;
+      if (!userInfoCache[cacheKey]) {
+        userInfoCache[cacheKey] = {};
+      }
+      if (avatarUrl) {
+        userInfoCache[cacheKey].avatarUrl = avatarUrl;
+      }
+      if (wallet && wallet !== 'unknown') {
+        userInfoCache[cacheKey].userAddress = wallet;
+      }
+      
+      // Check holder status asynchronously
+      if (wallet && wallet !== 'unknown') {
+        console.log('[Chat] Checking holder status for wallet:', wallet);
+        checkIsHolder(wallet).then(isHolder => {
+          console.log('[Chat] Holder check result:', { wallet, isHolder });
+          chatEntry.isHolder = isHolder;
+          userInfoCache[cacheKey].isHolder = isHolder;
+          console.log('[Chat] Holder status updated:', { username: user, wallet, isHolder, cacheKey, chatEntry });
+          
+          // Update existing log entries for this user
+          logEntries.forEach(logEntry => {
+            if (logEntry.userAddress === wallet || 
+                (logEntry.username === user && !logEntry.userAddress)) {
+              logEntry.isHolder = isHolder;
+              console.log('[Chat] Updated log entry holder status:', { username: logEntry.username, isHolder });
+            }
+          });
+          
+          // Update existing winner entries for this user
+          winnersEntries.forEach(winnerEntry => {
+            if (winnerEntry.userAddress === wallet || 
+                (winnerEntry.username === user && !winnerEntry.userAddress)) {
+              winnerEntry.isHolder = isHolder;
+              console.log('[Chat] Updated winner entry holder status:', { username: winnerEntry.username, isHolder });
+            }
+          });
+          
+          // Update all HUDs to reflect the new holder status
+          updateChatHud();
+          updateLogsHud();
+          updateWinnersHud();
+        }).catch((err) => {
+          console.warn('[Chat] Holder check failed:', err);
+          chatEntry.isHolder = false;
+          userInfoCache[cacheKey].isHolder = false;
+        });
+      } else {
+        console.log('[Chat] Skipping holder check - no valid wallet:', wallet);
+      }
+      
+      console.log('[Chat] Calling updateChatHud(), chatEntries.length:', chatEntries.length);
       updateChatHud();
 
       // Save to drive_db
@@ -1154,16 +1315,41 @@
       // Support /start and /spin commands
       if (cmd === '/start' || cmd.startsWith('/start ') || cmd === '/spin' || cmd.startsWith('/spin ')) {
         const wallet = data.wallet || data.userAddress || "unknown";
+        const avatarUrl = data.avatarUrl || data.profile_image || '';
+        
+        // Update user info cache when command is received
+        if (wallet && wallet !== 'unknown') {
+          const cacheKey = wallet;
+          if (!userInfoCache[cacheKey]) {
+            userInfoCache[cacheKey] = {};
+          }
+          if (avatarUrl) userInfoCache[cacheKey].avatarUrl = avatarUrl;
+          userInfoCache[cacheKey].userAddress = wallet;
+        }
+        
         console.log('[Command] /start or /spin detected, adding to queue:', { user, wallet });
         addToQueue(user, wallet);
       } else if (cmd === '/points') {
         const wallet = data.wallet || data.userAddress || null;
+        const avatarUrl = data.avatarUrl || data.profile_image || null;
+        const cacheKey = wallet && wallet !== 'unknown' ? wallet : `user:${user.toLowerCase()}`;
+        const userInfo = userInfoCache[cacheKey] || {};
+        const finalAvatarUrl = avatarUrl || userInfo.avatarUrl || null;
+        const isHolder = userInfo.isHolder || false;
+        
         if (wallet && wallet !== 'unknown') {
           const points = slotState.userPoints[wallet] || 0;
-          const remaining = Math.max(0, 1000 - points);
-          addLog(`📊 ${user} has ${points} points (${remaining} to 1000)`, '#00d2ff');
+          addLog(`📊 ${user} has ${points} points (${points} to 1000)`, '#00d2ff', {
+            username: user,
+            userAddress: wallet,
+            avatarUrl: finalAvatarUrl,
+            isHolder: isHolder
+          });
       } else {
-          addLog(`⚠️ ${user} has no wallet address`, '#ff8800');
+          addLog(`⚠️ ${user} has no wallet address`, '#ff8800', {
+            username: user,
+            avatarUrl: finalAvatarUrl
+          });
         }
             } else {
         console.log('[Command] Unknown command:', cmd);
@@ -1362,14 +1548,24 @@
     }
 
     async function processPrize(wallet, username, prize) {
+      // Get user info from slotCurrent or cache
+      const player = slotCurrent || {};
+      const isHolder = player.isHolder || false;
+      
+      // Get avatarUrl from cache
+      const cacheKey = wallet && wallet !== 'unknown' ? wallet : `user:${username.toLowerCase()}`;
+      const userInfo = userInfoCache[cacheKey] || {};
+      const avatarUrl = userInfo.avatarUrl || null;
+      const userAddress = wallet && wallet !== 'unknown' ? wallet : userInfo.userAddress || null;
+      
       if (prize === 'Nothing') {
-        addLog(`😔 ${username} got nothing`, '#666');
+        addLog(`😔 ${username} got nothing`, '#666', { username, userAddress, avatarUrl, isHolder });
         return;
       }
       
       if (prize === 'Extra spin') {
         slotState.queue.unshift({ username, wallet, kind: 'bonus' });
-        addLog(`🔄 ${username} got extra spin!`, '#00d2ff');
+        addLog(`🔄 ${username} got extra spin!`, '#00d2ff', { username, userAddress, avatarUrl, isHolder });
         return;
       }
       
@@ -1377,18 +1573,18 @@
         const points = parseInt(prize.match(/\d+/)?.[0] || '0');
         if (points > 0) {
           if (!wallet || wallet === 'unknown') {
-            addLog(`⚠️ ${username} has no wallet address (points not credited)`, '#ff8800');
+            addLog(`⚠️ ${username} has no wallet address (points not credited)`, '#ff8800', { username, avatarUrl });
         return;
       }
 
           slotState.userPoints[wallet] = (slotState.userPoints[wallet] || 0) + points;
-          addLog(`🎁 ${username} won ${points} points!`, '#00ff73');
-          addWinner(username, `${points} points`, points);
+          addLog(`🎁 ${username} won ${points} points!`, '#00ff73', { username, userAddress, avatarUrl, isHolder });
+          addWinner(username, `${points} points`, points, avatarUrl, userAddress, isHolder);
           saveSlotState();
           
           // Check for 1000 points milestone
           if (slotState.userPoints[wallet] >= 1000) {
-            addLog(`🏆 ${username} reached 1000 points!`, '#ffcc00');
+            addLog(`🏆 ${username} reached 1000 points!`, '#ffcc00', { username, userAddress, avatarUrl, isHolder });
             // 5. Trigger payout for 1000 points
             payoutPoints(wallet, username);
             slotState.userPoints[wallet] = slotState.userPoints[wallet] - 1000;
@@ -1400,15 +1596,15 @@
       
       if (prize === 'Free Mint NFT') {
         slotState.dailyNFTCount = (slotState.dailyNFTCount || 0) + 1;
-        addLog(`🎨 ${username} won Free Mint NFT!`, '#ff2975');
-        addWinner(username, prize);
+        addLog(`🎨 ${username} won Free Mint NFT!`, '#ff2975', { username, userAddress, avatarUrl, isHolder });
+        addWinner(username, prize, null, avatarUrl, userAddress, isHolder);
         saveSlotState();
         return;
       }
       
       if (prize === 'Jackpot') {
-        addLog(`🎰 ${username} WON THE JACKPOT! ${slotState.jackpot} MEWVOLT`, '#ffcc00');
-        addWinner(username, `JACKPOT ${slotState.jackpot} MEWVOLT`, slotState.jackpot);
+        addLog(`🎰 ${username} WON THE JACKPOT! ${slotState.jackpot} MEWVOLT`, '#ffcc00', { username, userAddress, avatarUrl, isHolder });
+        addWinner(username, `JACKPOT ${slotState.jackpot} MEWVOLT`, slotState.jackpot, avatarUrl, userAddress, isHolder);
         // 5. Trigger jackpot payout
         payoutJackpot(wallet, username);
         // Reset pot after win; rollover happens when not won
@@ -1418,16 +1614,22 @@
         return;
       }
       
-      addWinner(username, prize);
+      addWinner(username, prize, null, avatarUrl, userAddress, isHolder);
     }
 
     // --- UI UPDATES ---
     function updateChatHud() {
       const container = document.getElementById('chatMessages');
-      if (!container) return;
+      if (!container) {
+        console.warn('[Chat] Container chatMessages not found!');
+        return;
+      }
+      console.log('[Chat] updateChatHud called, chatEntries.length:', chatEntries.length);
       // Remove duplicates based on username + message + timestamp (within 2 seconds)
+      // Order: most recent first (chatEntries has newest at end, so take last 15 and reverse)
       const uniqueEntries = [];
       const seen = new Set();
+      // Take last 15 entries (most recent) and iterate in reverse to show newest first
       for (const e of chatEntries.slice(-15).reverse()) {
         const key = `${e.username}:${e.message}:${Math.floor(e.timestamp / 2000)}`;
         if (!seen.has(key)) {
@@ -1435,14 +1637,19 @@
           uniqueEntries.push(e);
         }
       }
-      container.innerHTML = uniqueEntries.reverse().map(e => {
-        const avatarImg = e.avatarUrl ? `<img src="${e.avatarUrl}" alt="${e.username}" class="avatar" onerror="this.style.display='none'">` : '<div class="avatar" style="background: rgba(255,255,255,0.1);"></div>';
+      // uniqueEntries now has most recent first (newest at index 0)
+      // Display them in order: newest first
+      console.log('[Chat] Rendering', uniqueEntries.length, 'unique entries');
+      container.innerHTML = uniqueEntries.map(e => {
+        console.log('[Chat] Rendering entry:', { username: e.username, avatarUrl: e.avatarUrl, isHolder: e.isHolder, userAddress: e.userAddress });
+        const avatarImg = e.avatarUrl ? `<img src="${e.avatarUrl}" alt="${e.username}" class="avatar" onerror="this.style.display='none'; console.log('Avatar failed to load:', '${e.avatarUrl}');">` : '<div class="avatar" style="background: rgba(255,255,255,0.1);"></div>';
+        const holderTag = e.isHolder ? '<span style="color:var(--gold);font-size:10px;margin-left:4px;font-weight:700;">HOLDER</span>' : '';
         return `
         <div class="item-row">
           ${avatarImg}
           <div class="content">
             <span class="ts">${new Date(e.timestamp).toLocaleTimeString()}</span>
-            <span class="user">${e.username}:</span>
+            <span class="user">${e.username}${holderTag}:</span>
             <span class="msg">${e.message}</span>
           </div>
         </div>
@@ -1460,6 +1667,22 @@
         return; // Skip duplicate
       }
       
+      // Get user info from cache if not provided in meta
+      let avatarUrl = meta.avatarUrl || null;
+      let isHolder = meta.isHolder !== undefined ? meta.isHolder : null;
+      let userAddress = meta.userAddress || null;
+      
+      if (meta.username || meta.userAddress) {
+        const cacheKey = meta.userAddress && meta.userAddress !== 'unknown' 
+          ? meta.userAddress 
+          : meta.username ? `user:${meta.username.toLowerCase()}` : null;
+        if (cacheKey && userInfoCache[cacheKey]) {
+          if (!avatarUrl) avatarUrl = userInfoCache[cacheKey].avatarUrl || null;
+          if (isHolder === null) isHolder = userInfoCache[cacheKey].isHolder || false;
+          if (!userAddress) userAddress = userInfoCache[cacheKey].userAddress || null;
+        }
+      }
+      
       // Save to drive_db
       const levelFromColor = (c) => {
         if (!c) return 'info';
@@ -1475,8 +1698,9 @@
         username: meta.username || null,
         text: text,
         action: meta.action || null,
-        userAddress: meta.userAddress || null,
-        avatarUrl: meta.avatarUrl || null,
+        userAddress: userAddress,
+        avatarUrl: avatarUrl,
+        isHolder: isHolder === true,
         level: meta.level || levelFromColor(color)
       };
       logEntries.unshift(logEntry); // Add to start
@@ -1499,17 +1723,20 @@
           : level === 'error' ? '#ff4444'
           : level === 'special' ? '#ffcc00'
           : '#ccc';
-        const avatarImg = e.avatarUrl ? `<img src="${e.avatarUrl}" alt="${e.username || ''}" class="avatar" onerror="this.style.display='none'">` : '<div class="avatar" style="background: rgba(255,255,255,0.1);"></div>';
+        console.log('[Logs] Rendering entry:', { username: e.username, avatarUrl: e.avatarUrl, isHolder: e.isHolder, userAddress: e.userAddress });
+        const avatarImg = e.avatarUrl ? `<img src="${e.avatarUrl}" alt="${e.username || ''}" class="avatar" onerror="this.style.display='none'; console.log('Avatar failed to load:', '${e.avatarUrl}');">` : '<div class="avatar" style="background: rgba(255,255,255,0.1);"></div>';
+        const holderTag = e.isHolder ? '<span style="color:var(--gold);font-size:10px;margin-left:4px;font-weight:700;">HOLDER</span>' : '';
+        const usernamePart = e.username ? `<span class="user">${e.username}${holderTag}</span> ` : '';
         return `<div class="item-row" style="color:${color}">
           ${avatarImg}
           <div class="content">
-            <span class="ts">${new Date(e.ts || Date.now()).toLocaleTimeString()}</span> ${text}
+            <span class="ts">${new Date(e.ts || Date.now()).toLocaleTimeString()}</span> ${usernamePart}${text}
           </div>
         </div>`;
       }).join('');
     }
 
-    function addWinner(user, prize, amount = null, avatarUrl = null) {
+    function addWinner(user, prize, amount = null, avatarUrl = null, userAddress = null, isHolder = null) {
       // Check for duplicates (same user + prize within last 5 seconds)
       const now = Date.now();
       const isDuplicate = winnersEntries.some(e => 
@@ -1519,13 +1746,31 @@
         return; // Skip duplicate
       }
       
+      // Get user info from cache if not provided
+      let finalAvatarUrl = avatarUrl || null;
+      let finalIsHolder = isHolder !== null ? isHolder : false;
+      let finalUserAddress = userAddress || null;
+      
+      if (user) {
+        const cacheKey = finalUserAddress && finalUserAddress !== 'unknown' 
+          ? finalUserAddress 
+          : `user:${user.toLowerCase()}`;
+        if (userInfoCache[cacheKey]) {
+          if (!finalAvatarUrl) finalAvatarUrl = userInfoCache[cacheKey].avatarUrl || null;
+          if (finalIsHolder === null || finalIsHolder === false) finalIsHolder = userInfoCache[cacheKey].isHolder || false;
+          if (!finalUserAddress) finalUserAddress = userInfoCache[cacheKey].userAddress || null;
+        }
+      }
+      
       // Save to drive_db
       const winnerEntry = {
         ts: now,
         username: user,
         prize: prize,
         amount: amount,
-        avatarUrl: avatarUrl
+        avatarUrl: finalAvatarUrl,
+        userAddress: finalUserAddress,
+        isHolder: finalIsHolder === true
       };
       winnersEntries.unshift(winnerEntry); // Add to start
       if (winnersEntries.length > 10) winnersEntries.pop(); // Remove from end
@@ -1541,11 +1786,13 @@
       if (!container) return;
       container.innerHTML = winnersEntries.map(e => {
         const prize = e.prize || e.action || 'PRIZE';
-        const avatarImg = e.avatarUrl ? `<img src="${e.avatarUrl}" alt="${e.username || ''}" class="avatar" onerror="this.style.display='none'">` : '<div class="avatar" style="background: rgba(255,255,255,0.1);"></div>';
+        console.log('[Winners] Rendering entry:', { username: e.username, avatarUrl: e.avatarUrl, isHolder: e.isHolder, userAddress: e.userAddress });
+        const avatarImg = e.avatarUrl ? `<img src="${e.avatarUrl}" alt="${e.username || ''}" class="avatar" onerror="this.style.display='none'; console.log('Avatar failed to load:', '${e.avatarUrl}');">` : '<div class="avatar" style="background: rgba(255,255,255,0.1);"></div>';
+        const holderTag = e.isHolder ? '<span style="color:var(--gold);font-size:10px;margin-left:4px;font-weight:700;">HOLDER</span>' : '';
         return `<div class="item-row">
           ${avatarImg}
           <div class="content">
-            <span class="user">${e.username || 'Unknown'}</span> won 
+            <span class="user">${e.username || 'Unknown'}${holderTag}</span> won 
             <span style="color:var(--gold)">${prize}</span>
           </div>
         </div>`;
@@ -1594,26 +1841,117 @@
           // Load chats
           if (Array.isArray(result.data.chats)) {
             chatEntries = result.data.chats
-              .map(c => ({
-                username: c.username || 'Unknown',
-                message: c.text || '',
-                timestamp: c.ts || Date.now(),
-                avatarUrl: c.avatarUrl || ''
-              }))
+              .map(c => {
+                const wallet = c.userAddress || null;
+                const cacheKey = wallet && wallet !== 'unknown' ? wallet : `user:${(c.username || 'unknown').toLowerCase()}`;
+                const avatarUrl = c.avatarUrl || '';
+                
+                // Update cache from loaded data
+                if (cacheKey && !userInfoCache[cacheKey]) {
+                  userInfoCache[cacheKey] = {};
+                }
+                if (avatarUrl && cacheKey) {
+                  userInfoCache[cacheKey].avatarUrl = avatarUrl;
+                }
+                if (wallet && cacheKey) {
+                  userInfoCache[cacheKey].userAddress = wallet;
+                }
+                
+                return {
+                  username: c.username || 'Unknown',
+                  message: c.text || '',
+                  timestamp: c.ts || Date.now(),
+                  avatarUrl: avatarUrl,
+                  userAddress: wallet,
+                  isHolder: false // Will be updated async below
+                };
+              })
               .filter(c => c.message)
               .slice(-50);
+            
+            // Check holder status for loaded chat entries
+            chatEntries.forEach(entry => {
+              if (entry.userAddress && entry.userAddress !== 'unknown') {
+                checkIsHolder(entry.userAddress).then(isHolder => {
+                  entry.isHolder = isHolder;
+                  const cacheKey = entry.userAddress;
+                  if (userInfoCache[cacheKey]) {
+                    userInfoCache[cacheKey].isHolder = isHolder;
+                  }
+                  updateChatHud();
+                }).catch(() => {
+                  entry.isHolder = false;
+                });
+              }
+            });
+            
             updateChatHud();
           }
           
           // Load logs
+          // Drive DB stores logs in chronological order, but we add with unshift (newest first)
+          // So when loading, we need to reverse to match the unshift order (newest first)
           if (Array.isArray(result.data.logs)) {
-            logEntries = result.data.logs.slice(-20).reverse(); // Reverse to get newest first
+            logEntries = result.data.logs.slice(-20).reverse().map(log => {
+              // Ensure all fields are present
+              return {
+                ...log,
+                avatarUrl: log.avatarUrl || null,
+                userAddress: log.userAddress || null,
+                isHolder: log.isHolder === true,
+                username: log.username || null
+              };
+            });
+            
+            // Update cache from loaded logs
+            logEntries.forEach(log => {
+              if (log.userAddress || log.username) {
+                const cacheKey = log.userAddress && log.userAddress !== 'unknown' 
+                  ? log.userAddress 
+                  : log.username ? `user:${log.username.toLowerCase()}` : null;
+                if (cacheKey) {
+                  if (!userInfoCache[cacheKey]) {
+                    userInfoCache[cacheKey] = {};
+                  }
+                  if (log.avatarUrl) userInfoCache[cacheKey].avatarUrl = log.avatarUrl;
+                  if (log.userAddress) userInfoCache[cacheKey].userAddress = log.userAddress;
+                  if (log.isHolder) userInfoCache[cacheKey].isHolder = true;
+                }
+              }
+            });
+            
             updateLogsHud();
           }
           
           // Load winners
           if (Array.isArray(result.data.winners)) {
-            winnersEntries = result.data.winners.slice(-10).reverse(); // Reverse to get newest first
+            winnersEntries = result.data.winners.slice(-10).reverse().map(winner => {
+              // Ensure all fields are present
+              return {
+                ...winner,
+                avatarUrl: winner.avatarUrl || null,
+                userAddress: winner.userAddress || null,
+                isHolder: winner.isHolder === true
+              };
+            });
+            
+            // Update cache from loaded winners
+            winnersEntries.forEach(winner => {
+              if (winner.userAddress || winner.username) {
+                const cacheKey = winner.userAddress && winner.userAddress !== 'unknown' 
+                  ? winner.userAddress 
+                  : winner.username ? `user:${winner.username.toLowerCase()}` : null;
+                if (cacheKey) {
+                  if (!userInfoCache[cacheKey]) {
+                    userInfoCache[cacheKey] = {};
+                  }
+                  if (winner.avatarUrl) userInfoCache[cacheKey].avatarUrl = winner.avatarUrl;
+                  if (winner.userAddress) userInfoCache[cacheKey].userAddress = winner.userAddress;
+                  if (winner.isHolder) userInfoCache[cacheKey].isHolder = true;
+                }
+              }
+            });
+            
             updateWinnersHud();
           }
           
@@ -1896,6 +2234,14 @@
         try {
           isHolder = await checkIsHolder(wallet);
           console.log('[Queue] Holder check result:', { wallet, isHolder });
+          
+          // Update cache with holder status
+          const cacheKey = wallet;
+          if (!userInfoCache[cacheKey]) {
+            userInfoCache[cacheKey] = {};
+          }
+          userInfoCache[cacheKey].isHolder = isHolder;
+          userInfoCache[cacheKey].userAddress = wallet;
         } catch (e) {
           console.warn('[Queue] Holder check failed:', e);
         }
@@ -1911,12 +2257,26 @@
       
       // Check if user has reached daily limit
       if (currentSpins >= limit) {
-        addLog(`⚠️ ${username} reached daily limit (${limit} spins/day)`, '#ff8800');
+        const cacheKey = wallet && wallet !== 'unknown' ? wallet : `user:${username.toLowerCase()}`;
+        const userInfo = userInfoCache[cacheKey] || {};
+        addLog(`⚠️ ${username} reached daily limit (${limit} spins/day)`, '#ff8800', { 
+          username, 
+          userAddress: wallet !== 'unknown' ? wallet : null,
+          avatarUrl: userInfo.avatarUrl || null,
+          isHolder: userInfo.isHolder || false
+        });
         return;
       }
       
       slotState.queue.push({ username, wallet: wallet || 'unknown', isHolder, kind: 'normal' });
-      addLog(`🎟️ ${username} joined the queue (${currentSpins + 1}/${limit} spins)`, '#00d2ff');
+      const cacheKey = wallet && wallet !== 'unknown' ? wallet : `user:${username.toLowerCase()}`;
+      const userInfo = userInfoCache[cacheKey] || {};
+      addLog(`🎟️ ${username} joined the queue (${currentSpins + 1}/${limit} spins)`, '#00d2ff', {
+        username,
+        userAddress: wallet !== 'unknown' ? wallet : null,
+        avatarUrl: userInfo.avatarUrl || null,
+        isHolder: userInfo.isHolder || false
+      });
       updateSlotMachineHud();
       
       console.log('[Queue] Added to queue:', { username, wallet, queueLength: slotState.queue.length });

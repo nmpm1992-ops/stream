@@ -1725,6 +1725,31 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  // Drive DB clear endpoint (limpa todos os registros)
+  if (urlPath === '/drive/clear') {
+    setCors(res);
+    if (req.method !== 'POST' && req.method !== 'GET') {
+      return sendError(res, 405, 'Method not allowed');
+    }
+    (async () => {
+      try {
+        // Reset to default empty state (mantém slotState padrão)
+        const emptyDb = defaultDriveDb();
+        const saved = writeJsonFileSafe(DRIVE_DB_PATH, emptyDb);
+        setCors(res);
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json; charset=utf-8');
+        res.end(JSON.stringify({ ok: true, saved, message: 'All records cleared' }, null, 2));
+      } catch (err) {
+        setCors(res);
+        res.statusCode = 500;
+        res.setHeader('Content-Type', 'application/json; charset=utf-8');
+        res.end(JSON.stringify({ ok: false, error: err.message }, null, 2));
+      }
+    })();
+    return;
+  }
+
   // Get payout token (para frontend)
   if (urlPath === '/payout-token') {
     setCors(res);
